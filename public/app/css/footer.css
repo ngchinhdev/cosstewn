@@ -1,0 +1,30 @@
+footer {
+    background: url(../imgs/footer.png) no-repeat center/cover;
+}
+
+footer .socials i {
+    font-size: 1.3rem;
+    color: #677788;
+    padding-right: 0.2rem;
+    padding-left: 0.4rem;
+}
+
+footer .logo_footer {
+    width: 220px;
+}
+
+footer h5 {
+    color: #4f4f4f;
+    font-size: 1.1rem;
+}
+
+footer .list li {
+    margin-bottom: .6rem;
+    color: #677788;
+    font-size: .9rem;
+}
+
+footer .copyright {
+    color: #ababab;
+    font-size: .9rem;
+}

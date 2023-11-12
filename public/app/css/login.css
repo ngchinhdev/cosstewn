@@ -1,0 +1,243 @@
+#container_login {
+    background-color: #f9fdff;
+    padding: 20px;
+}
+#container_login .register form{
+    margin-top: 38px;
+    font-weight: 500;
+}
+#container_login .register form #wrap-social-login-plus button{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#container_login .form-group {
+    margin-bottom: 20px;
+}
+
+#container_login .title {
+    font-size: 30px;
+}
+
+#container_login .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+#container_login .form-group input {
+    width: 360px;
+    height: 40px;
+    padding: 8px 14px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#container_login .button-register button {
+    background-color: #218cff;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    width: 400px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 19px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#container_login .ho-ten {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+#container_login .sdt-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+#container_login .pass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+#container_login .address{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+#container_login .address .form-group input{
+    width: 740px;
+    height: 40px;
+}
+#container_login .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#container_login .form-group label {
+    text-align: left;
+}
+#container_login .form-group label span{
+    color: red;
+}
+#container_login .form-group label.required::after {
+    content: " *";
+    color: red;
+}
+/* .form-group1 label .star{
+    color: red;
+} */
+#container_login .button-register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin-top: 23px;
+}
+#container_login .text-center{
+    font-size: 16px;
+    margin-top: 10px;
+}
+#container_login #wrap-social-login-plus {
+    text-align: center;
+}
+
+#container_login .btn-login-plus {
+    width: 200px;
+    padding: 0;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+#container_login .btn-google-login {
+    background-color: #dd4b39;
+}
+#container_login .btn-facebook-login {
+    background-color: #3b5998;
+}
+#wrap-social-login-plus {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+
+#container_login .btn-login-plus {
+    width: 210px;
+    padding: 12px 0;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+#container_login .btn-google-login {
+    background-color: #dd4b39;
+}
+#container_login .btn-facebook-login {
+    background-color: #3b5998;
+}
+#container_login .label-btn-login {
+    margin-left: 10px;
+}
+#container_login .login input{
+    width: 100%;
+    height: 40px;
+}
+
+#container_login .button-login button {
+    background-color: #218cff;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    width: 200px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 19px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#container_login .login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    margin-top: 23px;
+}
+
+#container_login .button-register > div{
+    margin-bottom: 10px !important;
+}
+
+@media (max-width: 768px) {
+    #container_login .register form {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    #container_login .form-group {
+        width: 100%;
+    }
+
+    #container_login .title {
+        font-size: 24px !important;
+    }
+
+    #container_login .form-group input {
+        width: 100%;
+        height: 40px;
+        padding: 8px 14px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #container_login .address .form-group input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    #container_login .register form {
+        margin-top: 20px;
+    }
+
+    #container_login form {
+        width: 90%;
+    }
+
+    #container_login .ho-ten, #container_login .sdt-email, #container_login .pass {
+        display: unset;
+    }
+
+    #container_login #wrap-social-login-plus {
+        flex-direction: column;
+        align-items: center;
+    }
+     
+    #container_login .title {
+        font-size: 22px !important;
+    }
+
+    #container_login .or, #container_login .oror {
+        font-size: 13px;
+    }
+}

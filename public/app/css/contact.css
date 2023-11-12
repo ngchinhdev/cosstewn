@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container_contact .googlemap{
+    width: 100%;
+}
+
+#container_contact .diachi{
+    font-weight: bold;
+}
+
+#container_contact .not-bold{
+    font-weight: normal;
+}
+
+@media (max-width: 1000px) {
+  #container_contact .information1 {
+    flex-direction: column;
+  }
+  #container_contact .information1 {
+    width: 100%;
+  }
+}
+
+#container_contact .btn.btn-outline-gray {
+    color: gray;
+    background-color: transparent;
+    border-color: gray;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+#container_contact .btn.btn-outline-gray:hover {
+    color: white;
+    background-color: #218cff;
+}
+#container_contact .frame {
+  background-image: linear-gradient(to right, #218cff, rgb(199, 242, 242));
+    border: none;
+    align-items: center;
+    display: flex;
+}
+  
+#container_contact .information {
+  color: white;
+  padding: 20px;
+}
+  
+#container_contact .information h3 {
+  margin-bottom: 10px;
+  padding: 20px 20px 0 20px;
+  color: #fffff0;
+}
+  
+#container_contact .information ul {
+  list-style: none;
+  padding-left: 20px;
+}
+  
+#container_contact .information ul li {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 600;
+}
+#container_contact .form-group {
+  margin-bottom: 20px;
+}
+  
+#container_contact .form-group label {
+  margin: 10px 10px 10px 0px;
+}
+  
+#container_contact .avatar-container {
+  padding: 40px 40px 0 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+  
+#container_contact .avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+  
+#container_contact .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid grey;
+}
+  
+#container_contact .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
+#container_contact .avatar-info {
+  text-align: center;
+  color: black;
+  font-size: 16px;
+}
+#container_contact .avatar-info h5{
+  margin-top: 10px;
+  color: #218cff;
+}
+
+#container_contact .avatar-info p{
+  color: #2c3e50;
+}
+
+@media (max-width: 1000px) {
+  #container_contact .frame {
+    flex-direction: column;
+  }
+
+  #container_contact .avatar-container,
+  #container_contact .information {
+    width: 100%;
+  }
+}
