@@ -1,6 +1,6 @@
 <?php
-    require_once "../models/catalogController/catalog.php";
-    $catalog = new Catalog();
+    require_once "../models/catalogModel/catalog.php";
+    $catagoryProducts = new CatalogProducts();
     
-    $flash_sale_prods = $catalog->getFlashSaleProducts();
+    $productByCatagory = $catagoryProducts->getProductsByCategory($maloai);
 ?>
