@@ -298,7 +298,40 @@
     <div class="new_product mt-4">
         <h4 class="text-uppercase fw-bold text-center">Sản phẩm mới ra mắt</h4>
         <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 px-sm-0 px-2 mt-4">
-            <div class="mb-1 p-1">
+        <?php foreach ($new_products as $product) : ?>
+                <div class="mb-1 p-1">
+                    <div class="box-products">
+                        <div class="wrap-imgage">
+                            <div class="watch-now"><a href="index.php?page=san-pham">Xem ngay</a></div>
+                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
+                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
+                        </div>
+                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                        <div class="card-content">
+                            <div class="text-brand">CLUB CLIO</div>
+                            <div class="text-name"><?= $product['ten_sp'] ?></div>
+                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
+                                <div class="price-now"><?= number_format($product['gia_tien'], 0, '.', '.') ?>₫</div>
+                                <div class="wrap-under d-flex justify-content-center text-center">
+                                    <div class="price-origin"><?= number_format($product['gia_goc'], 0, '.', '.') ?>₫</div>
+                                    <div class="sale">
+                                        <div class="text-sale"><?= ceil((($product['gia_goc'] - $product['gia_tien']) / $product['gia_goc'] * 100)) ?>%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="warp-star d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <div class="quantity-feedback">(40)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+            <!-- <div class="mb-1 p-1">
                 <div class="box-products">
                     <div class="wrap-imgage">
                         <div class="watch-now"><a href="#">Xem ngay</a></div>
@@ -429,40 +462,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-1 p-1">
-                <div class="box-products">
-                    <div class="wrap-imgage">
-                        <div class="watch-now"><a href="#">Xem ngay</a></div>
-                        <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                        <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                    </div>
-                    <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                    <div class="card-content">
-                        <div class="text-brand">CLUB CLIO</div>
-                        <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                            Founwear
-                            Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                        <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                            <div class="price-now">778.050đ</div>
-                            <div class="wrap-under d-flex justify-content-center text-center">
-                                <div class="price-origin">819.000đ</div>
-                                <div class="sale">
-                                    <div class="text-sale">-5%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="warp-star d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <div class="quantity-feedback">(40)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
         <div class="col-md-12 text-center mt-3">
             <a href="#" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
@@ -487,7 +487,14 @@
     <div class="category mt-4 pt-3" id="category">
         <h4 class="text-uppercase fw-bold text-center">Danh mục nổi bật</h4>
         <div class="category_row mt-4">
+        <?php foreach ($hightlight_categories as $category) : ?>
             <div class="category_item p-2 text-center border border-1 rounded-3 position-relative">
+                <a href="" class="position-absolute w-100 h-100 top-0 start-0"></a>
+                <img src="../../public/app/imgs/<?= $category['hinh_anh'] ?>" alt="" class="">
+                <p><?= $category['ten_loai'] ?></p>
+            </div>
+        <?php endforeach ?>
+            <!-- <div class="category_item p-2 text-center border border-1 rounded-3 position-relative">
                 <a href="" class="position-absolute w-100 h-100 top-0 start-0"></a>
                 <img src="../../public/app/imgs/cate.webp" alt="" class="">
                 <p>Serum</p>
@@ -546,14 +553,47 @@
                 <a href="" class="position-absolute w-100 h-100 top-0 start-0"></a>
                 <img src="../../public/app/imgs/xitkhoang.webp" alt="" class="">
                 <p>Xịt khoáng</p>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Popular Products Section -->
     <div class="popular_products mt-5">
-        <h4 class="text-uppercase fw-bold text-center">Các Sản phẩm bán chạy</h4>
+        <h4 class="text-uppercase fw-bold text-center">Được xem nhiều nhất</h4>
         <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 px-sm-0 px-2 mt-4">
-            <div class="mb-1 p-1">
+        <?php foreach ($new_products as $product) : ?>
+                <div class="mb-1 p-1">
+                    <div class="box-products">
+                        <div class="wrap-imgage">
+                            <div class="watch-now"><a href="index.php?page=san-pham">Xem ngay</a></div>
+                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
+                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
+                        </div>
+                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                        <div class="card-content">
+                            <div class="text-brand">CLUB CLIO</div>
+                            <div class="text-name"><?= $product['ten_sp'] ?></div>
+                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
+                                <div class="price-now"><?= number_format($product['gia_tien'], 0, '.', '.') ?>₫</div>
+                                <div class="wrap-under d-flex justify-content-center text-center">
+                                    <div class="price-origin"><?= number_format($product['gia_goc'], 0, '.', '.') ?>₫</div>
+                                    <div class="sale">
+                                        <div class="text-sale"><?= ceil((($product['gia_goc'] - $product['gia_tien']) / $product['gia_goc'] * 100)) ?>%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="warp-star d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <div class="quantity-feedback">(40)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+            <!-- <div class="mb-1 p-1">
                 <div class="box-products">
                     <div class="wrap-imgage">
                         <div class="watch-now"><a href="#">Xem ngay</a></div>
@@ -684,40 +724,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-1 p-1">
-                <div class="box-products">
-                    <div class="wrap-imgage">
-                        <div class="watch-now"><a href="#">Xem ngay</a></div>
-                        <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                        <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                    </div>
-                    <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                    <div class="card-content">
-                        <div class="text-brand">CLUB CLIO</div>
-                        <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                            Founwear
-                            Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                        <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                            <div class="price-now">778.050đ</div>
-                            <div class="wrap-under d-flex justify-content-center text-center">
-                                <div class="price-origin">819.000đ</div>
-                                <div class="sale">
-                                    <div class="text-sale">-5%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="warp-star d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <div class="quantity-feedback">(40)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
         <div class="col-md-12 text-center mt-3">
             <a href="#" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
@@ -731,7 +738,40 @@
     <div class="foryou_products mt-5">
         <h4 class="text-uppercase fw-bold text-center">Sản phẩm dành cho bạn</h4>
         <div class="row  row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 px-sm-0 px-2 mt-4">
-            <div class="mb-1 p-1">
+        <?php foreach ($new_products as $product) : ?>
+                <div class="mb-1 p-1">
+                    <div class="box-products">
+                        <div class="wrap-imgage">
+                            <div class="watch-now"><a href="index.php?page=san-pham">Xem ngay</a></div>
+                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
+                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
+                        </div>
+                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                        <div class="card-content">
+                            <div class="text-brand">CLUB CLIO</div>
+                            <div class="text-name"><?= $product['ten_sp'] ?></div>
+                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
+                                <div class="price-now"><?= number_format($product['gia_tien'], 0, '.', '.') ?>₫</div>
+                                <div class="wrap-under d-flex justify-content-center text-center">
+                                    <div class="price-origin"><?= number_format($product['gia_goc'], 0, '.', '.') ?>₫</div>
+                                    <div class="sale">
+                                        <div class="text-sale"><?= ceil((($product['gia_goc'] - $product['gia_tien']) / $product['gia_goc'] * 100)) ?>%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="warp-star d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <div class="quantity-feedback">(40)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+            <!-- <div class="mb-1 p-1">
                 <div class="box-products">
                     <div class="wrap-imgage">
                         <div class="watch-now"><a href="#">Xem ngay</a></div>
@@ -862,44 +902,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="mb-1 p-1">
-                <div class="box-products">
-                    <div class="wrap-imgage">
-                        <div class="watch-now"><a href="#">Xem ngay</a></div>
-                        <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                        <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                    </div>
-                    <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                    <div class="card-content">
-                        <div class="text-brand">CLUB CLIO</div>
-                        <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                            Founwear
-                            Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                        <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                            <div class="price-now">778.050đ</div>
-                            <div class="wrap-under d-flex justify-content-center text-center">
-                                <div class="price-origin">819.000đ</div>
-                                <div class="sale">
-                                    <div class="text-sale">-5%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="warp-star d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <div class="quantity-feedback">(40)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
         <div class="col-md-12 text-center mt-3">
             <a href="#" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
-                tất cả</a>
+                tất cả
+            </a>
         </div>
     </div>
     <!-- Best Search Section -->

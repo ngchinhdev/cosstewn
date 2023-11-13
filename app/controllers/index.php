@@ -1,5 +1,6 @@
 <?php
     session_start();
+    // $ROOT_URL = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/";
     require_once "../views/layout/header.php";
 
     if(isset($_GET["page"])) {
@@ -14,6 +15,7 @@
                 require_once "../views/login/login.php";
                 break;
             case "dang-ky": 
+                require_once "registerController/oauthController.php";
                 require_once "../views/register/register.php";
                 break;
             case "gio-hang": 
