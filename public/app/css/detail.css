@@ -583,24 +583,15 @@
     background-color: var(--primary-color);
 }
 
-<<<<<<< HEAD
 #container_detail .flashsale .title img {
     width: 35%;
 }
 
 #container_detail .partnerships {
-=======
-#container_home .flashsale .title img {
-    width: 35%;
-}
-
-#container_home .partnerships {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
     overflow-x: auto;
     white-space: nowrap;
 }
 
-<<<<<<< HEAD
 #container_detail .partnerships::-webkit-scrollbar {
     width: 0;
 }
@@ -610,27 +601,12 @@
 }
 
 #container_detail .partnerships img {
-=======
-#container_home .partnerships::-webkit-scrollbar {
-    width: 0;
-}
-
-#container_home .partnerships img:not(:last-child) {
-    margin-right: .7rem;
-}
-
-#container_home .partnerships img {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
     width: 230px;
 }
 
 
 /* Product card  */
-<<<<<<< HEAD
 #container_detail .box-products {
-=======
-#container_home .box-products {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
     width: 100%;
     background: rgb(255, 255, 255);
     box-shadow: rgba(174, 174, 174, 0.25) 0px 0px 10px;
@@ -754,11 +730,7 @@
 }
 
 
-<<<<<<< HEAD
 #container_detail .wrap-under .sale::before {
-=======
-#container_home .sale::before {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
     content: "";
     width: 10px;
     position: absolute;
@@ -773,11 +745,7 @@
     z-index: 1;
 }
 
-<<<<<<< HEAD
 #container_detail .wrap-under .text-sale {
-=======
-#container_home .text-sale {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
     position: absolute;
     z-index: 2;
     width: 100%;
@@ -800,29 +768,17 @@
     margin: 5px 0;
 }
 
-<<<<<<< HEAD
 #container_detail .category_row {
-=======
-#container_home .category_row {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
     display: grid;
     grid-template-columns: repeat(6, auto);
     gap: 20px;
 }
 
-<<<<<<< HEAD
 #container_detail .category img {
     width: 120px;
 }
 
 #container_detail .keywords a {
-=======
-#container_home .category img {
-    width: 120px;
-}
-
-#container_home .keywords a {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
     background-color: #f6f6f5;
 }
 
@@ -860,21 +816,13 @@ footer .copyright {
 
 /* Responsive  */
 @media (max-width: 992px) {
-<<<<<<< HEAD
     #container_detail .category_row {
-=======
-    #container_home .category_row {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
         display: grid;
         grid-template-columns: repeat(4, auto);
         gap: 20px;
     }
 
-<<<<<<< HEAD
     #container_detail .flashsale .title img {
-=======
-    #container_home .flashsale .title img {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
         width: 50%;
     }
 
@@ -903,19 +851,11 @@ footer .copyright {
         text-align: center;
     }
 
-<<<<<<< HEAD
     #container_detail .category_row {
         gap: 10px;
     }
 
     #container_detail .category img {
-=======
-    #container_home .category_row {
-        gap: 10px;
-    }
-
-    #container_home .category img {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
         width: 100px;
     }
 
@@ -927,7 +867,6 @@ footer .copyright {
         font-size: .7rem !important;
     }
 
-<<<<<<< HEAD
     #container_detail .category_row {
         grid-template-columns: repeat(3, auto);
     }
@@ -945,42 +884,15 @@ footer .copyright {
     }
 
     #container_detail .timer {
-=======
-    #container_home .category_row {
-        grid-template-columns: repeat(3, auto);
-    }
-
-    #container_home .category img {
-        width: 80px;
-    }
-
-    #container_home .segment-title {
-        font-size: .9rem;
-    }
-
-    #container_home .segment {
-        font-size: .8rem;
-    }
-
-    #container_home .timer {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
         position: unset !important;
         margin-top: .6rem;
     }
 
-<<<<<<< HEAD
     #container_detail .flashsale .title img {
         width: 70%;
     }
 
     #container_detail .keywords {
-=======
-    #container_home .flashsale .title img {
-        width: 70%;
-    }
-
-    #container_home .keywords {
->>>>>>> 4429a8f00ba29ebbebb8ed132805da399e4f972b
         font-size: 0.8rem;
     }
 }
