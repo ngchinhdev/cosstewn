@@ -379,13 +379,17 @@ li {
     margin: 3px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #container_catalog .box-banner-catalog{
     width: 100%;
     display: flex;
     gap: 10px;
     white-space: nowrap;
     justify-content: space-between;
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 #container_catalog .box-banner-catalog img{

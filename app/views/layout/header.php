@@ -100,54 +100,11 @@
                             <i class="fa-sharp fa-solid fa-chevron-down ms-1"></i>
                         </span>
                         <div class="submenu position-absolute start-0 px-4 py-3 rounded-2">
+                            <?php foreach ($NamesTypeCatagory as $row) : ?>
                             <span>
-                                <a href="index.php?page=danh-muc">Sữa rửa mặt</a>
+                                <a href="index.php?page=danh-muc&maloai=<?php echo $row['maloai'] ?>"><?php echo $row['ten_loai'] ?></a>
                             </span>
-                            <span>
-                                <a href="">Sữa tắm</a>
-                            </span>
-                            <span>
-                                <a href="">Xịt khoáng</a>
-                            </span>
-                            <span>
-                                <a href="">Nước hoa</a>
-                            </span>
-                            <span>
-                                <a href="">Dưỡng thể</a>
-                            </span>
-                            <span>
-                                <a href="">Dầu gội</a>
-                            </span>
-                            <span>
-                                <a href="">Chống nắng</a>
-                            </span>
-                            <span>
-                                <a href="">Tẩy trang</a>
-                            </span>
-                            <span>
-                                <a href="">Son môi</a>
-                            </span>
-                            <span>
-                                <a href="">Kem dưỡng</a>
-                            </span>
-                            <span>
-                                <a href="">Mặt nạ</a>
-                            </span>
-                            <span>
-                                <a href="">Serum</a>
-                            </span>
-                            <span>
-                                <a href="">Phấn má</a>
-                            </span>
-                            <span>
-                                <a href="">Lăn khử mùi</a>
-                            </span>
-                            <span>
-                                <a href="">Tẩy tế bào chết</a>
-                            </span>
-                            <span>
-                                <a href="">Phụ kiện làm đẹp</a>
-                            </span>
+                            <?php endforeach; ?>
                         </div>
                     </li>
                     <li class="position-relative pb-2 me-4 <?php echo isset($_GET['type']) && $_GET['type'] === 'san-pham-moi' ? 'active' : ''; ?>">

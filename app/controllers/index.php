@@ -6,6 +6,7 @@
     if(isset($_GET["page"])) {
         switch($_GET['page']) {
             case "danh-muc": 
+                require_once "catalogController/catalog.php";
                 require_once "../views/category/category.php";
                 break;
             case "san-pham": 
