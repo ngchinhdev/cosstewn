@@ -8,5 +8,11 @@
 
             return $this->pdoExecute($sql, $name, $email, $phone, $address, $pass, $avt, 2);
         }
+
+        function getInfoUser($email) {
+            $sql = "SELECT * FROM `taikhoan` WHERE email = ?";
+            
+            return $this->pdoQueryOne($sql, $email);
+        }
     }
 ?>

@@ -12,10 +12,13 @@
                 require_once "../views/detail/detail.php";
                 break;
             case "dang-nhap": 
+                require_once "registerController/oauthGoogleController.php";
+                require_once "registerController/oauthFacebookController.php";
                 require_once "../views/login/login.php";
                 break;
             case "dang-ky": 
-                require_once "registerController/oauthController.php";
+                require_once "registerController/oauthGoogleController.php";
+                require_once "registerController/oauthFacebookController.php";
                 require_once "../views/register/register.php";
                 break;
             case "gio-hang": 
@@ -26,6 +29,9 @@
                 break;
             case "thanh-toan": 
                 require_once "../views/checkout/checkout.php";
+                break;
+            case "lich-su-mua": 
+                require_once "../views/profile/profile.php";
                 break;
             default:
                 require_once "homeController/productHome.php";

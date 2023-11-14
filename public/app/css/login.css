@@ -47,21 +47,18 @@
 #container_login .ho-ten {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
     text-align: center;
 }
 #container_login .sdt-email {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
     text-align: center;
 }
 #container_login .pass {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
     text-align: center;
 }
@@ -90,6 +87,11 @@
 #container_login .form-group label.required::after {
     content: " *";
     color: red;
+}
+
+small.error {
+    color: red;
+    font-size: 13px;
 }
 /* .form-group1 label .star{
     color: red;

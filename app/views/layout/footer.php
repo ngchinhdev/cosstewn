@@ -83,6 +83,10 @@
                 case 'thanh-toan':
                     echo '<script src="../../public/app/js/checkout.js"></script>';
                     break;
+                case 'dang-nhap':
+                case 'dang-ky':
+                    echo '<script src="../../public/app/js/form-login.js"></script>';
+                    break;
             }
         } else {
             echo '<script src="../../public/app/js/main.js"></script>';
