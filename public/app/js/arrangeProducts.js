@@ -21,10 +21,19 @@ $(document).ready(function () {
                 totalpage: totalpage
             },
             success: function (response) {
-                $('#container-response').html(response);
+                // Ẩn nội dung hiện tại với hiệu ứng fadeOut
+                $('#container-response').fadeOut('slow', function () {
+                    // Thêm nội dung mới
+                    $(this).html(response);
+                    // Hiển thị nội dung mới với hiệu ứng fadeIn và cuộn lên từ từ
+                    $(this).fadeIn('slow', function () {
+                        // Cuộn lên đầu trang
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                    });
+                });
             },
             error: function (xhr, status, error) {
-                // Handle errors here
+                // Xử lý lỗi ở đây
             }
         });
     }
@@ -32,18 +41,10 @@ $(document).ready(function () {
     var initialPageNumber = 1;
     updatePage(initialPageNumber);
 
-    $(document).on("click", ".node-number", function () {
-        var pageNumber = $(this).data("page-num");
+    $(document).on("click", ".node-number, .prev-page, .next-page", function (event) {
+        event.preventDefault();
+        var pageNumber = $(this).data("page-num") || $(this).data("page-prev") || $(this).data("page-next");
         updatePage(pageNumber);
-    });
-
-    $(document).on("click", ".prev-page", function () {
-        var pageNumber = $(this).data("page-prev");
-        updatePage(pageNumber);
-    });
-
-    $(document).on("click", ".next-page", function () {
-        var pageNumber = $(this).data("page-next");
-        updatePage(pageNumber);
+        return false;
     });
 });

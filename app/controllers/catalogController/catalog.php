@@ -45,12 +45,12 @@ if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['
         $htmlResponse .= '</div>';
         $htmlPagination = '<div class="pagination-container d-flex justify-content-center my-4">
                     <ul class="pagination">';
-        $htmlPagination .= ($pageNumber > 1) ? '<li><a class="node-paging prev-page" data-page-prev="' . ($pageNumber - 1) . '"><i class="fa-solid fa-chevron-left"></i></a></li>' : '';
+        $htmlPagination .= ($pageNumber > 1) ? '<li><a href="#" class="node-paging prev-page" data-page-prev="' . ($pageNumber - 1) . '"><i class="fa-solid fa-chevron-left"></i></a></li>' : '';
         for ($i = 1; $i <= $totalPages; $i++) {
             $isActive = ($i == $pageNumber) ? ' active' : '';
-            $htmlPagination .= ($totalPages > 1) ? '<li><a class="node-paging node-number' . $isActive . '" data-page-num="' . $i . '">' . $i . '</a></li>' : '';
+            $htmlPagination .= ($totalPages > 1) ? '<li><a href="#" class="node-paging node-number' . $isActive . '" data-page-num="' . $i . '">' . $i . '</a></li>' : '';
         }
-        $htmlPagination .= ($pageNumber < $totalPages) ? '<li><a class="node-paging next-page" data-page-next="' . ($pageNumber + 1) . '"><i class="fa-solid fa-chevron-right"></i></a></li>' : '';
+        $htmlPagination .= ($pageNumber < $totalPages) ? '<li><a href="#" class="node-paging next-page" data-page-next="' . ($pageNumber + 1) . '"><i class="fa-solid fa-chevron-right"></i></a></li>' : '';
 
         $htmlPagination .= '</ul>
                 </div>';
