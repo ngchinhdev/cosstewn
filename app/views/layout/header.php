@@ -94,7 +94,7 @@
                     <li class="position-relative pb-2 me-4 <?php echo !isset($_GET['page']) ? 'active' : ''; ?>">
                         <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Trang chủ</a>
                     </li>
-                    <li class="position-relative pb-2 me-4 category_header">
+                    <li class="position-relative pb-2 me-4 category_header <?php echo isset($_GET['page']) && $_GET['page'] === 'danh-muc' && !isset($_GET['type']) ? 'active' : ''; ?>">
                         <span role="button" class="">
                             Danh mục
                             <i class="fa-sharp fa-solid fa-chevron-down ms-1"></i>
@@ -110,8 +110,8 @@
                     <li class="position-relative pb-2 me-4 <?php echo isset($_GET['type']) && $_GET['type'] === 'san-pham-moi' ? 'active' : ''; ?>">
                         <a href="index.php?page=danh-muc&type=san-pham-moi">Sản phẩm mới</a>
                     </li>
-                    <li class="position-relative pb-2 me-4">
-                        <a href="">Lịch sử mua</a>
+                    <li class="position-relative pb-2 me-4 <?php echo isset($_GET['page']) && $_GET['page'] === 'lich-su-mua' ? 'active' : ''; ?>">
+                        <a href="index.php?page=lich-su-mua">Lịch sử mua</a>
                     </li>
                     <li class="position-relative pb-2 me-4 <?php echo isset($_GET['page']) && $_GET['page'] === 'lien-he' ? 'active' : ''; ?>">
                         <a href="index.php?page=lien-he">Liên hệ</a>
