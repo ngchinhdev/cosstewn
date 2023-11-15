@@ -119,7 +119,7 @@
         <div class="col-sm-12 col-xl-9 ">
             <div class="row" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>">
                 <div class="row">
-                    <!-- <?php foreach ($productByPage as $row) : ?>
+                    <?php foreach ($productByPage as $row) : ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
                             <div class="box-products">
                                 <div class="wrap-imgage">
@@ -152,10 +152,10 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?> -->
+                    <?php endforeach; ?>
                 </div>
 
-                <!-- <div class="pagination-container d-flex justify-content-center my-4">
+                <div class="pagination-container d-flex justify-content-center my-4">
                     <ul class="pagination">
                         <?= ($pageNumber > 1) ? '<li><a href="#" class="node-paging prev-page" data-page-prev="' . ($pageNumber - 1) . '"><i class="fa-solid fa-chevron-left"></i></a></li>' : '' ?>
                         <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
@@ -164,7 +164,7 @@
                         <?php endfor; ?>
                         <?= ($pageNumber < $totalPages) ? '<li><a href="#" class="node-paging next-page" data-page-next="' . ($pageNumber + 1) . '"><i class="fa-solid fa-chevron-right"></i></a></li>' : '' ?>
                     </ul>
-                </div> -->
+                </div>
             </div>
         </div>
 

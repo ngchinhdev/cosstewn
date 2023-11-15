@@ -59,4 +59,10 @@ if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['
 
     echo $htmlResponse;
     echo $htmlPagination;
+} else {
+    $pageNumber = isset($_GET['pageNumber']) ? $_GET['pageNumber'] : 1;
+    $brandId = isset($_GET['maloai']) ? $_GET['maloai'] : '';
+    $newProduct = isset($_GET['type']) ? $_GET['type'] : '';
+    $totalPages = ceil($countProducts / 12);
+    $productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProduct, $pageNumber, $page_size = 12);
 }

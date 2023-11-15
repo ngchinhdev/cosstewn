@@ -78,7 +78,6 @@ if (isset($_GET['page'])) {
             break;
         case 'danh-muc':
             echo '<script src="../../public/app/js/arrangeProducts.js"></script>';
-            echo '<script src="../../public/app/js/cardPaging.js"></script>';
             echo '<script src="../../public/app/js/changewidth.js"></script>';
             break;
         case 'thanh-toan':
