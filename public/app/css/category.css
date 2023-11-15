@@ -32,6 +32,7 @@ li {
     color: #797979;
 }
 
+
 #container_catalog .text-link h1 {
     color: black;
     font-size: 25px;
@@ -178,7 +179,7 @@ li {
     border-radius: 3px 4px 4px 3px;
     position: relative;
     margin-left: 20px;
-    padding: 2px 12px 0 0;
+    padding: 2px 0 0 0;
     width: 37px;
 }
 
@@ -373,10 +374,13 @@ li {
 }
 
 #container_catalog .pagination a.node-number {
-    border: 1px solid black;
     border-radius: 50%;
     padding: 5px 10px;
     margin: 3px;
+}
+
+#container_catalog .pagination a.node-paging {
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -401,4 +405,7 @@ li {
     color: #218CFF;
 }
 
-
+#container_catalog .node-number.active{
+    border: 1px solid #218CFF;
+    color: #218CFF;
+}

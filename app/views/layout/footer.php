@@ -66,35 +66,33 @@
 
 
 
-    <!-- Link bootstrap, jquery, js  -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <?php
-        if(isset($_GET['page'])) {
-            switch($_GET['page']) {
-                case 'san-pham':
-                    echo '<script src="../../public/app/js/product-detail.js"></script>';
-                    break;
-                case 'thanh-toan':
-                    echo '<script src="../../public/app/js/checkout.js"></script>';
-                    break;
-                case 'danh-muc':
-                    echo '<script src="../../public/app/js/changewidth.js"></script>';
-                    break;
-                case 'dang-nhap':
-                case 'dang-ky':
-                    echo '<script src="../../public/app/js/form-login.js"></script>';
-                    break;
-            }
-        } else {
-            echo '<script src="../../public/app/js/main.js"></script>';
-        }
-    ?>
+<!-- Link bootstrap, jquery, js  -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<?php
+if (isset($_GET['page'])) {
+    switch ($_GET['page']) {
+        case 'san-pham':
+            echo '<script src="../../public/app/js/product-detail.js"></script>';
+            break;
+        case 'danh-muc':
+            echo '<script src="../../public/app/js/arrangeProducts.js"></script>';
+            echo '<script src="../../public/app/js/cardPaging.js"></script>';
+            echo '<script src="../../public/app/js/changewidth.js"></script>';
+            break;
+        case 'thanh-toan':
+            echo '<script src="../../public/app/js/checkout.js"></script>';
+            break;
+        case 'dang-nhap':
+        case 'dang-ky':
+            echo '<script src="../../public/app/js/form-login.js"></script>';
+            break;
+    }
+} else {
+    echo '<script src="../../public/app/js/main.js"></script>';
+}
+?>
 </body>
 
 </html>
