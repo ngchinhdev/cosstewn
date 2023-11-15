@@ -1,7 +1,3 @@
-<!-- <?php
-        echo "Danh muc";
-        var_dump($flash_sale_prods);
-        ?> -->
 
 <div id="container_catalog" class="container mt-2">
     <div class="row">
@@ -81,38 +77,38 @@
                 <div class="wrap-filter">
                     <div class="filter-price mb-2">
                         <div class="title-filter">
-                            Thương hiệu <i class="fa-solid fa-chevron-up"></i>
+                            Khuyến mãi <i class="fa-solid fa-chevron-up"></i>
                         </div>
                     </div>
                     <div class="checkbox-group checkbox-group2">
                         <div class="wrap-checkbox">
                             <input type="checkbox" id="price-checkbox6" class="custom-checkbox2">
                             <label for="price-checkbox6">
-                                <p>DEAR KLAIRS (1)</p><i class="fa-solid fa-check"></i>
+                                <p>Từ 10% - 20%</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
                         <div class="wrap-checkbox">
                             <input type="checkbox" id="price-checkbox7" class="custom-checkbox2">
                             <label for="price-checkbox7">
-                                <p>VACOSI (73)</p><i class="fa-solid fa-check"></i>
+                                <p>Từ 20% - 30%</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
                         <div class="wrap-checkbox">
                             <input type="checkbox" id="price-checkbox8" class="custom-checkbox2">
                             <label for="price-checkbox8">
-                                <p>LIPSTICIAN (1)</p><i class="fa-solid fa-check"></i>
+                                <p>Từ 30% - 40%</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
                         <div class="wrap-checkbox">
                             <input type="checkbox" id="price-checkbox9" class="custom-checkbox2">
                             <label for="price-checkbox9">
-                                <p>MENTHOLATUM (2)</p><i class="fa-solid fa-check"></i>
+                                <p>Từ 40% - 50%</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
                         <div class="wrap-checkbox">
                             <input type="checkbox" id="price-checkbox10" class="custom-checkbox2">
                             <label for="price-checkbox10">
-                                <p>FLAWSOME (1)</p><i class="fa-solid fa-check"></i>
+                                <p>Trên 50%</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
                     </div>
@@ -122,13 +118,12 @@
 
         </div>
         <div class="col-sm-12 col-xl-9 ">
-            <div class="row">
-                <img src="../../public/app/imgs/suaruamat1_1.jpg" alt="">
-                <?php foreach ($productByCatagory as $row) : ?>
+            <div class="row" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id = "<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products = "<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>">
+                <!-- <?php foreach ($productByCategory as $row) : ?>
                     <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
                         <div class="box-products">
                             <div class="wrap-imgage">
-                                <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $row['masp'] ?>">Xem ngay</a></div>
+                                <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $row['masp'] ?>&maloai=<?php echo $row['maloai'] ?>">Xem ngay</a></div>
                                 <?php $images = explode(',', $row['hinh_anh']); ?>
                                 <?php for ($i = 0; $i < 2; $i++) { ?>
                                     <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
@@ -143,7 +138,7 @@
                                     <div class="wrap-under d-flex justify-content-center text-center">
                                         <div class="price-origin"><?= number_format($row['gia_goc'], 0, '.', '.') ?>₫</div>
                                         <div class="sale">
-                                            <div class="text-sale"><?= ceil((($row['gia_goc'] - $row['gia_tien']) / $row['gia_goc'] * 100)) ?>%</div>
+                                            <div class="text-sale">-<?= ceil((($row['gia_goc'] - $row['gia_tien']) / $row['gia_goc'] * 100)) ?>%</div>
                                         </div>
                                     </div>
                                 </div>
@@ -157,21 +152,18 @@
                 <?php endforeach; ?>
                 <div class="pagination-container d-flex justify-content-center my-4">
                     <ul class="pagination">
-                        <li><a href="#" class="node-paging">Previous</i></a></li>
-                        <li>
-                            <a href="#" class="node-paging node-number">1</a>
-                        </li>
-                        <li>
-                            <a href="#" class="node-paging node-number">2</a>
-                        </li>
-                        <li>
-                            <a href="#" class="node-paging node-number">3</a>
-                        </li>
-                        <li><a href="#" class="node-paging">Next</a></li>
+                        <li><a href="" class="node-paging prev-page" data-page-prev="<?= $page_num - 1 ?>"><i class="fa-solid fa-chevron-left"></i></a></li>
+                        <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                            <li>
+                                <a href="" class="node=paging node-number" data-page-num="<?= $i ?>"><?= $i ?></a>
+                            </li>
+                        <?php endfor; ?>
+                        <li><a href="" class="node-paging next-page" data-page-next="<?= $page_num + 1 ?>"><i class="fa-solid fa-chevron-right"></i></a></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
+        
     </div>
     <div class="box-banner-catalog mt-2">
         <img src="../../public/app/imgs/banner-last1.webp" alt="" class="rounded-3">

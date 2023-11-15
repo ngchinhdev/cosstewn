@@ -58,8 +58,8 @@
                         <a href="<?php echo $_SERVER['PHP_SELF']; ?>"><img class="w-100 h-100" src="../../public/app/imgs/logo.png" alt="Logo"></a>
                     </div>
                     <div class="right_above d-flex align-items-center position-relative">
-                        <form class="search_header position-relative d-none d-sm-flex">
-                            <input type="text" placeholder="Sữa rửa mặt" class="pt-2 pb-2 pe-3 ps-3 w-100">
+                        <form method="GET" class="search_header position-relative d-none d-sm-flex">
+                            <input name="search" type="text" placeholder="Sữa rửa mặt" class="pt-2 pb-2 pe-3 ps-3 w-100">
                             <i class="fa-solid fa-magnifying-glass position-absolute fs-5"></i>
                         </form>
                         <div class="search_icon_mobile d-sm-none">

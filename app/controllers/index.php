@@ -10,6 +10,7 @@
                 require_once "../views/category/category.php";
                 break;
             case "san-pham": 
+                require_once "detailController/detail.php";
                 require_once "../views/detail/detail.php";
                 break;
             case "dang-nhap": 
