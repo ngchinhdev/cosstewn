@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once "headerController/TypeCatagory.php";
+    require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";
 
     if(isset($_GET["page"])) {

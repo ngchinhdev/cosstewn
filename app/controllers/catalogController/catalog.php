@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/catalogModel/catalog.php";
 $catagoryProducts = new CatalogProducts();
+$NamesTypeCatagory = $catagoryProducts->getTypeCatagory();
 $countProducts = $catagoryProducts->getTotalProducts($maloai, $newProducts);
 if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['brandId'])) {
     $pageNumber = isset($_POST['pageNumber']) ? $_POST['pageNumber'] : 1;

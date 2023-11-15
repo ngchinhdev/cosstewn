@@ -21,15 +21,16 @@ $(document).ready(function () {
                 totalpage: totalpage
             },
             success: function (response) {
-                // Ẩn nội dung hiện tại với hiệu ứng fadeOut
-                $('#container-response').fadeOut('slow', function () {
-                    // Thêm nội dung mới
-                    $(this).html(response);
-                    // Hiển thị nội dung mới với hiệu ứng fadeIn và cuộn lên từ từ
-                    $(this).fadeIn('slow', function () {
-                        // Cuộn lên đầu trang
-                        $('html, body').animate({ scrollTop: 0 }, 'slow');
-                    });
+                // Ẩn nội dung hiện tại mà không có hiệu ứng
+                $('#container-response').hide();
+
+                // Thêm nội dung mới
+                $('#container-response').html(response);
+
+                // Hiển thị nội dung mới mà không có hiệu ứng và cuộn lên từ từ
+                $('#container-response').show(0, function () {
+                    // Cuộn lên đầu trang
+                    $('html, body').animate({ scrollTop: 0 }, 'slow');
                 });
             },
             error: function (xhr, status, error) {
