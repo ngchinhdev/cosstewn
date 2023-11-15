@@ -1,6 +1,8 @@
 <!-- <?php
         echo "Danh muc";
+        var_dump($flash_sale_prods);
         ?> -->
+
 <div id="container_catalog" class="container mt-2">
     <div class="row">
         <div class="col-12 text-link">
@@ -121,402 +123,38 @@
         </div>
         <div class="col-sm-12 col-xl-9 ">
             <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
+                <img src="../../public/app/imgs/suaruamat1_1.jpg" alt="">
+                <?php foreach ($productByCatagory as $row) : ?>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
+                        <div class="box-products">
+                            <div class="wrap-imgage">
+                                <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $row['masp'] ?>">Xem ngay</a></div>
+                                <?php $images = explode(',', $row['hinh_anh']); ?>
+                                <?php for ($i = 0; $i < 2; $i++) { ?>
+                                    <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
+                                <?php } ?>
+                            </div>
+                            <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                            <div class="card-content">
+                                <div class="text-brand"><?php echo $row['ten_loai'] ?></div>
+                                <div class="text-name"><?php echo $row['ten_sp'] ?></div>
+                                <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
+                                    <div class="price-now"><?= number_format($row['gia_tien'], 0, '.', '.') ?>₫</div>
+                                    <div class="wrap-under d-flex justify-content-center text-center">
+                                        <div class="price-origin"><?= number_format($row['gia_goc'], 0, '.', '.') ?>₫</div>
+                                        <div class="sale">
+                                            <div class="text-sale"><?= ceil((($row['gia_goc'] - $row['gia_tien']) / $row['gia_goc'] * 100)) ?>%</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
+                                <div class="warp-star d-flex justify-content-center align-items-center">
+                                    (<i class="fa-solid fa-eye"></i>
+                                    <div class="quantity-feedback"><?php echo $row['so_luot_xem'] ?> Lượt xem )</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                    <div class="box-products">
-                        <div class="wrap-imgage">
-                            <div class="watch-now"><a href="#">Xem ngay</a></div>
-                            <img src="../../public/app/imgs/bf7aac2f-02b9-42aa-8106-2f97d758f4a7.webp" alt="">
-                            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4.webp" alt="">
-                        </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                        <div class="card-content">
-                            <div class="text-brand">CLUB CLIO</div>
-                            <div class="text-name">Phấn Nước Che Khuyết Điểm Hoàn Hảo Clio Kill Cover The New
-                                Founwear
-                                Cushion SPF50+ PA+++ (15gx2) (Tặng 1 lõi refill)</div>
-                            <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                <div class="price-now">778.050đ</div>
-                                <div class="wrap-under d-flex justify-content-center text-center">
-                                    <div class="price-origin">819.000đ</div>
-                                    <div class="sale">
-                                        <div class="text-sale">-5%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="warp-star d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <div class="quantity-feedback">(40)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
                 <div class="pagination-container d-flex justify-content-center my-4">
                     <ul class="pagination">
                         <li><a href="#" class="node-paging">Previous</i></a></li>
@@ -535,7 +173,7 @@
             </div>
         </div>
     </div>
-    <div class="box-banner-catalog ">
+    <div class="box-banner-catalog mt-2">
         <img src="../../public/app/imgs/banner-last1.webp" alt="" class="rounded-3">
         <img src="../../public/app/imgs/banner-last2.webp" alt="" class="rounded-3">
         <img src="../../public/app/imgs/banner-last3.webp" alt="" class="rounded-3">
