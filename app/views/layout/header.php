@@ -31,6 +31,9 @@
             case 'thanh-toan':
                 echo '<link rel="stylesheet" href="../../public/app/css/checkout.css">';
                 break;
+            case 'lich-su-mua':
+                echo '<link rel="stylesheet" href="../../public/app/css/profile.css">';
+                break;
             default:
                 echo '<link rel="stylesheet" href="../../public/app/css/main.css">';
         }
@@ -55,7 +58,7 @@
             <div class="container">
                 <div class="above_header d-flex justify-content-between align-items-center">
                     <div class="logo_header">
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>"><img class="w-100 h-100" src="../../public/app/imgs/logo.png" alt="Logo"></a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>"><img class="w-100 h-100" src="../../public/app/imgs/logoft.png" alt="Logo"></a>
                     </div>
                     <div class="right_above d-flex align-items-center position-relative">
                         <form method="GET" class="search_header position-relative d-none d-sm-flex">

@@ -1,7 +1,6 @@
 <?php
     session_start();
-    // $ROOT_URL = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/";
-    require_once "headerController/TypeCatagory.php";
+    require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";
 
     if(isset($_GET["page"])) {

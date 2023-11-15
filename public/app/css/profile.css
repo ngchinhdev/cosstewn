@@ -1,0 +1,17 @@
+body  {
+    background-color: #f5f5f5;
+}
+
+#container_profile .menu_status {
+    background-color: #fff;
+}
+
+#container_profile .bill_details {
+    background-color: #fff;
+}
+
+#container_profile .bill_details .item_info img {
+    width: 80px;
+    height: 80px;
+    border: 0.5px solid rgba(0, 0, 0, 0.30);
+}

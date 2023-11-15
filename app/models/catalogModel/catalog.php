@@ -41,4 +41,11 @@ class CatalogProducts extends PDOModel
             return $this->pdoQueryValue($sql);
         }
     }
+
+    function getTypeCatagory()
+    {
+        $sql = "SELECT * FROM loaihang";
+
+        return $this->pdoQuery($sql);
+    }
 }

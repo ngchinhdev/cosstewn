@@ -2,7 +2,7 @@
     <div class="container pt-4">
         <div class="row pt-2 text-sm-start text-center">
             <div class="col-lg-3 col-sm-6 mb-lg-0 mb-5">
-                <img src="../../public/app/imgs/logo.png" alt="" class="logo_footer mb-3">
+                <img src="../../public/app/imgs/logoft.png" alt="" class="logo_footer mb-3">
                 <div class="socials">
                     <a href=""><i class="fab fa-facebook-square"></i></a>
                     <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -78,7 +78,6 @@ if (isset($_GET['page'])) {
             break;
         case 'danh-muc':
             echo '<script src="../../public/app/js/arrangeProducts.js"></script>';
-            echo '<script src="../../public/app/js/cardPaging.js"></script>';
             echo '<script src="../../public/app/js/changewidth.js"></script>';
             break;
         case 'thanh-toan':

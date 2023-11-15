@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/catalogModel/catalog.php";
 $catagoryProducts = new CatalogProducts();
+$NamesTypeCatagory = $catagoryProducts->getTypeCatagory();
 $countProducts = $catagoryProducts->getTotalProducts($maloai, $newProducts);
 if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['brandId'])) {
     $pageNumber = isset($_POST['pageNumber']) ? $_POST['pageNumber'] : 1;
@@ -45,12 +46,12 @@ if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['
         $htmlResponse .= '</div>';
         $htmlPagination = '<div class="pagination-container d-flex justify-content-center my-4">
                     <ul class="pagination">';
-        $htmlPagination .= ($pageNumber > 1) ? '<li><a class="node-paging prev-page" data-page-prev="' . ($pageNumber - 1) . '"><i class="fa-solid fa-chevron-left"></i></a></li>' : '';
+        $htmlPagination .= ($pageNumber > 1) ? '<li><a href="#" class="node-paging prev-page" data-page-prev="' . ($pageNumber - 1) . '"><i class="fa-solid fa-chevron-left"></i></a></li>' : '';
         for ($i = 1; $i <= $totalPages; $i++) {
             $isActive = ($i == $pageNumber) ? ' active' : '';
-            $htmlPagination .= ($totalPages > 1) ? '<li><a class="node-paging node-number' . $isActive . '" data-page-num="' . $i . '">' . $i . '</a></li>' : '';
+            $htmlPagination .= ($totalPages > 1) ? '<li><a href="#" class="node-paging node-number' . $isActive . '" data-page-num="' . $i . '">' . $i . '</a></li>' : '';
         }
-        $htmlPagination .= ($pageNumber < $totalPages) ? '<li><a class="node-paging next-page" data-page-next="' . ($pageNumber + 1) . '"><i class="fa-solid fa-chevron-right"></i></a></li>' : '';
+        $htmlPagination .= ($pageNumber < $totalPages) ? '<li><a href="#" class="node-paging next-page" data-page-next="' . ($pageNumber + 1) . '"><i class="fa-solid fa-chevron-right"></i></a></li>' : '';
 
         $htmlPagination .= '</ul>
                 </div>';
@@ -58,4 +59,10 @@ if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['
 
     echo $htmlResponse;
     echo $htmlPagination;
+} else {
+    $pageNumber = isset($_GET['pageNumber']) ? $_GET['pageNumber'] : 1;
+    $brandId = isset($_GET['maloai']) ? $_GET['maloai'] : '';
+    $newProduct = isset($_GET['type']) ? $_GET['type'] : '';
+    $totalPages = ceil($countProducts / 12);
+    $productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProduct, $pageNumber, $page_size = 12);
 }

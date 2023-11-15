@@ -3,25 +3,61 @@
     
     class ProductHome extends PDOModel {
         function getFlashSaleProducts() {
-            $sql = "SELECT * FROM sanpham ORDER BY ((gia_goc - gia_tien) / gia_goc) DESC LIMIT 5";
+            $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
+                    FROM sanpham
+                    INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
+                    LEFT JOIN (
+                        SELECT masp, GROUP_CONCAT(hinh_anh) AS hinh_anh
+                        FROM hinhanh
+                        GROUP BY masp
+                    ) AS hinhanh ON sanpham.masp = hinhanh.masp
+                    WHERE sanpham.an_hien = 1
+                    ORDER BY ((gia_goc - gia_tien) / gia_goc) DESC LIMIT 5";
             
             return $this->pdoQuery($sql);
         }
         
         function getNewProducts() {
-            $sql = "SELECT * FROM sanpham WHERE an_hien = 1 ORDER BY ngay_nhap DESC LIMIT 5";
+            $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
+            FROM sanpham
+            INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
+            LEFT JOIN (
+                SELECT masp, GROUP_CONCAT(hinh_anh) AS hinh_anh
+                FROM hinhanh
+                GROUP BY masp
+            ) AS hinhanh ON sanpham.masp = hinhanh.masp
+            WHERE sanpham.an_hien = 1
+            ORDER BY ngay_nhap DESC LIMIT 5";
 
             return $this->pdoQuery($sql);
         }
 
         function getBestSellProducts() {
-            $sql = "SELECT * FROM sanpham WHERE an_hien = 1 ORDER BY so_luot_xem DESC LIMIT 5";
+            $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
+            FROM sanpham
+            INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
+            LEFT JOIN (
+                SELECT masp, GROUP_CONCAT(hinh_anh) AS hinh_anh
+                FROM hinhanh
+                GROUP BY masp
+            ) AS hinhanh ON sanpham.masp = hinhanh.masp
+            WHERE sanpham.an_hien = 1
+            ORDER BY so_luot_xem DESC LIMIT 5";
 
             return $this->pdoQuery($sql);
         }
 
         function getForYouProducts() {
-            $sql = "SELECT * FROM sanpham WHERE an_hien = 1 ORDER BY ngay_nhap ASC LIMIT 5";
+            $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
+            FROM sanpham
+            INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
+            LEFT JOIN (
+                SELECT masp, GROUP_CONCAT(hinh_anh) AS hinh_anh
+                FROM hinhanh
+                GROUP BY masp
+            ) AS hinhanh ON sanpham.masp = hinhanh.masp
+            WHERE sanpham.an_hien = 1
+            ORDER BY ngay_nhap ASC LIMIT 5";
 
             return $this->pdoQuery($sql);
         }

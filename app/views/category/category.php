@@ -1,4 +1,3 @@
-
 <div id="container_catalog" class="container mt-2">
     <div class="row">
         <div class="col-12 text-link">
@@ -118,52 +117,57 @@
 
         </div>
         <div class="col-sm-12 col-xl-9 ">
-            <div class="row" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id = "<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products = "<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>">
-                <!-- <?php foreach ($productByCategory as $row) : ?>
-                    <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
-                        <div class="box-products">
-                            <div class="wrap-imgage">
-                                <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $row['masp'] ?>&maloai=<?php echo $row['maloai'] ?>">Xem ngay</a></div>
-                                <?php $images = explode(',', $row['hinh_anh']); ?>
-                                <?php for ($i = 0; $i < 2; $i++) { ?>
-                                    <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
-                                <?php } ?>
-                            </div>
-                            <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                            <div class="card-content">
-                                <div class="text-brand"><?php echo $row['ten_loai'] ?></div>
-                                <div class="text-name"><?php echo $row['ten_sp'] ?></div>
-                                <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                    <div class="price-now"><?= number_format($row['gia_tien'], 0, '.', '.') ?>₫</div>
-                                    <div class="wrap-under d-flex justify-content-center text-center">
-                                        <div class="price-origin"><?= number_format($row['gia_goc'], 0, '.', '.') ?>₫</div>
-                                        <div class="sale">
-                                            <div class="text-sale">-<?= ceil((($row['gia_goc'] - $row['gia_tien']) / $row['gia_goc'] * 100)) ?>%</div>
+            <div class="row" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>">
+                <div class="row">
+                    <?php foreach ($productByPage as $row) : ?>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
+                            <div class="box-products">
+                                <div class="wrap-imgage">
+                                    <div class="watch-now">
+                                        <a href="index.php?page=san-pham&masp=<?= $row['masp'] ?>&maloai=<?= $row['maloai'] ?>">Xem ngay</a>
+                                    </div>
+                                    <?php
+                                    $images = explode(',', $row['hinh_anh']);
+                                    for ($i = 0; $i < 2; $i++) : ?>
+                                        <img src="../../public/app/imgs/img-prods/<?= $images[$i] ?>" alt="">
+                                    <?php endfor; ?>
+                                </div>
+                                <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                                <div class="card-content">
+                                    <div class="text-brand"><?= $row['ten_loai'] ?></div>
+                                    <div class="text-name"><?= $row['ten_sp'] ?></div>
+                                    <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
+                                        <div class="price-now"><?= number_format($row['gia_tien'], 0, '.', '.') ?>₫</div>
+                                        <div class="wrap-under d-flex justify-content-center text-center">
+                                            <div class="price-origin"><?= number_format($row['gia_goc'], 0, '.', '.') ?>₫</div>
+                                            <div class="sale">
+                                                <div class="text-sale">-<?= ceil((($row['gia_goc'] - $row['gia_tien']) / $row['gia_goc'] * 100)) ?>%</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="warp-star d-flex justify-content-center align-items-center">
-                                    (<i class="fa-solid fa-eye"></i>
-                                    <div class="quantity-feedback"><?php echo $row['so_luot_xem'] ?> Lượt xem )</div>
+                                    <div class="warp-star d-flex justify-content-center align-items-center">
+                                        (<i class="fa-solid fa-eye"></i>
+                                        <div class="quantity-feedback"><?= $row['so_luot_xem'] ?> Lượt xem)</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
+
                 <div class="pagination-container d-flex justify-content-center my-4">
                     <ul class="pagination">
-                        <li><a href="" class="node-paging prev-page" data-page-prev="<?= $page_num - 1 ?>"><i class="fa-solid fa-chevron-left"></i></a></li>
+                        <?= ($pageNumber > 1) ? '<li><a href="#" class="node-paging prev-page" data-page-prev="' . ($pageNumber - 1) . '"><i class="fa-solid fa-chevron-left"></i></a></li>' : '' ?>
                         <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-                            <li>
-                                <a href="" class="node=paging node-number" data-page-num="<?= $i ?>"><?= $i ?></a>
-                            </li>
+                            <?php $isActive = ($i == $pageNumber) ? ' active' : ''; ?>
+                            <?= ($totalPages > 1) ? '<li><a href="#" class="node-paging node-number' . $isActive . '" data-page-num="' . $i . '">' . $i . '</a></li>' : '' ?>
                         <?php endfor; ?>
-                        <li><a href="" class="node-paging next-page" data-page-next="<?= $page_num + 1 ?>"><i class="fa-solid fa-chevron-right"></i></a></li>
+                        <?= ($pageNumber < $totalPages) ? '<li><a href="#" class="node-paging next-page" data-page-next="' . ($pageNumber + 1) . '"><i class="fa-solid fa-chevron-right"></i></a></li>' : '' ?>
                     </ul>
-                </div> -->
+                </div>
             </div>
         </div>
-        
+
     </div>
     <div class="box-banner-catalog mt-2">
         <img src="../../public/app/imgs/banner-last1.webp" alt="" class="rounded-3">
