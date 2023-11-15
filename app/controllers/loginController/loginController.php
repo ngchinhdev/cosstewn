@@ -20,7 +20,9 @@
             exit();
         }
     } else {
-        header("Location: ../index.php?page=lich-su-mua");
+        //  var_dump($_SESSION['data_user']);
+        echo "<script>window.location.href = '/cosstewn/app/controllers/index.php?page=lich-su-mua';</script>";
+        // header("Location: ../index.php?page=lich-su-mua");
         exit();
     }
 ?>

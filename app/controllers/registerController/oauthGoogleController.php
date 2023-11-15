@@ -35,9 +35,8 @@
         );
 
         $_SESSION['data_user'] = $data_user;
-
         $register = new Register();
-        if($register->getInfoUser($data_user['email'])) {
+        if($register->getInfoUser($email)) {
             require_once "../loginController/loginController.php";
         } else {
             require_once "registerController.php";

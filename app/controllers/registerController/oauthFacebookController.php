@@ -1,5 +1,6 @@
 <?php
     require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/vendor" . '/autoload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/registerModel/registerModel.php";
 
     $fb = new \Facebook\Facebook([
         'app_id' => '346573231243408',
@@ -74,11 +75,12 @@
 
                 $_SESSION['data_user'] = $data_user;
                 $register = new Register();
-                if ($register->getInfoUser($facebook_user_info['email'])) {
+                if ($register->getInfoUser($_SESSION['user_email_address'])) {
                     require_once "loginController/loginController.php";
                 } else {
                     require_once "registerController.php";
                 }
+
                 
             } catch (Facebook\Exceptions\FacebookResponseException $e) {
                 // When Graph returns an error
