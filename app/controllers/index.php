@@ -19,7 +19,8 @@
             case "gio-hang": 
                 require_once "../views/cart/cart.php";
                 break;
-            case "lien-he": 
+            case "lien-he":
+                require_once "contactController/contactController.php";
                 require_once "../views/contact/contact.php";
                 break;
             case "thanh-toan": 
