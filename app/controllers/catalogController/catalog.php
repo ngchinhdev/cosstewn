@@ -2,13 +2,16 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/catalogModel/catalog.php";
 $catagoryProducts = new CatalogProducts();
 $NamesTypeCatagory = $catagoryProducts->getTypeCatagory();
-$countProducts = $catagoryProducts->getTotalProducts($maloai, $newProducts);
-if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['brandId'])) {
-    $pageNumber = isset($_POST['pageNumber']) ? $_POST['pageNumber'] : 1;
-    $brandId = isset($_POST['brandId']) ? $_POST['brandId'] : '';
-    $newProduct = isset($_POST['newProducts']) ? $_POST['newProducts'] : '';
-    $totalPages = isset($_POST['totalpage']) ? $_POST['totalpage'] : '';
-    $productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProduct, $pageNumber, $page_size = 12);
+$countProducts = $catagoryProducts->getTotalProducts($brandId, $newProducts, $priceRange, $rateRange, $filterOption);
+if (isset($_POST['pageNumber']) || isset($_POST['newProducts']) || isset($_POST['brandId']) || isset($_POST['filterPrice']) || isset($_POST['filterRate'])) {
+    $pageNumber = $_POST['pageNumber'];
+    $brandId = $_POST['brandId'];
+    $newProducts = $_POST['newProducts'];
+    $totalPages = $_POST['totalpage'];
+    $priceRange = $_POST['filterPrice'];
+    $rateRange = $_POST['filterRate'];
+    $filterOption = $_POST['filterOptions'];
+    $productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProducts, $pageNumber, $page_size = 12, $priceRange, '', $filterOption);
     $htmlResponse = '';
 
     foreach ($productByPage as $row) {
@@ -57,12 +60,16 @@ if (isset($_POST['pageNumber']) || isset($_POST['newProduct']) || isset($_POST['
                 </div>';
     }
 
+    echo $_POST['pageNumber'];
+    $_POST['brandId'];
+    $_POST['newProducts'];
+    $_POST['totalpage'];
+    $_POST['filterPrice'];
+    $_POST['filterRate'];
+    $_POST['filterOptions'];
     echo $htmlResponse;
     echo $htmlPagination;
 } else {
-    $pageNumber = isset($_GET['pageNumber']) ? $_GET['pageNumber'] : 1;
-    $brandId = isset($_GET['maloai']) ? $_GET['maloai'] : '';
-    $newProduct = isset($_GET['type']) ? $_GET['type'] : '';
     $totalPages = ceil($countProducts / 12);
-    $productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProduct, $pageNumber, $page_size = 12);
+    $productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProducts, $pageNumber, $page_size = 12, $priceRange, $rateRange, $filterOption);
 }

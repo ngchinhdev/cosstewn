@@ -1,3 +1,4 @@
+
 <div id="container_catalog" class="container mt-2">
     <div class="row">
         <div class="col-12 text-link">
@@ -21,9 +22,9 @@
                                 Tất cả
                             </a>
                             <div class="dropdown-menu dropdown-menu-end filter-items" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Giá giảm dần&ensp;<i class="fa-solid fa-arrow-down-wide-short"></i></a>
-                                <a class="dropdown-item" href="#">Giá tăng dần&ensp;<i class="fa-solid fa-arrow-down-short-wide"></i></a>
-                                <a class="dropdown-item" href="#">Xem nhiều&ensp;<i class="fa-solid fa-eye"></i></a>
+                                <a class="dropdown-item filter-option" href="#" data-filter-option="priceDesc">Giá giảm dần&ensp;<i class="fa-solid fa-arrow-down-wide-short"></i></a>
+                                <a class="dropdown-item filter-option" href="#" data-filter-option="priceASC">Giá tăng dần&ensp;<i class="fa-solid fa-arrow-down-short-wide"></i></a>
+                                <a class="dropdown-item filter-option" href="#" data-filter-option="topViews">Xem nhiều&ensp;<i class="fa-solid fa-eye"></i></a>
                             </div>
                         </li>
                     </ul>
@@ -41,32 +42,32 @@
                         </div>
                     </div>
                     <div class="checkbox-group">
-                        <div class="wrap-checkbox">
-                            <input type="checkbox" id="price-checkbox" class="custom-checkbox">
+                        <div class="wrap-checkbox" >
+                            <input type="checkbox" id="price-checkbox" class="custom-checkbox" >
                             <label for="price-checkbox">
                                 <p>Dưới 500.000₫</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
-                        <div class="wrap-checkbox">
-                            <input type="checkbox" id="price-checkbox2" class="custom-checkbox">
+                        <div class="wrap-checkbox" >
+                            <input type="checkbox" id="price-checkbox2" class="custom-checkbox" >
                             <label for="price-checkbox2">
                                 <p>500.000₫ - 1.000.000₫</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
-                        <div class="wrap-checkbox">
-                            <input type="checkbox" id="price-checkbox3" class="custom-checkbox">
+                        <div class="wrap-checkbox" >
+                            <input type="checkbox" id="price-checkbox3" class="custom-checkbox" >
                             <label for="price-checkbox3">
                                 <p>1.000.000₫ - 1.500.000₫</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
-                        <div class="wrap-checkbox">
-                            <input type="checkbox" id="price-checkbox4" class="custom-checkbox">
+                        <div class="wrap-checkbox" >
+                            <input type="checkbox" id="price-checkbox4" class="custom-checkbox" >
                             <label for="price-checkbox4">
                                 <p>1.500.000₫ - 2.000.000₫</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
-                        <div class="wrap-checkbox">
-                            <input type="checkbox" id="price-checkbox5" class="custom-checkbox">
+                        <div class="wrap-checkbox" >
+                            <input type="checkbox" id="price-checkbox5" class="custom-checkbox" >
                             <label for="price-checkbox5">
                                 <p>Trên 2.000.000₫</p><i class="fa-solid fa-check"></i>
                             </label>
@@ -83,7 +84,7 @@
                         <div class="wrap-checkbox">
                             <input type="checkbox" id="price-checkbox6" class="custom-checkbox2">
                             <label for="price-checkbox6">
-                                <p>Từ 10% - 20%</p><i class="fa-solid fa-check"></i>
+                                <p>Dưới 20%</p><i class="fa-solid fa-check"></i>
                             </label>
                         </div>
                         <div class="wrap-checkbox">
@@ -117,7 +118,7 @@
 
         </div>
         <div class="col-sm-12 col-xl-9 ">
-            <div class="row" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>">
+            <div class="row" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>" data-filter-price = "<?php echo isset($_GET['priceRange']) ? $_GET['priceRange'] : null; ?>" data-filter-rate = "<?php echo isset($_GET['rateRange']) ? $_GET['rateRange'] : null; ?> " data-filter-options = "<?php echo isset($_GET['filterOption']) ? $_GET['filterOption'] : null; ?> ">
                 <div class="row">
                     <?php foreach ($productByPage as $row) : ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
