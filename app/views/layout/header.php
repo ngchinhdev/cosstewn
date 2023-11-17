@@ -114,7 +114,7 @@
                         <a href="index.php?page=danh-muc&type=san-pham-moi">Sản phẩm mới</a>
                     </li>
                     <li class="position-relative pb-2 me-4 <?php echo isset($_GET['page']) && $_GET['page'] === 'lich-su-mua' ? 'active' : ''; ?>">
-                        <a href="index.php?page=lich-su-mua">Lịch sử mua</a>
+                        <a href="index.php?page=lich-su-mua&status=all">Lịch sử mua</a>
                     </li>
                     <li class="position-relative pb-2 me-4 <?php echo isset($_GET['page']) && $_GET['page'] === 'lien-he' ? 'active' : ''; ?>">
                         <a href="index.php?page=lien-he">Liên hệ</a>

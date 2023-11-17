@@ -48,7 +48,6 @@
 
         // header("Location: userController.php");
 
-    // Now you can use this profile info to create account in your website and make user logged in.
     } else {
         // echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
         // include ("../views/loginRegister.php");

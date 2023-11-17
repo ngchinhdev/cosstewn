@@ -4,8 +4,6 @@
 
     if(isset($_POST['submit'])) {
         extract($_POST);
-        // var_dump($_POST);
-        // echo ucwords($ho . ' ' . $ten);
         $name = ucwords($ho . ' ' . $ten);
         $user = $register->getInfoUser($email);
 
@@ -19,7 +17,6 @@
             $register->addNewUser($name, $email, $phone, $address, $repass, '');
             header("Location: ../index.php?page=lich-su-mua");
         }
-
     } else {
         $data_user = $_SESSION['data_user'];
         if(isset($data_user['name']) && isset($data_user['email']) && isset($data_user['avatar'])) {

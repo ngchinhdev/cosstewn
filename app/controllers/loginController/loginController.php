@@ -21,6 +21,9 @@
         }
     } else {
         //  var_dump($_SESSION['data_user']);
+        // setcookie('name', $_SESSION['data_user']['name'], time() + 84000, "/");
+        // setcookie('email', $_SESSION['data_user']['email'], time() + 84000, "/");
+        // setcookie('avatar', $_SESSION['data_user']['avatar'], time() + 84000, "/");
         echo "<script>window.location.href = '/cosstewn/app/controllers/index.php?page=lich-su-mua';</script>";
         // header("Location: ../index.php?page=lich-su-mua");
         exit();

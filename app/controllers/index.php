@@ -33,7 +33,8 @@
                 require_once "../views/checkout/checkout.php";
                 break;
             case "lich-su-mua": 
-                require_once "../views/profile/profile.php";
+                require_once "historyController/historyController.php";
+                require_once "../views/history/history.php";
                 break;
             default:
                 require_once "homeController/productHome.php";

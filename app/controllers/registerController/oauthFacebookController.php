@@ -44,7 +44,7 @@
             $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
         }
         // redirect the user to the account page if it has "code" GET variable
-        if (isset($_GET['code'])) {
+        if (isset($_GET['code']) && isset($_GET['state'])) {
             try {
                 $_SESSION['user_id'] = '';
                 $_SESSION['user_name'] = '';
