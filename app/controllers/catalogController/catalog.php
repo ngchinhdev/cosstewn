@@ -60,13 +60,6 @@ if (isset($_POST['pageNumber']) || isset($_POST['newProducts']) || isset($_POST[
                 </div>';
     }
 
-    echo $_POST['pageNumber'];
-    $_POST['brandId'];
-    $_POST['newProducts'];
-    $_POST['totalpage'];
-    $_POST['filterPrice'];
-    $_POST['filterRate'];
-    $_POST['filterOptions'];
     echo $htmlResponse;
     echo $htmlPagination;
 } else {

@@ -118,10 +118,10 @@
 
         </div>
         <div class="col-sm-12 col-xl-9 ">
-            <div class="row" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>" data-filter-price = "<?php echo isset($_GET['priceRange']) ? $_GET['priceRange'] : null; ?>" data-filter-rate = "<?php echo isset($_GET['rateRange']) ? $_GET['rateRange'] : null; ?> " data-filter-options = "<?php echo isset($_GET['filterOption']) ? $_GET['filterOption'] : null; ?> ">
-                <div class="row">
+            <div class="row d-flex" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>" data-filter-price = "<?php echo isset($_GET['priceRange']) ? $_GET['priceRange'] : null; ?>" data-filter-rate = "<?php echo isset($_GET['rateRange']) ? $_GET['rateRange'] : null; ?> " data-filter-options = "<?php echo isset($_GET['filterOption']) ? $_GET['filterOption'] : null; ?> ">
+                
                     <?php foreach ($productByPage as $row) : ?>
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
+                        <div class="col-sm-6 col-md-4 col-lg-3 p-1">
                             <div class="box-products">
                                 <div class="wrap-imgage">
                                     <div class="watch-now">
@@ -154,7 +154,7 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div>
+                
 
                 <div class="pagination-container d-flex justify-content-center my-4">
                     <ul class="pagination">

@@ -109,17 +109,17 @@ class CatalogProducts extends PDOModel
             }
 
             $sql .= " LIMIT $startRow, $page_size";
-            var_dump($sql);
-            if(!empty($priceRange)){
-                echo $priceRange;
-            }else{
-                echo 'không tồn tại';
-            }
-            if(!empty($filterOption)){
-                echo $filterOption;
-            }else{
-                echo 'không tồn tại';
-            }
+            // var_dump($sql);
+            // if(!empty($priceRange)){
+            //     echo $priceRange;
+            // }else{
+            //     echo 'không tồn tại';
+            // }
+            // if(!empty($filterOption)){
+            //     echo $filterOption;
+            // }else{
+            //     echo 'không tồn tại';
+            // }
             return $this->pdoQuery($sql);
         }
     }
