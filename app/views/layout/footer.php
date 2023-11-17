@@ -78,6 +78,9 @@ if (isset($_GET['page'])) {
             break;
         case 'danh-muc':
             echo '<script src="../../public/app/js/arrangeProducts.js"></script>';
+            echo '<script src="../../public/app/js/filterOption.js"></script>';
+            echo '<script src="../../public/app/js/filterRate.js"></script>';
+            echo '<script src="../../public/app/js/filterPrice.js"></script>';
             echo '<script src="../../public/app/js/changewidth.js"></script>';
             break;
         case 'thanh-toan':

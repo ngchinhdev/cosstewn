@@ -9,23 +9,23 @@ function updatePage(pageNumber) {
     var brandId = brandIdElement.getAttribute("data-brand-id");
     var newProducts = brandIdElement.getAttribute("data-new-products");
     var totalpage = brandIdElement.getAttribute("data-total-page");
-
+    var filterPrice = brandIdElement.getAttribute("data-filter-price");
+    var filterRate = brandIdElement.getAttribute("data-filter-rate");
+    var filterOptions = brandIdElement.getAttribute("data-filter-options");
     $.ajax({
         url: "catalogController/catalog.php",
         type: "POST",
         dataType: "html",
         data: {
+            filterPrice: filterPrice,
+            filterRate: filterRate,
+            filterOptions: filterOptions,
             brandId: brandId,
             pageNumber: pageNumber,
             newProducts: newProducts,
             totalpage: totalpage
         },
         success: function (response) {
-            console.log("brandId:", brandId);
-            console.log("pageNumber:", pageNumber);
-            console.log("newProducts:", newProducts);
-            console.log("totalpage:", totalpage);
-            // Ẩn nội dung hiện tại mà không có hiệu ứng
             $('#container-response').hide();
 
             // Thêm nội dung mới

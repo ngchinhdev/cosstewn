@@ -32,6 +32,7 @@
                         <div class="text-sale">-<?= ceil((($infoByProducts['gia_goc'] - $infoByProducts['gia_tien']) / $infoByProducts['gia_goc'] * 100)) ?>%</div>
                     </div>
                 </div>
+
                 <div class="flash-sale-wrapper d-flex my-2">
                     <div class="text-flash-sale"><i class="fa-solid fa-bolt"></i>SIÊU DEAL CHỚP NHOÁNG</div>
                     <div class="timer">
@@ -124,6 +125,14 @@
             </div>
         </div>
     <?php endif; ?>
+    <div class="row wrap-description ">
+        <div class="col-12 col-lg-3 p-0">
+            <h2>Mô tả</h2>
+        </div>
+        <div class="col-12 col-lg-9 d-flex p-0">
+            <div class="text-description"><?php echo $infoByProducts['mo_ta'] ?></div>
+        </div>
+    </div>
     <div class="box-banner-detail">
         <img src="../../public/app/imgs/banner-detail.webp" alt="" class="rounded-3">
         <img src="../../public/app/imgs/banner2-detail.webp" alt="" class="rounded-3">

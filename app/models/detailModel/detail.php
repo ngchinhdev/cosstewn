@@ -7,6 +7,8 @@ class DetailProducts extends PDOModel
 {
     function getInfoProducts($masp)
     {
+        $this->increaseViewCount($masp);
+
         $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
         FROM sanpham
         INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
@@ -19,6 +21,14 @@ class DetailProducts extends PDOModel
 
         return $this->pdoQueryOne($sql, $masp);
     }
+
+    // tăng lượt xem khi click
+    function increaseViewCount($masp)
+    {
+        $sql = "UPDATE sanpham SET so_luot_xem = so_luot_xem + 1 WHERE masp = ?";
+        $this->pdoExecute($sql, $masp);
+    }
+
     function getSimilarProducts($maloai, $masp)
     {
         $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh

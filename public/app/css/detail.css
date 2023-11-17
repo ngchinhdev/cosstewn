@@ -900,6 +900,24 @@ li {
     border: 0.5px solid var(--primary-color);
 }
 
+#container_detail .wrap-description {
+    margin: 40px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 5px;
+}
+
+#container_detail .wrap-description h2 {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+#container_detail .wrap-description .text-description {
+    line-height: 2;
+    letter-spacing: 0.3px;
+}
+
+
 /* css page detail product */
 
 #topbar {
