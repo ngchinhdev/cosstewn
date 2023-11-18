@@ -32,5 +32,11 @@
 
             return $this->pdoQuery($sql, $user_id, $order_id);
         }
+
+        function getCurrentUser($user_id) {
+            $sql = "SELECT * FROM taikhoan WHERE matk = ?";
+
+            return $this->pdoQuery($sql, $user_id);
+        }
     }
 ?>

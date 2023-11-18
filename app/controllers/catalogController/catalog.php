@@ -72,4 +72,5 @@ if (isset($_POST['pageNumber']) || isset($_POST['newProducts']) || isset($_POST[
 } else {
     $totalPages = ceil($countProducts / 12);
     $productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProducts, $pageNumber, $page_size = 12, $priceRange, $rateRange, $filterOption);
+    var_dump($productByPage);
 }

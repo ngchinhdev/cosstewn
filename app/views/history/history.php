@@ -3,10 +3,10 @@
         <div class="left_site px-4 py-3 col-lg-3">
             <div class="info_box d-flex align-items-center">
                 <div class="avt">
-                    <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="Avatar" class="rounded-circle me-3">
+                    <img src="<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] ? $_SESSION['avatar'] : 'https://inkythuatso.com/uploads/thumbnails/800/2023/03/9-anh-dai-dien-trang-inkythuatso-03-15-27-03.jpg' ?>" alt="Avatar" class="rounded-circle me-3">
                 </div>
                 <div class="name">
-                    <h6 class="mb-1"><?= $_SESSION['data_user']['name'] ?></h6>
+                    <h6 class="mb-1"><?= $_SESSION['name'] ?></h6>
                     <a href="" class="change_profile d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
                             <g clip-path="url(#clip0_741_1547)">
@@ -59,6 +59,7 @@
                         href="index.php?page=lich-su-mua&status=complete">Đã hoàn thành</a>
                 </li>
             </ul>
+            <?php if(count($all_orders) === 0) echo '<div class="px-3">Chưa có sản phẩm nào.</div>' ?>
             <?php foreach($all_orders as $key => $order): ?>
             <div class="bill_details py-3 px-4 mt-3">
                 <div class="title d-flex align-items-center justify-content-between pb-2 border-bottom">
