@@ -32,6 +32,7 @@
                 echo '<link rel="stylesheet" href="../../public/app/css/checkout.css">';
                 break;
             case 'lich-su-mua':
+            case 'ho-so':
                 echo '<link rel="stylesheet" href="../../public/app/css/profile.css">';
                 break;
             default:

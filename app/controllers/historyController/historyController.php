@@ -5,9 +5,9 @@
     $all_orders = array();
     $order_details = array();
    
-    if(isset($_GET['id'])) {
-        $_SESSION["user_id"] = $_GET['id'];
-        $cur_user = $history->getCurrentUser($_GET['id']);
+    if(isset($_GET['u'])) {
+        $_SESSION["user_id"] = $_GET['u'];
+        $cur_user = $history->getCurrentUser($_SESSION["user_id"]);
         extract($cur_user[0]);
         $_SESSION["name"] = $ho_ten;
         $_SESSION["email"] = $email;

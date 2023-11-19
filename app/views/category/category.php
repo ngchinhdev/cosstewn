@@ -130,7 +130,7 @@
                                     <?php
                                     $images = explode(',', $row['hinh_anh']);
                                     for ($i = 0; $i < 2; $i++) : ?>
-                                        <img src="../../public/app/imgs/img-prods/<?= $images[$i] ?>" alt="">
+                                        <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="">
                                     <?php endfor; ?>
                                 </div>
                                 <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>

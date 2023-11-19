@@ -79,3 +79,51 @@ body  {
 #container_profile .bill_details .item_price strong {
     font-size: .9rem;
 }
+
+/* Profile css */
+#container_profile .prof_info {
+    background-color: #fff;
+}
+
+#container_profile .prof_info .heading p {
+    font-size: .9rem;
+}
+
+#container_profile .prof_info tr {
+    border-bottom: 20px solid transparent;
+    font-size: .9rem;
+}
+
+#container_profile .prof_info tr td:first-child {
+    width: 1px;
+    color: rgba(85,85,85,.9);
+    white-space: nowrap;
+}
+
+#container_profile .prof_info tr td input {
+    border: none;
+    outline: none;
+    padding: 6px 0;
+}
+
+#container_profile .prof_info tr td.pw-hide i {
+    bottom: 10px;
+    font-size: .8rem;
+}
+
+#container_profile .prof_info img {
+    width: 80px;
+    height: 80px;
+}
+
+#container_profile .prof_info label {
+    font-size: .9rem;
+}
+
+#container_profile .prof_info input[type=submit] {
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    float: right;
+}

@@ -91,7 +91,7 @@
                             <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $product['masp'] ?>&maloai=<?php echo $product['maloai'] ?>">Xem ngay</a></div>
                             <?php $images = explode(',', $product['hinh_anh']); ?>
                             <?php for ($i = 0; $i < 2; $i++) { ?>
-                                <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
+                                <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="">
                             <?php } ?>
                         </div>
                         <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
@@ -138,7 +138,7 @@
                             <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $product['masp'] ?>&maloai=<?php echo $product['maloai'] ?>">Xem ngay</a></div>
                             <?php $images = explode(',', $product['hinh_anh']); ?>
                             <?php for ($i = 0; $i < 2; $i++) { ?>
-                                <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
+                                <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="">
                             <?php } ?>
                         </div>
                         <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
@@ -206,7 +206,7 @@
                             <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $product['masp'] ?>&maloai=<?php echo $product['maloai'] ?>">Xem ngay</a></div>
                             <?php $images = explode(',', $product['hinh_anh']); ?>
                             <?php for ($i = 0; $i < 2; $i++) { ?>
-                                <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
+                                <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="">
                             <?php } ?>
                         </div>
                         <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
@@ -250,7 +250,7 @@
                             <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $product['masp'] ?>&maloai=<?php echo $product['maloai'] ?>">Xem ngay</a></div>
                             <?php $images = explode(',', $product['hinh_anh']); ?>
                             <?php for ($i = 0; $i < 2; $i++) { ?>
-                                <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
+                                <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="">
                             <?php } ?>
                         </div>
                         <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>

@@ -9,7 +9,7 @@
         $correctPassword = $user['mat_khau'] === $password;
 
         if($user && $correctPassword) {
-            echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=lich-su-mua&id=" . $user['matk'] . "';</script>";
+            echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . $user['matk'] . "';</script>";
             exit();
         } else {
             $_SESSION['error'] = "Sai tai khoan hoac mat khau";
@@ -17,7 +17,7 @@
             exit();
         }
     } else {
-        echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=lich-su-mua&id=" . $user['matk'] . "';</script>";
+        echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . $user['matk'] . "';</script>";
         exit();
     }
 ?>

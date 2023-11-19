@@ -8,7 +8,7 @@
                 <div class="list-imagedetail">
                     <?php $images = explode(',', $infoByProducts['hinh_anh']); ?>
                     <?php for ($i = 0; $i < 4; $i++) { ?>
-                        <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="" <?php if ($i === 0) {
+                        <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="" <?php if ($i === 0) {
                                                                                                         echo 'class="active"';
                                                                                                     } ?>>
                     <?php } ?>
@@ -16,7 +16,7 @@
                 <div class="wrapper-image d-flex justify-content-center align-items-center">
                     <?php $images = explode(',', $infoByProducts['hinh_anh']); ?>
                     <?php for ($i = 0; $i < 1; $i++) { ?>
-                        <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
+                        <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="">
                     <?php } ?>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                             <div class="watch-now"><a href="index.php?page=san-pham&masp=<?php echo $row['masp'] ?>&maloai=<?php echo $row['maloai'] ?>">Xem ngay</a></div>
                             <?php $images = explode(',', $row['hinh_anh']); ?>
                             <?php for ($i = 0; $i < 2; $i++) { ?>
-                                <img src="../../public/app/imgs/img-prods/<?php echo $images[$i] ?>" alt="">
+                                <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="">
                             <?php } ?>
                         </div>
                         <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
