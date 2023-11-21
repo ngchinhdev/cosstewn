@@ -146,6 +146,7 @@ li {
     font-weight: normal;
     bottom: -152px;
     display: none;
+    color: #000;
 }
 
 #main_header .category_header:hover .submenu {

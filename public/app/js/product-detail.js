@@ -68,23 +68,6 @@ function flip(flipCard, newNumber) {
 }
 
 
-/* display: none or block button comment */
-
-const inputcmt = document.querySelector('.input-cmt');
-
-function toggleSendButton() {
-  var sendButton = document.querySelector('.btn-sendcmt');
-  if (inputcmt.value.trim() === "") {
-    sendButton.style.display = 'none';
-  } else {
-    sendButton.style.display = 'block';
-  }
-}
-inputcmt.addEventListener('input', toggleSendButton);
-
-toggleSendButton();
-
-
 /* onlick menu arrange */
 
 function toggleItemsArrange(event) {

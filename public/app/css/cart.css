@@ -123,6 +123,31 @@
     height: 80px;
 }
 
+#container_cart .wrap-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container_cart .wrap-empty img {
+    margin-bottom: 20px;
+}
+
+#container_cart .wrap-empty p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#container_cart .wrap-empty a {
+    background: #218CFF;
+    border-radius: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
 /* Responsive  */
 @media (max-width: 992px) {
     #container_cart .bill-container {

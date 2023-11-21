@@ -2,7 +2,7 @@
     <div class="container pt-4">
         <div class="row pt-2 text-sm-start text-center">
             <div class="col-lg-3 col-sm-6 mb-lg-0 mb-5">
-                <img src="../../public/app/imgs/logo.png" alt="" class="logo_footer mb-3">
+                <img src="../../public/app/imgs/logoft.png" alt="" class="logo_footer mb-3">
                 <div class="socials">
                     <a href=""><i class="fab fa-facebook-square"></i></a>
                     <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -73,11 +73,18 @@
 <?php
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
+        case 'gio-hang':
+            echo '<script src="../../public/app/js/ajaxCart.js"></script>';
+            break;
         case 'san-pham':
+            echo '<script src="../../public/app/js/ajaxFeedback.js"></script>';
+            echo '<script src="../../public/app/js/quantityDetail.js"></script>';
+            echo '<script src="../../public/app/js/feedbackAjax.js"></script>';
             echo '<script src="../../public/app/js/product-detail.js"></script>';
             break;
         case 'danh-muc':
-            echo '<script src="../../public/app/js/arrangeProducts.js"></script>';
+            echo '<script src="../../public/app/js/removeTagFilter.js"></script>';
+            echo '<script src="../../public/app/js/pagingNumber.js"></script>';
             echo '<script src="../../public/app/js/filterOption.js"></script>';
             echo '<script src="../../public/app/js/filterRate.js"></script>';
             echo '<script src="../../public/app/js/filterPrice.js"></script>';
@@ -85,6 +92,10 @@ if (isset($_GET['page'])) {
             break;
         case 'thanh-toan':
             echo '<script src="../../public/app/js/checkout.js"></script>';
+            break;
+        case 'dang-nhap':
+        case 'dang-ky':
+            echo '<script src="../../public/app/js/form-login.js"></script>';
             break;
     }
 } else {

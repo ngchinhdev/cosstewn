@@ -1,5 +1,5 @@
 <?php
-require_once "../../configs/pdoModel.php";
+require_once  $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/configs/" . "pdoModel.php";
 
 $masp = isset($_GET['masp']) ? $_GET['masp'] : null;
 $maloai = isset($_GET['maloai']) ? $_GET['maloai'] : null;

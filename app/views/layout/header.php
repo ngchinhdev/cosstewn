@@ -31,6 +31,9 @@
             case 'thanh-toan':
                 echo '<link rel="stylesheet" href="../../public/app/css/checkout.css">';
                 break;
+            case 'lich-su-mua':
+                echo '<link rel="stylesheet" href="../../public/app/css/profile.css">';
+                break;
             default:
                 echo '<link rel="stylesheet" href="../../public/app/css/main.css">';
         }
@@ -55,10 +58,10 @@
             <div class="container">
                 <div class="above_header d-flex justify-content-between align-items-center">
                     <div class="logo_header">
-                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>"><img class="w-100 h-100" src="../../public/app/imgs/logo.png" alt="Logo"></a>
+                        <a href="<?php echo $_SERVER['PHP_SELF']; ?>"><img class="w-100 h-100" src="../../public/app/imgs/logoft.png" alt="Logo"></a>
                     </div>
                     <div class="right_above d-flex align-items-center position-relative">
-                        <form method="GET" class="search_header position-relative d-none d-sm-flex">
+                        <form id="searchForm" method="GET" class="search_header position-relative d-none d-sm-flex">
                             <input name="search" type="text" placeholder="Sữa rửa mặt" class="pt-2 pb-2 pe-3 ps-3 w-100">
                             <i class="fa-solid fa-magnifying-glass position-absolute fs-5"></i>
                         </form>
@@ -85,7 +88,15 @@
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.1531 4.05183C19.5977 3.83483 18.9759 3.79867 18.1791 3.79283C18.0136 3.44338 17.7523 3.14811 17.4255 2.94137C17.0988 2.73463 16.7201 2.62491 16.3334 2.625H11.6667C11.2802 2.62481 10.9016 2.73435 10.5748 2.94088C10.2481 3.1474 9.98672 3.44244 9.82106 3.79167C9.02306 3.79867 8.4024 3.83483 7.84706 4.05183C7.18413 4.31115 6.60759 4.75185 6.1834 5.3235C5.75523 5.89867 5.5534 6.63833 5.27806 7.6545L4.5454 10.3413C4.086 10.5722 3.68355 10.9021 3.36706 11.3073C2.6414 12.2372 2.51306 13.3443 2.64256 14.6137C2.7674 15.8457 3.1559 17.3973 3.64123 19.3387L3.67156 19.4635C3.97956 20.6908 4.22806 21.6883 4.5244 22.4665C4.83356 23.2785 5.22673 23.9435 5.87306 24.4487C6.52056 24.9538 7.2614 25.172 8.12356 25.277C8.94956 25.375 9.97856 25.375 11.2444 25.375H16.7557C18.0216 25.375 19.0494 25.375 19.8766 25.2758C20.7399 25.1732 21.4796 24.9538 22.1259 24.4475C22.7734 23.9435 23.1654 23.2785 23.4746 22.4665C23.7721 21.6883 24.0206 20.6908 24.3274 19.4623L24.3589 19.3398C24.8442 17.3973 25.2316 15.8457 25.3576 14.6148C25.4859 13.3432 25.3576 12.2372 24.6319 11.3073C24.3157 10.9023 23.9137 10.5724 23.4547 10.3413L22.7221 7.6545C22.4456 6.63833 22.2437 5.89867 21.8167 5.32233C21.3924 4.75111 20.8159 4.31083 20.1531 4.05183ZM8.48406 5.68167C8.74073 5.58133 9.05106 5.55217 9.82223 5.544C10.1512 6.23233 10.8536 6.70833 11.6656 6.70833H16.3322C17.1466 6.70833 17.8489 6.23233 18.1779 5.544C18.9491 5.55217 19.2594 5.58133 19.5161 5.68167C19.8731 5.82167 20.1834 6.0585 20.4121 6.3665C20.6174 6.643 20.7376 7.02917 21.0771 8.274L21.4901 9.78717C20.2791 9.625 18.7157 9.625 16.7732 9.625H11.2257C9.2844 9.625 7.72106 9.625 6.51006 9.78717L6.92306 8.274C7.2614 7.02917 7.38273 6.643 7.58806 6.3665C7.81651 6.05863 8.12702 5.82129 8.48406 5.68167ZM11.6667 4.375C11.5894 4.375 11.5152 4.40573 11.4605 4.46043C11.4058 4.51513 11.3751 4.58931 11.3751 4.66667C11.3751 4.74402 11.4058 4.81821 11.4605 4.87291C11.5152 4.9276 11.5894 4.95833 11.6667 4.95833H16.3334C16.4108 4.95833 16.4849 4.9276 16.5396 4.87291C16.5943 4.81821 16.6251 4.74402 16.6251 4.66667C16.6251 4.58931 16.5943 4.51513 16.5396 4.46043C16.4849 4.40573 16.4108 4.375 16.3334 4.375H11.6667ZM4.74723 12.3842C5.07273 11.9677 5.58723 11.6877 6.6489 11.5337C7.73506 11.3773 9.2074 11.375 11.2992 11.375H16.7009C18.7927 11.375 20.2639 11.3773 21.3501 11.5337C22.4129 11.6877 22.9274 11.9677 23.2529 12.3853C23.5784 12.8018 23.7254 13.3677 23.6157 14.4363C23.5049 15.5283 23.1502 16.9563 22.6427 18.9863C22.3196 20.279 22.0944 21.175 21.8401 21.8447C21.5927 22.491 21.3512 22.8328 21.0491 23.0697C20.7469 23.3053 20.3561 23.4558 19.6689 23.5387C18.9572 23.6238 18.0356 23.625 16.7009 23.625H11.2992C9.96456 23.625 9.04173 23.6238 8.33123 23.5387C7.6429 23.457 7.25323 23.3053 6.95106 23.0697C6.64773 22.8328 6.40623 22.491 6.16006 21.8447C5.90573 21.175 5.68056 20.279 5.35623 18.9863C4.8499 16.9563 4.49406 15.5283 4.38323 14.4363C4.27473 13.3677 4.42173 12.8007 4.74723 12.3842Z" fill="<?php echo isset($_GET['page']) && $_GET['page'] === 'gio-hang' ? '#218CFF' : 'black'; ?>" />
                                 </svg>
                                 <span class="d-none d-xl-inline-block">Giỏ hàng</span>
-                                <span class="position-absolute num_in_cart">1</span>
+                                <span class="position-absolute num_in_cart"><?php if (isset($_SESSION['data_user']['email'])) {
+                                                                                if ($totalQuantity > 0) {
+                                                                                    echo $totalQuantity;
+                                                                                } else if ($totalQuantity < 1) {
+                                                                                    echo 0;
+                                                                                }
+                                                                            } else if (!isset($_SESSION['data_user']['email'])) {
+                                                                                echo 0;
+                                                                            } ?></span>
                             </a>
                         </div>
                     </div>
@@ -94,24 +105,24 @@
                     <li class="position-relative pb-2 me-4 <?php echo !isset($_GET['page']) ? 'active' : ''; ?>">
                         <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Trang chủ</a>
                     </li>
-                    <li class="position-relative pb-2 me-4 category_header">
+                    <li class="position-relative pb-2 me-4 category_header <?php echo isset($_GET['page']) && $_GET['page'] === 'danh-muc' && !isset($_GET['type']) ? 'active' : ''; ?>">
                         <span role="button" class="">
                             Danh mục
                             <i class="fa-sharp fa-solid fa-chevron-down ms-1"></i>
                         </span>
                         <div class="submenu position-absolute start-0 px-4 py-3 rounded-2">
                             <?php foreach ($NamesTypeCatagory as $row) : ?>
-                            <span>
-                                <a href="index.php?page=danh-muc&maloai=<?php echo $row['maloai'] ?>"><?php echo $row['ten_loai'] ?></a>
-                            </span>
+                                <span>
+                                    <a href="index.php?page=danh-muc&maloai=<?php echo $row['maloai'] ?>"><?php echo $row['ten_loai'] ?></a>
+                                </span>
                             <?php endforeach; ?>
                         </div>
                     </li>
                     <li class="position-relative pb-2 me-4 <?php echo isset($_GET['type']) && $_GET['type'] === 'san-pham-moi' ? 'active' : ''; ?>">
                         <a href="index.php?page=danh-muc&type=san-pham-moi">Sản phẩm mới</a>
                     </li>
-                    <li class="position-relative pb-2 me-4">
-                        <a href="">Lịch sử mua</a>
+                    <li class="position-relative pb-2 me-4 <?php echo isset($_GET['page']) && $_GET['page'] === 'lich-su-mua' ? 'active' : ''; ?>">
+                        <a href="index.php?page=lich-su-mua&status=all">Lịch sử mua</a>
                     </li>
                     <li class="position-relative pb-2 me-4 <?php echo isset($_GET['page']) && $_GET['page'] === 'lien-he' ? 'active' : ''; ?>">
                         <a href="index.php?page=lien-he">Liên hệ</a>

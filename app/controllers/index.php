@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once "cartControllers/cart.php";
     require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";
 
@@ -10,16 +11,22 @@
                 require_once "../views/category/category.php";
                 break;
             case "san-pham": 
+                require_once "detailController/feedback.php";
                 require_once "detailController/detail.php";
                 require_once "../views/detail/detail.php";
                 break;
             case "dang-nhap": 
+                require_once "registerController/oauthFacebookController.php";
+                require_once "registerController/oauthGoogleController.php";
                 require_once "../views/login/login.php";
                 break;
             case "dang-ky": 
+                require_once "registerController/oauthFacebookController.php";
+                require_once "registerController/oauthGoogleController.php";
                 require_once "../views/register/register.php";
                 break;
             case "gio-hang": 
+                require_once "cartControllers/cart.php";
                 require_once "../views/cart/cart.php";
                 break;
             case "lien-he": 
@@ -27,6 +34,10 @@
                 break;
             case "thanh-toan": 
                 require_once "../views/checkout/checkout.php";
+                break;
+            case "lich-su-mua": 
+                require_once "historyController/historyController.php";
+                require_once "../views/history/history.php";
                 break;
             default:
                 require_once "homeController/productHome.php";

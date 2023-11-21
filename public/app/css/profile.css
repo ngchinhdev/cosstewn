@@ -1,0 +1,76 @@
+body  {
+    background-color: #f5f5f5;
+}
+
+#container_profile .menu_status,
+#container_profile .bill_details,
+#container_profile .left_site {
+    background-color: #fff;
+}
+
+#container_profile .change_profile {
+    font-size: .8rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.60);
+}
+
+#container_profile .nav a.active {
+    color: #fff;
+    background-color: #5fc6ef;
+}   
+
+#container_profile .nav a.active svg path {
+    stroke: #fff;
+}   
+
+#container_profile .menu_status a.active {
+    color: var(--primary-color);
+}
+
+#container_profile .menu_status a.active::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+}
+
+#container_profile .bill_details .item_info img {
+    width: 80px;
+    height: 80px;
+    border: 0.5px solid rgba(0, 0, 0, 0.30);
+}
+
+#container_profile .bill_details .date {
+    font-weight: 600;
+}
+
+#container_profile .bill_details .status {
+    color: #26AA99;
+}
+
+#container_profile .bill_details .title {
+    font-size: .9rem;
+}
+
+#container_profile .bill_details .name b {
+    font-size: .9rem;
+}
+
+#container_profile .bill_details .name {
+    padding-right: 20px;
+}
+
+#container_profile .bill_details .name span {
+    font-size: .8rem;
+}
+
+#container_profile .bill_details del {
+    font-size: .8rem;
+}
+
+#container_profile .bill_details .item_price strong {
+    font-size: .9rem;
+}
