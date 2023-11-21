@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(isset($_GET['u']) && $_GET['u']) {
+        setcookie('user_id', $_GET['u'], time() + (86400 * 30), "/");
+    }
     require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";
 

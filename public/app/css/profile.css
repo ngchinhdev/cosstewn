@@ -127,3 +127,12 @@ body  {
     color: #fff;
     float: right;
 }
+
+#container_profile .logout input {
+    font-size: .8rem;
+    background-color: #08394c !important;
+}
+
+input[type="text"]:disabled{
+    background-color: transparent;
+}
