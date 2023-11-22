@@ -11,7 +11,7 @@
                 </div>
                 <div class="name">
                     <h6 class="mb-1"><?= $_SESSION['name'] ?></h6>
-                    <a href="index.php?page=ho-so&u=<?= $_SESSION['user_id'] ?>" class="change_profile d-flex align-items-center">
+                    <a href="index.php?page=ho-so&u=<?= base64_encode($_SESSION['user_id']) ?>" class="change_profile d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
                             <g clip-path="url(#clip0_741_1547)">
                                 <path d="M1.75838 9.66666L0.966711 13.0833C0.939401 13.2082 0.940337 13.3376 0.969451 13.4621C0.998565 13.5866 1.05512 13.703 1.13499 13.8029C1.21485 13.9027 1.31601 13.9834 1.43108 14.0392C1.54614 14.0949 1.6722 14.1242 1.80004 14.125C1.85961 14.131 1.91964 14.131 1.97921 14.125L5.41671 13.3333L12.0167 6.75833L8.33338 3.08333L1.75838 9.66666Z" fill="black" fill-opacity="0.6" />
