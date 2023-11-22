@@ -19,7 +19,7 @@ if ($getProductsByUserId) { ?>
                 <?php
                 $images = explode(',', $row['hinh_anh']);
                 for ($i = 0; $i < 1; $i++) : ?>
-                    <img src="../../public/app/imgs/img-prods/<?= $images[$i] ?>" alt="" class="me-3 img_prod">
+                    <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="" class="me-3 img_prod">
                 <?php endfor; ?>
                 <div class="ten">
                     <b><?php echo $row['ten_loai']; ?></b>
