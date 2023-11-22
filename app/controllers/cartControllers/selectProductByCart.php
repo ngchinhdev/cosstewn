@@ -4,9 +4,16 @@ $cartPage = new CartPage();
 
 $userid = isset($_POST['userid']) ? $_POST['userid'] : '';
 $getProductsByUserId = $cartPage->getProductsByUserId($userid);
-if ($getProductsByUserId) {
+if ($getProductsByUserId) { ?>
+    <tr class="nav_cart">
+        <td class="ps-3 td_nav">Sản Phẩm</td>
+        <td class="text-center td_nav px-3">Giá tiền</td>
+        <td class="text-center td_nav px-3">Số lượng</td>
+        <td class="pe-3 text-center td_nav">Thành tiền</td>
+    </tr>
+    <?php
     foreach ($getProductsByUserId as $row) {
-?>
+    ?>
         <tr class="border-bottom" id="wraptrProduct">
             <td class="d-flex pe-3">
                 <?php

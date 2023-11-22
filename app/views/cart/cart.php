@@ -25,12 +25,13 @@
         <?php } else { ?>
             <div class="left_site col-lg-9 col-12" id="cartForm" data-id-user="<?php echo $matk; ?>">
                 <table class="w-100" id="tableCart">
-                    <tr class="nav_cart">
+                    <!-- <tr class="nav_cart">
                         <td class="ps-3 td_nav">Sản Phẩm</td>
                         <td class="text-center td_nav px-3">Giá tiền</td>
                         <td class="text-center td_nav px-3">Số lượng</td>
                         <td class="pe-3 text-center td_nav">Thành tiền</td>
-                    </tr>
+                    </tr> -->
+
                     <!-- Sản phẩm -->
                 </table>
                 <div class="bottom_cart col-8 d-flex justify-content-between mt-4 position-relative w-100">

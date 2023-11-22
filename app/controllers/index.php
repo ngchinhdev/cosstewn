@@ -1,6 +1,8 @@
 <?php
     session_start();
-    require_once "cartControllers/cart.php";
+    if(isset($_GET['u']) && $_GET['u']) {
+        setcookie('user_id', $_GET['u'], time() + (86400 * 30), "/");
+    }
     require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";
 
@@ -38,6 +40,10 @@
             case "lich-su-mua": 
                 require_once "historyController/historyController.php";
                 require_once "../views/history/history.php";
+                break;
+            case "ho-so": 
+                require_once "profileController/profileController.php";
+                require_once "../views/profile/profile.php";
                 break;
             default:
                 require_once "homeController/productHome.php";

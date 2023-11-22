@@ -75,6 +75,7 @@
 
                 $_SESSION['data_user'] = $data_user;
                 $register = new Register();
+                $user = $register->getInfoUser($_SESSION['user_email_address']);
                 if ($register->getInfoUser($_SESSION['user_email_address'])) {
                     require_once "loginController/loginController.php";
                 } else {
