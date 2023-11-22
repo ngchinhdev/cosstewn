@@ -3,6 +3,7 @@
     if(isset($_GET['u']) && $_GET['u']) {
         setcookie('user_id', $_GET['u'], time() + (86400 * 30), "/");
     }
+    require_once "cartControllers/cart.php";
     require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";
 
@@ -13,6 +14,7 @@
                 require_once "../views/category/category.php";
                 break;
             case "san-pham": 
+                require_once "detailController/feedback.php";
                 require_once "detailController/detail.php";
                 require_once "../views/detail/detail.php";
                 break;
@@ -27,6 +29,7 @@
                 require_once "../views/register/register.php";
                 break;
             case "gio-hang": 
+                require_once "cartControllers/cart.php";
                 require_once "../views/cart/cart.php";
                 break;
             case "lien-he": 

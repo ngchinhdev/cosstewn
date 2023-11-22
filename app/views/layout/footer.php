@@ -73,11 +73,18 @@
 <?php
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
+        case 'gio-hang':
+            echo '<script src="../../public/app/js/ajaxCart.js"></script>';
+            break;
         case 'san-pham':
+            echo '<script src="../../public/app/js/ajaxFeedback.js"></script>';
+            echo '<script src="../../public/app/js/quantityDetail.js"></script>';
+            echo '<script src="../../public/app/js/feedbackAjax.js"></script>';
             echo '<script src="../../public/app/js/product-detail.js"></script>';
             break;
         case 'danh-muc':
-            echo '<script src="../../public/app/js/arrangeProducts.js"></script>';
+            echo '<script src="../../public/app/js/removeTagFilter.js"></script>';
+            echo '<script src="../../public/app/js/pagingNumber.js"></script>';
             echo '<script src="../../public/app/js/filterOption.js"></script>';
             echo '<script src="../../public/app/js/filterRate.js"></script>';
             echo '<script src="../../public/app/js/filterPrice.js"></script>';

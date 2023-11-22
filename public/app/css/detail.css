@@ -546,9 +546,9 @@ li {
     padding: 13px 0px;
     border-top: 2px solid rgb(239, 239, 239);
     border-bottom: 2px solid rgb(239, 239, 239);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-left: none;
+    border-right: none;
+    text-align: center;
 }
 
 #container_detail .btn-add-cart {
@@ -585,6 +585,7 @@ li {
     height: 50px;
     white-space: nowrap;
     grid-area: btnbuy;
+    text-align: center;
 }
 
 #container_detail .wrapper-action {
@@ -595,6 +596,7 @@ li {
     grid-template-areas:
         "quantity btnadd btnbuy";
     gap: 10px;
+    position: relative;
 }
 
 #container_detail .wrap-quantity-btn {
@@ -917,6 +919,29 @@ li {
     letter-spacing: 0.3px;
 }
 
+
+#container_detail .wrapper-action .lock-cmt{
+    position: absolute;
+    text-align: center;
+    z-index: 90;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.838); 
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6,
+    4px 4px 4px 0px #d1d9e6 inset,
+    -4px -4px 4px 0px #ffffff inset;
+    padding: 2px;
+}
+
+#container_detail .lock-cmt a:hover{
+    color: #218CFF;
+}
 
 /* css page detail product */
 
@@ -1251,6 +1276,10 @@ footer .copyright {
     }
 
     #container_detail .input-cmt {
+        width: 100%;
+    }
+
+    #container_detail .wrapper-action .lock-cmt{
         width: 100%;
     }
 

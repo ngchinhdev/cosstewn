@@ -76,21 +76,23 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="wrapper-action">
-                    <div class="d-flex h-50 wrap-quantity-btn">
-                        <button type="button" class="quantity-btn minus-btn"><i class="fa-solid fa-minus"></i></button>
-                        <div class="quantity-text">1</div>
-                        <button type="button" class="quantity-btn add-btn"><i class="fa-solid fa-plus"></i></button>
+                <form action="index.php?page=gio-hang" method="POST">
+                    <div class="wrapper-action">
+                        <div class="d-flex wrap-quantity-btn">
+                            <button type="button" class="quantity-btn minus-btn" onclick="decreaseQuantity()"><i class="fa-solid fa-minus"></i></button>
+                            <input type="text" class="quantity-text" value="1" name="quantity-pd" id="quantity-pd">
+                            <button type="button" class="quantity-btn add-btn" onclick="increaseQuantity()"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <button class="btn-add-cart" name="submit-cart">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Thêm vào giỏ hàng</span>
+                        </button>
+                        <input type="hidden" value="<?php echo $_GET['masp'] ?>" name="input-masp">
+                        <input type="hidden" value="<?php echo $InfoUsers['matk']; ?>" name="input-matk">
+                        <button class="btn-buy" name="submit-buy">MUA NGAY</button>
                     </div>
-                    <button class="btn-add-cart">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span>Thêm vào giỏ hàng</span>
-                    </button>
-                    <a href="index.php?page=thanh-toan" class="btn-buy">
-                        MUA NGAY
-                    </a>
-                </div>
+                </form>
+
                 <div class="row box-commit">
                     <div class="wrapper-commit col-12 col-md-6">
                         <svg viewBox="64 64 896 896" focusable="false" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true">
@@ -177,7 +179,7 @@
     <div class="box-comment row justify-content-center align-items-center mt-3">
         <div class="wrapper-title col-12 d-flex">
             <div class="quantity-comment">
-                32 Bình luận
+                <!-- 32 Bình luận -->
             </div>
             <div onclick="toggleItemsArrange()" class="menu-arrange d-flex justify-content-center align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" focusable="false" style="pointer-events: none; display: block; ">
@@ -186,82 +188,28 @@
                 Sắp xếp theo
                 <div class="wrapper-arrange">
                     <div class="items-arrange d-flex flex-column">
-                        <a href="#">Bình luận mới nhất</a>
-                        <a href="#">Bình luận cũ nhất</a>
+                        <a data-cmt-arrange="cmtNew" class="btn-cmtnew">Bình luận mới nhất</a>
+                        <a data-cmt-arrange="cmtold" class="btn-cmtold">Bình luận cũ nhất</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="wrapper-action col-12 d-flex">
-            <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4 copy.webp" alt="">
-            <form action="">
-                <input type="text" placeholder="Thêm nhận xét..." class="input-cmt">
-                <button type="submit" class="btn-sendcmt">Gửi bình luận</button>
+            <?php if (!isset($_SESSION['data_user']['name'])) : ?>
+                <div class="lock-cmt"><a href="index.php?page=dang-nhap">Đánh giá ngay <i class="fa-solid fa-comment-medical"></i></a></div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['data_user']['name'])) { ?>
+                <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="">
+            <?php } else { ?>
+                <img src="../../public/app/imgs/img-prods/user.jpg" alt="">
+            <?php } ?>
+            <form action="" method="POST" id="commentForm" data-product-id="<?php echo $masp; ?>" data-id-user="<?php echo $InfoUsers['matk']; ?>">
+                <input type="text" id="textfb" name="noidungcmt" placeholder="Thêm nhận xét..." class="input-cmt">
+                <button type="submit" name="feedback-submit" class="btn-sendcmt">Gửi bình luận</button>
             </form>
-
         </div>
-        <div class="wrapper-cmt col-12 mt-4">
-            <div class="infor-cmt d-flex justify-content-start align-items-center">
-                <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4 copy.webp" alt="" class="align-self-start">
-                <div class="box-infor">
-                    <div class="infor-top d-flex align-items-center">
-                        <div class="infor-name">
-                            Võ Thanh Phương
-                        </div>
-                        <div class="infor-date">
-                            2023-10-01
-                        </div>
-                        <div class="check-buy">
-                            <i class="fa-solid fa-check"></i>Đã mua hàng
-                        </div>
-                    </div>
-                    <div class="text-cmt">
-                        Sản phẩm quá tốt, xứng đáng với giá tiền mình bỏ ra
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper-cmt col-12 mt-4">
-            <div class="infor-cmt d-flex justify-content-start align-items-center">
-                <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4 copy.webp" alt="" class="align-self-start">
-                <div class="box-infor">
-                    <div class="infor-top d-flex align-items-center">
-                        <div class="infor-name">
-                            Võ Thanh Phương
-                        </div>
-                        <div class="infor-date">
-                            2023-10-01
-                        </div>
-                        <div class="check-buy">
-                            <i class="fa-solid fa-check"></i>Đã mua hàng
-                        </div>
-                    </div>
-                    <div class="text-cmt">
-                        Sản phẩm quá tốt, xứng đáng với giá tiền mình bỏ ra
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper-cmt col-12 mt-4">
-            <div class="infor-cmt d-flex justify-content-start align-items-center">
-                <img src="../../public/app/imgs/85436612-bcf2-47cb-8b63-4dc60c0b98a4 copy.webp" alt="" class="align-self-start">
-                <div class="box-infor">
-                    <div class="infor-top d-flex align-items-center">
-                        <div class="infor-name">
-                            Võ Thanh Phương
-                        </div>
-                        <div class="infor-date">
-                            2023-10-01
-                        </div>
-                        <div class="check-buy">
-                            <i class="fa-solid fa-check"></i>Đã mua hàng
-                        </div>
-                    </div>
-                    <div class="text-cmt">
-                        Sản phẩm quá tốt, xứng đáng với giá tiền mình bỏ ra
-                    </div>
-                </div>
-            </div>
+        <div class="box-all-cmt" id="commentContainer">
+            
         </div>
     </div>
 </div>
