@@ -7,7 +7,7 @@ $countFeedback = $detailFeedback->CountFeedback($productId);
 
 
 if($countFeedback > 0){
-    echo $countFeedback . ' Bình luận';
+    echo $countFeedback . ' Đánh giá';
 }else{
-    echo '0 Bình luận';
+    echo '0 Đánh giá';
 }

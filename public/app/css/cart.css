@@ -114,6 +114,10 @@
     padding-bottom: 10px;
 }
 
+#container_cart .left_site table td:first-child{
+    max-width: 520px;
+}
+
 #container_cart .left_site table td:not(.td_nav) {
     padding-top: 15px;
 }

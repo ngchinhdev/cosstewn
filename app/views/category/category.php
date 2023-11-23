@@ -221,7 +221,7 @@
                                     </div>
                                     <div class="warp-star d-flex justify-content-center align-items-center">
                                         (<i class="fa-solid fa-eye"></i>
-                                        <div class="quantity-feedback"><?= $row['so_luot_xem'] ?> Lượt xem)</div>
+                                        <div class="quantity-feedback"><?= $row['so_luot_xem'] ?> Lượt xem )</div>
                                     </div>
                                 </div>
                             </div>

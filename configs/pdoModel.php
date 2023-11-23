@@ -4,7 +4,7 @@ class PDOModel
     private $host = 'localhost';
     private $username = 'root';
     private $password = '';
-    private $dbname = 'cos';
+    private $dbname = 'cosstewn';
     private $conn;
 
     public function __construct()
