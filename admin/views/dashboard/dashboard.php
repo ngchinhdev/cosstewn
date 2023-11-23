@@ -1,1 +1,1 @@
-<h1>hi</h1>
+<h1>Dashboard page</h1>

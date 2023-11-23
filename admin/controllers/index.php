@@ -2,10 +2,10 @@
     include_once("../views/layout/header.php");
 
     if (isset($_GET['page'])) {
-        // switch ($_GET['page']) {
-        //     case 'add-exam':
-        //         include_once("../views/addExam.php");
-        //         break;
+        switch ($_GET['page']) {
+            // case 'add-exam':
+            //     include_once("../views/addExam.php");
+            //     break;
         //     case 'add-test':
         //         include_once("../views/addTest.php");
         //         break;
@@ -27,7 +27,7 @@
         //         break;
         //     default:
         //         include_once("../views/main.php");
-        // }
+        }
     } else {
         include_once("../views/dashboard/dashboard.php");
     }

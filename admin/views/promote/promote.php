@@ -1,0 +1,1 @@
+<h1>Promote page</h1>
