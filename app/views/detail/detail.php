@@ -199,7 +199,7 @@
             <?php if (!isset($_COOKIE['user_id'])) { ?>
                 <div class="lock-cmt"><a href="index.php?page=dang-nhap">Đánh giá ngay <i class="fa-solid fa-comment-medical"></i></a></div>
             <?php } else if (isset($_COOKIE['user_id']) && (empty($checkPurchaseProducts))) { ?>
-                    <div class="lock-cmt"><a href="index.php?page=dang-nhap">Mua hàng để đánh giá <i class="fa-solid fa-comment-medical"></i></a></div>
+                    <div class="lock-cmt"><a href="">Mua hàng để đánh giá <i class="fa-solid fa-comment-medical"></i></a></div>
             <?php } ?>
             <?php if (isset($_COOKIE['user_id'])) { ?>
                 <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="">
