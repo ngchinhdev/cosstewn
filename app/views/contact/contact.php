@@ -30,18 +30,18 @@ if (isset($_SESSION['contact_message'])) {
         <div class="col-6">
             <h3 style="color: #218cff;">NHẬN THÔNG TIN</h3>
             <br>
-            <form class="row" method="POST" action="../controllers/contactController/contactController.php">
+            <form class="row" method="POST" action="../controllers/contactController/contactController.php" onsubmit="return validateForm()">
                 <div class="information1 col-6">
-                    <label for="Name" class="form-label">Họ và tên:</label>
-                    <input type="text" name="name" class="form-control" id="Name" placeholder="Nhập họ tên">
+                    <label for="name" class="form-label">Họ và tên:</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Nhập họ tên" required>
                 </div>
                 <div class="information1 col-6">
-                    <label for="Email" class="form-label">Email:</label>
-                    <input type="email" name="email" class="form-control" id="Email" placeholder="Nhập email">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Nhập email" required>
                 </div>
                 <div class="information1 form-group">
                     <label for="message">Nội dung:</label>
-                    <textarea id="message" name="message" placeholder="Nhập nội dung" class="form-control" rows="8"></textarea>
+                    <textarea id="message" name="message" placeholder="Nhập nội dung" class="form-control" rows="8" required></textarea>
                 </div>
                 <div class="d-grid gap-2 d-md-block">
                     <button type="reset" class="btn btn-outline-gray btn-md">Hủy</button>
