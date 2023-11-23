@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="index.php?page=gio-hang" method="POST">
+                <form action="index.php?page=<?= isset($_COOKIE['user_id']) ? 'gio-hang' : 'dang-nhap' ?>" method="POST">
                     <div class="wrapper-action">
                         <div class="d-flex wrap-quantity-btn">
                             <button type="button" class="quantity-btn minus-btn" onclick="decreaseQuantity()"><i class="fa-solid fa-minus"></i></button>
@@ -196,10 +196,10 @@
             </div>
         </div>
         <div class="wrapper-action col-12 d-flex">
-            <?php if (!isset($_SESSION['data_user']['name'])) : ?>
+            <?php if (!isset($_COOKIE['user_id'])) : ?>
                 <div class="lock-cmt"><a href="index.php?page=dang-nhap">Đánh giá ngay <i class="fa-solid fa-comment-medical"></i></a></div>
             <?php endif; ?>
-            <?php if (isset($_SESSION['data_user']['name'])) { ?>
+            <?php if (isset($_COOKIE['user_id'])) { ?>
                 <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="">
             <?php } else { ?>
                 <img src="../../public/app/imgs/img-prods/user.jpg" alt="">

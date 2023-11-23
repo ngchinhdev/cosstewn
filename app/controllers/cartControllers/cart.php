@@ -1,12 +1,13 @@
 <?php
-require_once "../models/cartModel/cart.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/cartModel/cart.php";
 $cartPage = new CartPage();
-$email = isset($_SESSION['data_user']['email']) ? $_SESSION['data_user']['email'] : '';
+// $email = isset($_SESSION['data_user']['email']) ? $_SESSION['data_user']['email'] : '';
+$user_id = isset($_COOKIE['user_id']) ? base64_decode($_COOKIE['user_id']) : '';
 $magh = isset($_GET['removesp']) ? $_GET['removesp'] : '';
 
-if (isset($_SESSION['data_user']['email'])) {
-    $getUserIdbyEmail = $cartPage->getUserIdbyEmail($email);
-    $matk = $getUserIdbyEmail;
+if ($user_id) {
+    // $getUserIdbyEmail = $cartPage->getUserIdbyEmail($email);
+    $matk = $user_id;
     $getProductsByUserId = $cartPage->getProductsByUserId($matk);
     $getTotalPriceProducts = $cartPage->getTotalPriceProducts($matk);
     $totalQuantity = $cartPage->getTotalQuantityProductByCartUser($matk);
@@ -22,8 +23,8 @@ if (isset($_SESSION['data_user']['email'])) {
 
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-cart']) && isset($_SESSION['data_user']['email'])) {
-    $matk = $_POST['input-matk'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-cart']) && $user_id) {
+    $matk = $user_id;
     $masp = $_POST['input-masp'];
     $quantity = $_POST['quantity-pd'];
     $cartPage->insertProductIntoCart($matk, $masp, $quantity);
@@ -37,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-cart']) && is
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-buy']) && isset($_SESSION['data_user']['email'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-buy'])) {
     $_SESSION['prod_id'] = $_POST['prod_id'];
-    header("Location: index.php?page=thanh-toan");
+    $_SESSION['quantity_dt'] = $_POST['quantity-pd'];
+    header("Location: /cosstewn/app/controllers/index.php?page=thanh-toan");
 }

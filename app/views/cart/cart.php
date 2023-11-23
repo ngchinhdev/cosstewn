@@ -3,18 +3,18 @@
         <a href="" style="color: #888;" class="text-decoration-none">Trang chủ</a> > <a href="" style="color: #888;" class="text-decoration-none">Giỏ hàng</a>
     </span>
     <h2 style="font-size: 22px;" class="mb-4 mt-2">Giỏ hàng
-        <span style="color: #888; font-size: 18px;" class="fw-normal">(<?php if (isset($_SESSION['data_user']['email'])) {
+        <span style="color: #888; font-size: 18px;" class="fw-normal">(<?php if (isset($_COOKIE['user_id'])) {
                                                                             if ($totalQuantity > 0) {
                                                                                 echo $totalQuantity;
                                                                             } else if ($totalQuantity < 1) {
                                                                                 echo 0;
                                                                             }
-                                                                        } else if (!isset($_SESSION['data_user']['email'])) {
+                                                                        } else if (!isset($_COOKIE['user_id'])) {
                                                                             echo 0;
                                                                         } ?> sản phẩm)</span>
     </h2>
-    <form action="" method="post" class="row">
-        <?php if (!isset($_SESSION['data_user']['email']) || $totalQuantity < 1) { ?>
+    <form action="/cosstewn/app/controllers/index.php?page=thanh-toan" method="post" class="row">
+        <?php if (!isset($_COOKIE['user_id']) || $totalQuantity < 1) { ?>
             <div class="cart-empty d-flex justify-content-center align-items-center">
                 <div class="wrap-empty">
                     <img src="../../public/app/imgs/img-prods/img_lb_empty.gif" alt="">
@@ -42,7 +42,7 @@
                         <span class="pe-1 fw-bold">Tạm tính: </span>
                         <b style="color: #F7452E;" class="ms-1 tongCong"> </b>
                         <p style="color: #888;" class="text-end mb-2">(Đã bao gồm VAT)</p>
-                        <button style="font-size: 14px; padding: 8px 47px;" id="checkoutBtn" class="hero-btn">Tiến hành đặt hàng</button>
+                        <button name="checkout-cart" style="font-size: 14px; padding: 8px 47px;" id="checkoutBtn" class="hero-btn">Tiến hành đặt hàng</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <hr>
                     <div>Tổng cộng: <b style="color: #F7452E;" class="tongCong"> </b></div>
                     <div style="color: #888;" class="mt-1">(Đã bao gồm VAT)</div>
-                    <button style="font-size: 0.9rem;" id="checkoutBtn" class="hero-btn mt-2 w-100">Tiến hành đặt hàng</button>
+                    <button name="checkout-cart" style="font-size: 0.9rem;" id="checkoutBtn" class="hero-btn mt-2 w-100">Tiến hành đặt hàng</button>
                 </div>
             </div>
         <?php } ?>

@@ -78,7 +78,7 @@
                     <?php foreach($order_details[$key] as $detail): ?>
                         <div class="item d-flex justify-content-between align-items-center mt-3 pb-3 border-bottom">
                             <div class="item_info d-flex align-items-center">
-                                <img src="../../public/app/imgs/img-prods/<?= $detail['hinh_anh'] ?>" alt="" class="me-3 img_prod">
+                                <img src="../../public/app/imgs/imgs-product/<?= $detail['hinh_anh'] ?>" alt="" class="me-3 img_prod">
                                 <div class="name">
                                     <b><?= $detail['ten_loai'] ?></b>
                                     <p style="font-size: 13px;" class="mb-2"><?= $detail['ten_sp'] ?></p>

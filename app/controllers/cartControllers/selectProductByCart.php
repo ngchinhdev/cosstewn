@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/cartModel/cart.php";
 $cartPage = new CartPage();
 
-$userid = isset($_POST['userid']) ? $_POST['userid'] : '';
+$userid = isset($_COOKIE['user_id']) ? base64_decode($_COOKIE['user_id']) : '';
 $getProductsByUserId = $cartPage->getProductsByUserId($userid);
 if ($getProductsByUserId) { ?>
     <tr class="nav_cart">
@@ -25,6 +25,7 @@ if ($getProductsByUserId) { ?>
                     <b><?php echo $row['ten_loai']; ?></b>
                     <p style="font-size: 13px;" class="mb-2"><?php echo $row['ten_sp']; ?></p>
                     <input type="hidden" value="<?= $row['masp'] ?>" name="prod_id[]">
+                    <input type="hidden" value="<?php echo $row['so_luong_chitiet']; ?>" name="prod_quantity[]">
                     <a style="color: #C73130; font-size: 12px;" href="index.php?page=gio-hang&removesp=<?php echo $row['magh']; ?>">
                         <i class="fa-solid fa-square-xmark pe-1" style="color: #C73130;"></i>
                         Xóa khỏi giỏ hàng

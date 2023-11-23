@@ -47,6 +47,9 @@
                 require_once "profileController/profileController.php";
                 require_once "../views/profile/profile.php";
                 break;
+            case "dat-hang-thanh-cong": 
+                require_once "../views/checkout/success.php";
+                break;
             default:
                 require_once "homeController/productHome.php";
                 require_once "../views/home/home.php";
