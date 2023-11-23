@@ -12,16 +12,6 @@ class PDOModel
         $this->connect();
     }
 
-<<<<<<< HEAD
-    private function connect()
-    {
-        try {
-            $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->conn = $conn;
-        } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
-=======
         private function connect() {
             try {
                 $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
@@ -86,7 +76,6 @@ class PDOModel
             } catch(PDOException $e) {
                 throw $e;
             }
->>>>>>> 68f3b6a7a9a8ff41b974498a6b10ee3ae706e4d3
         }
     }
 
