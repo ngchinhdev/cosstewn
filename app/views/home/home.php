@@ -46,12 +46,12 @@
                     <div class="segment-title text-light text-uppercase mb-1">Giờ</div>
                     <div class="segment text-primary">
                         <div class="flip-card mx-1" data-hours-tens>
-                            <div class="top">2</div>
-                            <div class="bottom">2</div>
+                            <div class="top">0</div>
+                            <div class="bottom">0</div>
                         </div>
                         <div class="flip-card" data-hours-ones>
-                            <div class="top">4</div>
-                            <div class="bottom">4</div>
+                            <div class="top">0</div>
+                            <div class="bottom">0</div>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
             <?php endforeach ?>
         </div>
         <div class="col-md-12 text-center mt-3">
-            <a href="#" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
+            <a href="index.php?page=danh-muc&type=san-pham-moi" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
                 tất cả</a>
         </div>
     </div>
@@ -199,7 +199,7 @@
     <div class="popular_products mt-5">
         <h4 class="text-uppercase fw-bold text-center">Được xem nhiều nhất</h4>
         <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 px-sm-0 px-2 mt-4">
-            <?php foreach ($new_products as $product) : ?>
+            <?php foreach ($best_watched_products as $product) : ?>
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
                     <div class="box-products">
                         <div class="wrap-imgage">
@@ -243,7 +243,7 @@
     <div class="foryou_products mt-5">
         <h4 class="text-uppercase fw-bold text-center">Sản phẩm dành cho bạn</h4>
         <div class="row  row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 px-sm-0 px-2 mt-4">
-            <?php foreach ($new_products as $product) : ?>
+            <?php foreach ($for_you_products as $product) : ?>
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-1 p-1">
                     <div class="box-products">
                         <div class="wrap-imgage">
@@ -276,7 +276,7 @@
             <?php endforeach ?>
         </div>
         <div class="col-md-12 text-center mt-3">
-            <a href="#" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
+            <a href="index.php?page=danh-muc&type=san-pham-moi&priceRange=under500k" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
                 tất cả
             </a>
         </div>

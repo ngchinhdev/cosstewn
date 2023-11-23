@@ -1,12 +1,30 @@
-const countToDate = new Date().setHours(new Date().getHours() + 24)
-let previousTimeBetweenDates
-setInterval(() => {
-  const currentDate = new Date()
-  const timeBetweenDates = Math.ceil((countToDate - currentDate) / 1000)
-  flipAllCards(timeBetweenDates)
+const storedEnd = localStorage.getItem("endTimeCos");
 
-  previousTimeBetweenDates = timeBetweenDates
-}, 250)
+let previousTimeBetweenDates
+if(storedEnd) {
+  startTimer(storedEnd);
+} else {
+  const countToDate = new Date().setHours(new Date().getHours() + 12);
+  localStorage.setItem("endTimeCos", countToDate);
+  startTimer(countToDate);
+}
+
+function startTimer(storedEnd) {
+  const timer = setInterval(() => {
+    const currentDate = new Date()
+    const timeBetweenDates = Math.ceil((storedEnd - currentDate) / 1000)
+    flipAllCards(timeBetweenDates)
+  
+    previousTimeBetweenDates = timeBetweenDates
+  }, 250);
+
+  if (storedEnd < 2000) {
+    clearInterval(timer);
+    const countToDate = new Date().setHours(new Date().getHours() + 12);
+    localStorage.setItem("endTimeCos", countToDate);
+    startCountDown(countToDate);
+  }
+}
 
 function flipAllCards(time) {
   const seconds = time % 60

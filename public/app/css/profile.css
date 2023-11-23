@@ -65,7 +65,7 @@ body  {
 }
 
 #container_profile .bill_details .name {
-    padding-right: 20px;
+    padding-right: 50px;
 }
 
 #container_profile .bill_details .name span {
@@ -74,10 +74,12 @@ body  {
 
 #container_profile .bill_details del {
     font-size: .8rem;
+    display: block;
 }
 
 #container_profile .bill_details .item_price strong {
     font-size: .9rem;
+    display: block;
 }
 
 /* Profile css */

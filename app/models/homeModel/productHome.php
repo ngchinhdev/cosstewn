@@ -32,7 +32,7 @@
             return $this->pdoQuery($sql);
         }
 
-        function getBestSellProducts() {
+        function getBestWatchedProducts() {
             $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
             FROM sanpham
             INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
@@ -42,7 +42,7 @@
                 GROUP BY masp
             ) AS hinhanh ON sanpham.masp = hinhanh.masp
             WHERE sanpham.an_hien = 1
-            ORDER BY so_luot_xem DESC LIMIT 5";
+            ORDER BY sanpham.so_luot_xem DESC LIMIT 5";
 
             return $this->pdoQuery($sql);
         }

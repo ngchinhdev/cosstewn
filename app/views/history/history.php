@@ -61,6 +61,7 @@
             </ul>
             <?php if(count($all_orders) === 0) echo '<div class="px-3">Chưa có sản phẩm nào.</div>' ?>
             <?php foreach($all_orders as $key => $order): ?>
+            <?php $sum = 0 ?>
             <div class="bill_details py-3 px-4 mt-3">
                 <div class="title d-flex align-items-center justify-content-between pb-2 border-bottom">
                     <div class="date text-danger">
@@ -76,6 +77,7 @@
                 </div>
                 <div class="items_row">
                     <?php foreach($order_details[$key] as $detail): ?>
+                        <?php $sum += (int)$detail['gia_tien'] * (int)$detail['so_luong'] ?>
                         <div class="item d-flex justify-content-between align-items-center mt-3 pb-3 border-bottom">
                             <div class="item_info d-flex align-items-center">
                                 <img src="../../public/app/imgs/imgs-product/<?= $detail['hinh_anh'] ?>" alt="" class="me-3 img_prod">
@@ -96,7 +98,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M3 20C2.45 20 1.979 19.804 1.587 19.412C1.195 19.02 0.999335 18.5493 1 18V7H3V18H20V20H3ZM7 16C6.45 16 5.979 15.804 5.587 15.412C5.195 15.02 4.99934 14.5493 5 14V6C5 5.45 5.196 4.979 5.588 4.587C5.98 4.195 6.45067 3.99934 7 4H21C21.55 4 22.021 4.196 22.413 4.588C22.805 4.98 23.0007 5.45067 23 6V14C23 14.55 22.804 15.021 22.412 15.413C22.02 15.805 21.5493 16.0007 21 16H7ZM9 14C9 13.45 8.804 12.979 8.412 12.587C8.02 12.195 7.54934 11.9993 7 12V14H9ZM19 14H21V12C20.45 12 19.979 12.196 19.587 12.588C19.195 12.98 18.9993 13.4507 19 14ZM14 13C14.8333 13 15.5417 12.7083 16.125 12.125C16.7083 11.5417 17 10.8333 17 10C17 9.16667 16.7083 8.45834 16.125 7.875C15.5417 7.29167 14.8333 7 14 7C13.1667 7 12.4583 7.29167 11.875 7.875C11.2917 8.45834 11 9.16667 11 10C11 10.8333 11.2917 11.5417 11.875 12.125C12.4583 12.7083 13.1667 13 14 13ZM7 8C7.55 8 8.021 7.804 8.413 7.412C8.805 7.02 9.00067 6.54934 9 6H7V8ZM21 8V6H19C19 6.55 19.196 7.021 19.588 7.413C19.98 7.805 20.4507 8.00067 21 8Z" fill="#C12929" />
                     </svg>
-                    <span class="ms-2 me-2">Thành tiền: </span><strong class="text-danger">555.555 đ</strong>
+                    <span class="ms-2 me-2">Thành tiền: </span><strong class="text-danger"><?= number_format($sum, 0, '.', '.') ?> ₫</strong>
                 </div>
             </div>
             <?php endforeach ?>
