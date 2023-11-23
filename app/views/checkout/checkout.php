@@ -30,6 +30,7 @@
             <div class="sum s1">
                 <strong>Tổng đơn hàng: </strong>
                 <?php
+                // if(isset($_SESSION['prod_id'])) var_dump($_SESSION['prod_id']);
                     // if(isset($_COOKIE['user_id'])) {
                     //     $promotion = 0.95;
                     //     echo '<span class="promotion">Đã giảm 5% cho thành viên</span>';
@@ -41,37 +42,38 @@
             </div>
             <table class="row_prod">
                 <?php 
-                    // $data = $_SESSION['data'];
-                    // $sumPay = 0;
-                    // $sumPayPro = 0;
-                    // foreach($data as $key => $row) {
-                    //     $price = $data[$key]['quantity'] * $data[$key]['price'];
-                    //     $sumPay += $price; 
-                    //     $sumPayPro += $price * $promotion;
-                    //     echo 
-                    //     '<tr>
-                    //         <td class="">
-                    //             <div class="img-prod">
-                    //                 <img src="../../public/assets/imgs/'.$data[$key]['image_url'].'" alt="">
-                    //             </div>
-                    //         </td>
-                    //         <td class="mid">
-                    //             <div class="name-prod">
-                    //                 '.$data[$key]['name'].'
-                    //             </div>
-                    //         </td>
-                    //         <td class="">
-                    //             <div class="quantity-prod">
-                    //                 x <span>'.$data[$key]['quantity'].'</span>
-                    //             </div>
-                    //         </td>
-                    //         <td class="">
-                    //             <div class="price-prod">
-                    //                 '.formatPrice($price * $promotion).'
-                    //             </div>
-                    //         </td>
-                    //     </tr>';
-                // }
+                    $data = $products_to_pay;
+                    $sumPay = 0;
+                    $sumPayPro = 0;
+                    foreach($data as $key => $row) {
+                        $price = $data[$key]['so_luong'] * $data[$key]['gia_tien'];
+                        // $sumPay += $price; 
+                        // $sumPayPro += $price * $promotion;
+                        $imgs = explode(',', $row['hinh_anh']);
+                        echo 
+                        '<tr>
+                            <td class="">
+                                <div class="img-prod">
+                                    <img src="../../public/app/imgs/imgs-product/'.$imgs[0].'" alt="">
+                                </div>
+                            </td>
+                            <td class="mid">
+                                <div class="name-prod">
+                                    '.$data[$key]['ten_sp'].'
+                                </div>
+                            </td>
+                            <td class="">
+                                <div class="quantity-prod">
+                                    x <span>'.$data[$key]['so_luong'].'</span>
+                                </div>
+                            </td>
+                            <td class="">
+                                <div class="price-prod">
+                                    '.number_format($price, 0, '.', '.').'
+                                </div>
+                            </td>
+                        </tr>';
+                    }
                 ?>
             </table>
         </div>

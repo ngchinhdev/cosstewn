@@ -36,3 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-cart']) && is
     header("Location: index.php?page=dang-nhap");
     exit();
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-buy']) && isset($_SESSION['data_user']['email'])) {
+    $_SESSION['prod_id'] = $_POST['prod_id'];
+    header("Location: index.php?page=thanh-toan");
+}

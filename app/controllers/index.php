@@ -36,6 +36,7 @@
                 require_once "../views/contact/contact.php";
                 break;
             case "thanh-toan": 
+                require_once "checkoutController/checkoutController.php";
                 require_once "../views/checkout/checkout.php";
                 break;
             case "lich-su-mua": 

@@ -285,17 +285,17 @@
     <div class="best_search mt-5">
         <h4 class="text-uppercase fw-bold text-center">Tìm kiếm nhiều nhất</h4>
         <div class="keywords mt-4 text-center">
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">son môi</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">trang điểm</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">mặt nạ</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">chăm sóc da</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">dầu gội</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">sữa rửa mặt</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">serum</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">sữa tắm</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">chống nắng</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">kem mắt</a>
-            <a href="#" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">xịt khoáng</a>
+            <a href="index.php?page=danh-muc&maloai=9" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">son môi</a>
+            <a href="index.php?page=danh-muc&search=trang&redirected=1" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">trang điểm</a>
+            <a href="index.php?page=danh-muc&search=mat&redirected=1" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">sữa rửa mặt</a>
+            <a href="index.php?page=danh-muc&maloai=15" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">chăm sóc da</a>
+            <a href="index.php?page=danh-muc&maloai=6" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">dầu gội</a>
+            <a href="index.php?page=danh-muc&maloai=1" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">sữa rửa mặt</a>
+            <a href="index.php?page=danh-muc&maloai=12" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">serum</a>
+            <a href="index.php?page=danh-muc&maloai=2" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">sữa tắm</a>
+            <a href="index.php?page=danh-muc&maloai=7" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">chống nắng</a>
+            <a href="index.php?page=danh-muc&maloai=15" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">tẩy tế bào</a>
+            <a href="index.php?page=danh-muc&maloai=3" role="button" class="py-2 d-inline-block rounded-5 px-4 mx-2 my-2">xịt khoáng</a>
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@
                                                                             echo 0;
                                                                         } ?> sản phẩm)</span>
     </h2>
-    <div class="row">
+    <form action="" method="post" class="row">
         <?php if (!isset($_SESSION['data_user']['email']) || $totalQuantity < 1) { ?>
             <div class="cart-empty d-flex justify-content-center align-items-center">
                 <div class="wrap-empty">
@@ -62,5 +62,5 @@
                 </div>
             </div>
         <?php } ?>
-    </div>
+    </form>
 </div>

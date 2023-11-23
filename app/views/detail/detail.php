@@ -89,6 +89,7 @@
                         </button>
                         <input type="hidden" value="<?php echo $_GET['masp'] ?>" name="input-masp">
                         <input type="hidden" value="<?php echo $InfoUsers['matk']; ?>" name="input-matk">
+                        <input type="hidden" value="<?php echo $_GET['masp'] ?>" name="prod_id[]">
                         <button class="btn-buy" name="submit-buy">MUA NGAY</button>
                     </div>
                 </form>

@@ -12,12 +12,12 @@ if ($getProductsByUserId) {
                 <?php
                 $images = explode(',', $row['hinh_anh']);
                 for ($i = 0; $i < 1; $i++) : ?>
-                    <img src="../../public/app/imgs/img-prods/<?= $images[$i] ?>" alt="" class="me-3 img_prod">
+                    <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="" class="me-3 img_prod">
                 <?php endfor; ?>
                 <div class="ten">
                     <b><?php echo $row['ten_loai']; ?></b>
                     <p style="font-size: 13px;" class="mb-2"><?php echo $row['ten_sp']; ?></p>
-
+                    <input type="hidden" value="<?= $row['masp'] ?>" name="prod_id[]">
                     <a style="color: #C73130; font-size: 12px;" href="index.php?page=gio-hang&removesp=<?php echo $row['magh']; ?>">
                         <i class="fa-solid fa-square-xmark pe-1" style="color: #C73130;"></i>
                         Xóa khỏi giỏ hàng
