@@ -42,4 +42,16 @@ class DetailFeedback extends PDOModel
 
         return $this->pdoQueryValue($sql, $productId);
     }
+
+
+    // kiểm tra người dùng đã mua sản phẩm chưa để được đánh giá
+    function checkPurchaseProducts($matk, $masp)
+    {
+        $sql = "SELECT donhang.*, chitietdonhang.*
+        FROM donhang
+        INNER JOIN chitietdonhang ON chitietdonhang.madh = donhang.madh
+        WHERE donhang.matk = ? AND chitietdonhang.masp = ?;";
+
+        return $this->pdoQuery($sql, $matk, $masp);
+    }
 }

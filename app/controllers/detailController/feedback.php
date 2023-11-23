@@ -5,3 +5,8 @@ $email = isset($_SESSION['data_user']['email']) ? $_SESSION['data_user']['email'
 $masp = isset($_GET['masp']) ? $_GET['masp'] : '';
 // $InfoUsers là matk của người dùng
 $InfoUsers = $detailFeedback->InfoUsers($email);
+
+$matk = $InfoUsers['matk'];
+// kiểm tra người dùng đã mua sản phẩm chưa để được đánh giá
+$checkPurchaseProducts = $detailFeedback->checkPurchaseProducts($matk, $masp);
+
