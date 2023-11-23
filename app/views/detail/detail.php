@@ -9,8 +9,8 @@
                     <?php $images = explode(',', $infoByProducts['hinh_anh']); ?>
                     <?php for ($i = 0; $i < 4; $i++) { ?>
                         <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="" <?php if ($i === 0) {
-                                                                                                        echo 'class="active"';
-                                                                                                    } ?>>
+                                                                                                            echo 'class="active"';
+                                                                                                        } ?>>
                     <?php } ?>
                 </div>
                 <div class="wrapper-image d-flex justify-content-center align-items-center">
@@ -196,9 +196,11 @@
             </div>
         </div>
         <div class="wrapper-action col-12 d-flex">
-            <?php if (!isset($_COOKIE['user_id'])) : ?>
+            <?php if (!isset($_COOKIE['user_id'])) { ?>
                 <div class="lock-cmt"><a href="index.php?page=dang-nhap">Đánh giá ngay <i class="fa-solid fa-comment-medical"></i></a></div>
-            <?php endif; ?>
+            <?php } else if (isset($_COOKIE['user_id']) && (empty($checkPurchaseProducts))) { ?>
+                    <div class="lock-cmt"><a href="">Mua hàng để đánh giá <i class="fa-solid fa-comment-medical"></i></a></div>
+            <?php } ?>
             <?php if (isset($_COOKIE['user_id'])) { ?>
                 <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="">
             <?php } else { ?>
@@ -210,7 +212,7 @@
             </form>
         </div>
         <div class="box-all-cmt" id="commentContainer">
-            
+
         </div>
     </div>
 </div>
