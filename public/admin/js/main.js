@@ -10,5 +10,6 @@ $(function() {
         console.log($(this).data('control'));
         const curPage = $(this).data('control');
         container.load(`../controllers/${curPage}Controller/${curPage}Controller.php`);
+        console.log(`../controllers/${curPage}Controller/${curPage}Controller.php`);
     })
 })
