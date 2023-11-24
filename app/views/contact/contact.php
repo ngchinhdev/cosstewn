@@ -50,4 +50,42 @@ if (isset($_SESSION['contact_message'])) {
             </form>
         </div>
     </div>
+    <br>
+    <div class="rounded-2 frame col-12">
+    <div class="information col-6">
+        <h3>DỊCH VỤ HỖ TRỢ</h3>
+        <ul>
+            <li>Với dịch vụ hổ trợ trực tuyến, Quý khách hàng sẽ chủ động thao tác khá đơn giản để hỗ trợ việc sử dụng Internet theo mong muốn của mình. Vì thế, các dịch vụ này sẽ giúp quý khách tương tác trực tiếp với cosstewn.io.vn nhằm tiết kiệm tối đa chi phí, thời gian. Chỉ cần một cú nhấp chuột là bạn đã thực hiện giao dịch thành công và cosstewn.io.vn sẽ giao hàng tận nơi. Xin chân thành cảm ơn.</li>
+        </ul>
+    </div>
+    <div class="avatar-container col-6">
+    <div class="avatar-wrapper">
+            <div class="avatar">
+                <img src="images/OtterAvatar.jpg" alt="">
+            </div>
+            <div class="avatar-info">
+                <h5>A.Chính</h5>
+                <p>Chuyên gia tư vấn sản phẩm</p>
+            </div>
+        </div>
+        <div class="avatar-wrapper">
+            <div class="avatar">
+                <img src="images/UnderbiteAvatar.jpg" alt="">
+            </div>
+            <div class="avatar-info">
+                <h5>A.Phương</h5>
+                <p>Chuyên gia chăm sóc da</p>
+            </div>
+        </div>
+        <div class="avatar-wrapper">
+            <div class="avatar">
+                <img src="images/ValienteAvatar.jpg" alt="">
+            </div>
+            <div class="avatar-info">
+                <h5>A.Trường</h5>
+                <p>Chuyên gia bảo hành và đổi trả</p>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

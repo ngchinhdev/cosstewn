@@ -1,6 +1,10 @@
 <?php
     session_start();
-    require_once "headerController/TypeCatagory.php";
+    if(isset($_GET['u']) && $_GET['u']) {
+        setcookie('user_id', $_GET['u'], time() + (86400 * 30), "/");
+    }
+    require_once "cartControllers/cart.php";
+    require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";
 
     if(isset($_GET["page"])) {
@@ -10,15 +14,22 @@
                 require_once "../views/category/category.php";
                 break;
             case "san-pham": 
+                require_once "detailController/feedback.php";
+                require_once "detailController/detail.php";
                 require_once "../views/detail/detail.php";
                 break;
             case "dang-nhap": 
+                require_once "registerController/oauthFacebookController.php";
+                require_once "registerController/oauthGoogleController.php";
                 require_once "../views/login/login.php";
                 break;
             case "dang-ky": 
+                require_once "registerController/oauthFacebookController.php";
+                require_once "registerController/oauthGoogleController.php";
                 require_once "../views/register/register.php";
                 break;
             case "gio-hang": 
+                require_once "cartControllers/cart.php";
                 require_once "../views/cart/cart.php";
                 break;
             case "lien-he":
@@ -26,7 +37,19 @@
                 require_once "../views/contact/contact.php";
                 break;
             case "thanh-toan": 
+                require_once "checkoutController/checkoutController.php";
                 require_once "../views/checkout/checkout.php";
+                break;
+            case "lich-su-mua": 
+                require_once "historyController/historyController.php";
+                require_once "../views/history/history.php";
+                break;
+            case "ho-so": 
+                require_once "profileController/profileController.php";
+                require_once "../views/profile/profile.php";
+                break;
+            case "dat-hang-thanh-cong": 
+                require_once "../views/checkout/success.php";
                 break;
             default:
                 require_once "homeController/productHome.php";

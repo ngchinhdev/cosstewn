@@ -5,7 +5,7 @@
     // Init configuration
     $clientID = '55287002966-lng5si4mhmpef5d4o8p0srr12k439acd.apps.googleusercontent.com';
     $clientSecret = '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';
-    $redirectUri = 'http://localhost/cosstewn/app/controllers/registerController/oauthGoogleController.php';
+    $redirectUri = 'http://localhost/cosstewn/app/controllers/index.php?page=dang-ky';
 
     // Create Client Request to access Google API
     $client = new Google_Client();
@@ -35,21 +35,13 @@
         );
 
         $_SESSION['data_user'] = $data_user;
-
         $register = new Register();
-        if($register->getInfoUser($data_user['email'])) {
-            require_once "../loginController/loginController.php";
+        $user = $register->getInfoUser($email);
+        if($user['matk']) {
+            require_once "loginController/loginController.php";
         } else {
             require_once "registerController.php";
         }
-
-        // header("Location: registerController.php");
-
-        // $_SESSION['data_user'] = $data_user;
-
-        // header("Location: userController.php");
-
-    // Now you can use this profile info to create account in your website and make user logged in.
     } else {
         // echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
         // include ("../views/loginRegister.php");

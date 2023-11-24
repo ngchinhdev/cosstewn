@@ -155,28 +155,28 @@
 
 #container_home .box-products .watch-now {
     position: absolute;
-    padding: 8px 20px 10px 20px;
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    z-index: 99;
-    border-radius: 26px;
+    z-index: 9;
     border: none;
-    background: rgba(0, 0, 0, 0.812) !important;
     color: rgb(255, 255, 255) !important;
-    opacity: 0;
-    transition: 0.3s;
     white-space: nowrap;
 }
 
 #container_home .watch-now a {
+    opacity: 0;
+    transition: 0.3s;
     text-decoration: none;
+    border-radius: 26px;
     color: white;
     font-weight: 600;
     font-size: 14px;
+    padding: 12px 20px 14px 20px;
+    background: rgba(0, 0, 0, 0.812) !important;
 }
 
-#container_home .watch-now:hover {
+#container_home .watch-now a:hover {
     background: #218cffe7 !important;
 }
 
@@ -184,8 +184,9 @@
     transform: translateX(-100%);
 }
 
-#container_home .box-products:hover .watch-now {
+#container_home .box-products:hover .watch-now a{
     opacity: 1;
+    cursor: pointer;
 }
 
 #container_home .card-content {
@@ -245,7 +246,7 @@
     border-radius: 3px 4px 4px 3px;
     position: relative;
     margin-left: 20px;
-    padding: 2px 12px 0 0;
+    padding: 2px 0 0 0;
     width: 37px;
 }
 

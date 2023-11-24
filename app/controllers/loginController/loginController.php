@@ -9,18 +9,15 @@
         $correctPassword = $user['mat_khau'] === $password;
 
         if($user && $correctPassword) {
-            $_SESSION['data_user']['email'] = $user['email'];
-            $_SESSION['data_user']['name'] = $user['ho_ten'];
-            $_SESSION['data_user']['avatar'] = $user['hinh_anh'];
-            header("Location: ../index.php?page=lich-su-mua");
+            echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
             exit();
         } else {
-            $_SESSION['error'] = "Sai tai khoan hoac mat khau";
+            $_SESSION['error_log'] = "Sai tai khoan hoac mat khau";
             header("Location: ../index.php?page=dang-nhap");
             exit();
         }
     } else {
-        header("Location: ../index.php?page=lich-su-mua");
+        echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
         exit();
     }
 ?>

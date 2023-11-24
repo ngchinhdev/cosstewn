@@ -140,7 +140,7 @@ body {
 }
 
 #container_checkout #form_wrap .buy_btn:hover {
-    background-color: rgb(167, 12, 12);
+    background-color: rgb(12, 108, 167);
 }
 
 #container_checkout #form_wrap .sum {
@@ -151,8 +151,8 @@ body {
 }
 
 #container_checkout #form_wrap .sum span {
-    color: var(--primary-color);
-    font-size: 24px;
+    color: #dd0000;
+    font-size: 20px;
 }
 
 #container_checkout small.error {
@@ -183,4 +183,63 @@ body {
 
 #container_checkout .placeHD::placeholder {
     color: red;
+}
+
+#container_checkout #form_wrap .row_prod tr {
+    padding-bottom: 20px;
+    display: block;
+    font-size: .8rem;
+}
+
+#container_checkout #form_wrap .row_prod td {
+    text-align: center;
+}
+
+#container_checkout #form_wrap .row_prod .quantity-prod {
+    padding-left: 30px;
+}
+
+#container_checkout #form_wrap .row_prod .price-prod {
+    color: var(--header-color);
+    text-align: right;
+}
+
+#container_checkout #form_wrap .row_prod td.side {
+    width: 20%;
+}
+
+#container_checkout #form_wrap .row_prod td.mid {
+    width: 50%;
+    padding-left: 20px;
+}
+
+#container_checkout #form_wrap .row_prod .img-prod {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#container_checkout #form_wrap .row_prod .img-prod img {
+    width: 50px;
+    height: 50px;
+}
+
+#container_checkout #form_wrap .org-sum {
+    font-size: 1rem;
+    color: #6e6e6e;
+}
+
+
+/* ///// */
+#container_success a.see {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+#container_success p {
+    width: 40%;
+}
+
+#container_success .continue {
+    color: var(--primary-color);
 }

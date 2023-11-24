@@ -1,0 +1,36 @@
+<?php
+    include_once("../views/layout/header.php");
+
+    if (isset($_GET['page'])) {
+        switch ($_GET['page']) {
+            // case 'add-exam':
+            //     include_once("../views/addExam.php");
+            //     break;
+        //     case 'add-test':
+        //         include_once("../views/addTest.php");
+        //         break;
+        //     case 'edit-exam':
+        //         include_once("examController.php");
+        //         include_once("../views/editExam.php");
+        //         break;
+        //     case 'edit-test':
+        //         include_once("examController.php");
+        //         include_once("../views/editTest.php");
+        //         break;
+        //     case 'edit-feedback':
+        //         include_once("feedbackController.php");
+        //         include_once("../views/editFeedback.php");
+        //         break;
+        //     case 'edit-user':
+        //         include_once("userController.php");
+        //         include_once("../views/editUser.php");
+        //         break;
+        //     default:
+        //         include_once("../views/main.php");
+        }
+    } else {
+        include_once("../views/dashboard/dashboard.php");
+    }
+
+    include_once("../views/layout/footer.php");
+?>

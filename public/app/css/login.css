@@ -1,5 +1,8 @@
-#container_login {
+body {
     background-color: #f9fdff;
+}
+
+#container_login {
     padding: 20px;
 }
 #container_login .register form{
