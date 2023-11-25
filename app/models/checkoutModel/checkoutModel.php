@@ -27,5 +27,11 @@
 
             return $this->pdoQueryOne($sql, $user_id);
         }
+
+        function decreaseQuantityProd($quantity, $prod_id) {
+            $sql = "UPDATE sanpham SET so_luong = so_luong - ? WHERE masp = ?";
+
+            return $this->pdoExecute($sql, $quantity, $prod_id);
+        }
     }
 ?>

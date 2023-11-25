@@ -1,7 +1,7 @@
 <div id="container_login" class="container">
     <div class="text-center">
         <h1 class="title">Đăng nhập tài khoản <?php if(isset($_SESSION['error_log'])) echo $_SESSION['error_log'] ?></h1>
-        <span class="or">Bạn đã có tài khoản? Đăng ký <a href="index.php?page=dang-ky" class="link-login text-decoration-underline text-primary">tại đây</a></span>
+        <span class="or">Bạn chưa có tài khoản? Đăng ký <a href="index.php?page=dang-ky" class="link-login text-decoration-underline text-primary">tại đây</a></span>
     </div>
     <div class="login">
         <form action="loginController/loginController.php" method="post" class="form-login">

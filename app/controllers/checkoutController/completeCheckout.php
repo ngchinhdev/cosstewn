@@ -14,6 +14,7 @@
                 // echo $order_id;
                 // echo $_SESSION['product_quantity'][$i];
                 $checkout->addNewOrderDetails($order_id, $masp, $_SESSION['product_quantity'][$i]);
+                $checkout->decreaseQuantityProd($_SESSION['product_quantity'][$i], $masp);
             }
             header("Location: /cosstewn/app/controllers/index.php?page=dat-hang-thanh-cong");
             exit();
@@ -24,6 +25,7 @@
                 // echo $order_id;
                 // echo $_SESSION['product_quantity'][$i];
                 $checkout->addNewOrderDetails($order_id, $masp, $_SESSION['product_quantity'][$i]);
+                $checkout->decreaseQuantityProd($_SESSION['product_quantity'][$i], $masp);
             }
             header("Location: /cosstewn/app/controllers/index.php?page=dat-hang-thanh-cong");
             exit();

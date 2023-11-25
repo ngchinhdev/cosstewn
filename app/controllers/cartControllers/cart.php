@@ -2,10 +2,16 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/cartModel/cart.php";
 $cartPage = new CartPage();
 // $email = isset($_SESSION['data_user']['email']) ? $_SESSION['data_user']['email'] : '';
-$user_id = isset($_COOKIE['user_id']) ? base64_decode($_COOKIE['user_id']) : '';
+// $user_id = (isset($_COOKIE['user_id']) || isset($_GET['u'])) ? (base64_decode($_COOKIE['user_id']) || base64_decode($_GET['u'])) : '';
+$user_id = '';
+if(isset($_COOKIE['user_id'])) {
+    $user_id=  isset($_COOKIE['user_id']) ? base64_decode($_COOKIE['user_id']) : '';
+} else if(isset($_GET['u'])) {
+    $user_id=  isset($_GET['u']) ? base64_decode($_GET['u']) : '';
+}
 $magh = isset($_GET['removesp']) ? $_GET['removesp'] : '';
 
-if ($user_id) {
+if (isset($user_id) && $user_id) {
     // $getUserIdbyEmail = $cartPage->getUserIdbyEmail($email);
     $matk = $user_id;
     $getProductsByUserId = $cartPage->getProductsByUserId($matk);

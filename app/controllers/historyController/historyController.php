@@ -5,8 +5,8 @@
     $all_orders = array();
     $order_details = array();
    
-    if(isset($_GET['u'])) {
-        $_SESSION["user_id"] = base64_decode($_GET['u']);
+    if(isset($_COOKIE['user_id'])) {
+        $_SESSION["user_id"] = base64_decode($_COOKIE['user_id']);
         $cur_user = $history->getCurrentUser($_SESSION["user_id"]);
         extract($cur_user[0]);
         // if(empty($cur_user[0])) {
