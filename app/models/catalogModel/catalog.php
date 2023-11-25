@@ -65,7 +65,7 @@ class CatalogProducts extends PDOModel
             }
 
             $sql .= " LIMIT $startRow, $page_size";
-            
+
             return $this->pdoQuery($sql, $brandId);
         }
 
@@ -111,7 +111,7 @@ class CatalogProducts extends PDOModel
             }
 
             $sql .= " LIMIT $startRow, $page_size";
-            
+
             return $this->pdoQuery($sql);
         }
 
@@ -155,7 +155,7 @@ class CatalogProducts extends PDOModel
             }
 
             $sql .= " LIMIT $startRow, $page_size";
-            
+
             return $this->pdoQuery($sql, '%' . $search . '%');
         }
     }

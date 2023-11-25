@@ -1,7 +1,7 @@
 <div id="container_catalog" class="container mt-2">
     <div class="row">
         <div class="col-12 text-link">
-            Trang chủ > <?php if (isset($_GET['maloai'])) {
+            <a href="index.php">Trang chủ</a> > <?php if (isset($_GET['maloai'])) {
                             echo $getNameBrand['ten_loai'];
                         } else if (isset($_GET['type'])) {
                             echo 'Sản phẩm mới';
