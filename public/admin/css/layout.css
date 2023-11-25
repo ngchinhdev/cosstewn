@@ -272,8 +272,9 @@ main .above_table .search_box i {
 
 main table {
     margin: 0 auto;
-    width: 962px;
+    width: 100%;
     margin-top: 20px;
+    background: white;
 }
 
 main table th,
@@ -502,3 +503,106 @@ main table td .del-btn {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/* PageProducts Css */
+
+#pageProduct .wrap-actionTop {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#pageProduct .wrap-actionTop h1 {
+    font-size: 24px;
+}
+
+#pageProduct .wrap-actionTop .btn-add {
+    margin-left: auto;
+    background: #ECB100;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    font-size: 0.9em;
+}
+
+#pageProduct table img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#pageProduct table th.picProduct-th,
+#pageProduct table th.describe-th {
+    width: 200px;
+}
+
+#pageProduct table th.nameProduct-th {
+    width: 250px;
+}
+
+#pageProduct table .describe-td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#pageProduct table .action-btn a {
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#pageProduct table .action-btn a.fix-items {
+    background: #218CFF;
+}
+
+#pageProduct table .action-btn a.remove-items {
+    background: #FF4C41;
+}
+
+/* Phân trang css */
+#pageProduct .pagination-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#pageProduct .pagination-container .pagination {
+    display: flex;
+    border: 2px solid #ccc;
+    width: fit-content;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#pageProduct .pagination .page-link {
+    display: block;
+    padding: 5px 15px;
+    color: #218CFF;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom: none;
+    text-align: center;
+}
+
+#pageProduct .pagination .page-num.active{
+    background: #218CFF;
+    color: white;
+}
+
+#pageProduct .pagination .page-link:hover{
+    background: #218CFF;
+    color: white;
+}
+
+#pageProduct .pagination .wrap-pagenum{
+    display: flex;
+}
+
+
+
+/* end Phân trang css*/
