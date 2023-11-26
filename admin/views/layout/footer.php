@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../public/admin/js/main.js"></script>
     <script src="../../public/admin/js/pagingProducts.js"></script>
-
-    <!-- <script src="../../public/admin/js/newư.js"></script> -->
+    <script src="../../public/admin/js/user.js"></script>
 </body>
 </html>

@@ -602,7 +602,59 @@ main table td .del-btn {
 #pageProduct .pagination .wrap-pagenum{
     display: flex;
 }
-
-
-
 /* end Phân trang css*/
+
+/* Edit user css */
+#edit_user {
+    padding: 20px;
+}
+
+#edit_user h2 {
+    margin-bottom: 1rem;
+}
+
+#edit_user .fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 1rem;
+}
+
+#edit_user label {
+    display: block;
+    padding-bottom: 4px;
+}
+
+#edit_user .fields input {
+    width: 100%;
+    padding: .6rem .8rem;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    background: #FFF;
+}
+
+#edit_user .fields .adr-box {
+    grid-column: 1 / span 2;
+}
+
+#edit_user .last-box {
+    display: flex;
+    margin-top: 1rem;
+}
+
+#edit_user .last-box .role-box select {
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+#edit_user .submit-box button {
+    padding: 10px 16px;
+    background-color: #218CFF;
+    border-radius: 5px;
+    margin-top: 1rem;
+    float: right;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}

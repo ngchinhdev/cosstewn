@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Bắt sự kiện khi click vào nút chuyển trang
     $(document).on("click", ".pagination a.page-link", function (e) {
         e.preventDefault();
         console.log(1);
