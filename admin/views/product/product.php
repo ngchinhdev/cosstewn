@@ -1,9 +1,9 @@
 <section id="pageProduct">
     <div class="wrap-actionTop">
         <h1>Trang sản phẩm</h1>
-        <a class="btn-add" id="btn-addbrand" href="#"> <i class="fa-solid fa-plus"></i>&ensp;Thêm mới</a>
+        <div class="btn-add" id="btn-addbrand" data-control="addproduct"> <i class="fa-solid fa-plus"></i>&ensp;Thêm mới</div>
     </div>
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>STT</th>
@@ -50,9 +50,11 @@
                             echo 'Ẩn';
                         }
                         ?></td>
-                    <td class="action-btn">
-                        <a href="" class="fix-items">Sửa</a>
-                        <a href="" class="remove-items">Xóa</a>
+                    <td>
+                        <div class="action-btn">
+                            <div class="fix-items action-items" data-masp="<?= $row['masp'] ?>">Sửa</div>
+                            <div class="remove-items action-items" data-current-page="<?php echo $pageNumber; ?>" data-remove-masp="<?= $row['masp'] ?>">Xóa</div>
+                        </div>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -67,7 +69,7 @@
 
             <?php if ($totalPages > 1) : ?>
                 <li class="wrap-pagenum">
-                    <a href="javascript:void(0);" class="page-link page-num active"><?php echo $pageNumber; ?></a>
+                    <a href="javascript:void(0);" class="page-num active"><?php echo $pageNumber; ?></a>
                 </li>
             <?php endif; ?>
             <?php if ($pageNumber < $totalPages) : ?>
@@ -77,4 +79,3 @@
         </ul>
     </div>
 </section>
-<script src="../../public/admin/js/pagingProducts.js"></script>

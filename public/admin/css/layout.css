@@ -278,6 +278,7 @@ main table {
     background: white;
 }
 
+
 main table th,
 main table td {
     padding: 6px;
@@ -392,6 +393,7 @@ main table td .del-btn {
     font-weight: 500;
     color: white;
     font-size: 0.9em;
+    cursor: pointer;
 }
 
 #pageProduct table img {
@@ -418,17 +420,25 @@ main table td .del-btn {
     -webkit-box-orient: vertical;
 }
 
-#pageProduct table .action-btn a {
+#pageProduct table td .action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#pageProduct table .action-btn .action-items {
     color: white;
     border-radius: 5px;
     padding: 5px 10px;
+    cursor: pointer;
 }
 
-#pageProduct table .action-btn a.fix-items {
+#pageProduct table .action-btn .fix-items {
     background: #218CFF;
 }
 
-#pageProduct table .action-btn a.remove-items {
+#pageProduct table .action-btn .remove-items {
     background: #FF4C41;
 }
 
@@ -448,6 +458,7 @@ main table td .del-btn {
     overflow: hidden;
 }
 
+#pageProduct .pagination .page-num,
 #pageProduct .pagination .page-link {
     display: block;
     padding: 5px 15px;
@@ -458,20 +469,218 @@ main table td .del-btn {
     text-align: center;
 }
 
-#pageProduct .pagination .page-num.active{
+#pageProduct .pagination .page-num.active {
     background: #218CFF;
     color: white;
 }
 
-#pageProduct .pagination .page-link:hover{
+#pageProduct .pagination .page-link:hover {
     background: #218CFF;
     color: white;
 }
 
-#pageProduct .pagination .wrap-pagenum{
+#pageProduct .pagination .wrap-pagenum {
     display: flex;
 }
 
-
-
 /* end Phân trang css*/
+
+/* Page addproduct css */
+#pageaddproduct h3 {
+    color: white;
+    padding: 15px;
+    width: 100%;
+    background-image: linear-gradient(to left, #218CFF 0%, rgb(0, 102, 255) 100%);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#pageaddproduct .form-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+
+#pageaddproduct .form-variation {
+    gap: 5px;
+}
+
+#pageaddproduct .form-group input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#pageaddproduct .form-group label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#pageaddproduct button.btn {
+    background: #218CFF;
+    padding: 7px 15px;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: 0.2s;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+
+#pageaddproduct button.btn:hover {
+    background: rgb(0, 102, 255);
+    cursor: pointer;
+}
+
+#pageaddproduct .wrap-checkerr {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+#pageaddproduct .form-control {
+    margin-bottom: 5px;
+}
+
+#pageaddproduct select.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#pageaddproduct select.form-control option {
+    font-size: 14px;
+    padding: 5px;
+}
+
+/* page fix product css */
+#pagefixproduct h3 {
+    color: white;
+    padding: 15px;
+    width: 100%;
+    background-image: linear-gradient(to left, #218CFF 0%, rgb(0, 102, 255) 100%);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#pagefixproduct .form-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+
+#pagefixproduct .form-variation {
+    gap: 5px;
+}
+
+#pagefixproduct .form-group input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#pagefixproduct .form-group label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#pagefixproduct button.btn {
+    background: #218CFF;
+    padding: 7px 15px;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: 0.2s;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
+
+#pagefixproduct button.btn:hover {
+    background: rgb(0, 102, 255);
+    cursor: pointer;
+}
+
+#pagefixproduct .wrap-checkerr {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+#pagefixproduct .form-control {
+    margin-bottom: 5px;
+}
+
+#pagefixproduct select.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#pagefixproduct select.form-control option {
+    font-size: 14px;
+    padding: 5px;
+}
+
+#pagefixproduct .box-images {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+#pagefixproduct .wrap-images .title-image {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#pagefixproduct .wrap-images img {
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+#pagefixproduct .file-input-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#pagefixproduct .wrap-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pagefixproduct .file-input-wrapper input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+#pagefixproduct .file-input-wrapper label {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 3px;
+    box-shadow:
+        4px 4px 4px 0px #d1d9e6 inset,
+        -4px -4px 4px 0px #ffffff inset;
+}
