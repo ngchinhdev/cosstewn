@@ -26,6 +26,7 @@
         <div class="avt-box">
             <label for="avt">Hình ảnh</label>
             <div class="ctn">
+                <label for="avt" class="choose">Chọn hình</label>
                 <input type="file" id="avt">
                 <div class="img-chose">
                     <img src="../../public/app/imgs/ahc.webp" alt="">

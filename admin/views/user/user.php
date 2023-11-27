@@ -50,7 +50,7 @@
                 <td><?= ($user['mavt'] === 1) ? 'admin' : 'user' ?></td>
                 <td>
                     <div class="last-td">
-                        <a href="views/edit_user.php?id=<?= $user['matk'] ?>" class="change-btn" data-user="<?= $user['matk'] ?>">Sửa</a>
+                        <a href="views/edit_user.php?id=<?= $user['matk'] ?>" class="change-btn change-user-btn" data-user="<?= $user['matk'] ?>">Sửa</a>
                         <a href="controllers/delete_user.php?id=<?= $user['matk'] ?>" data-user="<?= $user['matk'] ?>" class="del-btn">Xóa</a>
                     </div>
                 </td>

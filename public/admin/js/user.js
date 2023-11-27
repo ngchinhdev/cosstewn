@@ -2,7 +2,7 @@ $(function() {
     const container = $('.container');
     let userId = '';
 
-    $(document).on('click', '.change-btn', function(e) {
+    $(document).on('click', '.change-user-btn', function(e) {
         e.preventDefault();
 
         $('#user').hide();
@@ -72,7 +72,7 @@ $(function() {
     $(document).on('change', '.avt-box input', function(e) {
         let file = $(this)[0].files[0];
         let reader = new FileReader();
-
+        $('.img-chose').html('');
         reader.onload = (function(file) {
             return function(e) {
                 let img = document.createElement("img");

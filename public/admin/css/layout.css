@@ -623,15 +623,15 @@ main table td .del-btn {
 /* end Phân trang css*/
 
 /* Edit user css */
-#edit_user, #edit_category {
+#edit_user, #edit_category, #add_category {
     padding: 20px;
 }
 
-#edit_category {
+#edit_category, #add_category {
     width: 50%;
 }
 
-#edit_user h2, #edit_category h2 {
+#edit_user h2, #edit_category h2, #add_category h2 {
     margin-bottom: 1rem;
 }
 
@@ -642,12 +642,12 @@ main table td .del-btn {
     row-gap: 1rem;
 }
 
-#edit_user label, #edit_category label {
+#edit_user label, #edit_category label, #add_category label {
     display: block;
     padding-bottom: 4px;
 }
 
-#edit_user .fields input, #edit_category .fields input {
+#edit_user .fields input, #edit_category .fields input, #add_category .fields input {
     width: 100%;
     padding: .6rem .8rem;
     border-radius: 5px;
@@ -659,36 +659,42 @@ main table td .del-btn {
     grid-column: 1 / span 2;
 }
 
-#edit_user .last-box, #edit_category .last-box {
+#edit_user .last-box, #edit_category .last-box, #add_category .last-box {
     display: flex;
     margin-top: 1rem;
 }
 
-#edit_category .last-box {
+#edit_category .last-box, #add_category .last-box {
     justify-content: space-between;
 }
 
-#edit_user .ctn, #edit_category .ctn {
+#edit_user .ctn, #edit_category .ctn, #add_category .ctn {
     display: flex;
     position: relative;
 }
 
-#edit_user .ctn img, #edit_category .ctn img {
+#edit_user .ctn img, #edit_category .ctn img, #add_category .ctn img {
     width: 60px;
     height: 60px;
     border: 0.5px solid #333;
-    position: absolute;
-    right: 70px;
+    /* position: absolute; */
+    /* right: 70px; */
 }
 
 #edit_user .last-box select,
-#edit_category .last-box select {
+#edit_category .last-box select,
+#add_category .last-box select {
     padding: 4px 8px;
     border-radius: 5px;
 }
 
+#edit_user .last-box > div:first-child {
+    margin-right: 40px;
+}
+
 #edit_user .submit-box button,
-#edit_category .submit-box button{
+#edit_category .submit-box button,
+#add_category .submit-box button {
     padding: 10px 16px;
     background-color: #218CFF;
     border-radius: 5px;
@@ -715,4 +721,23 @@ main table td .del-btn {
     justify-content: center;
     display: flex;
     align-items: center;
+}
+
+#edit_category #cate-img,
+#add_category #cate-img,
+#edit_user #avt {
+    display: none;
+}
+
+#edit_category label.choose,
+#add_category label.choose,
+#edit_user label.choose {
+    display: inline-block;
+    font-size: .9rem;
+    background-color: #d9d9d9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 1rem;
+    cursor: pointer;
+    height: fit-content;
 }

@@ -15,7 +15,7 @@
             // }
             ?>
         </div>
-        <div class="add-new">
+        <div class="add-new-cate add-new">
             <a href="views/add_user.php">+ Thêm mới</a>
         </div>
     </div>
@@ -40,14 +40,13 @@
             <td><?= $category['an_hien'] === 1 ? "Hiện" : "Ẩn" ?></td>
             <td>
                 <div class="last-td">
-                    <a href="views/edit_user.php?id=<?= $category['maloai'] ?>" class="change-btn">Sửa</a>
+                    <a href="views/edit_user.php?id=<?= $category['maloai'] ?>" class="change-btn change-cate-btn" data-cate="<?= $category['maloai'] ?>">Sửa</a>
                     <a href="controllers/delete_user.php?id=<?= $category['maloai'] ?>" class="del-btn">Xóa</a>
                 </div>
             </td>
         </tr>
     <?php } ?>
 </table>
-<?php if($cur_records === $per_page ): ?>
 <div class="pagination">
     <div class="left-ctrl pag-ctrl" data-pag="<?= $cur_page > 1 ? $cur_page - 1 : $cur_page ?>">
         <i class="fa-sharp fa-solid fa-chevron-left"></i>
@@ -55,46 +54,10 @@
     <div class="pag-num">
         <?= $cur_page ?>
     </div>
+    <?php if($cur_records === $per_page ): ?>
     <div class="right-ctrl pag-ctrl" data-pag="<?= $cur_page <= $total_pages ? $cur_page + 1 : $cur_page ?>">
         <i class="fa-sharp fa-solid fa-chevron-right"></i>
     </div>
+    <?php endif ?>
 </div>
-<?php endif ?>
 
-<form id="edit_category" method="post" enctype="multipart/form-data">
-    <h2>Cập nhật loại hàng</h2>
-    <div class="fields">
-        <div class="name-box box">
-            <label for="name-cate">Tên loại</label>
-            <input type="text" id="name-cate" placeholder="Nhập tên loại">
-        </div>
-    </div>
-    <div class="last-box">
-        <div class="cate-box">
-            <label for="cate">Hình ảnh</label>
-            <div class="ctn">
-                <input type="file" id="cate">
-                <div class="img-chose">
-                    <img src="../../public/app/imgs/ahc.webp" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="hightlight-box">
-            <label for="hightlight">Nổi bật</label>
-            <select name="" id="hightlight">
-                <option value="1">Có</option>
-                <option value="0">Không</option>
-            </select>
-        </div>
-        <div class="role-box">
-            <label for="hide-show">Ẩn/Hiện</label>
-            <select name="" id="role">
-                <option value="0">Ẩn</option>
-                <option value="1">Hiện</option>
-            </select>
-        </div>
-    </div>
-    <div class="submit-box">
-        <button type="submit" role="button">Cập nhật</button>
-    </div>
-</form>
