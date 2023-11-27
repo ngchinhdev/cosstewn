@@ -2,7 +2,7 @@
     require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/profileModel/profileModel.php";
     $profile = new Profile();
     if(isset($_POST['logout'])) {
-        setcookie('user_id', base64_encode($_GET['u']), time() - (86400 * 30), "/");
+        setcookie('user_id', base64_decode($_COOKIE['user_id']), time() - (86400 * 30), "/");
         session_destroy();
         header("Location: ../index.php?page=dang-nhap");
         exit();

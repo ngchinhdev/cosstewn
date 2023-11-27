@@ -1,6 +1,6 @@
 <?php
 $ROOT_ADMIN = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/admin/";
-require_once $ROOT_ADMIN . "models/addproductModel/addproductModel.php";
+require_once $ROOT_ADMIN . "models/productModel/addproductModel.php";
 $addproducts = new AddProducts();
 
 if (isset($image_variation4) || isset($image_variation3) || isset($image_variation2) || isset($image_variation1) || isset($_POST['statusproduct']) || isset($_POST['brandproduct']) || isset($_POST['describeprd']) || isset($_POST['quantityprd']) || isset($_POST['priceNow']) || isset($_POST['priceOrigin']) || isset($_POST['nameproduct'])) {
@@ -40,4 +40,4 @@ if (isset($image_variation4) || isset($image_variation3) || isset($image_variati
     }
 }
 
-require_once $ROOT_ADMIN . "views/addproduct/addproduct.php";
+require_once $ROOT_ADMIN . "views/product/addproduct.php";

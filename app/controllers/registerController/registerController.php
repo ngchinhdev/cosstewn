@@ -14,8 +14,9 @@
             echo "<script>alert('Số điện thoại đã tồn tại!'); window.location.href = document.referrer;</script>";
             exit(); 
         } else {
-            $register->addNewUser($name, $email, $phone, $address, $repass, '');
-            header("Location: ../index.php?page=lich-su-mua");
+            $id = $register->addNewUser($name, $email, $phone, $address, $repass, null);
+            $id_encode = base64_encode($id);
+            header("Location: ../index.php?page=ho-so&u=$id_encode");
         }
     } else {
         $data_user = $_SESSION['data_user'];

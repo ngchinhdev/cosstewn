@@ -39,7 +39,7 @@ $(document).ready(function () {
 
         // Gửi dữ liệu lên máy chủ thông qua AJAX
         $.ajax({
-            url: 'fixproductController/fixproductController.php',
+            url: 'productController/fixproductController.php',
             type: 'POST',
             data: formData,
             contentType: false,

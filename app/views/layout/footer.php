@@ -50,10 +50,10 @@
                 <h5 class="fw-bold text-uppercase">Đối tác và liên kết</h5>
                 <ul class="list ps-0 mt-4">
                     <li>
-                        <a href="https://thefaceshop.com.vn/">THE FACE SHOP Vietnam</a>
+                        <a href="https://thefaceshop.com.vn/" target="_blank">THE FACE SHOP Vietnam</a>
                     </li>
                     <li>
-                        <a href="https://ahcvietnam.com/">AHC Vietnam</a>
+                        <a href="https://ahcvietnam.com/" target="_blank">AHC Vietnam</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +66,6 @@
 
 <!-- Link bootstrap, jquery, js  -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <?php
 if (isset($_GET['page'])) {

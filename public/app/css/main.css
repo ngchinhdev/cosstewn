@@ -151,6 +151,7 @@
     width: 100%;
     height: auto;
     transition: 0.5s;
+    aspect-ratio: 1/1;
 }
 
 #container_home .box-products .watch-now {

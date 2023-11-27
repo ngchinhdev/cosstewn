@@ -33,7 +33,7 @@
                         <i class="fa-regular fa-envelope"></i>
                     </div>
                     <div class="profile-pic">
-                        <img src="../../public/imgs/admin.jpg" alt="">
+                        <img src="../../public/admin/imgs/logo.png" alt="">
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
-<section id="pageProduct">
+<section id="pageProduct" class="activePaging">
     <div class="wrap-actionTop">
         <h1>Trang sản phẩm</h1>
-        <div class="btn-add" id="btn-addbrand" data-control="addproduct"> <i class="fa-solid fa-plus"></i>&ensp;Thêm mới</div>
+        <div class="btn-add" id="btn-addbrand" data-control-parent="product" data-control="addproduct"> <i class="fa-solid fa-plus"></i>&ensp;Thêm mới</div>
     </div>
     <table border="1">
         <thead>
@@ -61,7 +61,7 @@
         </tbody>
     </table>
     <div class="pagination-container">
-        <ul class="pagination">
+        <ul class="pagination pagingprd">
             <?php if ($pageNumber > 1) : ?>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="1"><i class="fa-solid fa-angles-left"></i></a></li>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="<?php echo $pageNumber - 1; ?>"><i class="fa-solid fa-angle-left"></i></a></li>

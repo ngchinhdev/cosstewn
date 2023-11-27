@@ -1,6 +1,6 @@
 <?php
 $ROOT_ADMIN = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/admin/";
-require_once $ROOT_ADMIN . "models/fixproductModel/fixproductModel.php";
+require_once $ROOT_ADMIN . "models/productModel/fixproductModel.php";
 $fixProducts = new FixProducts();
 $masp = isset($_POST['masp']) ? $_POST['masp'] : '';
 $productByMasp = $fixProducts->getProductByMasp($masp);
@@ -40,4 +40,4 @@ if (isset($_FILES['image_variation']) || isset($_POST['statusproduct']) || isset
     }
     $productByMasp = $fixProducts->getProductByMasp($masp);
 }
-require_once $ROOT_ADMIN . "views/fixproduct/fixproduct.php";
+require_once $ROOT_ADMIN . "views/product/fixproduct.php";

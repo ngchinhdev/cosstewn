@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         // Gửi dữ liệu lên máy chủ thông qua AJAX
         $.ajax({
-            url: 'addproductController/addproductController.php',
+            url: 'productController/addproductController.php',
             type: 'POST',
             data: formData,
             contentType: false,
