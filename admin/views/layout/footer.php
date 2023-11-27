@@ -11,5 +11,6 @@
     <script src="../../public/admin/js/main.js"></script>
     <script src="../../public/admin/js/pagingProducts.js"></script>
     <script src="../../public/admin/js/user.js"></script>
+    <script src="../../public/admin/js/category.js"></script>
 </body>
 </html>

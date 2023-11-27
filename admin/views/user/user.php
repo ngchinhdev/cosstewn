@@ -38,7 +38,7 @@
             $link = str_contains($user['hinh_anh'], 'http') ? $user['hinh_anh'] : '../../public/app/imgs/' . $user['hinh_anh']
             ?>
             <tr>
-                <td><?= $key + 1 ?></td>
+                <td><?= $offset + $key + 1 ?></td>
                 <td><?= $user['ho_ten'] ?></td>
                 <td>
                     <img class="avt-img" src="<?= $link ?>" alt="">
@@ -58,3 +58,16 @@
         <?php } ?>
     </table>
 </div>
+<?php if($cur_records === $per_page ): ?>
+<div class="pagination">
+    <div class="left-ctrl pag-ctrl-user" data-pag="<?= $cur_page > 1 ? $cur_page - 1 : $cur_page ?>">
+        <i class="fa-sharp fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="pag-num">
+        <?= $cur_page ?>
+    </div>
+    <div class="right-ctrl pag-ctrl-user" data-pag="<?= $cur_page < $total_pages ? $cur_page + 1 : $cur_page ?>">
+        <i class="fa-sharp fa-solid fa-chevron-right"></i>
+    </div>
+</div>
+<?php endif ?>

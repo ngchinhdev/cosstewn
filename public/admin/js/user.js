@@ -27,6 +27,7 @@ $(function() {
                 $('#adr').val(data.dia_chi);
                 $('#role').val(data.mavt);
                 $('#pass').val(data.mat_khau);
+                $('.img-chose img').attr('src', `../../public/app/imgs/${data.hinh_anh}`);
             },
             error: function(err) {
                 console.error(err);
@@ -46,7 +47,9 @@ $(function() {
         formData.append('phone', $('#phone').val());
         formData.append('adr', $('#adr').val());
         formData.append('pass', $('#pass').val());
-        formData.append('avt', $('#avt')[0].files[0]);
+        if($('#avt')[0].files[0]) {
+            formData.append('avt', $('#avt')[0].files[0]);
+        }
         formData.append('role', $('#role').val());
     
         $.ajax({
@@ -66,8 +69,26 @@ $(function() {
         });
     });
 
+    $(document).on('change', '.avt-box input', function(e) {
+        let file = $(this)[0].files[0];
+        let reader = new FileReader();
+
+        reader.onload = (function(file) {
+            return function(e) {
+                let img = document.createElement("img");
+                img.src = e.target.result;
+
+                $('.img-chose').append(img);
+            };
+        })(file);
+        reader.readAsDataURL(file);
+    })
+
     $(document).on('click', '.del-btn', function(e) {
         e.preventDefault();
+
+        const isDel = confirm("Chắc chắn muốn xóa người dùng này?");
+        if(!isDel) return;
 
         $('#user').hide();
         userId = $(this).data('user');
@@ -86,6 +107,22 @@ $(function() {
             },
             error: function(err) {
                 console.error(err);
+            }
+        })
+    })
+
+    $(document).on("click", ".pag-ctrl-user", function() {
+        const container = $('.container');
+        const curPage = Number($(this).data('pag'));
+
+        $.ajax({
+            url: 'userController/userController.php',
+            type: 'GET',
+            data: {
+                pagNum: curPage
+            },
+            success: function (data) {
+                container.html(data);
             }
         })
     })

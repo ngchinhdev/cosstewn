@@ -11,7 +11,7 @@
             <h3 class="title">
                 Khách hàng
             </h3>
-            <div class="more-info">
+            <div class="more-info link" data-control="user">
                 Xem thêm <i class="fa-sharp fa-solid fa-circle-arrow-right"></i>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <h3 class="title">
                 Danh mục
             </h3>
-            <div class="more-info">
+            <div class="more-info link" data-control="category">
                 Xem thêm <i class="fa-sharp fa-solid fa-circle-arrow-right"></i>
             </div>
         </div>
@@ -39,7 +39,7 @@
             <h3 class="title">
                 Sản phẩm
             </h3>
-            <div class="more-info">
+            <div class="more-info link" data-control="product">
                 Xem thêm <i class="fa-sharp fa-solid fa-circle-arrow-right"></i>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <h3 class="title">
                 Hóa đơn
             </h3>
-            <div class="more-info">
+            <div class="more-info link" data-control="order">
                 Xem thêm <i class="fa-sharp fa-solid fa-circle-arrow-right"></i>
             </div>
         </div>
@@ -83,9 +83,9 @@
                 </table>
             </div>
         </div>
-        <div class="col">
+        <div class="col best-inventory">
             <div class="title">
-                <h3>Sản phẩm bán chạy nhất</h3>
+                <h3>Sản phẩm tồn kho</h3>
             </div>
             <div class="content">
                 <table class="">

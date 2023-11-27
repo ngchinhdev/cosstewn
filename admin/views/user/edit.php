@@ -25,7 +25,12 @@
     <div class="last-box">
         <div class="avt-box">
             <label for="avt">Hình ảnh</label>
-            <input type="file" id="avt">
+            <div class="ctn">
+                <input type="file" id="avt">
+                <div class="img-chose">
+                    <img src="../../public/app/imgs/ahc.webp" alt="">
+                </div>
+            </div>
         </div>
         <div class="role-box">
             <label for="role">Vai trò</label>

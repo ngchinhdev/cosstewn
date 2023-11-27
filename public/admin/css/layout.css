@@ -346,6 +346,10 @@ main table td .del-btn {
     margin-left: 1rem;
 }
 
+.container {
+    margin-bottom: 40px;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(0);
@@ -390,6 +394,21 @@ main table td .del-btn {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 150px;
     gap: 20px;
+}
+
+#dashboard .best-inventory {
+    position: relative;
+    overflow-y: scroll;
+}
+
+#dashboard .best-inventory .title {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#dashboard .best-inventory::-webkit-scrollbar {
+    display: none;
 }
 
 #dashboard .four-col .col {
@@ -472,7 +491,6 @@ main table td .del-btn {
 #dashboard .two-col .col {
     background-color: #fff;
     border-radius: 6px;
-    overflow: hidden;
     border: 0.5px #7d6f19 solid;
 }
 
@@ -480,7 +498,7 @@ main table td .del-btn {
     padding: 4px 20px;
     white-space: 2px;
     color: #fff;
-    background-color: #7d6f19;
+    background-color: #218CFF;
     text-align: center;
 }
 
@@ -605,11 +623,15 @@ main table td .del-btn {
 /* end Phân trang css*/
 
 /* Edit user css */
-#edit_user {
+#edit_user, #edit_category {
     padding: 20px;
 }
 
-#edit_user h2 {
+#edit_category {
+    width: 50%;
+}
+
+#edit_user h2, #edit_category h2 {
     margin-bottom: 1rem;
 }
 
@@ -620,12 +642,12 @@ main table td .del-btn {
     row-gap: 1rem;
 }
 
-#edit_user label {
+#edit_user label, #edit_category label {
     display: block;
     padding-bottom: 4px;
 }
 
-#edit_user .fields input {
+#edit_user .fields input, #edit_category .fields input {
     width: 100%;
     padding: .6rem .8rem;
     border-radius: 5px;
@@ -637,17 +659,36 @@ main table td .del-btn {
     grid-column: 1 / span 2;
 }
 
-#edit_user .last-box {
+#edit_user .last-box, #edit_category .last-box {
     display: flex;
     margin-top: 1rem;
 }
 
-#edit_user .last-box .role-box select {
+#edit_category .last-box {
+    justify-content: space-between;
+}
+
+#edit_user .ctn, #edit_category .ctn {
+    display: flex;
+    position: relative;
+}
+
+#edit_user .ctn img, #edit_category .ctn img {
+    width: 60px;
+    height: 60px;
+    border: 0.5px solid #333;
+    position: absolute;
+    right: 70px;
+}
+
+#edit_user .last-box select,
+#edit_category .last-box select {
     padding: 4px 8px;
     border-radius: 5px;
 }
 
-#edit_user .submit-box button {
+#edit_user .submit-box button,
+#edit_category .submit-box button{
     padding: 10px 16px;
     background-color: #218CFF;
     border-radius: 5px;
@@ -657,4 +698,21 @@ main table td .del-btn {
     outline: none;
     color: #fff;
     cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    justify-content: flex-end;
+}
+
+.pagination > div {
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border: #218CFF 1px solid;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }

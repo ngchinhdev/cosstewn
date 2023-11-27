@@ -20,14 +20,16 @@
             $pass = $_POST['pass'];
             $role = $_POST['role'];
             $id = $_POST['id'];
-            $avatar = $_FILES['avt']['name']; 
-            $tempAvatarPath = $_FILES['avt']['tmp_name'];
-
-            $destination = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/public/app/imgs/" . $avatar;
-
-            move_uploaded_file($tempAvatarPath, $destination);
-
-            $user->updateUser($name, $email, $phone, $adr, $pass, $avatar, $role, $id);
+            
+            if(isset($_FILES['avt'])) {
+                $avatar = $_FILES['avt']['name']; 
+                $tempAvatarPath = $_FILES['avt']['tmp_name'];
+                $destination = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/public/app/imgs/" . $avatar;
+                move_uploaded_file($tempAvatarPath, $destination);
+                $user->updateUserAvt($name, $email, $phone, $adr, $pass, $avatar, $role, $id);
+            } else {
+                $user->updateUser($name, $email, $phone, $adr, $pass, $role, $id);
+            }
 
             header('Content-Type: application/json');
             echo json_encode(['status' => 'success', 'message' => 'Cập nhật người dùng thành công!']);

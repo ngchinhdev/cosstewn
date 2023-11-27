@@ -1,8 +1,8 @@
 $(function() {
     const container = $('.container');
-    container.load(`../controllers/userController/userController.php`);
+    container.load(`../controllers/categoryController/categoryController.php`);
 
-    $('.link').on('click', function() {
+    $(document).on('click', '.link', function() {
         const linkParent = $(this).parent('li');
         linkParent.siblings().removeClass('active');
         linkParent.addClass('active');
