@@ -1,19 +1,19 @@
-<form id="edit_category" method="post" enctype="multipart/form-data">
+<form id="add_category" method="post" enctype="multipart/form-data">
     <h2>Thêm loại hàng</h2>
     <div class="fields">
         <div class="name-box box">
-            <label for="name-cate">Tên loại</label>
-            <input type="text" id="name-cate" placeholder="Nhập tên loại">
+            <label for="name-cate">Tên loại (*)</label>
+            <input type="text" id="name-cate" placeholder="Nhập tên loại" class="req">
         </div>
     </div>
     <div class="last-box">
         <div class="cate-box">
-            <label for="cate-img">Hình ảnh</label>
+            <label for="cate-img">Hình ảnh (*)</label>
             <div class="ctn">
                 <label for="cate-img" class="choose">Chọn hình</label>
-                <input type="file" id="cate-img">
+                <input type="file" id="cate-img" class="req">
                 <div class="img-chose">
-                    <img src="../../public/app/imgs/ahc.webp" alt="">
+                    <!-- <img src="../../public/app/imgs/ahc.webp" alt=""> -->
                 </div>
             </div>
         </div>

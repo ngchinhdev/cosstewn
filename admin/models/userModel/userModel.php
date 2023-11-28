@@ -9,7 +9,7 @@
         }
 
         function getCountRecords() {
-            $sql = "SELECT COUNT(matk) FROM taikhoan GROUP BY matk";
+            $sql = "SELECT COUNT(matk) FROM taikhoan";
 
             return $this->pdoQueryValue($sql);
         }

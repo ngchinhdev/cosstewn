@@ -61,26 +61,22 @@
     <div class="two-col">
         <div class="col">
             <div class="title">
-                <h3>Khách hàng VÀNG</h3>
+                <h3>Loại hàng bán chạy</h3>
             </div>
-            <div class="content">
-                <table class="">
-                    <tr>
-                        <th></th>
-                        <th>Họ tên</th>
-                        <th>SĐT</th>
-                    </tr>
-                    <?php foreach ($top_inventory as $key => $inventory) { ?>
-                        <tr>
-                            <td><?= $key + 1 ?>. </td>
-                            <td>
-                                <img class="avt-img" src="../../public/app/imgs/<?= $inventory['hinh_anh'] ?>" alt="">
-                            </td>
-                            <td><?= $inventory['ten_sp'] ?></td>
-                            <td><?= $inventory['so_luong'] ?></td>
-                        </tr>
-                    <?php } ?>
-                </table>
+            <div class="content chart-box">
+                <div class="hints">
+                    <div class="row">
+                        <div class="color"></div>
+                        <span>Dầu gội</span>
+                    </div>
+                    <div class="row">
+                        <div class="color"></div>
+                        <span>Sua rua mat</span>
+                    </div>
+                </div>
+                <div id="chart">
+                    <canvas id="chart-exam" width="150" height="150" style="width: 150px; height: 150px; display: block;"></canvas>
+                </div>
             </div>
         </div>
         <div class="col best-inventory">

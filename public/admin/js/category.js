@@ -66,6 +66,12 @@ $(function() {
 
     $(document).on('submit', '#edit_category', function(e) {
         e.preventDefault();
+
+        if($('.req').val() === '') {
+            $('h2').find('span').remove();
+            $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
+            return;
+        }
     
         const formData = new FormData(this);
     
@@ -75,7 +81,7 @@ $(function() {
         if($('#cate-img')[0].files[0]) {
             formData.append('cate-img', $('#cate-img')[0].files[0]);
         }
-        formData.append('higtlight', Number($('#hightlight').val()));
+        formData.append('hightlight', Number($('#hightlight').val()));
         formData.append('hide-show', Number($('#hide-show').val()));
     
         $.ajax({
@@ -86,6 +92,7 @@ $(function() {
             processData: false,
             data: formData,
             success: function(data) {
+                console.log(data);
                 alert(data.message);
                 container.load(`../controllers/categoryController/categoryController.php`);
             },
@@ -97,6 +104,12 @@ $(function() {
 
     $(document).on('submit', '#add_category', function(e) {
         e.preventDefault();
+
+        if($('.req').val() === '') {
+            $('h2').find('span').remove();
+            $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
+            return;
+        }
     
         const formData = new FormData(this);
     
@@ -104,7 +117,7 @@ $(function() {
         formData.append('type', 'add');
         formData.append('name', $('#name-cate').val());
         formData.append('cate-img', $('#cate-img')[0].files[0]);
-        formData.append('higtlight', Number($('#hightlight').val()));
+        formData.append('hightlight', Number($('#hightlight').val()));
         formData.append('hide-show', Number($('#hide-show').val()));
     
         $.ajax({
@@ -123,5 +136,31 @@ $(function() {
             }
         });
     });
+
+    $(document).on('click', '.del-btn-cate', function(e) {
+        e.preventDefault();
+
+        const isDel = confirm("Chắc chắn muốn xóa loại hàng này?");
+        if(!isDel) return;
+
+        cateId = $(this).data('cate');
+        
+        $.ajax({
+            type: "GET",
+            url: "../controllers/categoryController/delete.php",
+            dataType: "json",
+            data: {
+                type: 'delete',
+                id: cateId
+            },
+            success: function(data) {
+                alert(data.message);
+                container.load(`../controllers/categoryController/categoryController.php`);
+            },
+            error: function(err) {
+                console.error(err);
+            }
+        })
+    })
 
 })

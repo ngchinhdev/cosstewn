@@ -1,6 +1,6 @@
 $(function() {
     const container = $('.container');
-    container.load(`../controllers/categoryController/categoryController.php`);
+    container.load(`../controllers/dashboardController/dashboardController.php`);
 
     $(document).on('click', '.link', function() {
         const linkParent = $(this).parent('li');
@@ -9,7 +9,42 @@ $(function() {
 
         const curPage = $(this).data('control');
         container.load(`../controllers/${curPage}Controller/${curPage}Controller.php`);
-        console.log(`../controllers/${curPage}Controller/${curPage}Controller.php`);
     })
+
+    $.ajax({
+        type: "POST",
+        url: "../controllers/dashboardController/topSaleCategory.php",
+        dataType: "json",
+        data: {
+            type: 'top-cate',
+        },
+        success: function(data) {
+            const color = ['#D3B342', '#2A2798', '#115C3D', '#7B2798', '#D83F64'];
+            const hints = $('.hints');
+            console.log(data)
+            const hintItems = data.map((d, i) => {
+                return `<div class="row">
+                            <div class="color" style="background-color: ${color[i]}"></div>
+                            <span>${d.ten_loai}</span>
+                        </div>`
+            });
+            hints.html(hintItems);
+
+            new Chart(document.querySelector('#chart-exam'), {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                        data: data.map(d => d.so_luong),
+                        backgroundColor: color
+                    }]
+                }
+            })
+        },
+        error: function(err) {
+            console.error(err);
+        }
+    })
+
+   
 })
 

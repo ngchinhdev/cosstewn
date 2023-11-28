@@ -9,7 +9,7 @@
         }
 
         function getCountRecords() {
-            $sql = "SELECT COUNT(maloai) FROM loaihang GROUP BY maloai";
+            $sql = "SELECT COUNT(maloai) FROM loaihang";
 
             return $this->pdoQueryValue($sql);
         }
@@ -37,6 +37,12 @@
                     VALUES (?, ?, ?, ?)";
 
             return $this->pdoExecute($sql, $name, $hightlight, $showhide, $img);
+        }
+
+        function deleteCategory($cate_id) {
+            $sql = "DELETE FROM loaihang WHERE maloai = ?";
+
+            return $this->pdoExecute($sql, $cate_id);
         }
     }
  ?>

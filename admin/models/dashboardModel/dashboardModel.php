@@ -32,5 +32,13 @@
 
             return $this->pdoQuery($sql);
         }
+
+        function getTopSaleCategory() {
+            $sql = "SELECT COUNT(sp.maloai) so_luong, l.ten_loai FROM sanpham sp 
+                    JOIN chitietdonhang ctdh ON sp.masp = ctdh.masp JOIN loaihang l 
+                    ON sp.maloai = l.maloai GROUP BY(sp.maloai) LIMIT 5";
+
+            return $this->pdoQuery($sql);
+        }
     }
  ?>

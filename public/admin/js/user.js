@@ -37,6 +37,12 @@ $(function() {
 
     $(document).on('submit', '#edit_user', function(e) {
         e.preventDefault();
+
+        if($('.req').val() === '' || ($('.pass-box #pass').val() !== '' && $('.pass-box #pass').val().length < 5)) {
+            $('h2').find('span').remove();
+            $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
+            return;
+        }
     
         const formData = new FormData(this);
     
@@ -84,7 +90,7 @@ $(function() {
         reader.readAsDataURL(file);
     })
 
-    $(document).on('click', '.del-btn', function(e) {
+    $(document).on('click', '.del-btn-user', function(e) {
         e.preventDefault();
 
         const isDel = confirm("Chắc chắn muốn xóa người dùng này?");

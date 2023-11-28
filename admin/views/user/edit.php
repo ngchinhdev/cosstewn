@@ -2,12 +2,12 @@
     <h2>Cập nhật người dùng</h2>
     <div class="fields">
         <div class="name-box box">
-            <label for="name">Họ tên</label>
-            <input type="text" id="name" placeholder="Nhập họ tên">
+            <label for="name">Họ tên (*)</label>
+            <input type="text" id="name" placeholder="Nhập họ tên" class="req">
         </div>
         <div class="email-box box">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Nhập email">
+            <label for="email">Email (*)</label>
+            <input type="email" id="email" placeholder="Nhập email" class="req">
         </div>
         <div class="phone-box box">
             <label for="phone">Số điện thoại</label>
@@ -18,7 +18,7 @@
             <input type="text" id="adr" placeholder="Nhập địa chỉ">
         </div>
         <div class="pass-box box">
-            <label for="pass">Mật khẩu</label>
+            <label for="pass">Mật khẩu (>= 5 ký tự)</label>
             <input type="text" id="pass" placeholder="Nhập mật khẩu">
         </div>
     </div>

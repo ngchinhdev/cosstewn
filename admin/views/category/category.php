@@ -41,7 +41,7 @@
             <td>
                 <div class="last-td">
                     <a href="views/edit_user.php?id=<?= $category['maloai'] ?>" class="change-btn change-cate-btn" data-cate="<?= $category['maloai'] ?>">Sửa</a>
-                    <a href="controllers/delete_user.php?id=<?= $category['maloai'] ?>" class="del-btn">Xóa</a>
+                    <a href="controllers/delete_user.php?id=<?= $category['maloai'] ?>" data-cate="<?= $category['maloai'] ?>" class="del-btn del-btn-cate">Xóa</a>
                 </div>
             </td>
         </tr>
@@ -54,10 +54,7 @@
     <div class="pag-num">
         <?= $cur_page ?>
     </div>
-    <?php if($cur_records === $per_page ): ?>
-    <div class="right-ctrl pag-ctrl" data-pag="<?= $cur_page <= $total_pages ? $cur_page + 1 : $cur_page ?>">
+    <div class="right-ctrl pag-ctrl" data-pag="<?= $cur_page < $total_pages ? $cur_page + 1 : $cur_page ?>">
         <i class="fa-sharp fa-solid fa-chevron-right"></i>
     </div>
-    <?php endif ?>
 </div>
-

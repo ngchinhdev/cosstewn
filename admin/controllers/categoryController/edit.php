@@ -15,7 +15,7 @@
         if(isset($_POST['id']) && $_POST['type'] === 'done') {
             $name = $_POST['name'];
             $hightlight = $_POST['hightlight'];
-            $showhide = $_POST['show-hide'];
+            $showhide = $_POST['hide-show'];
             $id = $_POST['id'];
             
             if(isset($_FILES['cate-img'])) {
