@@ -39,5 +39,11 @@
 
             return $this->pdoExecute($sql, $user_id);
         }
+
+        function getAllRoles() {
+            $sql = "SELECT * FROM vaitro";
+
+            return $this->pdoQuery($sql);
+        }
     }
  ?>

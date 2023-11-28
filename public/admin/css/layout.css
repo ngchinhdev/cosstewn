@@ -51,7 +51,7 @@ header .left_site svg {
 
 header .left_site .search-box {
     margin-left: 3rem;
-    border: 1px solid #FFC003;
+    border: 1px solid #218CFF;
     border-radius: 20px;
     position: relative;
     padding: 0 20px;
@@ -553,6 +553,7 @@ canvas#chart-exam {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 /* PageProducts Css */
 
 #pageProduct .wrap-actionTop {
@@ -639,39 +640,55 @@ canvas#chart-exam {
     text-align: center;
 }
 
-#pageProduct .pagination .page-num.active{
+#pageProduct .pagination .page-num.active {
     background: #218CFF;
     color: white;
 }
 
-#pageProduct .pagination .page-link:hover{
+#pageProduct .pagination .page-link:hover {
     background: #218CFF;
     color: white;
 }
 
-#pageProduct .pagination .wrap-pagenum{
+#pageProduct .pagination .wrap-pagenum {
     display: flex;
 }
+
 /* end Phân trang css*/
 
 /* Edit user css */
-#edit_user, #edit_category, #add_category {
+#edit_user,
+#edit_category,
+#add_category,
+#edit_role,
+#add_role {
     padding: 20px;
 }
 
-#edit_category, #add_category {
+#edit_category,
+#add_category,
+#edit_role,
+#add_role {
     width: 50%;
 }
 
-#edit_user h2, #edit_category h2, #add_category h2 {
+#edit_user h2,
+#edit_category h2,
+#add_category h2,
+#edit_role h2,
+#add_role h2 {
     margin-bottom: 1rem;
 }
 
-#edit_category h2 span, #add_category h2 span, #edit_user h2 span {
+#edit_category h2 span,
+#add_category h2 span,
+#edit_user h2 span,
+#edit_role h2 span,
+#add_role h2 span {
     color: red;
     font-size: 1rem;
     font-weight: 500;
-    padding-left: 50px;
+    padding-left: 30px;
 }
 
 #edit_user .fields {
@@ -681,12 +698,20 @@ canvas#chart-exam {
     row-gap: 1rem;
 }
 
-#edit_user label, #edit_category label, #add_category label {
+#edit_user label,
+#edit_category label,
+#add_category label,
+#add_role label,
+#edit_role label {
     display: block;
     padding-bottom: 4px;
 }
 
-#edit_user .fields input, #edit_category .fields input, #add_category .fields input {
+#edit_user .fields input,
+#edit_category .fields input,
+#add_category .fields input,
+#edit_role .fields input,
+#add_role .fields input {
     width: 100%;
     padding: .6rem .8rem;
     border-radius: 5px;
@@ -698,26 +723,37 @@ canvas#chart-exam {
     grid-column: 1 / span 2;
 }
 
-#edit_user .last-box, #edit_category .last-box, #add_category .last-box {
+#edit_user .last-box,
+#edit_category .last-box,
+#add_category .last-box {
     display: flex;
     margin-top: 1rem;
 }
 
-#edit_category .last-box, #add_category .last-box {
+#edit_category .last-box,
+#add_category .last-box {
     justify-content: space-between;
 }
 
-#edit_user .ctn, #edit_category .ctn, #add_category .ctn {
+#edit_user .ctn,
+#edit_category .ctn,
+#add_category .ctn {
     display: flex;
     position: relative;
 }
 
-#edit_user .ctn img, #edit_category .ctn img, #add_category .ctn img {
+#edit_user .ctn img,
+#edit_category .ctn img,
+#add_category .ctn img {
     width: 60px;
     height: 60px;
     border: 0.5px solid #333;
     /* position: absolute; */
     /* right: 70px; */
+}
+
+#edit_user label[for=avt].none-click {
+    pointer-events: none;
 }
 
 #edit_user .last-box select,
@@ -727,13 +763,15 @@ canvas#chart-exam {
     border-radius: 5px;
 }
 
-#edit_user .last-box > div:first-child {
+#edit_user .last-box>div:first-child {
     margin-right: 40px;
 }
 
 #edit_user .submit-box button,
 #edit_category .submit-box button,
-#add_category .submit-box button {
+#add_category .submit-box button,
+#add_role .submit-box button,
+#edit_role .submit-box button {
     padding: 10px 16px;
     background-color: #218CFF;
     border-radius: 5px;
@@ -752,7 +790,7 @@ canvas#chart-exam {
     justify-content: flex-end;
 }
 
-.pagination > div {
+.pagination>div {
     cursor: pointer;
     width: 34px;
     height: 34px;

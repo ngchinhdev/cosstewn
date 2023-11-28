@@ -67,12 +67,21 @@ $(function() {
     $(document).on('submit', '#edit_category', function(e) {
         e.preventDefault();
 
-        if($('.req').val() === '') {
-            $('h2').find('span').remove();
-            $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
-            return;
+        let validationFailed = false;
+
+        $('.req').each(function() {
+            if ($(this).val() === '') {
+                $('h2').find('span').remove();
+                $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
+                validationFailed = true;
+                return false; 
+            }
+        });
+        
+        if (validationFailed) {
+            return false; 
         }
-    
+
         const formData = new FormData(this);
     
         formData.append('id', cateId);
@@ -105,10 +114,30 @@ $(function() {
     $(document).on('submit', '#add_category', function(e) {
         e.preventDefault();
 
-        if($('.req').val() === '') {
-            $('h2').find('span').remove();
-            $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
-            return;
+        let validationFailed = false;
+
+        $('.req').each(function() {
+            if ($(this).is('#cate-img')) {
+                console.log(111)
+                if (this.files.length === 0) {
+                    $('h2').find('span').remove();
+                    $('h2').append('<span>Vui lòng chọn một ảnh (*)</span>');
+                    validationFailed = true;
+                    return false;
+                }
+            } else {
+                console.log(22)
+                if ($(this).val() === '') {
+                    $('h2').find('span').remove();
+                    $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
+                    validationFailed = true;
+                    return false; 
+                }
+            }
+        });
+        
+        if (validationFailed) {
+            return false; 
         }
     
         const formData = new FormData(this);

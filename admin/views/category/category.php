@@ -2,18 +2,6 @@
     <div class="above_table">
         <div class="ctg_name">
             <strong>Loại hàng</strong>
-            <?php
-            // if(isset($_SESSION['add-user-success'])) {
-            //     echo '<span class="success">'.$_SESSION['add-user-success'].'</span>';
-            //     unset($_SESSION['add-user-success']);
-            // } else if(isset($_SESSION['delete-user-success'])) {
-            //     echo '<span class="success">'.$_SESSION['delete-user-success'].'</span>';
-            //     unset($_SESSION['delete-user-success']);
-            // }  else if(isset($_SESSION['edit-user-success'])) {
-            //     echo '<span class="success">'.$_SESSION['edit-user-success'].'</span>';
-            //     unset($_SESSION['edit-user-success']);
-            // }
-            ?>
         </div>
         <div class="add-new-cate add-new">
             <a href="views/add_user.php">+ Thêm mới</a>

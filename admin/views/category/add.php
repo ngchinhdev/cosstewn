@@ -2,13 +2,13 @@
     <h2>Thêm loại hàng</h2>
     <div class="fields">
         <div class="name-box box">
-            <label for="name-cate">Tên loại (*)</label>
+            <label for="name-cate">Tên loại <span style="color: red;">(*)</label>
             <input type="text" id="name-cate" placeholder="Nhập tên loại" class="req">
         </div>
     </div>
     <div class="last-box">
         <div class="cate-box">
-            <label for="cate-img">Hình ảnh (*)</label>
+            <label for="cate-img">Hình ảnh <span style="color: red;">(*)</label>
             <div class="ctn">
                 <label for="cate-img" class="choose">Chọn hình</label>
                 <input type="file" id="cate-img" class="req">

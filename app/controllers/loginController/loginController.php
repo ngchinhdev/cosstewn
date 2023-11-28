@@ -17,6 +17,7 @@
             exit();
         }
     } else {
+        // echo 1;
         echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
         exit();
     }

@@ -19,15 +19,23 @@ $(function() {
             },
             success: function(data) {
                 console.log(data);
-                data = data[0];
+                const user = data.user[0];
+                const roles = data.roles.map(role => `<option value="${role.mavt}">${role.vai_tro[0].toUpperCase() + role.vai_tro.slice(1)}</option>`);
+                $('#role').html(roles);
 
-                $('#name').val(data.ho_ten);
-                $('#email').val(data.email);
-                $('#phone').val(data.so_dien_thoai);
-                $('#adr').val(data.dia_chi);
-                $('#role').val(data.mavt);
-                $('#pass').val(data.mat_khau);
-                $('.img-chose img').attr('src', `../../public/app/imgs/${data.hinh_anh}`);
+                const imgHttp = user.hinh_anh.includes('http');
+                console.log(imgHttp)
+                $('#name').val(user.ho_ten);
+                imgHttp && $('#name').attr('readonly', true);
+                $('#email').val(user.email);
+                imgHttp && $('#email').attr('readonly', true);
+                $('#phone').val(user.so_dien_thoai);
+                $('#adr').val(user.dia_chi);
+                $('#role').val(user.mavt);
+                $('#pass').val(user.mat_khau);
+                imgHttp && $('#pass').attr('readonly', true);
+                $('.img-chose img').attr('src', imgHttp ? user.hinh_anh : `../../public/app/imgs/${user.hinh_anh}`);
+                imgHttp && $('label[for=avt]').addClass('none-click');
             },
             error: function(err) {
                 console.error(err);
@@ -38,12 +46,21 @@ $(function() {
     $(document).on('submit', '#edit_user', function(e) {
         e.preventDefault();
 
-        if($('.req').val() === '' || ($('.pass-box #pass').val() !== '' && $('.pass-box #pass').val().length < 5)) {
-            $('h2').find('span').remove();
-            $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
-            return;
+        let validationFailed = false;
+
+        $('.req').each(function() {
+            if ($(this).val() === '' || ($('.pass-box #pass').val() !== '' && $('.pass-box #pass').val().length < 5)) {
+                $('h2').find('span').remove();
+                $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
+                validationFailed = true;
+                return false;
+            }
+        });
+
+        if (validationFailed) {
+            return false; 
         }
-    
+        
         const formData = new FormData(this);
     
         formData.append('id', userId);

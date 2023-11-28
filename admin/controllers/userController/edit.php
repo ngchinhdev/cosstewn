@@ -5,7 +5,12 @@
 
     if(isset($_GET['id']) && $_GET['type'] === 'edit') {
         $user_id = $_GET['id'];
-        $data = $user->getCurUser($user_id);
+        $all_users = $user->getCurUser($user_id);
+        $roles = $user->getAllRoles();
+        $data = array(
+            'user' => $all_users,
+            'roles' => $roles
+        );
 
         header('Content-Type: application/json');
         echo json_encode($data);

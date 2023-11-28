@@ -2,11 +2,11 @@
     <h2>Cập nhật người dùng</h2>
     <div class="fields">
         <div class="name-box box">
-            <label for="name">Họ tên (*)</label>
+            <label for="name">Họ tên <span style="color: red;">(*)</span></label>
             <input type="text" id="name" placeholder="Nhập họ tên" class="req">
         </div>
         <div class="email-box box">
-            <label for="email">Email (*)</label>
+            <label for="email">Email <span style="color: red;">(*)</span></label>
             <input type="email" id="email" placeholder="Nhập email" class="req">
         </div>
         <div class="phone-box box">
