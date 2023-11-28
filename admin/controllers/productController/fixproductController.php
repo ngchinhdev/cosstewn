@@ -36,7 +36,7 @@ if (isset($_FILES['image_variation']) || isset($_POST['statusproduct']) || isset
             $fixProducts->updateImagesByProduct($imageVariation, $image_id);
         }
 
-        $success = "Sản phẩm đã được cấp nhật thành công.";
+        $success = "Sản phẩm đã được cập nhật thành công.";
     }
     $productByMasp = $fixProducts->getProductByMasp($masp);
 }

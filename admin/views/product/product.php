@@ -34,8 +34,8 @@
                             <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="">
                         <?php endfor; ?>
                     </td>
-                    <td><?php echo number_format($row['gia_goc'], 0, '.', '.') ?> đ</td>
-                    <td><?php echo number_format($row['gia_tien'], 0, '.', '.') ?> đ</td>
+                    <td><?php echo number_format($row['gia_goc'], 0, '.', '.') ?> ₫</td>
+                    <td><?php echo number_format($row['gia_tien'], 0, '.', '.') ?> ₫</td>
                     <td><?php echo $row['so_luong']; ?></td>
                     <td>
                         <div class="describe-td">

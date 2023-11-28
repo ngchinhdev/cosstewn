@@ -19,6 +19,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.container {
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif !important;
+}
+
 .grid_container {
     display: grid;
     grid-template-areas:
@@ -62,6 +67,7 @@ header .left_site .search-box input {
     border: none;
     width: 100%;
     outline: none;
+
 }
 
 header .left_site .search-box i {
@@ -523,7 +529,7 @@ main table td .del-btn {
     background: #ECB100;
     padding: 5px 15px;
     border-radius: 10px;
-    font-weight: 500;
+    font-weight: 600;
     color: white;
     font-size: 0.9em;
     cursor: pointer;
@@ -565,14 +571,15 @@ main table td .del-btn {
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 #pageProduct table .action-btn .fix-items {
-    background: #218CFF;
+    background: blue;
 }
 
 #pageProduct table .action-btn .remove-items {
-    background: #FF4C41;
+    background: #dd0000;
 }
 
 /* Phân trang css */
@@ -596,7 +603,7 @@ main table td .del-btn {
 .activePaging .pagination .page-link {
     display: block;
     padding: 5px 15px;
-    color: #218CFF;
+    color: blue;
     border: 1px solid #ccc;
     border-top: none;
     border-bottom: none;
@@ -604,12 +611,12 @@ main table td .del-btn {
 }
 
 .activePaging .pagination .page-num.active {
-    background: #218CFF;
+    background: blue;
     color: white;
 }
 
 .activePaging .pagination .page-link:hover {
-    background: #218CFF;
+    background: blue;
     color: white;
 }
 
@@ -884,7 +891,7 @@ main table td .del-btn {
 }
 
 #pageFeedback table tbody .btn-detailFB {
-    background: #4aa1ff;
+    background: blue;
     color: white;
     border-radius: 5px;
     font-weight: bold;
@@ -892,7 +899,70 @@ main table td .del-btn {
     border: none;
 }
 
-#pageFeedback table tbody .btn-detailFB:hover{
+#pageFeedback table tbody .btn-detailFB:hover {
     cursor: pointer;
     background: #00458f;
+}
+
+/* page detail feedback css*/
+
+#pageOrder table tbody .status,
+#pageDetailFB table tbody .status {
+    width: 100px;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    color: #218CFF;
+    background: rgb(207, 238, 247);
+    border: 1px solid #218CFF;
+    font-weight: 600;
+}
+
+#pageDetailFB table th.th-contentFB {
+    width: 500px;
+}
+
+#pageDetailFB .wrap-actionTop {
+    margin-top: 20px;
+}
+
+/* page order css */
+#pageOrder table thead tr th:nth-child(3) {
+    width: 330px;
+}
+
+#pageOrder table thead tr th:nth-child(6) {
+    width: 150px;
+}
+
+#pageOrder table thead tr th:nth-child(8) {
+    width: 110px;
+}
+#pageOrder table td.td-nameOrder {
+    line-height: 1.5;
+}
+
+#pageOrder .wrap-status,
+#pageOrder .wrap-formpay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#pageOrder .wrap-formpay .formpay {
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ff5900;
+    color: #ff5900;
+    background: #f8efce;
+}
+
+#pageOrder .wrap-status .status-order {
+    width: fit-content;
+    padding: 5px 10px;
+    background: #dbffcc;
+    color: #39bb02;
+    border: 1px solid #39bb02;
+    border-radius: 5px;
 }

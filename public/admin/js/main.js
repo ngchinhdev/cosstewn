@@ -1,6 +1,6 @@
 $(function () {
     const container = $('.container');
-    container.load(`../controllers/commentController/commentController.php`);
+    container.load(`../controllers/orderController/orderController.php`);
 
     $('.link').on('click', function () {
         const linkParent = $(this).parent('li');
