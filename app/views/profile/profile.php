@@ -4,10 +4,10 @@
             <div class="info_box d-flex align-items-center">
                 <div class="avt">
                     <?php 
-                        $is_regular_user = !(isset($_SESSION['avatar']) && str_contains($_SESSION['avatar'], 'http'));
+                        $is_regular_user = !(isset($_SESSION['avatar']) && $_SESSION['avatar'] && str_contains($_SESSION['avatar'], 'http'));
                         $link = !$is_regular_user ? $_SESSION['avatar'] : '../../public/app/imgs/'.$_SESSION['avatar'] 
                     ?>
-                    <img src="<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] ? $link : 'https://inkythuatso.com/uploads/thumbnails/800/2023/03/9-anh-dai-dien-trang-inkythuatso-03-15-27-03.jpg' ?>" alt="Avatar" class="rounded-circle me-3">
+                    <img src="<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] ? $link : '../../public/app/imgs/anhdaidien.jpg' ?>" alt="Avatar" class="rounded-circle me-3">
                 </div>
                 <div class="name">
                     <h6 class="mb-1"><?= $_SESSION['name'] ?></h6>

@@ -7,14 +7,17 @@
         extract($_POST);
 
         $user = $login->getInfoUser($email);
-        $correctPassword = $user['mat_khau'] === $password;
+        // $correctPassword = password_verify(trim($password), trim($user['mat_khau']));
+        $correctPassword = $password === $user['mat_khau'];
 
         if($user && $correctPassword) {
             echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
             exit();
         } else {
             $_SESSION['error_log'] = "Sai tai khoan hoac mat khau";
-            header("Location: ../index.php?page=dang-nhap");
+            var_dump($user['mat_khau']);
+            var_dump($correctPassword);
+            // header("Location: ../index.php?page=dang-nhap");
             exit();
         }
     } else {

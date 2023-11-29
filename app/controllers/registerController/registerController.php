@@ -6,6 +6,8 @@
         extract($_POST);
         $name = ucwords($ho . ' ' . $ten);
         $user = $register->getInfoUser($email);
+        // $pass = password_hash($repass, PASSWORD_DEFAULT);
+        $pass = $repass;
 
         if ($user['email'] && $user['email'] === $email) {
             echo "<script>alert('Email đã tồn tại!'); window.location.href = document.referrer;</script>";
@@ -14,7 +16,7 @@
             echo "<script>alert('Số điện thoại đã tồn tại!'); window.location.href = document.referrer;</script>";
             exit(); 
         } else {
-            $id = $register->addNewUser($name, $email, $phone, $address, $repass, null);
+            $id = $register->addNewUser($name, $email, $phone, $address, $pass, null);
             $id_encode = base64_encode($id);
             header("Location: ../index.php?page=ho-so&u=$id_encode");
         }
