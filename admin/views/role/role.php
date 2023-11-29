@@ -18,7 +18,7 @@
         <?php foreach ($all_roles as $key => $role) { ?>
             <tr>
                 <td><?= $key + 1 ?></td>
-                <td><?= $role['vai_tro'] ?></td>
+                <td><?= ucfirst($role['vai_tro']) ?></td>
                 <td>
                     <div class="last-td" style="flex-direction: row; align-items: center;">
                         <a style="margin: 0 6px 0 0;" href="views/edit_user.php?id=<?= $role['mavt'] ?>" class="change-btn change-role-btn" data-role="<?= $role['mavt'] ?>">Sửa</a>

@@ -28,7 +28,7 @@ if (isset($_SESSION['contact_message'])) {
         </div>
         <div class="col-2"></div>
         <div class="col-6">
-            <h3 style="color: #218cff;">NHẬN THÔNG TIN</h3>
+            <h3 style="color: #218cff;">LIÊN HỆ TỚI CHÚNG TÔI</h3>
             <br>
             <form class="row" method="POST" action="../controllers/contactController/contactController.php" onsubmit="return validateForm()">
                 <div class="information1 col-6">

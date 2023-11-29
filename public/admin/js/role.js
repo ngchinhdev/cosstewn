@@ -18,7 +18,7 @@ $(function() {
             },
             success: function(data) {
                 console.log(data);
-                $('.role-box input').val(data.vai_tro);
+                $('.role-box input').val(data.vai_tro[0].toUpperCase() + data.vai_tro.slice(1));
             },
             error: function(err) {
                 console.error(err);
