@@ -22,7 +22,7 @@ class DetailFeedback extends PDOModel
         $sql = "SELECT binhluan.*, taikhoan.*
             FROM binhluan
             LEFT JOIN taikhoan ON binhluan.matk = taikhoan.matk
-            WHERE binhluan.masp = ?";
+            WHERE binhluan.masp = ? AND binhluan.trang_thai = 1";
 
         if (!empty($arrangeType)) {
             if ($arrangeType == 'cmtNew') {

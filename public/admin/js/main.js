@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     const container = $('.container');
     container.load(`../controllers/dashboardController/dashboardController.php`);
 

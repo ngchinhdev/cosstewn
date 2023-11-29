@@ -1,9 +1,9 @@
-<section id="pageProduct">
+<section id="pageProduct" class="activePaging">
     <div class="wrap-actionTop">
         <h1>Trang sản phẩm</h1>
-        <a class="btn-add" id="btn-addbrand" href="#"> <i class="fa-solid fa-plus"></i>&ensp;Thêm mới</a>
+        <div class="btn-add" id="btn-addbrand" data-control-parent="product" data-control="addproduct"> <i class="fa-solid fa-plus"></i>&ensp;Thêm mới</div>
     </div>
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>STT</th>
@@ -34,8 +34,8 @@
                             <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="">
                         <?php endfor; ?>
                     </td>
-                    <td><?php echo number_format($row['gia_goc'], 0, '.', '.') ?> đ</td>
-                    <td><?php echo number_format($row['gia_tien'], 0, '.', '.') ?> đ</td>
+                    <td><?php echo number_format($row['gia_goc'], 0, '.', '.') ?> ₫</td>
+                    <td><?php echo number_format($row['gia_tien'], 0, '.', '.') ?> ₫</td>
                     <td><?php echo $row['so_luong']; ?></td>
                     <td>
                         <div class="describe-td">
@@ -50,16 +50,18 @@
                             echo 'Ẩn';
                         }
                         ?></td>
-                    <td class="action-btn">
-                        <a href="" class="fix-items">Sửa</a>
-                        <a href="" class="remove-items">Xóa</a>
+                    <td>
+                        <div class="action-btn">
+                            <div class="fix-items action-items" data-masp="<?= $row['masp'] ?>">Sửa</div>
+                            <div class="remove-items action-items" data-current-page="<?php echo $pageNumber; ?>" data-remove-masp="<?= $row['masp'] ?>">Xóa</div>
+                        </div>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
     <div class="pagination-container">
-        <ul class="pagination">
+        <ul class="pagination pagingprd">
             <?php if ($pageNumber > 1) : ?>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="1"><i class="fa-solid fa-angles-left"></i></a></li>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="<?php echo $pageNumber - 1; ?>"><i class="fa-solid fa-angle-left"></i></a></li>
@@ -67,7 +69,7 @@
 
             <?php if ($totalPages > 1) : ?>
                 <li class="wrap-pagenum">
-                    <a href="javascript:void(0);" class="page-link page-num active"><?php echo $pageNumber; ?></a>
+                    <a href="javascript:void(0);" class="page-num active"><?php echo $pageNumber; ?></a>
                 </li>
             <?php endif; ?>
             <?php if ($pageNumber < $totalPages) : ?>

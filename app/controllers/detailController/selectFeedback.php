@@ -17,7 +17,11 @@ if ($exportFeedback) {
                             <?php echo $row['ho_ten']; ?>
                         </div>
                         <div class="infor-date">
-                            <?php echo $row['ngay_bl']; ?>
+                            <?php $ngay_bl = $row['ngay_bl'];
+                            $ngay_bl = new DateTime($ngay_bl);
+                            $ngay_blformat = $ngay_bl->format('d-m-Y H:i:s');
+                            echo $ngay_blformat;
+                            ?>
                         </div>
                         <div class="check-buy">
                             <i class="fa-solid fa-check"></i>Đã mua hàng

@@ -31,4 +31,10 @@ class Products extends PDOModel
 
         return $this->pdoQueryValue($sql);
     }
+
+    function removeProductByMasp($masp){
+        $sql = "DELETE FROM sanpham WHERE masp = ?";
+        $this->pdoExecute($sql, $masp);
+    }
 }
+
