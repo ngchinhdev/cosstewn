@@ -192,6 +192,19 @@ small.error {
     margin-bottom: 10px !important;
 }
 
+#container_login .forgot-pass {
+    margin-top: 6px;
+    color: #3b5998;
+    text-align: center;
+    font-size: .9rem;
+    text-decoration: underline;
+}
+
+#container_login .form-forgot,
+#container_login .form-change-pass {
+    width: 30%;
+}
+
 @media (max-width: 768px) {
     #container_login .register form {
         margin-top: 20px;

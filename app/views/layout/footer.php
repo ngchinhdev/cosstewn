@@ -97,6 +97,10 @@ if (isset($_GET['page'])) {
         case 'dang-ky':
             echo '<script src="../../public/app/js/form-login.js"></script>';
             break;
+        case 'thay-doi-mat-khau':
+        case 'quen-mat-khau':
+            echo '<script src="../../public/app/js/form-repass.js"></script>';
+            break;
     }
 } else {
     echo '<script src="../../public/app/js/main.js"></script>';

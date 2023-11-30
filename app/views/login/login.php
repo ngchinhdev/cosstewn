@@ -18,6 +18,9 @@
             <div class="button-login d-flex justify-content-center">
                 <button type="submit" name="submit">Đăng Nhập</button>
             </div>
+            <div class="forgot-pass">
+                <a href="index.php?page=quen-mat-khau">Quên mật khẩu?</a>
+            </div>
             <div class="text-center">
                 <p class="oror">Hoặc đăng nhập bằng</p>
             </div>

@@ -6,8 +6,8 @@
         extract($_POST);
         $name = ucwords($ho . ' ' . $ten);
         $user = $register->getInfoUser($email);
-        // $pass = password_hash($repass, PASSWORD_DEFAULT);
-        $pass = $repass;
+        $pass = hash_hmac('sha256', $repass, 'coscoscos');
+        // $pass = $repass;
 
         if ($user['email'] && $user['email'] === $email) {
             echo "<script>alert('Email đã tồn tại!'); window.location.href = document.referrer;</script>";

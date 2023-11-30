@@ -7,5 +7,11 @@
             
             return $this->pdoQueryOne($sql, $email);
         }
+
+        function updatePassword($email, $pass) {
+            $sql = "UPDATE taikhoan SET mat_khau = ? WHERE email = ?";
+
+            return $this->pdoExecute($sql, $pass, $email);
+        }
     }
 ?>

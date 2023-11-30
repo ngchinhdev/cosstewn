@@ -66,13 +66,13 @@
                             <tr class="align-items-center">
                                 <td class="text-end me-3 pe-5">Họ tên: </td>
                                 <td>
-                                    <input class="w-100 border-bottom" readonly="<?= $is_regular_user ? 'false' : 'true' ?>" value="<?= $cur_user['ho_ten'] ?>" type="text" name="name" id="">
+                                    <input class="w-100 border-bottom" <?php echo !$is_regular_user ? 'readonly' : '' ?> value="<?= $cur_user['ho_ten'] ?>" type="text" name="name" id="">
                                 </td>
                             </tr>
                             <tr class="align-items-center">
                                 <td class="text-end me-3 pe-5">Email: </td>
                                 <td>
-                                    <input class="w-100 border-bottom" readonly="<?= $is_regular_user ? 'false' : 'true' ?>" value="<?= $cur_user['email'] ?>" type="text" name="email" id="">
+                                    <input class="w-100 border-bottom" <?php echo !$is_regular_user ? 'readonly' : '' ?> value="<?= $cur_user['email'] ?>" type="text" name="email" id="">
                                 </td>
                             </tr>
                             <tr class="align-items-center">

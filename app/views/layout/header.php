@@ -20,6 +20,8 @@
                 break;
             case 'dang-nhap':
             case 'dang-ky':
+            case 'quen-mat-khau':
+            case 'thay-doi-mat-khau':
                 echo '<link rel="stylesheet" href="../../public/app/css/login.css">';
                 break;
             case 'gio-hang':

@@ -51,6 +51,12 @@
             case "dat-hang-thanh-cong": 
                 require_once "../views/checkout/success.php";
                 break;
+            case "quen-mat-khau": 
+                require_once "../views/login/forgot.php";
+                break;
+            case "thay-doi-mat-khau": 
+                require_once "../views/login/change-pass.php";
+                break;
             default:
                 require_once "homeController/productHome.php";
                 require_once "../views/home/home.php";
