@@ -25,14 +25,22 @@
                 <div class="name_product">
                     <h1><?php echo $infoByProducts['ten_sp'] ?></h1>
                 </div>
-                <div class="wrap-price d-flex align-items-baseline">
+                <div class="wrap-price d-flex align-items-center my-3">
                     <div class="price-now"><?= number_format($infoByProducts['gia_tien'], 0, '.', '.') ?>₫</div>
                     <div class="price-origin"><?= number_format($infoByProducts['gia_goc'], 0, '.', '.') ?>₫</div>
                     <div class="sale">
                         <div class="text-sale">-<?= ceil((($infoByProducts['gia_goc'] - $infoByProducts['gia_tien']) / $infoByProducts['gia_goc'] * 100)) ?>%</div>
                     </div>
+                    <?php if (!empty($promoProduct)) : ?>
+                        <div class="box-voucher">
+                            <?php foreach ($promoProduct as $row) : ?>
+                                <div class="items-voucher">
+                                    <span class="voucher-promo-value">Giảm <?= number_format($row['giam_gia'], 0, '.', '.'); ?>₫</span>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
-
                 <div class="flash-sale-wrapper d-flex my-2">
                     <div class="text-flash-sale"><i class="fa-solid fa-bolt"></i>SIÊU DEAL CHỚP NHOÁNG</div>
                     <div class="timer">
@@ -199,7 +207,7 @@
             <?php if (!isset($_COOKIE['user_id'])) { ?>
                 <div class="lock-cmt"><a href="index.php?page=dang-nhap">Đánh giá ngay <i class="fa-solid fa-comment-medical"></i></a></div>
             <?php } else if (isset($_COOKIE['user_id']) && (empty($checkPurchaseProducts))) { ?>
-                    <div class="lock-cmt"><a href="">Mua hàng để đánh giá <i class="fa-solid fa-comment-medical"></i></a></div>
+                <div class="lock-cmt"><a href="">Mua hàng để đánh giá <i class="fa-solid fa-comment-medical"></i></a></div>
             <?php } ?>
             <?php if (isset($_COOKIE['user_id'])) { ?>
                 <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="">
@@ -212,7 +220,7 @@
             </form>
         </div>
         <div class="box-all-cmt" id="commentContainer">
-                
+
         </div>
     </div>
 </div>

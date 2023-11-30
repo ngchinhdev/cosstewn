@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Poppins:wght@100;200;300;500&display=swap');
 
 * {
     margin: 0;
@@ -55,7 +56,7 @@ header .left_site svg {
 
 header .left_site .search-box {
     margin-left: 3rem;
-    border: 1px solid #FFC003;
+    border: 1px solid #218CFF;
     border-radius: 20px;
     position: relative;
     padding: 0 20px;
@@ -353,6 +354,11 @@ main table td .del-btn {
     margin-left: 1rem;
 }
 
+.container {
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif !important;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(0);
@@ -387,7 +393,7 @@ main table td .del-btn {
 }
 
 #dashboard h1 {
-    font-size: 24px;
+    font-size: 26px;
     margin-top: -20px;
     margin-bottom: 20px;
 }
@@ -399,13 +405,28 @@ main table td .del-btn {
     gap: 20px;
 }
 
+#dashboard .best-inventory {
+    position: relative;
+    overflow-y: scroll;
+}
+
+#dashboard .best-inventory .title {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#dashboard .best-inventory::-webkit-scrollbar {
+    display: none;
+}
+
 #dashboard .four-col .col {
     overflow: hidden;
-    padding: 14px;
+    padding: 16px;
     position: relative;
     border-radius: 6px;
     color: white;
-    width: 230px;
+    /* width: 230px; */
 }
 
 #dashboard .four-col .col.col-1 {
@@ -448,7 +469,7 @@ main table td .del-btn {
     text-align: center;
     width: 100%;
     left: 0;
-    padding: 3px 0;
+    padding: 6px 0;
     cursor: pointer;
 }
 
@@ -479,17 +500,30 @@ main table td .del-btn {
 #dashboard .two-col .col {
     background-color: #fff;
     border-radius: 6px;
-    overflow: hidden;
     border: 0.5px #7d6f19 solid;
 }
 
 
 #dashboard .two-col .col .title h3 {
-    padding: 4px 20px;
+    padding: 6px 20px;
     white-space: 2px;
     color: #fff;
-    background-color: #7d6f19;
+    background-color: #218CFF;
     text-align: center;
+}
+
+#dashboard .content.chart-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
+
+canvas#chart-exam {
+    width: 200px !important;
+    height: 200px !important;
+    display: block !important;
+    box-sizing: border-box !important;
 }
 
 #dashboard .two-col .col table {
@@ -499,6 +533,22 @@ main table td .del-btn {
 
 #dashboard .two-col .col .content {
     padding: 0 22px;
+}
+
+#dashboard .hints {
+    padding-top: 20px;
+}
+
+#dashboard .hints .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+#dashboard .hints .color {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
 }
 
 #dashboard .two-col .col .content li {
@@ -826,13 +876,48 @@ main table td .del-btn {
         -4px -4px 4px 0px #ffffff inset;
 }
 
+#pageaddproduct #textDescribeprd,
+#pagefixproduct #textDescribeprd{
+    text-align: left;
+    padding: 5px;
+    width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
 /* Edit user css */
-#edit_user {
+#edit_user,
+#edit_category,
+#add_category,
+#edit_role,
+#add_role {
     padding: 20px;
 }
 
-#edit_user h2 {
+#edit_category,
+#add_category,
+#edit_role,
+#add_role {
+    width: 50%;
+}
+
+#edit_user h2,
+#edit_category h2,
+#add_category h2,
+#edit_role h2,
+#add_role h2 {
     margin-bottom: 1rem;
+}
+
+#edit_category h2 span,
+#add_category h2 span,
+#edit_user h2 span,
+#edit_role h2 span,
+#add_role h2 span {
+    color: red;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 30px;
 }
 
 #edit_user .fields {
@@ -842,12 +927,20 @@ main table td .del-btn {
     row-gap: 1rem;
 }
 
-#edit_user label {
+#edit_user label,
+#edit_category label,
+#add_category label,
+#add_role label,
+#edit_role label {
     display: block;
     padding-bottom: 4px;
 }
 
-#edit_user .fields input {
+#edit_user .fields input,
+#edit_category .fields input,
+#add_category .fields input,
+#edit_role .fields input,
+#add_role .fields input {
     width: 100%;
     padding: .6rem .8rem;
     border-radius: 5px;
@@ -859,17 +952,55 @@ main table td .del-btn {
     grid-column: 1 / span 2;
 }
 
-#edit_user .last-box {
+#edit_user .last-box,
+#edit_category .last-box,
+#add_category .last-box {
     display: flex;
     margin-top: 1rem;
 }
 
-#edit_user .last-box .role-box select {
+#edit_category .last-box,
+#add_category .last-box {
+    justify-content: space-between;
+}
+
+#edit_user .ctn,
+#edit_category .ctn,
+#add_category .ctn {
+    display: flex;
+    position: relative;
+}
+
+#edit_user .ctn img,
+#edit_category .ctn img,
+#add_category .ctn img {
+    width: 60px;
+    height: 60px;
+    border: 0.5px solid #333;
+    /* position: absolute; */
+    /* right: 70px; */
+}
+
+#edit_user label[for=avt].none-click {
+    pointer-events: none;
+}
+
+#edit_user .last-box select,
+#edit_category .last-box select,
+#add_category .last-box select {
     padding: 4px 8px;
     border-radius: 5px;
 }
 
-#edit_user .submit-box button {
+#edit_user .last-box>div:first-child {
+    margin-right: 40px;
+}
+
+#edit_user .submit-box button,
+#edit_category .submit-box button,
+#add_category .submit-box button,
+#add_role .submit-box button,
+#edit_role .submit-box button {
     padding: 10px 16px;
     background-color: #218CFF;
     border-radius: 5px;
@@ -882,6 +1013,8 @@ main table td .del-btn {
 }
 
 /* page feedback css */
+
+#pageOrder .wrap-actionTop,
 #pageFeedback .wrap-actionTop {
     margin-top: 20px;
 }
@@ -924,6 +1057,7 @@ main table td .del-btn {
 
 #pageDetailFB .wrap-actionTop {
     margin-top: 20px;
+    font-size: 0.8em;
 }
 
 /* page order css */
@@ -938,6 +1072,7 @@ main table td .del-btn {
 #pageOrder table thead tr th:nth-child(8) {
     width: 110px;
 }
+
 #pageOrder table td.td-nameOrder {
     line-height: 1.5;
 }
@@ -965,4 +1100,40 @@ main table td .del-btn {
     color: #39bb02;
     border: 1px solid #39bb02;
     border-radius: 5px;
+}
+
+.pagination {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    justify-content: flex-end;
+}
+
+.pagination>div {
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border: #218CFF 1px solid;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#edit_category #cate-img,
+#add_category #cate-img,
+#edit_user #avt {
+    display: none;
+}
+
+#edit_category label.choose,
+#add_category label.choose,
+#edit_user label.choose {
+    display: inline-block;
+    font-size: .9rem;
+    background-color: #d9d9d9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 1rem;
+    cursor: pointer;
+    height: fit-content;
 }

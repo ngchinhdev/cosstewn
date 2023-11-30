@@ -1,10 +1,11 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/catalogModel/catalog.php";
 $catagoryProducts = new CatalogProducts();
+$viewMedium = $catagoryProducts->calculateAverage();
 $NamesTypeCatagory = $catagoryProducts->getTypeCatagory();
-$countProducts = $catagoryProducts->getTotalProducts($brandId, $newProducts, $priceRange, $rateRange, $filterOption, $search);
+$countProducts = $catagoryProducts->getTotalProducts($brandId, $mostView, $viewMedium, $newProducts, $priceRange, $rateRange, $filterOption, $search);
 $totalPages = ceil($countProducts / 12);
-$productByPage = $catagoryProducts->getProductsByCategory($brandId, $newProducts, $pageNumber, $page_size = 12, $priceRange, $rateRange, $filterOption, $search);
+$productByPage = $catagoryProducts->getProductsByCategory($brandId, $mostView, $viewMedium, $newProducts, $pageNumber, $page_size = 12, $priceRange, $rateRange, $filterOption, $search);
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["search"]) && !isset($_GET["redirected"])) {
     $searchValue = urlencode($_GET["search"]);
@@ -18,4 +19,3 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["search"]) && !isset($_GE
 }
 
 $getNameBrand = $catagoryProducts->getNameBrand($brandId);
-

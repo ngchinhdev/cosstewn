@@ -3,18 +3,6 @@
         <div class="above_table">
             <div class="ctg_name">
                 <strong>Người Dùng</strong>
-                <?php
-                // if(isset($_SESSION['add-user-success'])) {
-                //     echo '<span class="success">'.$_SESSION['add-user-success'].'</span>';
-                //     unset($_SESSION['add-user-success']);
-                // } else if(isset($_SESSION['delete-user-success'])) {
-                //     echo '<span class="success">'.$_SESSION['delete-user-success'].'</span>';
-                //     unset($_SESSION['delete-user-success']);
-                // }  else if(isset($_SESSION['edit-user-success'])) {
-                //     echo '<span class="success">'.$_SESSION['edit-user-success'].'</span>';
-                //     unset($_SESSION['edit-user-success']);
-                // }
-                ?>
             </div>
             <div class="add-new">
                 <!-- <a href="views/add_user.php">+ Thêm mới</a> -->
@@ -38,7 +26,7 @@
             $link = str_contains($user['hinh_anh'], 'http') ? $user['hinh_anh'] : '../../public/app/imgs/' . $user['hinh_anh']
             ?>
             <tr>
-                <td><?= $key + 1 ?></td>
+                <td><?= $offset + $key + 1 ?></td>
                 <td><?= $user['ho_ten'] ?></td>
                 <td>
                     <img class="avt-img" src="<?= $link ?>" alt="">
@@ -50,11 +38,24 @@
                 <td><?= ($user['mavt'] === 1) ? 'admin' : 'user' ?></td>
                 <td>
                     <div class="last-td">
-                        <a href="views/edit_user.php?id=<?= $user['matk'] ?>" class="change-btn" data-user="<?= $user['matk'] ?>">Sửa</a>
-                        <a href="controllers/delete_user.php?id=<?= $user['matk'] ?>" data-user="<?= $user['matk'] ?>" class="del-btn">Xóa</a>
+                        <a href="views/edit_user.php?id=<?= $user['matk'] ?>" class="change-btn change-user-btn" data-user="<?= $user['matk'] ?>">Sửa</a>
+                        <a href="controllers/delete_user.php?id=<?= $user['matk'] ?>" data-user="<?= $user['matk'] ?>" class="del-btn del-btn-user">Xóa</a>
                     </div>
                 </td>
             </tr>
         <?php } ?>
     </table>
 </div>
+<?php if($cur_records === $per_page ): ?>
+<div class="pagination">
+    <div class="left-ctrl pag-ctrl-user" data-pag="<?= $cur_page > 1 ? $cur_page - 1 : $cur_page ?>">
+        <i class="fa-sharp fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="pag-num">
+        <?= $cur_page ?>
+    </div>
+    <div class="right-ctrl pag-ctrl-user" data-pag="<?= $cur_page < $total_pages ? $cur_page + 1 : $cur_page ?>">
+        <i class="fa-sharp fa-solid fa-chevron-right"></i>
+    </div>
+</div>
+<?php endif ?>

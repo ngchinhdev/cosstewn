@@ -129,6 +129,8 @@
                                 echo isset($_COOKIE['user_id']) ? 'lich-su-mua&u='.$_COOKIE['user_id'].'&status=all' : 'dang-nhap';
                             } else if(isset($_GET['u'])) {
                                 echo isset($_GET['u']) ? 'lich-su-mua&u='.$_GET['u'].'&status=all' : 'dang-nhap';
+                            } else {
+                                echo 'dang-nhap';
                             }
                         ?>">Lịch sử mua</a>
                     </li>

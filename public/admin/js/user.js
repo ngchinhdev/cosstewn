@@ -2,7 +2,7 @@ $(function() {
     const container = $('.container');
     let userId = '';
 
-    $(document).on('click', '.change-btn', function(e) {
+    $(document).on('click', '.change-user-btn', function(e) {
         e.preventDefault();
 
         $('#user').hide();
@@ -19,14 +19,23 @@ $(function() {
             },
             success: function(data) {
                 console.log(data);
-                data = data[0];
+                const user = data.user[0];
+                const roles = data.roles.map(role => `<option value="${role.mavt}">${role.vai_tro[0].toUpperCase() + role.vai_tro.slice(1)}</option>`);
+                $('#role').html(roles);
 
-                $('#name').val(data.ho_ten);
-                $('#email').val(data.email);
-                $('#phone').val(data.so_dien_thoai);
-                $('#adr').val(data.dia_chi);
-                $('#role').val(data.mavt);
-                $('#pass').val(data.mat_khau);
+                const imgHttp = user.hinh_anh.includes('http');
+                console.log(imgHttp)
+                $('#name').val(user.ho_ten);
+                imgHttp && $('#name').attr('readonly', true);
+                $('#email').val(user.email);
+                imgHttp && $('#email').attr('readonly', true);
+                $('#phone').val(user.so_dien_thoai);
+                $('#adr').val(user.dia_chi);
+                $('#role').val(user.mavt);
+                $('#pass').val(user.mat_khau);
+                imgHttp && $('#pass').attr('readonly', true);
+                $('.img-chose img').attr('src', imgHttp ? user.hinh_anh : `../../public/app/imgs/${user.hinh_anh}`);
+                imgHttp && $('label[for=avt]').addClass('none-click');
             },
             error: function(err) {
                 console.error(err);
@@ -36,7 +45,22 @@ $(function() {
 
     $(document).on('submit', '#edit_user', function(e) {
         e.preventDefault();
-    
+
+        let validationFailed = false;
+
+        $('.req').each(function() {
+            if ($(this).val() === '' || ($('.pass-box #pass').val() !== '' && $('.pass-box #pass').val().length < 5)) {
+                $('h2').find('span').remove();
+                $('h2').append('<span>Vui lòng nhập đủ các trường (*)</span>');
+                validationFailed = true;
+                return false;
+            }
+        });
+
+        if (validationFailed) {
+            return false; 
+        }
+        
         const formData = new FormData(this);
     
         formData.append('id', userId);
@@ -46,7 +70,9 @@ $(function() {
         formData.append('phone', $('#phone').val());
         formData.append('adr', $('#adr').val());
         formData.append('pass', $('#pass').val());
-        formData.append('avt', $('#avt')[0].files[0]);
+        if($('#avt')[0].files[0]) {
+            formData.append('avt', $('#avt')[0].files[0]);
+        }
         formData.append('role', $('#role').val());
     
         $.ajax({
@@ -66,8 +92,26 @@ $(function() {
         });
     });
 
-    $(document).on('click', '.del-btn', function(e) {
+    $(document).on('change', '.avt-box input', function(e) {
+        let file = $(this)[0].files[0];
+        let reader = new FileReader();
+        $('.img-chose').html('');
+        reader.onload = (function(file) {
+            return function(e) {
+                let img = document.createElement("img");
+                img.src = e.target.result;
+
+                $('.img-chose').append(img);
+            };
+        })(file);
+        reader.readAsDataURL(file);
+    })
+
+    $(document).on('click', '.del-btn-user', function(e) {
         e.preventDefault();
+
+        const isDel = confirm("Chắc chắn muốn xóa người dùng này?");
+        if(!isDel) return;
 
         $('#user').hide();
         userId = $(this).data('user');
@@ -86,6 +130,22 @@ $(function() {
             },
             error: function(err) {
                 console.error(err);
+            }
+        })
+    })
+
+    $(document).on("click", ".pag-ctrl-user", function() {
+        const container = $('.container');
+        const curPage = Number($(this).data('pag'));
+
+        $.ajax({
+            url: 'userController/userController.php',
+            type: 'GET',
+            data: {
+                pagNum: curPage
+            },
+            success: function (data) {
+                container.html(data);
             }
         })
     })
