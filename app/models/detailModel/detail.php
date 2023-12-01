@@ -43,4 +43,15 @@ class DetailProducts extends PDOModel
 
         return $this->pdoQuery($sql, $maloai, $masp);
     }
+
+    function getPromoProductByMasp($masp)
+    {
+        $sql = "SELECT km.giam_gia
+        FROM khuyenmai km
+        INNER JOIN chitietkhuyenmai ctkm ON km.makm = ctkm.makm
+        WHERE ctkm.masp = ? AND km.ngay_bat_dau <= CURRENT_TIMESTAMP 
+        AND km.ngay_ket_thuc >= CURRENT_TIMESTAMP";
+
+        return $this->pdoQuery($sql, $masp);
+    }
 }

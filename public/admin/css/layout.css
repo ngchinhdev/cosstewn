@@ -887,6 +887,15 @@ canvas#chart-exam {
         -4px -4px 4px 0px #ffffff inset;
 }
 
+#pageaddproduct #textDescribeprd,
+#pagefixproduct #textDescribeprd{
+    text-align: left;
+    padding: 5px;
+    width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
 /* Edit user css */
 #edit_user,
 #edit_category,
@@ -1050,6 +1059,8 @@ canvas#chart-exam {
     height: fit-content;
 }
 /* page feedback css */
+
+#pageOrder .wrap-actionTop,
 #pageFeedback .wrap-actionTop {
     margin-top: 20px;
 }
@@ -1092,6 +1103,7 @@ canvas#chart-exam {
 
 #pageDetailFB .wrap-actionTop {
     margin-top: 20px;
+    font-size: 0.8em;
 }
 
 /* page order css */
@@ -1106,6 +1118,7 @@ canvas#chart-exam {
 #pageOrder table thead tr th:nth-child(8) {
     width: 110px;
 }
+
 #pageOrder table td.td-nameOrder {
     line-height: 1.5;
 }
@@ -1133,4 +1146,40 @@ canvas#chart-exam {
     color: #39bb02;
     border: 1px solid #39bb02;
     border-radius: 5px;
+}
+
+.pagination {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    justify-content: flex-end;
+}
+
+.pagination>div {
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border: #218CFF 1px solid;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#edit_category #cate-img,
+#add_category #cate-img,
+#edit_user #avt {
+    display: none;
+}
+
+#edit_category label.choose,
+#add_category label.choose,
+#edit_user label.choose {
+    display: inline-block;
+    font-size: .9rem;
+    background-color: #d9d9d9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 1rem;
+    cursor: pointer;
+    height: fit-content;
 }

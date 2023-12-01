@@ -232,7 +232,7 @@
             <?php endforeach ?>
         </div>
         <div class="col-md-12 text-center mt-3">
-            <a href="#" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
+            <a href="index.php?page=danh-muc&mostView=xem-nhieu-nhat" class="see_all-btn bg-transparent py-2 px-4 fw-bold rounded-5 text-decoration-none d-inline-block border-1">Xem
                 tất cả</a>
         </div>
     </div>

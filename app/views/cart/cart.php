@@ -52,9 +52,9 @@
                     <h4 class="fw-bold text-center mt-0" style="font-size: 20px;">Hóa đơn của bạn</h4>
                     <ul>
                         <li>Tạm tính: <b class="tongCong"> </b></li>
-                        <li>Giảm giá: <b>500.000 đ</b></li>
+                        <li>Giảm giá: <b>-500.000 đ</b></li>
                         <p style="color: #888; font-size: 0.9rem; margin-top: 8px;" class="mb-1">Khuyến mãi đã nhận được:</p>
-                        <li>Giảm giá: Giảm 500.000 cho thành viên bạc</li>
+                        <li>Không có</li>
                     </ul>
                     <hr>
                     <div>Tổng cộng: <b style="color: #F7452E;" class="tongCong"> </b></div>

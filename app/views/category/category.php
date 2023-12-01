@@ -2,18 +2,18 @@
     <div class="row">
         <div class="col-12 text-link">
             <a href="index.php">Trang chủ</a> > <?php if (isset($_GET['maloai'])) {
-                            echo $getNameBrand['ten_loai'];
-                        } else if (isset($_GET['type'])) {
-                            echo 'Sản phẩm mới';
-                        } else if (isset($_GET['search'])) {
-                            echo 'Tìm kiếm';
-                        } ?>
+                                                    echo $getNameBrand['ten_loai'];
+                                                } else if (isset($_GET['type'])) {
+                                                    echo 'Sản phẩm mới';
+                                                } else if (isset($_GET['search'])) {
+                                                    echo 'Tìm kiếm';
+                                                } ?>
             <h1><?php if (isset($_GET['maloai'])) {
                     echo $getNameBrand['ten_loai'];
                 } else if (isset($_GET['type'])) {
                     echo 'Sản phẩm mới';
                 } else if (isset($_GET['search'])) { ?>
-                    KẾT QUẢ TÌM KIẾM CHO “<?php echo strtoupper($_GET['search']);?>”
+                    KẾT QUẢ TÌM KIẾM CHO “<?php echo strtoupper($_GET['search']); ?>”
                 <?php } ?></h1>
         </div>
     </div>
@@ -231,12 +231,11 @@
 
                     <div class="pagination-container d-flex justify-content-center my-4">
                         <ul class="pagination">
+                            <?= ($pageNumber > 1) ? '<li><a href="#" class="node-paging prev-page" data-page-num="1"><i class="fa-solid fa-angles-left"></i></a></li>' : '' ?>
                             <?= ($pageNumber > 1) ? '<li><a href="#" class="node-paging prev-page" data-page-num="' . ($pageNumber - 1) . '"><i class="fa-solid fa-chevron-left"></i></a></li>' : '' ?>
-                            <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-                                <?php $isActive = ($i == $pageNumber) ? ' active' : ''; ?>
-                                <?= ($totalPages > 1) ? '<li><a href="#" class="node-paging node-number' . $isActive . '" data-page-num="' . $i . '">' . $i . '</a></li>' : '' ?>
-                            <?php endfor; ?>
+                            <?= ($totalPages > 1) ? '<li><a href="#" class="node-paging node-number active' . '" data-page-num="' . $pageNumber . '">' . $pageNumber . '</a></li>' : '' ?>
                             <?= ($pageNumber < $totalPages) ? '<li><a href="#" class="node-paging next-page" data-page-num="' . ($pageNumber + 1) . '"><i class="fa-solid fa-chevron-right"></i></a></li>' : '' ?>
+                            <?= ($pageNumber < $totalPages) ? '<li><a href="#" class="node-paging prev-page" data-page-num="' . $totalPages . '"><i class="fa-solid fa-angles-right"></i></a></li>' : '' ?>
                         </ul>
                     </div>
             </div>

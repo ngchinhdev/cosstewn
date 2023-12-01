@@ -11,14 +11,15 @@
         // $correctPassword = $password === $user['mat_khau'];
         if ($user) {
             $correctPassword = hash_hmac('sha256', trim($password), 'coscoscos') === $user['mat_khau'];
-            var_dump($correctPassword);
-            
+            // var_dump($correctPassword);
+            // echo hash_hmac('sha256', trim($password), 'coscoscos');
+
             if ($user && $correctPassword) {
-                // echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
+                echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
                 exit();
             } else {
                 // $_SESSION['error_log'] = "Sai tai khoan hoac mat khau";
-                // echo "<script>alert('Sai email hoặc mật khẩu!'); window.location.href = document.referrer;</script>";
+                echo "<script>alert('Sai email hoặc mật khẩu!'); window.location.href = document.referrer;</script>";
                 // header("Location: ../index.php?page=dang-nhap");
                 exit();
             }

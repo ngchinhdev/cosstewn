@@ -7,7 +7,7 @@ $(document).ready(function () {
         var priceOrigin = $("input[name='priceOrigin']").val();
         var priceNow = $("input[name='priceNow']").val();
         var quantityPrd = $("input[name='quantityprd']").val();
-        var describePrd = $("input[name='describeprd']").val();
+        var describePrd = $("textarea[name='describeprd']").val();
         var brandProduct = $("select[name='brandproduct']").val();
         var statusProduct = $("select[name='statusproduct']").val();
 

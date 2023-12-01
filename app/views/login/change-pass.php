@@ -1,5 +1,4 @@
 <?php if(isset($_SESSION['repass_email']) && $_SESSION['repass_email']): ?>
-<?php session_destroy() ?>
 <div id="container_login" class="container">
     <div class="text-center">
         <h1 class="title">Thay đổi mật khẩu</h1>
@@ -8,12 +7,12 @@
         <form action="loginController/newPassword.php" method="post" class="form-change-pass">
             <div class="form-group">
                 <label for="pass">Mật khẩu mới <span class="star">*</span></label>
-                <input type="text" id="pass" name="pass" placeholder="Mật khẩu mới">
+                <input type="password" id="pass" name="pass" placeholder="Mật khẩu mới">
                 <small class="error pt-1"></small>
             </div>
             <div class="form-group">
                 <label for="repass">Nhập lại mật khẩu <span class="star">*</span></label>
-                <input type="text" id="repass" name="repass" placeholder="Mật khẩu mới">
+                <input type="password" id="repass" name="repass" placeholder="Mật khẩu mới">
                 <small class="error pt-1"></small>
             </div>
             <div class="button-login d-flex justify-content-center">
