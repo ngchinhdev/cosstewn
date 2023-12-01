@@ -14,7 +14,7 @@ if ($getProductsByUserId) { ?>
     <?php
     foreach ($getProductsByUserId as $row) {
     ?>
-        <tr class="border-bottom" id="wraptrProduct">
+        <tr class="border-bottom" id="wraptrProduct">;
             <td class="d-flex pe-3">
                 <?php
                 $images = explode(',', $row['hinh_anh']);
