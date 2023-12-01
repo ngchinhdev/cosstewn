@@ -1183,3 +1183,10 @@ canvas#chart-exam {
     cursor: pointer;
     height: fit-content;
 }
+
+.pass-ch {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 5ch
+}

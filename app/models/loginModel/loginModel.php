@@ -13,5 +13,11 @@
 
             return $this->pdoExecute($sql, $pass, $email);
         }
+
+        function getAllUserId() {
+            $sql = "SELECT matk FROM taikhoan";
+
+            return $this->pdoQuery($sql);
+        }
     }
 ?>

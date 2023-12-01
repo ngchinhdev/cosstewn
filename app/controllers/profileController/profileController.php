@@ -15,14 +15,14 @@
         if(!empty($avatar)) {
             $destination = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/public/app/imgs/" . $avatar['name'];
             if(move_uploaded_file($avatar['tmp_name'], $destination)) {
-                $profile->updateInfoUserAvt($name, $email, $phone, $address, $avatar['name'], $pass, $_SESSION["user_id"]);
-                header("Location: ../index.php?page=ho-so&u=".base64_encode($_SESSION['user_id']));
+                $profile->updateInfoUserAvt($name, $email, $phone, $address, $avatar['name'], $pass, $_COOKIE["user_id"]);
+                header("Location: ../index.php?page=ho-so&u=".base64_encode($_COOKIE['user_id']));
                 return;
             } 
         }
 
-        $profile->updateInfoUser($name, $email, $phone, $address, $pass, $_SESSION["user_id"]);
-        header("Location: ../index.php?page=ho-so&u=".base64_encode($_SESSION['user_id']));
+        $profile->updateInfoUser($name, $email, $phone, $address, $pass, base64_decode($_COOKIE["user_id"]));
+        header("Location: ../index.php?page=ho-so&u=".$_COOKIE['user_id']);
         exit();
     }
 

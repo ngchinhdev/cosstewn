@@ -1,8 +1,13 @@
 <?php
     session_start();
+    require_once "loginController/matchUser.php";
     if(isset($_GET['u']) && $_GET['u']) {
+        if(isset($_COOKIE['user_id']) && $_GET['u'] !== $_COOKIE['user_id'] || !in_array(base64_decode($_GET['u']), $all_id)) {
+            echo "<script>window.location.href='/cosstewn/app/controllers/index.php';</script>";
+            exit();
+        }
         setcookie('user_id', $_GET['u'], time() + (86400 * 30), "/");
-    }
+    } 
     require_once "cartControllers/cart.php";
     require_once "catalogController/catalog.php";
     require_once "../views/layout/header.php";

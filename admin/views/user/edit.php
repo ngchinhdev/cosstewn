@@ -11,7 +11,7 @@
         </div>
         <div class="phone-box box">
             <label for="phone">Số điện thoại</label>
-            <input type="text" id="phone" placeholder="Nhập số điện thoại">
+            <input type="text" id="phone" placeholder="Nhập số điện thoại" class="req">
         </div>
         <div class="adr-box box">
             <label for="adr">Địa chỉ</label>

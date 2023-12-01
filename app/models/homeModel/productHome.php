@@ -14,6 +14,7 @@
                     LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
                     LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
                     WHERE sanpham.an_hien = 1
+                    GROUP BY sanpham.masp
                     ORDER BY ((gia_goc - gia_tien) / gia_goc) DESC LIMIT 5";
             
             return $this->pdoQuery($sql);
@@ -31,6 +32,7 @@
                     LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
                     LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
                     WHERE sanpham.an_hien = 1
+                    GROUP BY sanpham.masp
                     ORDER BY ngay_nhap DESC LIMIT 5";
 
             return $this->pdoQuery($sql);
@@ -48,6 +50,7 @@
                     LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
                     LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
                     WHERE sanpham.an_hien = 1
+                    GROUP BY sanpham.masp
                     ORDER BY sanpham.so_luot_xem DESC LIMIT 5";
 
             return $this->pdoQuery($sql);
@@ -65,6 +68,7 @@
                     LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
                     LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
                     WHERE sanpham.an_hien = 1
+                    GROUP BY sanpham.masp
                     ORDER BY ngay_nhap ASC LIMIT 5";
 
             return $this->pdoQuery($sql);
