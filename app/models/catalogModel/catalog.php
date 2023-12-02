@@ -208,7 +208,7 @@ class CatalogProducts extends PDOModel
                 } else if ($filterOption == 'topViews') {
                     $sql .= " ORDER BY sanpham.so_luot_xem DESC ";
                 }
-            }else{
+            } else {
                 $sql .= " GROUP BY sanpham.masp ";
             }
 
@@ -457,5 +457,12 @@ class CatalogProducts extends PDOModel
         $sql = "SELECT AVG(so_luot_xem) AS trung_binh_so_luot_xem FROM sanpham";
 
         return $this->pdoQueryValue($sql);
+    }
+
+    function checkMaloai($maloai)
+    {
+        $sql = "SELECT COUNT(*) FROM loaihang WHERE maloai = ?";
+
+        return $this->pdoQueryValue($sql, $maloai);
     }
 }

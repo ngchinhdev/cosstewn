@@ -1,4 +1,4 @@
-<section class="box-addbrand" id="pageaddproduct">
+<section class="box-addbrand box-add" id="pageaddproduct">
     <h3>Thêm sản phẩm</h3>
     <?php if (!empty($error)) : ?>
         <div class="wrap-checkerr" style="color: #55343A;; background: #F7D7D9"><?php echo $error; ?></div>

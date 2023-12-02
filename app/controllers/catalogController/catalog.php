@@ -1,6 +1,8 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/catalogModel/catalog.php";
 $catagoryProducts = new CatalogProducts();
+// Kiểm tra mã loại có tồn tại không
+$checkMaloai = $catagoryProducts->checkMaloai($brandId);
 $viewMedium = $catagoryProducts->calculateAverage();
 $NamesTypeCatagory = $catagoryProducts->getTypeCatagory();
 $countProducts = $catagoryProducts->getTotalProducts($brandId, $mostView, $viewMedium, $newProducts, $priceRange, $rateRange, $filterOption, $search);

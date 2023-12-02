@@ -21,14 +21,16 @@ $(document).ready(function () {
     $(document).on("click", ".pagingDetailfb a.page-link", function (e) {
         e.preventDefault();
         var pageNumber = $(this).data("number-page");
-        var masp = $('.pagination-container').data("fb-masp");
+        var masp = $('.pagingDetailfb').data("fb-masp");
+        var namesp = $('.pagingDetailfb').data("fb-namesp");
         // Gửi yêu cầu Ajax để load dữ liệu cho trang mới
         $.ajax({
             url: 'commentController/detailFBController.php',
             type: 'POST',
             data: {
                 masp: masp,
-                pageNumber: pageNumber
+                pageNumber: pageNumber,
+                namesp: namesp
             },
             success: function (data) {
                 $("#pageDetailFB").html(data);
