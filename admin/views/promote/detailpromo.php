@@ -1,6 +1,7 @@
 <section id="pageDetailPromo" class="activePaging">
     <div class="wrap-actionTop">
         <h1>Chi tiết các sản phẩm được áp dụng khuyến mãi ( <?= $namekm; ?> )</h1>
+        <div class="btn-add" id="btn-adddetailpromo" data-promo-namekm="<?= $namekm; ?>" data-promo-makm="<?= $makm ?>"><i class="fa-solid fa-plus"></i>&ensp;Thêm mới</div>
     </div>
     <?php if (!empty($infoProductsByMakm)) { ?>
         <table border="1">

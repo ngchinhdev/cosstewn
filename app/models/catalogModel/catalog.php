@@ -465,4 +465,15 @@ class CatalogProducts extends PDOModel
 
         return $this->pdoQueryValue($sql, $maloai);
     }
+
+
+    // function tự động xóa hàng trong bảng khuyenmai nếu cột ngay_ket_thuc nhỏ hơn hoặc bằng ngày hiện tại
+    function autoRemoveRowOfTablekhuyenmai()
+    {
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $ngayHienTai = date("Y-m-d H:i:s");
+        $sql = "DELETE FROM khuyenmai WHERE ngay_ket_thuc <= '$ngayHienTai'";
+
+        $this->pdoExecute($sql);
+    }
 }

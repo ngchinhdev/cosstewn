@@ -564,6 +564,7 @@ canvas#chart-exam {
 
 /* PageProducts Css */
 
+#pageDetailPromo .wrap-actionTop,
 #pagePromo .wrap-actionTop,
 #pageProduct .wrap-actionTop {
     display: flex;
@@ -575,6 +576,7 @@ canvas#chart-exam {
     font-size: 24px;
 }
 
+#pageDetailPromo .wrap-actionTop .btn-add,
 #pagePromo .wrap-actionTop .btn-add,
 #pageProduct .wrap-actionTop .btn-add {
     margin-left: auto;

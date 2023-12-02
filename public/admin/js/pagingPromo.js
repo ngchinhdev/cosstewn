@@ -66,7 +66,8 @@ $(document).ready(function () {
                     data: {
                         currentpage: currentpage,
                         removemasp: removemasp,
-                        removemakm: removemakm
+                        removemakm: removemakm,
+                        namekm: namekm
                     },
                     success: function (data) {
                         Swal.fire({

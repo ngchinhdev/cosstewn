@@ -64,4 +64,24 @@ $(document).ready(function () {
             }
         });
     });
+
+    // Load trang thêm thêm sản phẩm được áp dụng khuyến mãi
+    $(document).on("click", "#btn-adddetailpromo", function (e) {
+        const makm = $(this).data('promo-makm');
+        const namekm = $(this).data('promo-namekm');
+        $.ajax({
+            url: 'promoteController/insertdetailpromoController.php',
+            type: 'POST',
+            data: {
+                makm: makm,
+                namekm: namekm
+            },
+            success: function (data) {
+                console.log(makm);
+                console.log(namekm);
+                $(".container").html(data);
+            }
+        });
+    });
+
 });
