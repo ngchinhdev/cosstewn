@@ -46,18 +46,17 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-12 px-sm-5 mt-sm-2">
                 <div class="bill-container w-100">
                     <h4 class="fw-bold text-center mt-0" style="font-size: 20px;">Hóa đơn của bạn</h4>
                     <ul>
                         <li>Tạm tính: <b class="tongCong"> </b></li>
-                        <li>Giảm giá: <b>-500.000 đ</b></li>
+                        <li>Giảm giá: <b class="promoPrice"> </b></li>
                         <p style="color: #888; font-size: 0.9rem; margin-top: 8px;" class="mb-1">Khuyến mãi đã nhận được:</p>
                         <li>Không có</li>
                     </ul>
                     <hr>
-                    <div>Tổng cộng: <b style="color: #F7452E;" class="tongCong"> </b></div>
+                    <div class="box-lastprice">Tổng cộng: <b style="color: #F7452E;" class="lastPrice"> </b></div>
                     <div style="color: #888;" class="mt-1">(Đã bao gồm VAT)</div>
                     <button name="checkout-cart" style="font-size: 0.9rem;" id="checkoutBtn" class="hero-btn mt-2 w-100">Tiến hành đặt hàng</button>
                 </div>

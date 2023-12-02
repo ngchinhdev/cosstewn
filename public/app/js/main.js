@@ -69,15 +69,15 @@ function flip(flipCard, newNumber) {
   flipCard.append(topFlip, bottomFlip)
 }
 
+// Search on mobile
+const searchIconMobile = document.querySelector('.search_icon_mobile');
+searchIconMobile && searchIconMobile.addEventListener('click', function() {
+  document.querySelector('.search_header_hide').classList.toggle('active');
+})
+
 // Custom slider bootstrap
 const myCarouselElement = document.querySelector('#carouselExampleIndicators')
 const carousel = new bootstrap.Carousel(myCarouselElement, {
   interval: 2000,
   touch: false
-})
-
-// Search on mobile
-const searchIconMobile = document.querySelector('.search_icon_mobile');
-searchIconMobile && searchIconMobile.addEventListener('click', function() {
-  document.querySelector('.search_header_hide').classList.toggle('active');
 })

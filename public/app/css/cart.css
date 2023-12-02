@@ -114,7 +114,7 @@
     padding-bottom: 10px;
 }
 
-#container_cart .left_site table td:first-child{
+#container_cart .left_site table td:first-child {
     max-width: 520px;
 }
 
@@ -150,6 +150,11 @@
     padding: 5px 10px;
     font-weight: 700;
     font-size: 15px;
+}
+
+#container_cart .box-lastprice {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Responsive  */

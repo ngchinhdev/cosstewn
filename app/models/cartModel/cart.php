@@ -22,7 +22,8 @@ class CartPage extends PDOModel
         $this->pdoExecute($sql, $lastInsertId, $masp, $quantity);
     }
 
-    function changeQuantityProductbyCart($quantity, $magh){
+    function changeQuantityProductbyCart($quantity, $magh)
+    {
         $sql = "UPDATE chitietgiohang SET so_luong = ? WHERE magh = ?";
         $this->pdoExecute($sql, $quantity, $magh);
     }
@@ -98,5 +99,16 @@ class CartPage extends PDOModel
     {
         $sql = "DELETE FROM giohang WHERE magh =? AND matk = ?";
         $this->pdoExecute($sql, $magh, $matk);
+    }
+
+    function totalPromoPrice($masp)
+    {
+        $sql = "SELECT SUM(khuyenmai.giam_gia) as tongKM
+        FROM khuyenmai 
+        JOIN chitietkhuyenmai ON khuyenmai.makm = chitietkhuyenmai.makm
+        WHERE chitietkhuyenmai.masp = ? AND khuyenmai.ngay_bat_dau <= CURRENT_TIMESTAMP 
+        AND khuyenmai.ngay_ket_thuc >= CURRENT_TIMESTAMP";
+
+        return $this->pdoQueryValue($sql, $masp);
     }
 }

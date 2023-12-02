@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/cartModel/cart.php";
 $cartPage = new CartPage();
+
 // $email = isset($_SESSION['data_user']['email']) ? $_SESSION['data_user']['email'] : '';
 // $user_id = (isset($_COOKIE['user_id']) || isset($_GET['u'])) ? (base64_decode($_COOKIE['user_id']) || base64_decode($_GET['u'])) : '';
 $user_id = '';
@@ -27,8 +28,6 @@ if (isset($user_id) && $user_id) {
     }
 }
 
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-cart']) && $user_id) {
     $matk = $user_id;
     $masp = $_POST['input-masp'];
@@ -47,5 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-cart']) && $u
 if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-buy'])) {
     $_SESSION['prod_id'] = $_POST['prod_id'];
     $_SESSION['quantity_dt'] = $_POST['quantity-pd'];
+    // echo $_SESSION['promotion'];
     header("Location: /cosstewn/app/controllers/index.php?page=thanh-toan");
 }

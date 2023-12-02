@@ -21,6 +21,7 @@
             header("Location: ../index.php?page=ho-so&u=$id_encode");
         }
     } else {
+        // echo 1111;
         $data_user = $_SESSION['data_user'];
         if(isset($data_user['name']) && isset($data_user['email']) && isset($data_user['avatar'])) {
             $register->addNewUser($data_user['name'], $data_user['email'], '', '', '', $data_user['avatar']);

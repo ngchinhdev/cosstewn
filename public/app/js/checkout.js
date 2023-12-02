@@ -1,5 +1,16 @@
-// Regex name input
+
+const inputs = document.querySelectorAll(".boxx input");
+const selectBox = document.querySelector(".provinces");
+const fullName = document.querySelector(".name");
+const phoneNum = document.querySelector(".phone_num");
+const email = document.querySelector(".email");
+const address = document.querySelector(".address");
+const provinces = document.querySelector(".provinces");
+const submitBtn = document.querySelector(".buy_btn");
 const nameInput = document.querySelector(".name");
+const formCheckout = document.querySelector("form#form_wrap");
+
+// Regex name input
 function autoUpperFirstLetter(input) {
   input.addEventListener("keydown", function () {
     let name = this.value;
@@ -13,15 +24,6 @@ function autoUpperFirstLetter(input) {
   });
 }
 autoUpperFirstLetter(nameInput);
-
-const inputs = document.querySelectorAll(".boxx input");
-const selectBox = document.querySelector(".provinces");
-const fullName = document.querySelector(".name");
-const phoneNum = document.querySelector(".phone_num");
-const email = document.querySelector(".email");
-const address = document.querySelector(".address");
-const provinces = document.querySelector(".provinces");
-const submitBtn = document.querySelector(".buy_btn");
 
 function isError(input, message) {
   let siblingElem = input.nextElementSibling;
@@ -121,4 +123,22 @@ submitBtn.onclick = function (e) {
     checkProvinces(provinces);
   } 
 };
+
+// Change type of banking
+const type = {
+  0: 'redirect',
+  1: 'checkout_order'
+}
+
+document.querySelector('input[type="submit"]').name = 
+    type[document.querySelector('input[name="banking"]:checked').value];
+
+formCheckout.addEventListener('change', function() {
+  const checked = document.querySelector('input[name="banking"]:checked');
+
+  document.querySelector('input[type="submit"]').name = type[checked.value];
+  console.log(document.querySelector('input[type="submit"]'))
+})
+
+
 

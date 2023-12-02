@@ -29,6 +29,34 @@ $(document).ready(function () {
 
     loadToltalPriceProducts();
 
+    function loadToltalPromoPriceProducts() {
+        var userid = cartForm.getAttribute("data-id-user");
+        $.ajax({
+            url: 'cartControllers/selectTotalPromoPrice.php',
+            type: 'POST',
+            data: { userid: userid },
+            success: function (data) {
+                $(".promoPrice").html(data);
+            }
+        });
+    }
+
+    loadToltalPromoPriceProducts()
+
+    function loadToltalLastPrice() {
+        var userid = cartForm.getAttribute("data-id-user");
+        $.ajax({
+            url: 'cartControllers/selectLastPrice.php',
+            type: 'POST',
+            data: { userid: userid },
+            success: function (data) {
+                $(".lastPrice").html(data);
+            }
+        });
+    }
+
+    loadToltalLastPrice();
+
     $(document).on('input', '.quantityProducts', function (event) {
         event.preventDefault();
         var quantity = $(this).val();
@@ -38,10 +66,10 @@ $(document).ready(function () {
             type: 'POST',
             data: { magh: magh, quantity: quantity },
             success: function () {
-                console.log(magh);
-                console.log(quantity);
                 loadProductByCart();
                 loadToltalPriceProducts();
+                loadToltalPriceProducts();
+                loadToltalLastPrice();
             },
             error: function (xhr, status, error) {
                 console.error("Error updating cart: " + error);

@@ -1,20 +1,26 @@
 <div id="container_catalog" class="container mt-2">
     <div class="row">
         <div class="col-12 text-link">
-            <a href="index.php">Trang chủ</a> > <?php if (isset($_GET['maloai'])) {
-                                                    echo $getNameBrand['ten_loai'];
-                                                } else if (isset($_GET['type'])) {
-                                                    echo 'Sản phẩm mới';
-                                                } else if (isset($_GET['search'])) {
-                                                    echo 'Tìm kiếm';
-                                                } ?>
-            <h1><?php if (isset($_GET['maloai'])) {
-                    echo $getNameBrand['ten_loai'];
-                } else if (isset($_GET['type'])) {
-                    echo 'Sản phẩm mới';
-                } else if (isset($_GET['search'])) { ?>
-                    KẾT QUẢ TÌM KIẾM CHO “<?php echo strtoupper($_GET['search']); ?>”
-                <?php } ?></h1>
+            <a href="index.php">Trang chủ</a> <?php if (!empty($productByPage)) { ?> > <?php if (isset($_GET['maloai'])) {
+                                                                                            echo $getNameBrand['ten_loai'];
+                                                                                        } else if (isset($_GET['type'])) {
+                                                                                            echo 'Sản phẩm mới';
+                                                                                        } else if (isset($_GET['search'])) {
+                                                                                            echo 'Tìm kiếm';
+                                                                                        }  else if (isset($_GET['mostView'])){
+                                                                                            echo 'Xem nhiều nhất';
+                                                                                        ?>
+                <h1><?php if (isset($_GET['maloai'])) {
+                                                        echo $getNameBrand['ten_loai'];
+                                                    } else if (isset($_GET['type'])) {
+                                                        echo 'Sản phẩm mới';
+                                                    }else if (isset($_GET['mostView'])){
+                                                        echo 'Xem nhiều nhất';
+                                                    }
+                                                    } else if (isset($_GET['search'])) { ?>
+                        KẾT QUẢ TÌM KIẾM CHO “<?php echo strtoupper($_GET['search']); ?>”
+                    <?php } ?></h1>
+            <?php } ?>
         </div>
     </div>
     <div class="row">
@@ -190,44 +196,47 @@
         <div class="col-sm-12 col-xl-9 ">
             <div class="row d-flex" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>" data-filter-price="<?php echo isset($_GET['priceRange']) ? $_GET['priceRange'] : null; ?>" data-filter-rate="<?php echo isset($_GET['rateRange']) ? $_GET['rateRange'] : null; ?> " data-filter-options="<?php echo isset($_GET['filterOption']) ? $_GET['filterOption'] : null; ?> ">
 
-                <?php if ($countProducts < 1) { ?>
+                <?php if (empty($productByPage)) { ?>
                     <span class="text-center">Không có sản phẩm nào được hiển thị !</span>
                 <?php } else { ?>
-                    <?php foreach ($productByPage as $row) : ?>
-                        <div class="col-sm-6 col-md-4 col-lg-3 p-1">
-                            <div class="box-products">
-                                <div class="wrap-imgage">
-                                    <div class="watch-now">
-                                        <a href="index.php?page=san-pham&masp=<?= $row['masp'] ?>&maloai=<?= $row['maloai'] ?>">Xem ngay</a>
+                    <?php if (!empty($productByPage)) : ?>
+                        <?php foreach ($productByPage as $row) : ?>
+                            <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+                                <div class="box-products">
+                                    <div class="wrap-imgage">
+                                        <div class="watch-now">
+                                            <a href="index.php?page=san-pham&masp=<?= $row['masp'] ?>&maloai=<?= $row['maloai'] ?>">Xem ngay</a>
+                                        </div>
+                                        <?php
+                                        $images = explode(',', $row['hinh_anh']);
+                                        for ($i = 0; $i < 2; $i++) : ?>
+                                            <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="">
+                                        <?php endfor; ?>
                                     </div>
-                                    <?php
-                                    $images = explode(',', $row['hinh_anh']);
-                                    for ($i = 0; $i < 2; $i++) : ?>
-                                        <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="">
-                                    <?php endfor; ?>
-                                </div>
-                                <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
-                                <div class="card-content">
-                                    <div class="text-brand"><?= $row['ten_loai'] ?></div>
-                                    <div class="text-name"><?= $row['ten_sp'] ?></div>
-                                    <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
-                                        <div class="price-now"><?= number_format($row['gia_tien'], 0, '.', '.') ?>₫</div>
-                                        <div class="wrap-under d-flex justify-content-center text-center">
-                                            <div class="price-origin"><?= number_format($row['gia_goc'], 0, '.', '.') ?>₫</div>
-                                            <div class="sale">
-                                                <div class="text-sale">-<?= ceil((($row['gia_goc'] - $row['gia_tien']) / $row['gia_goc'] * 100)) ?>%</div>
+                                    <?php if (!empty($row['giam_gia'])) : ?>
+                                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                                    <?php endif; ?>
+                                    <div class="card-content">
+                                        <div class="text-brand"><?= $row['ten_loai'] ?></div>
+                                        <div class="text-name"><?= $row['ten_sp'] ?></div>
+                                        <div class="d-flex flex-column flex-lg-row justify-content-center text-center price-section" style="gap: 5px">
+                                            <div class="price-now"><?= number_format($row['gia_tien'], 0, '.', '.') ?>₫</div>
+                                            <div class="wrap-under d-flex justify-content-center text-center">
+                                                <div class="price-origin"><?= number_format($row['gia_goc'], 0, '.', '.') ?>₫</div>
+                                                <div class="sale">
+                                                    <div class="text-sale">-<?= ceil((($row['gia_goc'] - $row['gia_tien']) / $row['gia_goc'] * 100)) ?>%</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="warp-star d-flex justify-content-center align-items-center">
-                                        (<i class="fa-solid fa-eye"></i>
-                                        <div class="quantity-feedback"><?= $row['so_luot_xem'] ?> Lượt xem )</div>
+                                        <div class="warp-star d-flex justify-content-center align-items-center">
+                                            (<i class="fa-solid fa-eye"></i>
+                                            <div class="quantity-feedback"><?= $row['so_luot_xem'] ?> Lượt xem )</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
-
+                        <?php endforeach; ?>
+                    <?php endif; ?>
 
                     <div class="pagination-container d-flex justify-content-center my-4">
                         <ul class="pagination">

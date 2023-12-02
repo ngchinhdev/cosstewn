@@ -1,10 +1,15 @@
 <?php
     require_once "../models/homeModel/productHome.php";
-    $products = new ProductHome();
+    $home = new ProductHome();
     
-    $flash_sale_prods = $products->getFlashSaleProducts();
-    $new_products = $products->getNewProducts();
-    $best_watched_products = $products->getBestWatchedProducts();
-    $for_you_products = $products->getForYouProducts();
-    $hightlight_categories = $products->getHighlightCategory();
+    $flash_sale_prods = $home->getFlashSaleProducts();
+    $new_products = $home->getNewProducts();
+    $best_watched_products = $home->getBestWatchedProducts();
+    $for_you_products = $home->getForYouProducts();
+    $hightlight_categories = $home->getHighlightCategory();
+
+    $banners_slider = $home->getBannersSlider();
+    $banners_brand = $home->getBannersBrand();
+    $banners_partner = $home->getBannersPartner();
+    $last_banner = $home->getLastBannerHome();
 ?>

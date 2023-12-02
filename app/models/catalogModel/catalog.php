@@ -16,7 +16,7 @@ class CatalogProducts extends PDOModel
     function getProductsByCategory($brandId, $mostView, $viewMedium, $newProducts, $pageNumber, $page_size = 12, $priceRange, $rateRange, $filterOption, $search)
     {
         $startRow = ($pageNumber - 1) * $page_size;
-        $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
+        $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh, km.ten_km, km.giam_gia
         FROM sanpham
         INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
         LEFT JOIN (
@@ -24,6 +24,8 @@ class CatalogProducts extends PDOModel
             FROM hinhanh
             GROUP BY masp
         ) AS hinhanh ON sanpham.masp = hinhanh.masp
+        LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
+        LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
         WHERE sanpham.an_hien = 1";
         if (!empty($brandId)) {
             $sql .= " AND sanpham.maloai = ?";
@@ -56,6 +58,7 @@ class CatalogProducts extends PDOModel
             }
 
             if (!empty($filterOption)) {
+                $sql .= " GROUP BY sanpham.masp ";
                 if ($filterOption == 'priceDesc') {
                     $sql .= " ORDER BY sanpham.gia_tien DESC ";
                 } else if ($filterOption == 'priceASC') {
@@ -63,6 +66,8 @@ class CatalogProducts extends PDOModel
                 } else if ($filterOption == 'topViews') {
                     $sql .= " ORDER BY sanpham.so_luot_xem DESC ";
                 }
+            } else {
+                $sql .= " GROUP BY sanpham.masp ";
             }
 
             $sql .= " LIMIT $startRow, $page_size";
@@ -99,6 +104,7 @@ class CatalogProducts extends PDOModel
             }
 
             if (!empty($filterOption)) {
+                $sql .= " GROUP BY sanpham.masp ";
                 if ($filterOption == 'priceDesc') {
                     $sql .= " ORDER BY sanpham.gia_tien DESC ";
                 } else if ($filterOption == 'priceASC') {
@@ -106,7 +112,12 @@ class CatalogProducts extends PDOModel
                 } else if ($filterOption == 'topViews') {
                     $sql .= " ORDER BY sanpham.so_luot_xem DESC ";
                 }
+            } else {
+                $sql .= " GROUP BY sanpham.masp ";
+                $sql .= " ORDER BY sanpham.so_luot_xem DESC ";
             }
+
+
 
             $sql .= " LIMIT $startRow, $page_size";
 
@@ -143,6 +154,8 @@ class CatalogProducts extends PDOModel
             }
 
             if (!empty($filterOption)) {
+                $sql .= " GROUP BY sanpham.masp ";
+
                 if ($filterOption == 'priceDesc') {
                     $sql .= " ORDER BY sanpham.gia_tien DESC ";
                 } else if ($filterOption == 'priceASC') {
@@ -150,6 +163,8 @@ class CatalogProducts extends PDOModel
                 } else if ($filterOption == 'topViews') {
                     $sql .= " ORDER BY sanpham.so_luot_xem DESC ";
                 }
+            } else {
+                $sql .= " GROUP BY sanpham.masp ";
             }
 
             $sql .= " LIMIT $startRow, $page_size";
@@ -185,6 +200,7 @@ class CatalogProducts extends PDOModel
             }
 
             if (!empty($filterOption)) {
+                $sql .= " GROUP BY sanpham.masp ";
                 if ($filterOption == 'priceDesc') {
                     $sql .= " ORDER BY sanpham.gia_tien DESC ";
                 } else if ($filterOption == 'priceASC') {
@@ -192,6 +208,8 @@ class CatalogProducts extends PDOModel
                 } else if ($filterOption == 'topViews') {
                     $sql .= " ORDER BY sanpham.so_luot_xem DESC ";
                 }
+            }else{
+                $sql .= " GROUP BY sanpham.masp ";
             }
 
             $sql .= " LIMIT $startRow, $page_size";

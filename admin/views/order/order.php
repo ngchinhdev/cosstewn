@@ -49,19 +49,17 @@
                     <td>
                         <div class="wrap-status">
                             <?php if ($row['trang_thai'] == 0) { ?>
-                                <div class="status-order" style="border: 1px solid #ffd453; color: #ffbf00; background: #fff4d2;">Đang xử lí</div>
+                                <div class="status-order" style="border: 1px solid #ffd453; color: #ffbf00; background: #fff4d2;">Đang giao</div>
                             <?php } elseif ($row['trang_thai'] == 1) { ?>
-                                <div class="status-order" style="background: #dbffcc; color: #39bb02; border: 1px solid #39bb02;">Đã xác nhận</div>
-                            <?php } else { ?>
-                                <div class="status-order" style="background: #FDEAF0; color:#fb2d4c; border: 1px solid #fb2d4c;">Đã hủy</div>
+                                <div class="status-order" style="background: #dbffcc; color: #39bb02; border: 1px solid #39bb02;">Đã giao</div>
                             <?php } ?>
                         </div>
                     </td>
                     <td>
                         <select name="orderStatus" class="orderStatus status" data-madh="<?= $row['madh'] ?>">
                             <option>Thao tác</option>
-                            <option value="1">Xác nhận đơn hàng</option>
-                            <option value="2">Hủy đơn hàng</option>
+                            <option value="0">Đang giao</option>
+                            <option value="1">Đã giao</option>
                         </select>
                     </td>
                 </tr>

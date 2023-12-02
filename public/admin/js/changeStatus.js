@@ -20,7 +20,7 @@ $(document).ready(function () {
         var madh = $(this).data('madh');
 
         var selectElement = $(this);
-        if (selectedValue === "1" || selectedValue === "2") {
+        if (selectedValue === "0" || selectedValue === "1") {
             $.ajax({
                 url: 'orderController/orderController.php',
                 type: 'POST',
@@ -39,10 +39,10 @@ $(document).ready(function () {
     });
 
     function updateStatusDisplay(wrapStatus, selectedValue) {
-        if (selectedValue === "1") {
-            wrapStatus.html('<div class="status-order" style="background: #dbffcc; color: #39bb02; border: 1px solid #39bb02;">Đã xác nhận</div>');
-        } else if (selectedValue === "2") {
-            wrapStatus.html('<div class="status-order" style="background: #FDEAF0; color:#fb2d4c; border: 1px solid #fb2d4c;">Đã hủy</div>');
+        if (selectedValue === "0") {
+            wrapStatus.html(' <div class="status-order" style="border: 1px solid #ffd453; color: #ffbf00; background: #fff4d2;">Đang giao</div>');
+        } else if (selectedValue === "1") {
+            wrapStatus.html('<div class="status-order" style="background: #dbffcc; color: #39bb02; border: 1px solid #39bb02;">Đã giao</div>');
         }
     }
 

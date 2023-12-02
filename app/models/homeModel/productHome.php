@@ -14,7 +14,7 @@
                     LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
                     LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
                     WHERE sanpham.an_hien = 1
-                    GROUP BY sanpham.masp
+                    GROUP BY sanpham.masp 
                     ORDER BY ((gia_goc - gia_tien) / gia_goc) DESC LIMIT 5";
             
             return $this->pdoQuery($sql);
@@ -78,6 +78,30 @@
             $sql = "SELECT * FROM loaihang WHERE noi_bat = 1 AND an_hien = 1";
 
             return $this->pdoQuery($sql);
+        }
+
+        function getBannersSlider() {
+            $sql = "SELECT * FROM banner WHERE loai = 0";
+
+            return $this->pdoQuery($sql);
+        }
+
+        function getBannersBrand() {
+            $sql = "SELECT * FROM banner WHERE loai = 1";
+
+            return $this->pdoQuery($sql);
+        }
+
+        function getBannersPartner() {
+            $sql = "SELECT * FROM banner WHERE loai = 2";
+
+            return $this->pdoQuery($sql);
+        }
+
+        function getLastBannerHome() {
+            $sql = "SELECT * FROM banner WHERE loai = 3";
+
+            return $this->pdoQueryOne($sql);
         }
     }
 ?>

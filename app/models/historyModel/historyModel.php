@@ -4,21 +4,21 @@
     class History extends PDOModel {
         function getAllOrders($user_id) { 
             $sql = "SELECT ngay_dat_hang, trang_thai, madh 
-            FROM donhang WHERE matk = ?";
+            FROM donhang WHERE matk = ? ORDER BY ngay_dat_hang DESC";
 
             return $this->pdoQuery($sql, $user_id);
         }
 
         function getPendingOrders($user_id) { 
             $sql = "SELECT ngay_dat_hang, trang_thai, madh 
-            FROM donhang WHERE matk = ? AND trang_thai = 0";
+            FROM donhang WHERE matk = ? AND trang_thai = 0 ORDER BY ngay_dat_hang DESC";
 
             return $this->pdoQuery($sql, $user_id);
         }
 
         function getCompleteOrders($user_id) { 
             $sql = "SELECT ngay_dat_hang, trang_thai, madh 
-            FROM donhang WHERE matk = ? AND trang_thai = 1";
+            FROM donhang WHERE matk = ? AND trang_thai = 1 ORDER BY ngay_dat_hang DESC";
 
             return $this->pdoQuery($sql, $user_id);
         }
