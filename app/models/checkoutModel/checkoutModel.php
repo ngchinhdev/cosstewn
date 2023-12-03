@@ -33,5 +33,7 @@
 
             return $this->pdoExecute($sql, $quantity, $prod_id);
         }
+
+        function deleteCart() {}
     }
 ?>

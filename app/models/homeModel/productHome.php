@@ -79,5 +79,35 @@
 
             return $this->pdoQuery($sql);
         }
+
+        function getBannersSlider() {
+            $sql = "SELECT * FROM banner WHERE loai = 0";
+
+            return $this->pdoQuery($sql);
+        }
+
+        function getBannersBrand() {
+            $sql = "SELECT * FROM banner WHERE loai = 1";
+
+            return $this->pdoQuery($sql);
+        }
+
+        function getBannersPartner() {
+            $sql = "SELECT * FROM banner WHERE loai = 2";
+
+            return $this->pdoQuery($sql);
+        }
+
+        function getLastBannerHome() {
+            $sql = "SELECT * FROM banner WHERE loai = 3";
+
+            return $this->pdoQueryOne($sql);
+        }
+
+        function getBannersDetail() {
+            $sql = "SELECT * FROM banner WHERE loai = 5";
+    
+            return $this->pdoQuery($sql);
+        }
     }
 ?>

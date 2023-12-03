@@ -23,7 +23,7 @@ $(function() {
                 const roles = data.roles.map(role => `<option value="${role.mavt}">${role.vai_tro[0].toUpperCase() + role.vai_tro.slice(1)}</option>`);
                 $('#role').html(roles);
 
-                const imgHttp = user.hinh_anh.includes('http');
+                const imgHttp = user.hinh_anh?.includes('http');
                 console.log(imgHttp)
                 $('#name').val(user.ho_ten);
                 imgHttp && $('#name').attr('readonly', true);

@@ -20,6 +20,14 @@ body {
     font-size: 14px;
 }
 
+#form_wrap .sum.s1 .promotion {
+    font-size: 14px !important;
+    padding: 4px 10px;
+    background-color: #b8e2e6;
+    color: #2d7478 !important;
+    border-color: #d6e9c6;
+}
+
 #container_checkout #form_wrap .head_form p:first-child {
     color: var(--primary-color);
 }
@@ -114,6 +122,9 @@ body {
 
 #container_checkout #form_wrap .main_form .payment {
     margin-bottom: 14px;
+}
+
+#container_checkout #form_wrap .main_form .payment:last-child {
     display: flex;
 }
 
@@ -225,10 +236,20 @@ body {
 }
 
 #container_checkout #form_wrap .org-sum {
-    font-size: 1rem;
+    font-size: .9rem;
     color: #6e6e6e;
 }
 
+#container_checkout .vnpay {
+    display: block;
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+#container_checkout .vnpay img {
+    width: 100px;
+    height: 40px;
+}
 
 /* ///// */
 #container_success a.see {
@@ -242,4 +263,27 @@ body {
 
 #container_success .continue {
     color: var(--primary-color);
+}
+
+@media screen and (max-width: 500px) {
+    #container_checkout #form_wrap {
+        width: 100%;
+    }
+
+    #container_checkout #form_wrap .main_form .box_phone,
+    #container_checkout #form_wrap .main_form .box_name {
+        width: 100%;
+    }
+
+    #container_checkout #form_wrap .row_prod tr {
+        font-size: .6rem;
+    }
+
+    #container_checkout #form_wrap .sum span {
+        font-size: 16px;
+    }
+
+    #container_checkout #form_wrap .org-sum {
+        font-size: .7rem;
+    }
 }

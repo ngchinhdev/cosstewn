@@ -1,17 +1,7 @@
-const inputPW = document.querySelector('.pw-hide input');
-const btnToggle = document.querySelector('.btn-tgl');
-btnToggle.addEventListener('click', () => {
-    const isPass = inputPW.type === 'password';
-    inputPW.type = isPass ? 'text' : 'password';
-    isPass ? btnToggle.className = 'btn-tgl fa-sharp fa-solid fa-eye position-absolute end-0'
-            : btnToggle.className = 'btn-tgl fa-sharp fa-solid fa-eye-slash position-absolute end-0';
-})
-
 // Check valid
 const email = document.querySelector("input[name=email]");
 const phoneNum = document.querySelector("input[name=phone]");
 const nameInput = document.querySelector("input[name=name]");
-const password = document.querySelector("tr.ls.db input[name=pass]");
 const form = document.querySelector("form.form_info");
 const errorEl = document.querySelector('.error_el');
 
@@ -46,26 +36,32 @@ function checkEmail(input) {
     return isTrue;
 }
 
-function checkPassword(input) {
-    let isTrue = true;
-    if (input.value === '') {
-        return false
-    } else if (input.value.length < 5) {
-        isTrue = false;
+$(document).on('change', '#file-avt', function(e) {
+    $('.choose_img img').remove();
+
+    let file = e.target.files[0];
+
+    if (file) {
+        let imgUrl = URL.createObjectURL(file);
+
+        let img = document.createElement("img");
+        img.className = 'rounded-circle';
+        img.src = imgUrl;
+        
+        document.querySelector('.choose_img').insertAdjacentElement("afterbegin", img);
     }
-    return isTrue;
-}
+});
+
 
 form && form.addEventListener('submit', function(e) {
     if(e.submitter.id !== 'save') return;
 
     if(confirm("Bạn có chắc chắn muốn lưu thay đổi ?")) {
         if(password) {
-            if (!(checkEmail(email) && checkPassword(password) && checkPhoneNumber(phoneNum) &&
+            if (!(checkEmail(email) && checkPhoneNumber(phoneNum) &&
                     checkName(nameInput))) {
                 e.preventDefault();
                 checkEmail(email);
-                checkPassword(password);
                 checkPhoneNumber(phoneNum);
                 checkName(nameInput);
                 errorEl.textContent = "⛔ Vui lòng nhập chính xác thông tin!";

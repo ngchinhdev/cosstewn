@@ -34,7 +34,7 @@
                 <td><?= $user['email'] ?></td>
                 <td><?= $user['so_dien_thoai'] ?></td>
                 <td><?= $user['dia_chi'] ?></td>
-                <td><?= $user['mat_khau'] ?></td>
+                <td class="pass-ch"><?= $user['mat_khau'] ?></td>
                 <td><?= ($user['mavt'] === 1) ? 'admin' : 'user' ?></td>
                 <td>
                     <div class="last-td">

@@ -35,7 +35,7 @@ $(function () {
                             </div>`
                 });
                 hints.html(hintItems);
-    
+
                 myChart = new Chart($('#chart-exam'), {
                     type: 'pie',
                     data: {
@@ -44,7 +44,9 @@ $(function () {
                             backgroundColor: color
                         }]
                     }
-                })
+                });
+
+                callAjaxChart();
             },
             error: function(err) {
                 console.error(err);

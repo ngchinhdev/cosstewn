@@ -26,9 +26,9 @@
             return $this->pdoQueryValue($sql);
         }
 
-        function getTopInventory() {
+        function getAlmostOverProducts() {
             $sql = "SELECT * FROM sanpham sp JOIN (SELECT masp, GROUP_CONCAT(hinh_anh) hinh_anh 
-                    FROM hinhanh GROUP BY masp) ha ON sp.masp = ha.masp ORDER BY so_luong DESC LIMIT 5";
+                    FROM hinhanh GROUP BY masp) ha ON sp.masp = ha.masp ORDER BY so_luong ASC LIMIT 10";
 
             return $this->pdoQuery($sql);
         }

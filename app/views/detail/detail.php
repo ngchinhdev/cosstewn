@@ -37,6 +37,7 @@
                                 <div class="items-voucher">
                                     <span class="voucher-promo-value">Giảm <?= number_format($row['giam_gia'], 0, '.', '.'); ?>₫</span>
                                 </div>
+                                <input type="hidden" value="<?= $row['giam_gia'] ?>" name="voucher[]">
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
@@ -85,6 +86,11 @@
                     </div>
                 </div>
                 <form action="index.php?page=<?= isset($_COOKIE['user_id']) ? 'gio-hang' : 'dang-nhap' ?>" method="POST">
+                    <?php if (!empty($promoProduct)) : ?>
+                        <?php foreach ($promoProduct as $row) : ?>
+                            <input type="hidden" value="<?= $row['giam_gia'] ?>" name="vouchers[]">
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                     <div class="wrapper-action">
                         <div class="d-flex wrap-quantity-btn">
                             <button type="button" class="quantity-btn minus-btn" onclick="decreaseQuantity()"><i class="fa-solid fa-minus"></i></button>
@@ -145,9 +151,9 @@
         </div>
     </div>
     <div class="box-banner-detail">
-        <img src="../../public/app/imgs/banner-detail.webp" alt="" class="rounded-3">
-        <img src="../../public/app/imgs/banner2-detail.webp" alt="" class="rounded-3">
-        <img src="../../public/app/imgs/banner3-detail.webp" alt="" class="rounded-3">
+        <?php foreach($banners as $banner): ?>
+            <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="" class="rounded-3">
+        <?php endforeach ?>
     </div>
     <div class="row wrapper-similarProducts mt-4 d-flex justify-content-center" id="container_catalog">
         <h3 class="col-12 my-3">SẢN PHẨM TƯƠNG TỰ</h3>

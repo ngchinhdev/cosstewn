@@ -24,3 +24,4 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["search"]) && !isset($_GE
 }
 
 $getNameBrand = $catagoryProducts->getNameBrand($brandId);
+$banners = $catagoryProducts->getBannerCategory();

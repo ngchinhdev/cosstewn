@@ -255,10 +255,9 @@
 
     </div>
     <div class="box-banner-catalog mt-2">
-        <img src="../../public/app/imgs/banner-last1.webp" alt="" class="rounded-3">
-        <img src="../../public/app/imgs/banner-last2.webp" alt="" class="rounded-3">
-        <img src="../../public/app/imgs/banner-last3.webp" alt="" class="rounded-3">
-        <img src="../../public/app/imgs/banner-last4.webp" alt="" class="rounded-3">
+        <?php foreach($banners as $banner): ?>
+            <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="" class="rounded-3">
+        <?php endforeach ?>
     </div>
     <div class="row pt-5">
         <div class="col-12 py-4 container-news rounded-4 d-flex flex-column flex-lg-row align-items-center justify-content-between">

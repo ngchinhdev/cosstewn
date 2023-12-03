@@ -1,5 +1,4 @@
 <?php
-    ob_start();
     require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/loginModel/loginModel.php";
     $login = new Login();
 
@@ -30,10 +29,10 @@
             exit();
         }
     } else {
-        // echo 1;
+        // echo 2222;
+        // var_dump(dirname(__FILE__));
         // header("Location: /cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']));
         echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
         exit();
     }
-    ob_end_flush();
 ?>

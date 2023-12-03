@@ -8,18 +8,18 @@
             return $this->pdoQueryOne($sql, $user_id);
         }
 
-        function updateInfoUser($name, $email, $phone, $address, $pass, $user_id) {
+        function updateInfoUser($name, $email, $phone, $address, $user_id) {
             $sql = "UPDATE taikhoan SET ho_ten = ?, email = ?, so_dien_thoai = ?,
-                    dia_chi = ?, mat_khau = ? WHERE matk = ?";
+                    dia_chi = ? WHERE matk = ?";
 
-            return $this->pdoExecute($sql, $name, $email, $phone, $address, $pass, $user_id);
+            return $this->pdoExecute($sql, $name, $email, $phone, $address, $user_id);
         }
 
-        function updateInfoUserAvt($name, $email, $phone, $address, $pass, $avatar, $user_id) {
+        function updateInfoUserAvt($name, $email, $phone, $address, $avatar, $user_id) {
             $sql = "UPDATE taikhoan SET ho_ten = ?, email = ?, so_dien_thoai = ?,
-                    dia_chi = ?, hinh_anh = ?, mat_khau = ? WHERE matk = ?";
+                    dia_chi = ?, hinh_anh = ? WHERE matk = ?";
 
-            return $this->pdoExecute($sql, $name, $email, $phone, $address, $pass, $avatar, $user_id);
+            return $this->pdoExecute($sql, $name, $email, $phone, $address, $avatar, $user_id);
         }
     }
 ?>

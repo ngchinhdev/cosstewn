@@ -30,14 +30,11 @@
             <div class="sum s1">
                 <strong>Tổng đơn hàng: </strong>
                 <?php
-                // if(isset($_SESSION['prod_id'])) var_dump($_SESSION['prod_id']);
-                    // if(isset($_COOKIE['user_id'])) {
-                    //     $promotion = 0.95;
-                    //     echo '<span class="promotion">Đã giảm 5% cho thành viên</span>';
-                    // } else {
-                    //     $promotion = 1;
-                    //     echo '<span class="promotion">Đăng kí để được giảm 5% mỗi sản phẩm</span>';
-                    // }
+                    $promotion = 0;
+                    if(isset($_SESSION['promotion']) && $_SESSION['promotion']){
+                        $promotion = $_SESSION['promotion'];
+                        echo "<span class='promotion'>Đã giảm giá " .number_format($_SESSION['promotion'], 0, '.', '.')."₫</span>";
+                    };
                 ?>
             </div>
             <table class="row_prod">
@@ -49,7 +46,6 @@
                         $quantity = isset($product_quantity[$key]) ? $product_quantity[$key] : $_SESSION['quantity_dt'];
                         $price = $quantity * $data[$key]['gia_tien'];
                         $sumPay += $price; 
-                        // $sumPayPro += $price * $promotion;
                         $imgs = explode(',', $row['hinh_anh']);
                         echo 
                         '<tr>
@@ -80,15 +76,22 @@
         </div>
         <div class="sum">
             <?php
-                echo '<strong>Tổng tiền: </strong>
-                        <span><del class="org-sum">'.number_format($sumPay, 0, '.', '.').'₫</del>
-                        <span class="ps-2">'.number_format($sumPay, 0, '.', '.').'₫</span></span>
-                '
+                echo '<strong>Tổng tiền: </strong>';
+                if ($promotion !== 0) {
+                    echo '<span><del class="org-sum">' . number_format($sumPay, 0, '.', '.') . '₫</del>';
+                }
+                echo '<span class="ps-2">' . number_format($sumPay - $promotion, 0, '.', '.') . '₫</span>';
+                echo '</span>';
             ?>
         </div>
         <div class="payment">
-            <input type="radio" id="banking" name="banking" value="0" checked>
-            <label for="banking">Chuyển khoản ngân hàng</label>
+            <div class="d-flex">
+                <input type="radio" id="banking" name="banking" value="0" checked>
+                <label for="banking">Thanh toán VNPAY</label>
+            </div>
+            <div class="vnpay">
+                <img src="../../public/app/imgs/vnpay.png" alt="">
+            </div>
         </div>
         <div class="payment">
             <input type="radio" id="cash" name="banking" value="1">
@@ -99,6 +102,7 @@
             Thông tin cá nhân của bạn sẽ được sử dụng để xử lý đơn đặt hàng của bạn, hỗ trợ trải nghiệm của bạn trên
             toàn bộ trang web và cho các mục đích khác được mô tả trong chính sách riêng tư của chúng tôi.
         </p>
+        <input type="hidden" name="sum_payment" value="<?= $sumPay - $promotion ?>">
         <input class="buy_btn" type="submit" value="Đặt hàng" name="checkout_order">
     </div>
 </form>

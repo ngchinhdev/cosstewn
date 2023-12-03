@@ -1,7 +1,4 @@
     </div>
-    <ul class="history__list--results">
-
-    </ul>
     </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -22,5 +19,6 @@
     <script src="../../public/admin/js/category.js"></script>
     <script src="../../public/admin/js/role.js"></script>
     <script src="../../public/admin/js/changeStatus.js"></script>
+    <script src="../../public/admin/js/banner.js"></script>
 </body>
 </html>

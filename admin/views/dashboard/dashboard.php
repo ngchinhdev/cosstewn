@@ -81,7 +81,7 @@
         </div>
         <div class="col best-inventory">
             <div class="title">
-                <h3>Sản phẩm tồn kho</h3>
+                <h3>Sản phẩm sắp hết hàng</h3>
             </div>
             <div class="content">
                 <table class="">
@@ -89,7 +89,7 @@
                         <th></th>
                         <th>Ảnh</th>
                         <th>Tên SP</th>
-                        <th>Số lượng</th>
+                        <th>SL</th>
                     </tr>
                     <?php foreach ($top_inventory as $key => $inventory) { ?>
                         <?php $hinh_anh = explode(',', $inventory['hinh_anh']) ?>

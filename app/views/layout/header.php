@@ -72,8 +72,8 @@
                         <div class="search_icon_mobile d-sm-none">
                             <i class="fa-solid fa-magnifying-glass d-inline-block"></i>
                         </div>
-                        <form class="search_header_hide position-absolute d-sm-flex">
-                            <input type="text" placeholder="Sữa rửa mặt" class="pt-2 pb-2 pe-3 ps-3 w-100">
+                        <form id="searchForm" method="GET" class="search_header_hide position-absolute d-sm-flex">
+                            <input name="search" type="text" placeholder="Sữa rửa mặt" class="pt-2 pb-2 pe-3 ps-3 w-100">
                             <i class="fa-solid fa-magnifying-glass position-absolute fs-5"></i>
                         </form>
                         <span class="ms-md-5 ms-3 me-3 me-md-4 fs-5 text-primary">|</span>

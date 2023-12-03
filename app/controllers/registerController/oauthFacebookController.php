@@ -1,10 +1,10 @@
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/vendor" . '/autoload.php';
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/registerModel/registerModel.php";
+    require_once $VENDOR_URL . 'autoload.php';
+    require_once $URL_APP_MODEL . "registerModel/registerModel.php";
 
     $fb = new \Facebook\Facebook([
-        'app_id' => '722624559771762',
-        'app_secret' => '45a2469fc6552d574e1fe2d97b929c85',
+        'app_id' => '346573231243408',
+        'app_secret' => 'bebea82035f7b2b765c1ebdfaf669fd5',
         'default_graph_version' => 'v2.10'
     ]);
     
@@ -77,9 +77,9 @@
                 $register = new Register();
                 $user = $register->getInfoUser($_SESSION['user_email_address']);
                 if ($register->getInfoUser($_SESSION['user_email_address'])) {
-                    require_once "loginController/loginController.php";
+                    require_once $URL_APP_CONTROLLER . "loginController/loginController.php";
                 } else {
-                    require_once "registerController.php";
+                    require_once $URL_APP_CONTROLLER . "registerController.php";
                 }
 
                 

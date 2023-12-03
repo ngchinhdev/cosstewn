@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <form class="row mt-4 form_info" enctype="multipart/form-data" action="../controllers/profileController/profileController.php?u=<?= $_SESSION['user_id'] ?>" method="post">
-                    <div class="col-lg-8 px-5 border-end">
+                    <div class="col-lg-8 px-lg-4 px-sm-1 border-end">
                         <?= isset($_SESSION['error']) ? $_SESSION['error'] : '' ?>
                         <table class="px-4 w-100">
                             <tr class="align-items-center">
@@ -87,20 +87,12 @@
                                     <input class="w-100 border-bottom" value="<?= $cur_user['dia_chi'] ?>" type="text" name="address" id="">
                                 </td>
                             </tr>
-                            <tr class="align-items-center ls <?= $is_regular_user ? 'db' : 'd-none' ?>">
-                                <td class="text-end me-3 pe-5">Mật khẩu: </td>
-                                <td class="position-relative pw-hide">
-                                    <input class="w-100 border-bottom pe-4" value="<?= $cur_user['mat_khau'] ?>" name="pass" id="" type="password">
-                                    <i class="btn-tgl fa-sharp fa-solid fa-eye-slash position-absolute end-0" role="button"></i>
-                                    <!-- <i class="fa-sharp fa-solid fa-eye"></i> -->
-                                </td>
-                            </tr>
                         </table>
                         <input type="submit" name="save" value="Lưu" id="save" class="py-2 px-3 mt-3 rounded-2">
                     </div>
                     <div class="col-lg-4 d-flex flex-column align-items-center justify-content-between pt-3">
                         <div class="choose_img d-flex flex-column align-items-center">
-                            <img src="<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] ? $link : 'https://inkythuatso.com/uploads/thumbnails/800/2023/03/9-anh-dai-dien-trang-inkythuatso-03-15-27-03.jpg' ?>" alt="Avatar" class="rounded-circle me-3">
+                            <img src="<?= isset($_SESSION['avatar']) && $_SESSION['avatar'] ? $link : 'https://inkythuatso.com/uploads/thumbnails/800/2023/03/9-anh-dai-dien-trang-inkythuatso-03-15-27-03.jpg' ?>" alt="Avatar" class="rounded-circle">
                             <input type="file" class="d-none" id="file-avt" name="avatar">
                             <label for="file-avt" role="button" class="d-inline-block mt-4 border py-2 px-3 rounded-2 <?= $is_regular_user ? '' : 'd-none' ?>">Chọn ảnh</label>
                         </div>

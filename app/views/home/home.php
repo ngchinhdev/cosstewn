@@ -9,15 +9,11 @@
                         <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="../../public/app/imgs/bn1.webp" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="../../public/app/imgs/bn2.webp" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="../../public/app/imgs/bn3.webp" alt="Third slide">
-                        </div>
+                        <?php foreach ($banners_slider as $index => $banner) : ?>
+                            <div class="carousel-item <?php echo $index === 0 ? 'active' : '' ?>">
+                                <img class="d-block w-100" src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="Slide">
+                            </div>
+                        <?php endforeach ?>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -30,8 +26,11 @@
                 </div>
             </div>
             <div class="right-site col-sm-4 d-flex flex-column justify-content-between">
-                <img src="../../public/app/imgs/bn2.webp" alt="Banner 2" class="rounded-3 w-100 d-none d-sm-flex">
-                <img src="../../public/app/imgs/bn3.webp" alt="Banner 3" class="rounded-3 w-100 d-none d-sm-flex">
+                <?php for($i = 0; $i < 2; $i++): ?>
+                    <img src="../../public/app/imgs/banners/<?= $next_slider_banners[$i]['duong_dan'] ?>" alt="Banner <?= $i + 1 ?>" class="rounded-3 w-100 h-100 d-none d-sm-flex">
+                <?php endfor ?>
+                <!-- <img src="../../public/app/imgs/bn2.webp" alt="Banner 2" class="rounded-3 w-100 d-none d-sm-flex">
+                <img src="../../public/app/imgs/bn3.webp" alt="Banner 3" class="rounded-3 w-100 d-none d-sm-flex"> -->
             </div>
         </div>
     </div>
@@ -119,13 +118,9 @@
     </div>
     <!-- Flash Sale Section -->
     <div class="partnerships mt-4">
-        <img src="../../public/app/imgs/bb1.webp" alt="" class="rounded-2">
-        <img src="../../public/app/imgs/ahc.webp" alt="" class="rounded-2">
-        <img src="../../public/app/imgs/skinfood.webp" alt="" class="rounded-2">
-        <img src="../../public/app/imgs/stylelip.webp" alt="" class="rounded-2">
-        <img src="../../public/app/imgs/ohui.webp" alt="" class="rounded-2">
-        <img src="../../public/app/imgs/colui.webp" alt="" class="rounded-2">
-        <img src="../../public/app/imgs/cosrx.webp" alt="" class="rounded-2">
+        <?php foreach ($banners_brand as $index => $banner) : ?>
+            <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="Banner <?= $index ?>" class="rounded-2">
+        <?php endforeach ?>
     </div>
     <!-- New Product Section -->
     <div class="new_product mt-4">
@@ -171,15 +166,11 @@
     <!-- 3 Banner Section -->
     <div class="sub_banner mt-3 pt-1">
         <div class="row mt-3">
-            <div class="col-md-4 col-6">
-                <img src="../../public/app/imgs/bnn.webp" class="rounded-3 w-100" alt="">
-            </div>
-            <div class="col-md-4 col-6">
-                <img src="../../public/app/imgs/thefaceshop.webp" class="rounded-3 w-100" alt="">
-            </div>
-            <div class="col-md-4 col-6 d-none d-md-block">
-                <img src="../../public/app/imgs/ahc2.webp" class="rounded-3 w-100" alt="">
-            </div>
+            <?php foreach ($banners_partner as $index => $banner) : ?>
+                <div class="col-md-4 col-6">
+                    <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="Banner partner <?= $index ?>" class="rounded-3 w-100">
+                </div>
+            <?php endforeach ?>
         </div>
     </div>
     <!-- Category Section -->
@@ -237,7 +228,7 @@
         </div>
     </div>
     <div class="last_banner mt-5">
-        <img src="../../public/app/imgs/banner-son-moi-1-PhotoRoom.png-PhotoRoom.png" alt="" class="w-100 rounded-3">
+        <img src="../../public/app/imgs/<?= $last_banner['duong_dan'] ?>" alt="Banner Cuoi" class="w-100 rounded-3">
     </div>
     <!-- Foryou Products Section -->
     <div class="foryou_products mt-5">

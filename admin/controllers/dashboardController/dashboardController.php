@@ -7,7 +7,7 @@
     $category_quantity = $dashboard->getQuantityCategory();
     $prod_quantity = $dashboard->getQuantityProduct();
     $order_quantity = $dashboard->getQuantityOrder();
-    $top_inventory = $dashboard->getTopInventory();
+    $top_inventory = $dashboard->getAlmostOverProducts();
     $top_sale_category = $dashboard->getTopSaleCategory();
 
     require_once $ROOT_ADMIN . "views/dashboard/dashboard.php";

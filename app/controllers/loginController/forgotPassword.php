@@ -10,8 +10,8 @@
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
 
     if(isset($_POST['submit'])) {
-        $emailFrom = $_POST["email"];
-        $_SESSION['repass_email'] = $emailFrom;
+        $emailTo = $_POST["email"];
+        $_SESSION['repass_email'] = $emailTo;
 
         try {
             $mail->isSMTP();
@@ -30,8 +30,8 @@
             // );
 
             $mail->setFrom('chinhnguyennn24@gmail.com', "Thay đổi mật khẩu");
-            $mail->addAddress($emailFrom);
-            // $mail->addReplyTo($emailFrom, $name);
+            $mail->addAddress($emailTo);
+            // $mail->addReplyTo($emailTo, $name);
 
             $mail->isHTML(true);
             $mail->Subject = 'Khôi phục mật khẩu';
@@ -45,7 +45,7 @@
             // $mail->AltBody = 'This is the alternative text for non-HTML email clients.';
 
             $send = $mail->Send();
-            echo '<script>alert("Tin nhắn đã gửi thành công!!"); window.location.href = "/cosstewn/app/controllers/index.php?page=quen-mat-khau";</script>';
+            echo '<script>alert("Vui lòng kiểm tra email!!"); window.location.href = "/cosstewn/app/controllers/index.php?page=quen-mat-khau";</script>';
         } catch (Exception $e) {
             echo 'Tin nhắn chưa được gửi! Lỗi: ' . $mail->ErrorInfo;
         }
