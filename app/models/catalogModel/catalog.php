@@ -476,4 +476,10 @@ class CatalogProducts extends PDOModel
 
         $this->pdoExecute($sql);
     }
+
+    function getBannerCategory() {
+        $sql = "SELECT * FROM banner WHERE loai = 4";
+
+        return $this->pdoQuery($sql);
+    }
 }

@@ -103,5 +103,11 @@
 
             return $this->pdoQueryOne($sql);
         }
+
+        function getBannersDetail() {
+            $sql = "SELECT * FROM banner WHERE loai = 5";
+    
+            return $this->pdoQuery($sql);
+        }
     }
 ?>

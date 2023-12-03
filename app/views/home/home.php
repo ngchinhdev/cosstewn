@@ -26,8 +26,11 @@
                 </div>
             </div>
             <div class="right-site col-sm-4 d-flex flex-column justify-content-between">
-                <img src="../../public/app/imgs/bn2.webp" alt="Banner 2" class="rounded-3 w-100 d-none d-sm-flex">
-                <img src="../../public/app/imgs/bn3.webp" alt="Banner 3" class="rounded-3 w-100 d-none d-sm-flex">
+                <?php for($i = 0; $i < 2; $i++): ?>
+                    <img src="../../public/app/imgs/banners/<?= $next_slider_banners[$i]['duong_dan'] ?>" alt="Banner <?= $i + 1 ?>" class="rounded-3 w-100 h-100 d-none d-sm-flex">
+                <?php endfor ?>
+                <!-- <img src="../../public/app/imgs/bn2.webp" alt="Banner 2" class="rounded-3 w-100 d-none d-sm-flex">
+                <img src="../../public/app/imgs/bn3.webp" alt="Banner 3" class="rounded-3 w-100 d-none d-sm-flex"> -->
             </div>
         </div>
     </div>

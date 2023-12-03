@@ -9,6 +9,7 @@
     $hightlight_categories = $home->getHighlightCategory();
 
     $banners_slider = $home->getBannersSlider();
+    $next_slider_banners = $home->getBannersDetail();
     $banners_brand = $home->getBannersBrand();
     $banners_partner = $home->getBannersPartner();
     $last_banner = $home->getLastBannerHome();

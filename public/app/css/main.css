@@ -11,6 +11,10 @@
     white-space: nowrap;
 }
 
+#container_home .banner_top .right-site {
+    row-gap: 16px;
+}
+
 #container_home .partnerships::-webkit-scrollbar {
     width: 0;
 }

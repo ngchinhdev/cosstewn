@@ -151,9 +151,9 @@
         </div>
     </div>
     <div class="box-banner-detail">
-        <img src="../../public/app/imgs/banner-detail.webp" alt="" class="rounded-3">
-        <img src="../../public/app/imgs/banner2-detail.webp" alt="" class="rounded-3">
-        <img src="../../public/app/imgs/banner3-detail.webp" alt="" class="rounded-3">
+        <?php foreach($banners as $banner): ?>
+            <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="" class="rounded-3">
+        <?php endforeach ?>
     </div>
     <div class="row wrapper-similarProducts mt-4 d-flex justify-content-center" id="container_catalog">
         <h3 class="col-12 my-3">SẢN PHẨM TƯƠNG TỰ</h3>

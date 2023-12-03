@@ -54,4 +54,10 @@ class DetailProducts extends PDOModel
 
         return $this->pdoQuery($sql, $masp);
     }
+
+    function getBannersDetail() {
+        $sql = "SELECT * FROM banner WHERE loai = 5";
+
+        return $this->pdoQuery($sql);
+    }
 }

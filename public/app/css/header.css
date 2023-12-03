@@ -147,6 +147,7 @@ li {
     /* bottom: -152px; */
     display: none;
     color: #000;
+    z-index: 999;
 }
 
 #main_header .category_header:hover .submenu {
