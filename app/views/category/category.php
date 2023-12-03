@@ -29,7 +29,7 @@
         <div class="col-3 set_filter d-none d-xl-block">
             BỘ LỌC
         </div>
-        <div class="col-6 col-xl-5 px-2 d-flex align-items-center justify-content-start p-0 tag-filter">
+        <div class="col-3 col-xl-5 px-2 d-flex align-items-center justify-content-start p-0 tag-filter">
             <?php if (isset($_GET['filterOption'])) : ?><div class="box-tag">
                     <p><?php if ($_GET['filterOption'] == 'priceDesc') {
                             echo 'Giá giảm dần';
@@ -72,7 +72,7 @@
                 </div>
             <?php endif; ?>
         </div>
-        <div class="col-6 col-xl-4 d-flex align-items-center tools-filter justify-content-end p-0">
+        <div class="col-9 col-xl-4 d-flex align-items-center tools-filter justify-content-end p-0">
             <div class="result-search d-md-none"><?php if ($countProducts < 1) {
                                                         echo 0;
                                                     } else {
@@ -196,14 +196,14 @@
 
         </div>
         <div class="col-sm-12 col-xl-9 ">
-            <div class="row d-flex" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>" data-filter-price="<?php echo isset($_GET['priceRange']) ? $_GET['priceRange'] : null; ?>" data-filter-rate="<?php echo isset($_GET['rateRange']) ? $_GET['rateRange'] : null; ?> " data-filter-options="<?php echo isset($_GET['filterOption']) ? $_GET['filterOption'] : null; ?> ">
+            <div class="row d-flex px-2" id="container-response" data-total-page="<?php echo $totalPages = ceil($countProducts / 12); ?>" data-brand-id="<?php echo isset($_GET['maloai']) ? $_GET['maloai'] : null; ?>" data-new-products="<?php echo isset($_GET['type']) ? $_GET['type'] : null; ?>" data-filter-price="<?php echo isset($_GET['priceRange']) ? $_GET['priceRange'] : null; ?>" data-filter-rate="<?php echo isset($_GET['rateRange']) ? $_GET['rateRange'] : null; ?> " data-filter-options="<?php echo isset($_GET['filterOption']) ? $_GET['filterOption'] : null; ?> ">
 
                 <?php if (empty($productByPage)) { ?>
                     <span class="text-center">Không có sản phẩm nào được hiển thị !</span>
                 <?php } else { ?>
                     <?php if (!empty($productByPage)) : ?>
                         <?php foreach ($productByPage as $row) : ?>
-                            <div class="col-sm-6 col-md-4 col-lg-3 p-1">
+                            <div class="col-6 col-md-4 col-lg-3 p-1">
                                 <div class="box-products">
                                     <div class="wrap-imgage">
                                         <div class="watch-now">
