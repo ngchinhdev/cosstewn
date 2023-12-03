@@ -559,6 +559,8 @@ canvas#chart-exam {
 
 /* PageProducts Css */
 
+#pageDetailPromo .wrap-actionTop,
+#pagePromo .wrap-actionTop,
 #pageProduct .wrap-actionTop {
     display: flex;
     align-items: center;
@@ -569,6 +571,8 @@ canvas#chart-exam {
     font-size: 24px;
 }
 
+#pageDetailPromo .wrap-actionTop .btn-add,
+#pagePromo .wrap-actionTop .btn-add,
 #pageProduct .wrap-actionTop .btn-add {
     margin-left: auto;
     background: #ECB100;
@@ -604,6 +608,7 @@ canvas#chart-exam {
     -webkit-box-orient: vertical;
 }
 
+#pageDetailPromo table td .action-btn,
 #pageProduct table td .action-btn {
     display: flex;
     align-items: center;
@@ -611,6 +616,7 @@ canvas#chart-exam {
     gap: 5px;
 }
 
+#pageDetailPromo table .action-btn .remove-detailPromo,
 #pageProduct table .action-btn .action-items {
     color: white;
     border-radius: 5px;
@@ -623,6 +629,8 @@ canvas#chart-exam {
     background: blue;
 }
 
+
+#pageDetailPromo table .action-btn .remove-detailPromo,
 #pageProduct table .action-btn .remove-items {
     background: #dd0000;
 }
@@ -655,18 +663,17 @@ canvas#chart-exam {
     text-align: center;
 }
 
-#pageProduct .pagination .page-num.active {
-    background: #218CFF;
-    color: white;
-}
-
-#pageProduct .pagination .page-link:hover {
-    background: #218CFF;
-    color: white;
-}
-
-#pageProduct .pagination .wrap-pagenum
 .activePaging .pagination .page-num.active {
+    background: blue;
+    color: white;
+}
+
+.activePaging .pagination .page-link:hover {
+    background: blue;
+    color: white;
+}
+
+.activePaging .pagination .wrap-pagenum .activePaging .pagination .page-num.active {
     background: blue;
     color: white;
 }
@@ -683,7 +690,8 @@ canvas#chart-exam {
 /* end Phân trang css*/
 
 /* Page addproduct css */
-#pageaddproduct h3 {
+
+.box-add h3 {
     color: white;
     padding: 15px;
     width: 100%;
@@ -694,28 +702,28 @@ canvas#chart-exam {
     font-size: 1.2em;
 }
 
-#pageaddproduct .form-group {
+.box-add .form-group {
     display: flex;
     flex-direction: column;
     line-height: 2;
 }
 
-#pageaddproduct .form-variation {
+.box-add .form-variation {
     gap: 5px;
 }
 
-#pageaddproduct .form-group input {
+.box-add .form-group input {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
 }
 
-#pageaddproduct .form-group label {
+.box-add .form-group label {
     font-weight: 600;
     font-size: 14px;
 }
 
-#pageaddproduct button.btn {
+.box-add button.btn {
     background: #218CFF;
     padding: 7px 15px;
     color: white;
@@ -728,30 +736,30 @@ canvas#chart-exam {
     margin-bottom: 20px;
 }
 
-#pageaddproduct button.btn:hover {
+.box-add button.btn:hover {
     background: rgb(0, 102, 255);
     cursor: pointer;
 }
 
-#pageaddproduct .wrap-checkerr {
+.box-add .wrap-checkerr {
     width: 100%;
     padding: 15px 20px;
     border-radius: 10px;
     font-weight: 500;
 }
 
-#pageaddproduct .form-control {
+.box-add .form-control {
     margin-bottom: 5px;
 }
 
-#pageaddproduct select.form-control {
+.box-add select.form-control {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-#pageaddproduct select.form-control option {
+.box-add select.form-control option {
     font-size: 14px;
     padding: 5px;
 }
@@ -883,7 +891,7 @@ canvas#chart-exam {
 }
 
 #pageaddproduct #textDescribeprd,
-#pagefixproduct #textDescribeprd{
+#pagefixproduct #textDescribeprd {
     text-align: left;
     padding: 5px;
     width: 100%;
@@ -1053,8 +1061,10 @@ canvas#chart-exam {
     cursor: pointer;
     height: fit-content;
 }
+
 /* page feedback css */
 
+#pagePromo .wrap-actionTop,
 #pageOrder .wrap-actionTop,
 #pageFeedback .wrap-actionTop {
     margin-top: 20px;
@@ -1064,6 +1074,7 @@ canvas#chart-exam {
     width: 500px;
 }
 
+#pagePromo table tbody .btn-detailPromo,
 #pageFeedback table tbody .btn-detailFB {
     background: blue;
     color: white;
@@ -1073,6 +1084,7 @@ canvas#chart-exam {
     border: none;
 }
 
+#pagePromo table tbody .btn-detailPromo:hover,
 #pageFeedback table tbody .btn-detailFB:hover {
     cursor: pointer;
     background: #00458f;
@@ -1096,9 +1108,14 @@ canvas#chart-exam {
     width: 500px;
 }
 
+#pageDetailPromo .wrap-actionTop,
 #pageDetailFB .wrap-actionTop {
     margin-top: 20px;
-    font-size: 0.8em;
+}
+
+#pageDetailPromo .wrap-actionTop h1,
+#pageDetailFB .wrap-actionTop h1{
+    font-size: 17px;
 }
 
 /* page order css */

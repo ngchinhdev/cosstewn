@@ -10,9 +10,11 @@
     <script src="../../public/admin/js/pagingProducts.js"></script>
     <script src="../../public/admin/js/pagingFeedback.js"></script>
     <script src="../../public/admin/js/pagingOrder.js"></script>
+    <script src="../../public/admin/js/pagingPromo.js"></script>
     <script src="../../public/admin/js/ajaxPages.js"></script>
     <script src="../../public/admin/js/insertProduct.js"></script>
     <script src="../../public/admin/js/updateProduct.js"></script>
+    <script src="../../public/admin/js/insertPromo.js"></script>
     <script src="../../public/admin/js/user.js"></script>
     <script src="../../public/admin/js/category.js"></script>
     <script src="../../public/admin/js/role.js"></script>

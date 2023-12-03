@@ -36,8 +36,8 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="pagination-container" data-fb-masp="<?= $masp; ?>">
-        <ul class="pagination pagingDetailfb">
+    <div class="pagination-container">
+        <ul class="pagination pagingDetailfb" data-fb-masp="<?= $masp; ?>" data-fb-namesp="<?= $namesp; ?>">
             <?php if ($pageNumber > 1) : ?>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="1"><i class="fa-solid fa-angles-left"></i></a></li>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="<?php echo $pageNumber - 1; ?>"><i class="fa-solid fa-angle-left"></i></a></li>

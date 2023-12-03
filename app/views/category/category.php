@@ -1,25 +1,27 @@
 <div id="container_catalog" class="container mt-2">
     <div class="row">
         <div class="col-12 text-link">
-            <a href="index.php">Trang chủ</a> <?php if (!empty($productByPage)) { ?> > <?php if (isset($_GET['maloai'])) {
-                                                                                            echo $getNameBrand['ten_loai'];
-                                                                                        } else if (isset($_GET['type'])) {
-                                                                                            echo 'Sản phẩm mới';
-                                                                                        } else if (isset($_GET['search'])) {
-                                                                                            echo 'Tìm kiếm';
-                                                                                        }  else if (isset($_GET['mostView'])){
-                                                                                            echo 'Xem nhiều nhất';
-                                                                                        ?>
-                <h1><?php if (isset($_GET['maloai'])) {
+            <a href="index.php">Trang chủ</a> <?php if (isset($productByPage)) { ?> >
+                <?php if (isset($_GET['maloai']) && $checkMaloai > 0) {
                                                         echo $getNameBrand['ten_loai'];
                                                     } else if (isset($_GET['type'])) {
                                                         echo 'Sản phẩm mới';
-                                                    }else if (isset($_GET['mostView'])){
+                                                    } else if (isset($_GET['search'])) {
+                                                        echo 'Tìm kiếm';
+                                                    } else if (isset($_GET['mostView'])) {
                                                         echo 'Xem nhiều nhất';
-                                                    }
+                                                    } ?>
+                <h1>
+                    <?php if (isset($_GET['maloai']) && $checkMaloai > 0) {
+                                                        echo $getNameBrand['ten_loai'];
+                                                    } else if (isset($_GET['type'])) {
+                                                        echo 'Sản phẩm mới';
+                                                    } else if (isset($_GET['mostView'])) {
+                                                        echo 'Xem nhiều nhất';
                                                     } else if (isset($_GET['search'])) { ?>
                         KẾT QUẢ TÌM KIẾM CHO “<?php echo strtoupper($_GET['search']); ?>”
-                    <?php } ?></h1>
+                    <?php } ?>
+                </h1>
             <?php } ?>
         </div>
     </div>

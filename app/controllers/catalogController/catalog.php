@@ -1,6 +1,11 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/catalogModel/catalog.php";
 $catagoryProducts = new CatalogProducts();
+// function tự động xóa hàng trong bảng khuyenmai nếu cột ngay_ket_thuc nhỏ hơn hoặc bằng ngày hiện tại
+$catagoryProducts->autoRemoveRowOfTablekhuyenmai();
+
+// Kiểm tra mã loại có tồn tại không
+$checkMaloai = $catagoryProducts->checkMaloai($brandId);
 $viewMedium = $catagoryProducts->calculateAverage();
 $NamesTypeCatagory = $catagoryProducts->getTypeCatagory();
 $countProducts = $catagoryProducts->getTotalProducts($brandId, $mostView, $viewMedium, $newProducts, $priceRange, $rateRange, $filterOption, $search);
