@@ -3,6 +3,11 @@
     $checkout = new Checkout();
 
     if(isset($_SESSION['prod_id'])) {
+        if(isset($_COOKIE['user_id'])) {
+            $user_id = base64_decode($_COOKIE['user_id']);
+            $user = $checkout->getCurUser($user_id);
+        }
+
         $products_to_pay = [];
         $product_quantity = [$_SESSION['quantity_dt']];
         for($i = 0; $i < count($_SESSION['prod_id']); $i++) {

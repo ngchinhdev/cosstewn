@@ -37,6 +37,7 @@
                                 <div class="items-voucher">
                                     <span class="voucher-promo-value">Giảm <?= number_format($row['giam_gia'], 0, '.', '.'); ?>₫</span>
                                 </div>
+                                <input type="hidden" value="<?= $row['giam_gia'] ?>" name="voucher[]">
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
@@ -85,6 +86,11 @@
                     </div>
                 </div>
                 <form action="index.php?page=<?= isset($_COOKIE['user_id']) ? 'gio-hang' : 'dang-nhap' ?>" method="POST">
+                    <?php if (!empty($promoProduct)) : ?>
+                        <?php foreach ($promoProduct as $row) : ?>
+                            <input type="hidden" value="<?= $row['giam_gia'] ?>" name="vouchers[]">
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                     <div class="wrapper-action">
                         <div class="d-flex wrap-quantity-btn">
                             <button type="button" class="quantity-btn minus-btn" onclick="decreaseQuantity()"><i class="fa-solid fa-minus"></i></button>

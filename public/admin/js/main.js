@@ -26,7 +26,6 @@ $(function () {
                 type: 'top-cate',
             },
             success: function(data) {
-                console.log(data);
                 const color = ['#ffcd1f', '#2A2798', '#115C3D', '#7B2798', '#D83F64'];
                 const hints = $('.hints');
                 const hintItems = data.map((d, i) => {

@@ -1,49 +1,133 @@
 $(function() {
     const container = $('.container');
 
-    let bannerId = '';
+    let bannerTypeId = '';
+
+    function loadDetail(nameType) {
+        $.ajax({
+            type: "POST",
+            url: "../controllers/bannerController/detailBanner.php",
+            dataType: "json",
+            data: {
+                type: 'detail',
+                id: bannerTypeId
+            },
+            success: function(data) {
+                $('.ctg_name strong').text(nameType);
+                const containerBanner = $('.container_detail');
+                containerBanner.html('');
+
+                const markup = data.map(banner => `<div class="banner_box banner_box-${banner.mabn}">
+                                        <div class="image">
+                                            <img src="../../public/app/imgs/banners/${banner.duong_dan}" alt="">
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="change">
+                                                <label for="change-banner" role="button">Đổi ảnh</label>
+                                                <input type="file" id="change-banner" data-banner="${banner.mabn}">
+                                            </div>
+                                            <div class="delete-banner" role="button" data-banner="${banner.mabn}">Xóa ảnh</div>
+                                        </div>
+                                    </div>`).join(' ');
+
+                containerBanner.html(markup);
+                
+            },
+            error: function(err) {
+                console.error(err);
+            }
+        })
+    }
 
     $(document).on('click', '.see-detail', function(e) {
         e.preventDefault();
 
         container.load(`../views/banner/detail.php`);
-        bannerId = $(this).data('type');
-        console.log(bannerId)
+        bannerTypeId = $(this).data('type');
+        const nameType = $(`.name-banner-${bannerTypeId}`).text();
         
-        // $.ajax({
-        //     type: "GET",
-        //     url: "../controllers/categoryController/edit.php",
-        //     dataType: "json",
-        //     data: {
-        //         type: 'edit',
-        //         id: bannerId
-        //     },
-        //     success: function(data) {
-
-        //         $('#name-cate').val(data.ten_loai);
-        //         $('#hightlight').val(data.noi_bat);
-        //         $('#hide-show').val(data.an_hien);
-        //         $('.img-chose img').attr('src', `../../public/app/imgs/${data.hinh_anh}`);
-        //     },
-        //     error: function(err) {
-        //         console.error(err);
-        //     }
-        // })
+        loadDetail(nameType);
     })
 
-    $(document).on('change', '.cate-box input', function(e) {
-        let file = $(this)[0].files[0];
-        let reader = new FileReader();
-        $('.img-chose').html('');
-        reader.onload = (function(file) {
-            return function(e) {
-                let img = document.createElement("img");
-                img.src = e.target.result;
+    $(document).on('change', '#change-banner', function(e) {
+        const curBannerID = $(this).data('banner');
 
-                $('.img-chose').append(img);
-            };
-        })(file);
-        reader.readAsDataURL(file);
+        const file = e.target.files[0];
+
+        if (file) {
+            let imgUrl = URL.createObjectURL(file);
+    
+            $(`.banner_box-${curBannerID} img`).attr('src', imgUrl);
+        }
+
+        const formData = new FormData();
+        formData.append('type', 'update');
+        formData.append('id', curBannerID);
+        formData.append('banner', file);
+
+        $.ajax({
+            type: "POST",
+            url: "../controllers/bannerController/updateBanner.php",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        });
+    })
+
+    $(document).on('click', '.delete-banner', function(e) {
+        const curBannerID = $(this).data('banner');
+
+        const isDelete = confirm("Chắc chắn muốn xóa?");
+
+        if(!isDelete) return;
+
+        $.ajax({
+            type: "POST",
+            url: "../controllers/bannerController/deleteBanner.php",
+            data: {
+                type: 'delete',
+                id: curBannerID
+            },
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                loadDetail();
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        });
+    })
+
+    $(document).on('change', '#banner-new-btn', function(e) {
+        const file = e.target.files[0];
+
+        console.log(file)
+        const formData = new FormData();
+        formData.append('type', 'add');
+        formData.append('id', bannerTypeId);
+        formData.append('banner', file);
+
+        $.ajax({
+            type: "POST",
+            url: "../controllers/bannerController/addBanner.php",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log(data);
+                loadDetail('');
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        });
     })
 
 })

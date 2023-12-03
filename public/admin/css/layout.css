@@ -236,7 +236,12 @@ main .add-new {
     float: right;
 }
 
-main .add-new a {
+main .add-new input {
+    display: none;
+}
+
+main .add-new a, main .add-new label {
+    cursor: pointer;
     padding: 6px 14px;
     color: white;
     background-color: #e9af00;
@@ -1210,4 +1215,55 @@ main table .last-td a.see-detail {
 
 .last-col {
     width: 200px;
+}
+
+#detail_banner {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+
+#detail_banner .nav {
+    margin-bottom: 10px;
+}
+
+#detail_banner .container_detail {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+}
+
+#detail_banner .banner_box {
+    margin-top: 20px;
+}
+
+#detail_banner .banner_box img {
+    width: 100%;
+}
+
+#detail_banner .banner_box .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#detail_banner .banner_box .buttons .change input {
+    display: none;
+}
+
+#detail_banner .banner_box .buttons [role="button"] {
+    cursor: pointer;
+    padding: 4px 12px;
+    display: inline-block;
+    margin-top: 8px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: .9rem;
+}
+
+#detail_banner .banner_box .buttons .change label {
+    background-color: #00458f;
+}
+
+#detail_banner .banner_box .buttons .delete-banner {
+    background-color: #be2534;
 }

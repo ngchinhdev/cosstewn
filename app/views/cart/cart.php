@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-12 px-sm-5 mt-sm-2">
+            <div class="col-lg-3 col-12 px-sm-5 px-lg-0 mt-sm-2 mt-lg-0">
                 <div class="bill-container w-100">
                     <h4 class="fw-bold text-center mt-0" style="font-size: 20px;">Hóa đơn của bạn</h4>
                     <ul>

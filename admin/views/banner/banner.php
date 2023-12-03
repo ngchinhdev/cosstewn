@@ -18,7 +18,7 @@
         <?php foreach ($all_types as $key => $type) { ?>
             <tr>
                 <td><?= $key + 1 ?></td>
-                <td><?= $cmp_array[$type['loai']] ?></td>
+                <td class="name-banner-<?= $type['loai'] ?>"><?= $cmp_array[$type['loai']] ?></td>
                 <td class="last-col">
                     <div class="last-td" style="flex-direction: row; align-items: center;">
                         <a href="" class="change-btn see-detail" data-type="<?= $type['loai'] ?>">Chi tiết</a>
