@@ -85,6 +85,7 @@
                                     <b><?= $detail['ten_loai'] ?></b>
                                     <p style="font-size: 13px;" class="mb-2"><?= $detail['ten_sp'] ?></p>
                                     <span>x<?= $detail['so_luong'] ?></span>
+                                    <a href="index.php?page=san-pham&masp=<?= $detail['masp'] ?>&maloai=<?= $detail['maloai'] ?>" class="feedback-now">Đánh giá ngay</a>
                                 </div>
                             </div>
                             <div class="item_price">

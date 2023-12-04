@@ -138,3 +138,12 @@ body  {
 input[type="text"]:disabled{
     background-color: transparent;
 }
+
+#container_profile .feedback-now {
+    font-size: .8rem;
+    background-color: #26AA99;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 14px;
+}

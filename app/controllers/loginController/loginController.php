@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    if(session_id() === '') session_start();
     require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/loginModel/loginModel.php";
     $login = new Login();
 
