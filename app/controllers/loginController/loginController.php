@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/loginModel/loginModel.php";
     $login = new Login();
 
@@ -14,6 +15,13 @@
             // echo hash_hmac('sha256', trim($password), 'coscoscos');
 
             if ($user && $correctPassword) {
+
+                if($user['mavt'] === 1) {
+                    $_SESSION['admin'] = $user['matk'];
+                    echo "<script>window.location.href='/cosstewn/admin/controllers/index.php';</script>";
+                    exit();
+                }
+
                 echo "<script>window.location.href='/cosstewn/app/controllers/index.php?page=ho-so&u=" . base64_encode($user['matk']) . "';</script>";
                 exit();
             } else {

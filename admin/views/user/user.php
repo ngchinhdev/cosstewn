@@ -23,7 +23,7 @@
         </tr>
         <?php foreach ($all_users as $key => $user) { ?>
             <?php
-            $link = str_contains($user['hinh_anh'], 'http') ? $user['hinh_anh'] : '../../public/app/imgs/' . $user['hinh_anh']
+                $link = str_contains($user['hinh_anh'], 'http') ? $user['hinh_anh'] : '../../public/app/imgs/' . ($user['hinh_anh'] ?? 'anhdaidien.jpg')
             ?>
             <tr>
                 <td><?= $offset + $key + 1 ?></td>
@@ -39,7 +39,9 @@
                 <td>
                     <div class="last-td">
                         <a href="views/edit_user.php?id=<?= $user['matk'] ?>" class="change-btn change-user-btn" data-user="<?= $user['matk'] ?>">Sửa</a>
-                        <a href="controllers/delete_user.php?id=<?= $user['matk'] ?>" data-user="<?= $user['matk'] ?>" class="del-btn del-btn-user">Xóa</a>
+                        <?php if($user['mavt'] !== 1): ?>
+                            <a href="controllers/delete_user.php?id=<?= $user['matk'] ?>" data-user="<?= $user['matk'] ?>" class="del-btn del-btn-user">Xóa</a>
+                        <?php endif ?>
                     </div>
                 </td>
             </tr>

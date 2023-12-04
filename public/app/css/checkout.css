@@ -20,6 +20,10 @@ body {
     font-size: 14px;
 }
 
+#form_wrap .sum_rows table {
+    width: 100%;
+}
+
 #form_wrap .sum.s1 .promotion {
     font-size: 14px !important;
     padding: 4px 10px;

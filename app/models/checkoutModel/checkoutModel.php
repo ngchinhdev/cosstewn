@@ -34,6 +34,10 @@
             return $this->pdoExecute($sql, $quantity, $prod_id);
         }
 
-        function deleteCart() {}
+        function deleteCartAfterBuy($user_id) {
+            $sql = "DELETE FROM giohang WHERE matk = ?";
+
+            return $this->pdoExecute($sql, $user_id);
+        }
     }
 ?>
