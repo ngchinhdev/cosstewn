@@ -79,7 +79,7 @@
                 if ($register->getInfoUser($_SESSION['user_email_address'])) {
                     require_once $URL_APP_CONTROLLER . "loginController/loginController.php";
                 } else {
-                    require_once $URL_APP_CONTROLLER . "registerController.php";
+                    require_once $URL_APP_CONTROLLER . "registerController/registerController.php";
                 }
 
                 

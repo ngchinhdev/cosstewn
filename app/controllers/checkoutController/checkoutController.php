@@ -34,6 +34,7 @@
         }
         $_SESSION['products_to_pay'] = $products_to_pay;
         $_SESSION['product_quantity'] = $product_quantity;
+        $_SESSION['pay-from-cart'] = 'true';
         // var_dump($products_to_pay);
     }
 ?>
