@@ -7,6 +7,9 @@ if (isset($_POST['namepromo']) || isset($_POST['pricepromo']) || isset($_POST['s
     $namepromo = isset($_POST['namepromo']) ? $_POST['namepromo'] : '';
     $pricepromo = isset($_POST['pricepromo']) ? $_POST['pricepromo'] : '';
 
+    // Kiểm tra xem tên khuyến mãi đã tồn tại hay chưa
+    $checkNameKM = $addpromoPage->checkNameKM($namepromo);
+
     // Định dạng ngày bắt đầu
     $startdate = isset($_POST['startdate']) ? $_POST['startdate'] : '';
     $startdate = new DateTime($startdate);
@@ -18,9 +21,12 @@ if (isset($_POST['namepromo']) || isset($_POST['pricepromo']) || isset($_POST['s
     $enddateFormat = $enddate->format('Y-m-d H:i:s');
 
 
-    if(empty($namepromo) || empty($pricepromo)){
+
+    if (empty($namepromo) || empty($pricepromo)) {
         $error = "Vui lòng điền đầy đủ thông tin khuyến mãi.";
-    }else{
+    } else if (!empty($checkNameKM)) {
+        $error = "Tên khuyến mãi đã tồn tại vui lòng nhập tên khác.";
+    } else {
         $addpromoPage->insertPromo($namepromo, $pricepromo, $startdateFormat, $enddateFormat);
         $success = "Khuyến mãi đã được thêm thành công.";
     }

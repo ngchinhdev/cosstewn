@@ -12,4 +12,11 @@ class AddPromoPage extends PDOModel
 
         $this->pdoExecute($sql, $namepromo, $pricepromo, $startdateFormat, $enddateFormat);
     }
+
+    function checkNameKM($namepromo)
+    {
+        $sql = "SELECT * FROM khuyenmai WHERE ten_km = ?";
+
+        return $this->pdoQueryOne($sql, $namepromo);
+    }
 }

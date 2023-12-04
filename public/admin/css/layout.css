@@ -655,6 +655,7 @@ canvas#chart-exam {
     width: fit-content;
     border-radius: 5px;
     overflow: hidden;
+    margin: 0;
 }
 
 .activePaging .pagination .page-num,
