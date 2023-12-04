@@ -115,6 +115,7 @@ if (isset($_GET['page'])) {
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../../public/app/js/searchMobile.js"></script>
     <?php
         if(isset($_GET['page'])) {
             switch($_GET['page']) {

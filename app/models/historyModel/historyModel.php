@@ -24,7 +24,7 @@
         }
 
         function getDetailsOrder($user_id, $order_id) { 
-            $sql = "SELECT ctdh.so_luong, sp.ten_sp, sp.gia_tien, sp.gia_goc, ha.hinh_anh, lh.ten_loai 
+            $sql = "SELECT ctdh.so_luong, sp.ten_sp, sp.gia_tien, sp.masp, lh.maloai, sp.gia_goc, ha.hinh_anh, lh.ten_loai 
                     FROM `chitietdonhang` ctdh JOIN donhang dh ON ctdh.madh = dh.madh 
                     JOIN sanpham sp ON ctdh.masp = sp.masp JOIN loaihang lh ON lh.maloai = sp.maloai 
                     JOIN hinhanh ha ON sp.masp = ha.masp WHERE dh.matk = ? AND ctdh.madh = ?

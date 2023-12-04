@@ -168,7 +168,7 @@
         <div class="row mt-3">
             <?php foreach ($banners_partner as $index => $banner) : ?>
                 <div class="col-md-4 col-6">
-                    <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="Banner partner <?= $index ?>" class="rounded-3 w-100">
+                    <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="Banner partner <?= $index ?>" class="rounded-3 w-100 mt-3 mt-lg-0">
                 </div>
             <?php endforeach ?>
         </div>
