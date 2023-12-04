@@ -151,7 +151,7 @@
         </div>
     </div>
     <div class="box-banner-detail">
-        <?php foreach($banners as $banner): ?>
+        <?php foreach ($banners as $banner) : ?>
             <img src="../../public/app/imgs/banners/<?= $banner['duong_dan'] ?>" alt="" class="rounded-3">
         <?php endforeach ?>
     </div>
@@ -168,7 +168,9 @@
                                 <img src="../../public/app/imgs/imgs-product/<?php echo $images[$i] ?>" alt="">
                             <?php } ?>
                         </div>
-                        <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                        <?php if (!empty($row['giam_gia'])) : ?>
+                            <div class="wrap-gift"><i class="fa-solid fa-gift"></i></div>
+                        <?php endif; ?>
                         <div class="card-content">
                             <div class="text-brand"><?php echo $row['ten_loai'] ?></div>
                             <div class="text-name"><?php echo $row['ten_sp'] ?></div>
