@@ -157,7 +157,7 @@
     </div>
     <div class="row wrapper-similarProducts mt-4 d-flex justify-content-center" id="container_catalog">
         <h3 class="col-12 my-3">SẢN PHẨM TƯƠNG TỰ</h3>
-        <div class="row row-cols-lg-5 row-cols-sm-2 row-cols-md-3 ">
+        <div class="row row-cols-lg-5 row-cols-2 row-cols-md-3 ">
             <?php foreach ($similarProducts as $row) : ?>
                 <div class="mb-1 p-1">
                     <div class="box-products">
@@ -193,7 +193,7 @@
             <?php endforeach; ?>
         </div>
     </div>
-    <div class="box-comment row justify-content-center align-items-center mt-3">
+    <div class="box-comment row justify-content-center align-items-center mt-3 w-100">
         <div class="wrapper-title col-12 d-flex">
             <div class="quantity-comment">
                 <!-- 32 Bình luận -->
