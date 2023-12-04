@@ -39,7 +39,7 @@
                     <td><?= $row['dia_chi'] ?></td>
                     <td>
                         <div class="wrap-formpay">
-                            <?php if ($row['phuong_thuc'] == 1) { ?>
+                            <?php if ($row['phuong_thuc'] == 0) { ?>
                                 <div class="formpay" style="border: 1px solid #0059ff; color: #0059ff; background: #E6EEF3;">Chuyển khoản</div>
                             <?php } else { ?>
                                 <div class="formpay">Tiền mặt</div>
