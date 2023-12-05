@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2023 at 02:52 AM
+-- Generation Time: Dec 04, 2023 at 04:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,8 +18,47 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cos`
+-- Database: `cosstewn`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner`
+--
+
+CREATE TABLE `banner` (
+  `mabn` int(11) NOT NULL,
+  `duong_dan` varchar(250) NOT NULL,
+  `loai` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `banner`
+--
+
+INSERT INTO `banner` (`mabn`, `duong_dan`, `loai`) VALUES
+(1, 'bn1.webp', 0),
+(2, 'bn2.webp', 0),
+(3, 'bn3.webp', 0),
+(4, 'bnn.webp', 1),
+(5, 'ahc.webp', 1),
+(6, 'skinfood.webp', 1),
+(7, 'stylelip.webp', 1),
+(8, 'ohui.webp', 1),
+(9, 'colui.webp', 1),
+(10, 'cosrx.webp', 1),
+(11, 'bnn.webp', 2),
+(12, 'thefaceshop.webp', 2),
+(13, 'ahc2.webp', 2),
+(14, 'banner-son-moi-1-PhotoRoom.png-PhotoRoom.png', 3),
+(15, 'banner-last1.webp', 4),
+(16, 'banner-last2.webp', 4),
+(17, 'banner-last3.webp', 4),
+(18, 'banner-last4.webp', 4),
+(19, 'banner-detail.webp', 5),
+(20, 'banner2-detail.webp', 5),
+(21, 'banner3-detail.webp', 5);
 
 -- --------------------------------------------------------
 
@@ -108,7 +147,7 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`madh`, `matk`, `ngay_dat_hang`, `ho_ten`, `so_dien_thoai`, `email`, `dia_chi`, `phuong_thuc`, `trang_thai`) VALUES
-(1, 1, '2023-11-24 08:52:31', 'Nguyễn Chính', '0916512235', 'chinhnguyennn24@gmail.com', 'quang trung', 0, 0);
+(1, 1, '2023-11-24 08:52:31', 'Nguyễn Chính', '0916512235', 'chinhnguyennn24@gmail.com', 'quang trung', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -865,7 +904,7 @@ INSERT INTO `sanpham` (`masp`, `maloai`, `ten_sp`, `gia_tien`, `gia_goc`, `so_lu
 (8, 1, 'Sữa Rửa Mặt Eucerin Dịu Nhẹ Cho Da Nhạy Cảm 400ml pH5 Facial Cleanser Sensitive Skin', 211000, 279000, 0, 'Sữa Rửa Mặt Eucerin PH5 Facial Cleanser Sensitive Skin là dòng sữa rửa mặt hoàn toàn mới được Eucerin thiết kế dành riêng cho làn da nhạy cảm, với độ pH5 cân bằng cùng công thức 0% thành phần gây kích ứng da, giúp làm sạch sâu và cải thiện da nhạy cảm. Đối với da nhạy cảm, một bảng thành phần đẹp và an toàn luôn là yếu tố tiên quyết khi nàng chọn sản phẩm sữa rửa mặt. Nếu bạn vẫn đang loay hoay tìm cho mình một \"trợ thủ làm sạch\" vừa dịu nhẹ vừa không gây kích ứng, dòng sữa rửa mặt pH5 Facial Cleanser từ thương hiệu dược mỹ phẩm Eucerin sẽ là giải pháp lý tưởng dành cho bạn.', 100, '2023-11-18 13:42:54', 1),
 (9, 1, 'Sữa Rửa Mặt Kimsohyung Chiết Xuất Thảo Dược 145g Pink Brightening Cleanser', 329000, 420000, 0, 'Sữa Rửa Mặt Kimsohyung Chiết Xuất Thảo Dược Pink Brightening Cleanser là sản phẩm sữa rửa mặt đến từ thương hiệu KimsohyungFul được nhiều khách hàng tin dùng tại Hàn Quốc. Với công dụng là sạch làn da một cách hoàn hảo, bên cạnh đó giúp cải thiện làn da mịn màng, tươi tắn. Được làm từ những nguyên liệu có sẵn trong tự nhiên, 100% từ các loại thảo dược như: đậu đen, đậu xanh, đậu đỏ, trà xanh, lúa mạch, lựu, lá thông, rễ sen, cây ngưu bàng, đậu nành, ngũ vị tử, hạt quả mơ, bí đỏ, ý dĩ, cám gạo, thanh yên,..', 100, '2023-11-18 13:48:32', 1),
 (10, 1, 'Sữa Rửa Mặt Rau Củ Byvibes Wonder Bath Dưỡng Ẩm Da 300ml Super Vegitoks Cleanser Green', 189000, 350000, 0, 'Sữa Rửa Mặt Rau Củ Byvibes Wonder Bath Super Vegitoks Cleanser 300ml là sản phẩm sữa rửa mặt đến từ thương hiệu mỹ phẩm Byvibes Wonder Bath của Hàn Quốc, kết hợp cả 3 chức năng chỉ trong 1 sản phẩm duy nhất: tẩy trang – làm sạch – thải độc cho da. Điều đặc biệt nữa là dòng sản phẩm này được chiết xuất từ 100% các loại rau củ quả thiên nhiên, an toàn và lành tính cho cả những làn da nhạy cảm, giúp nuôi dưỡng cho da luôn khỏe mạnh và tươi trẻ, tràn đầy sức sống. Với Super Vegitoks Cleanser, các nàng “sâu lười” sẽ không còn phải lích kích đủ thứ bước skincare mà vẫn có được làn da sạch mịn mướt, thông thoáng, không lo mụn ẩn.', 100, '2023-11-18 13:48:32', 1),
-(11, 5, 'Kem Dưỡng Thể Paula\'s Choice Giảm Viêm Lỗ Chân Lông 60ml Weightless Body Treatment 2% BHA (Trial size)', 299000, 349000, 0, 'Paula\'s Choice Weightless Body Treatment With 2% BHA là sản phẩm kem dưỡng thể tẩy tế bào chết toàn thân đến từ thương hiệu dược mỹ phẩm Paula\'s Choice. Công thức chứa nồng độ 2% Salicylic Acid (BHA) có khả năng cải thiện các vấn đề về mụn, viêm lỗ chân lông, mẩn đỏ các vùng da trên cơ thể, mang đến cho bạn làn da sạch thoáng mịn màng hơn. Bên cạnh đó, kem dưỡng thể Paula\'s Choice Weightless Body Treatment With 2% BHA hoàn toàn không chứa các chất gây bào mòn da, nhẹ nhàng làm sạch đồng thời duy trì độ mềm mịn cần thiết. Sản phẩm có độ pH lý tưởng từ 3.5 – 3.9, phù hợp với mọi loại da, kể cả da nhạy cảm.', 100, '2023-11-18 13:57:40', 1),
+(11, 5, 'Kem Dưỡng Thể Paula\'s Choice Giảm Viêm Lỗ Chân Lông 60ml Weightless Body Treatment 2% BHA (Trial size)', 299000, 349000, 1, 'Paula\'s Choice Weightless Body Treatment With 2% BHA là sản phẩm kem dưỡng thể tẩy tế bào chết toàn thân đến từ thương hiệu dược mỹ phẩm Paula\'s Choice. Công thức chứa nồng độ 2% Salicylic Acid (BHA) có khả năng cải thiện các vấn đề về mụn, viêm lỗ chân lông, mẩn đỏ các vùng da trên cơ thể, mang đến cho bạn làn da sạch thoáng mịn màng hơn. Bên cạnh đó, kem dưỡng thể Paula\'s Choice Weightless Body Treatment With 2% BHA hoàn toàn không chứa các chất gây bào mòn da, nhẹ nhàng làm sạch đồng thời duy trì độ mềm mịn cần thiết. Sản phẩm có độ pH lý tưởng từ 3.5 – 3.9, phù hợp với mọi loại da, kể cả da nhạy cảm.', 100, '2023-11-18 13:57:40', 1),
 (12, 5, 'Serum Dưỡng Thể Vaseline Chống Nắng Sáng Da 300ml (Mới) Healthy Bright Daily Protection & Brightening Serum SPF 50+ PA++++', 135000, 203000, 0, 'Serum Chống Nắng Cơ Thể Vaseline Healthy Bright Sun + Pollution Protection SPF 50+ PA++++ là dòng sản phẩm dưỡng thể kết hợp chống nắng toàn thân đến từ thương hiệu mỹ phẩm Vaseline. Phiên bản nâng cấp mới nhất cho khả năng bảo vệ da trước 5 tác nhân có hại (UVA / UVB / ô nhiễm / ánh sáng xanh / môi trường điều hoà) gấp 50 lần, cùng hỗn hợp Vitamin gồm Niacinamide, Vitamin C&E giúp dưỡng da sáng rạng rỡ hơn gấp 2 lần. Với Serum Chống Nắng Vaseline Healthy Bright, làn da cơ thể bạn sẽ luôn được bảo vệ và nuôi dưỡng, ngăn ngừa hình thành các dấu hiệu lão hoá cũng như cải thiện tình trạng da thâm sạm, xỉn màu hiệu quả.', 100, '2023-11-18 13:57:40', 1),
 (13, 5, 'Sữa Dưỡng Thể Eucerin Làm Sáng Da SPF 7 250ml Spotless Brightening Body Lotion SPF 7', 313000, 370000, 0, 'Lotion Dưỡng Sáng Da Toàn Thân Eucerin Ultra White+ Spotless Body Lotion SPF 7 là phiên bản mới của Eucerin White Therapy Whitening Body Lotion SPF 7. Sản phẩm thuộc dòng chăm sóc và dưỡng sáng da Eucerin UltraWhite+, có công thức dịu nhẹ phù hợp cho cả những làn da nhạy cảm nhất, giúp cung cấp độ ẩm và làm sáng da từ sâu bên trong. Kết hợp với chỉ số chống nắng SPF 7 giúp bảo vệ làn da trước những tổn thương do ánh nắng mặt trời gây ra. Sử dụng lâu dài sẽ mang lại cho bạn một làn da mịn màng, tươi sáng và đều màu hơn, ngăn ngừa lão hóa da cơ thể. ', 100, '2023-11-18 14:00:16', 1),
 (14, 5, 'Sữa Dưỡng Thể Nivea Làm Sáng & Săn Chắc Da Ban Đêm 350ml Extra White Night Nourish Body Lotion', 91000, 139000, 0, 'Sữa Dưỡng Thể Nivea Extra White Body Lotion là dòng sản phẩm dưỡng thể làm sáng da toàn thân nổi tiếng của thương hiệu NIVEA, với công nghệ Deep White Essence chứa các hạt phân tử dưỡng sáng siêu nhỏ cùng hàm lượng Vitamin C cô đặc gấp 40 lần, nuôi dưỡng sâu các tế bào da, mang lại cho bạn làn da sáng mịn rạng rỡ. Sữa Dưỡng Thể Nivea Sáng Da Tức Thì White Instant Glow Body Lotion SPF30 PA++ chứa thành phần Collagen cao cấp giúp nuôi dưỡng và hỗ trợ phục hồi làn da hư tổn, sạm đen do ánh nắng. Công thức tiên tiến Deep White Essence với các hạt phân tử siêu nhỏ thẩm thấu nhanh cùng hàm lượng 40X Vitamin C, đem lại hiệu quả dưỡng sáng da nhanh chóng nhưng vẫn tuyệt đối an toàn cho da. Đặc biệt, sản phẩm được bổ sung chỉ số chống nắng cao SPF30 giúp bảo vệ làn da tránh khỏi các tổn thương bởi tia UV gây ra.', 100, '2023-11-18 14:00:16', 1),
@@ -925,16 +964,16 @@ INSERT INTO `sanpham` (`masp`, `maloai`, `ten_sp`, `gia_tien`, `gia_goc`, `so_lu
 (68, 4, 'Nước Hoa Nam Azzaro Chrome Extreme EDP Vaporisateur spray', 1118000, 1368000, 0, 'Azzaro Chrome Extreme được ra mắt vào năm 2020, hương thơm như chuyến trải nghiệm khám phá đại dương sâu thẳm, mênh mông. Nó mang đến một cảm giác vô cùng tươi mới, sảng khoái nhưng cũng vô cùng bí ẩn của đại dương.', 100, '2023-11-18 15:05:03', 1),
 (69, 4, 'Nước Hoa Dành Cho Nữ Calvin Klein Euphoria Eau De Parfum', 2262000, 2640000, 0, 'Nước hoa cho nữ giới với nhóm hương Oriental Floral (hoa cỏ phương Đông) mang lại làn hương đầy bí ẩn, quyến rũ. Euphoria có mùi hương tươi sáng và ngọt ngào nhờ vào những nốt hương trái cây và hoa cỏ góp mặt trong chai nước hoa. Sản phẩm được giới chuyên môn nhận định là mùi hương quyến rũ, huyền bí, gợi cảm đầy thu hút.', 100, '2023-11-18 15:07:13', 1),
 (70, 4, 'Nước Hoa Nam Ralph Lauren Polo Deep Blue Parfum Spray Vaporisateur 125ml', 2400000, 3020000, 0, 'Ralph Lauren Polo Deep Blue là chai nước hoa mang hương thơm tương phản giữa “deep” và “blue” đầy thú vị, ấn tượng. Bước vào nốt hương đầu tiên là sự tươi mát kết hợp với cam quýt và xoài xanh Hawaii. Năng lượng ấy càng mạnh mẽ hơn dưới sự xuất hiện của CristalFizz™ - một thành phần thủy sinh độc quyền giúp tăng cường sự tươi mát.', 100, '2023-11-18 15:07:13', 1),
-(71, 6, 'Dầu Gội Bưởi Cocoon Pomelo Shampoo 310ml', 500000, 450000, 0, 'Tinh dầu bưởi: chứa hàm lượng limonene rất cao giúp ức chế mạnh mẽ enzyme 5-alpha reductase gây ra tình trạng rụng tóc, có tính kháng khuẩn cao giúp hạn chế tình trạng gàu.', 100, '2023-11-20 00:00:00', 1),
-(72, 6, 'Dầu Gội Khô Tsubaki Dry Shampoo 180ml', 600000, 550000, 0, 'Dầu gội khô Tsubaki Dry Shampoo cho mái tóc luôn bồng bềnh như mới được gội trong cả ngày. Cảm giác sảng khoái như sau khi gội đầu sẽ giúp bạn gạt bỏ mệt mỏi sau giờ làm việc căng thẳng.', 100, '2023-11-20 00:00:00', 1),
-(73, 6, 'Dầu Gội Dưỡng Ẩm Pantene Shampoo Moisture Renewal', 700000, 650000, 0, 'Dầu gội Pantene Shampoo Moisture Renewal chứa thành phần dưỡng ẩm vượt trội nhất hiện nay. Với công dụng cung cấp, duy trì độ ẩm mang đến làn da mềm mại, óng ả như mong muốn.', 100, '2023-11-20 00:00:00', 1),
-(74, 6, 'Dầu Gội Trị Gàu Cho Da Đầu Dầu Vichy Dercos Anti- Dandruff Oily Hair 200Ml', 800000, 750000, 0, 'Sở hữu phức hợp Anti-sebum giúp kiểm soát tuyến bã nhờn ,làm sạch da đầu, đặc biệt là da đầu nhiều dầu ,kiểm soát dầu tiết ra giúp duy trì mái tóc sạch sẽ, không bết nhờn ,đồng thời tăng độ dày của tóc', 100, '2023-11-20 00:00:00', 1),
-(75, 6, 'Dầu Gội & Xả Tóc Dày, Bồng Bềnh Pantene Shampoo & Conditioner 2In1 Sheer Volume', 900000, 850000, 0, 'Uốn, nhuộm, sử dụng nhiệt nhiều khiến mái tóc hư tổn, mất đi độ đàn hồi nhất định. Vậy làm cách nào để giải quyết vấn đề nan giải này? Hãy cùng tìm hiểu ngay Pantene Shampoo & Conditioner 2IN1 Sheer Volume với công thức Sheer Volume Pro-V giúp làm dày, cung cấp ẩm, bảo vệ tóc trước tác nhân gây hại như tia cực tím, khói bụi, nhiệt độ... Đặc biệt dầu gội giữ được nếp khá lâu, hạn chế tiết dầu nhờn giúp tóc không bị bết dính.', 100, '2023-11-20 00:00:00', 1),
-(76, 6, 'Dầu Gội Dưỡng Tóc Suôn Mượt Loreal Paris Shampoo Extraordinary Oil Sleek 440ml', 1000000, 950000, 0, '100% tinh dầu gỗ tuyết tùng (từ Pháp) giàu chất dưỡng ẩm cùng khả năng phục hồi hư tổn cho các tế bào ở mô tóc, nuôi dưỡng tóc suôn mượt, vào nếp.', 100, '2023-11-20 00:00:00', 1),
-(77, 6, 'Dầu Gội Gừng Hà Thủ Ô Kích Mọc Tóc Weilaiya Zingiber Officinale Juice Shampoo 400Ml', 1100000, 1050000, 0, 'Dầu gội gừng hà thủ ô Weilaiya chứa chiết xuất từ gừng tươi, tinh chất hà thủ ô và các loại thảo mộc tự nhiên giúp làm sạch tóc và da đầu, loại bỏ gàu. Đồng thời dầu gội còn có tác dụng hỗ trợ lưu thông máu da đầu, tăng cường dinh dưỡng nuôi dưỡng nang tóc, giúp tóc phục hồi chắc khoẻ, giảm gãy rụng chỉ sau 1 lần gội. Ngoài ra tinh chất hà thủ ô có khả năng kích thích tóc mọc mới, giúp tóc đen nhánh, bóng mượt.', 100, '2023-11-20 00:00:00', 1),
-(78, 6, 'Dầu Gội & Xả Dành Cho Nam Giới Head & Shouders Male Shampoo & Conditioner 2In1 Old Spice Pure Sport', 1200000, 1150000, 0, 'Head & Shouder là thương hiệu dầu gội trị gàu nổi tiếng có nguồn gốc từ Mỹ. Sản phẩm được đánh giá cao về chất lượng từ thành phần đến công dụng. Không chỉ loại bỏ bụi bẩn giúp mái tóc sạch sẽ, mà còn hỗ trợ điều trị các vấn đề về da đầu như nấm, gàu, ngứa rát gây khó chịu bằng thành phần ưu việt Zinc Pyrithione (ZPT) 1%. Nếu bạn đang gặp phải những tình trạng trên, đây sẽ là giải pháp tuyệt vời cho bạn.', 100, '2023-11-20 00:00:00', 1),
-(79, 6, 'Dầu Gội Tsubaki Phục Hồi Ngăn Rụng Tóc 490ml\r\nPremium Volume & Repair Shampoo', 1300000, 1250000, 0, 'TSUBAKI Premium Shampoo là dòng sản phẩm dầu gội cao cấp của thương hiệu TSUBAKI (thuộc tập đoàn Shiseido Nhật Bản), được ứng dụng công nghệ thẩm thấu độc quyền của Shiseido giúp dưỡng chất hấp thu nhanh và sâu vào trong lõi tóc, nuôi dưỡng cho mái tóc khỏe mạnh và bóng mượt như vừa được dưỡng tại Salon Nhật về chỉ với \"0 giây chờ đợi\"!', 100, '2023-11-20 00:00:00', 1),
-(80, 6, 'Bộ Gội Xả TRESemmé Keratin Vào Nếp Suôn Mượt 640g+620g\r\nKeratin Smooth Shampoo & Conditioner', 1400000, 1350000, 0, 'Combo TRESemmé Keratin Smooth Vào Nếp Mượt Mà: Dầu Gội 640g + Dầu Xả 620g là dòng chăm sóc tóc mới của thương hiệu TRESemmé. Với nồng độ sulfate thấp, sản phẩm dầu gội + dầu xả TRESemmé Keratin Smooth  dành riêng cho tóc xơ rối không thể vào nếp.  Công thức chứa tinh dầu Argan từ vùng Morocco và keratin giúp nuôi dưỡng từng sợi tóc, mang lại 5 hiệu quả sau: Tóc vào nếp - Bóng Mượt - Mềm Mại - Giảm xơ - Gỡ Rối ngay sau khi sử dụng. ', 100, '2023-11-20 00:00:00', 1),
+(71, 6, 'Dầu Gội Bưởi Cocoon Pomelo Shampoo 310ml', 450000, 500000, 0, 'Tinh dầu bưởi: chứa hàm lượng limonene rất cao giúp ức chế mạnh mẽ enzyme 5-alpha reductase gây ra tình trạng rụng tóc, có tính kháng khuẩn cao giúp hạn chế tình trạng gàu.', 100, '2023-11-20 00:00:00', 1),
+(72, 6, 'Dầu Gội Khô Tsubaki Dry Shampoo 180ml', 550000, 600000, 0, 'Dầu gội khô Tsubaki Dry Shampoo cho mái tóc luôn bồng bềnh như mới được gội trong cả ngày. Cảm giác sảng khoái như sau khi gội đầu sẽ giúp bạn gạt bỏ mệt mỏi sau giờ làm việc căng thẳng.', 100, '2023-11-20 00:00:00', 1),
+(73, 6, 'Dầu Gội Dưỡng Ẩm Pantene Shampoo Moisture Renewal', 650000, 700000, 0, 'Dầu gội Pantene Shampoo Moisture Renewal chứa thành phần dưỡng ẩm vượt trội nhất hiện nay. Với công dụng cung cấp, duy trì độ ẩm mang đến làn da mềm mại, óng ả như mong muốn.', 100, '2023-11-20 00:00:00', 1),
+(74, 6, 'Dầu Gội Trị Gàu Cho Da Đầu Dầu Vichy Dercos Anti- Dandruff Oily Hair 200Ml', 750000, 800000, 0, 'Sở hữu phức hợp Anti-sebum giúp kiểm soát tuyến bã nhờn ,làm sạch da đầu, đặc biệt là da đầu nhiều dầu ,kiểm soát dầu tiết ra giúp duy trì mái tóc sạch sẽ, không bết nhờn ,đồng thời tăng độ dày của tóc', 100, '2023-11-20 00:00:00', 1),
+(75, 6, 'Dầu Gội & Xả Tóc Dày, Bồng Bềnh Pantene Shampoo & Conditioner 2In1 Sheer Volume', 850000, 900000, 0, 'Uốn, nhuộm, sử dụng nhiệt nhiều khiến mái tóc hư tổn, mất đi độ đàn hồi nhất định. Vậy làm cách nào để giải quyết vấn đề nan giải này? Hãy cùng tìm hiểu ngay Pantene Shampoo & Conditioner 2IN1 Sheer Volume với công thức Sheer Volume Pro-V giúp làm dày, cung cấp ẩm, bảo vệ tóc trước tác nhân gây hại như tia cực tím, khói bụi, nhiệt độ... Đặc biệt dầu gội giữ được nếp khá lâu, hạn chế tiết dầu nhờn giúp tóc không bị bết dính.', 100, '2023-11-20 00:00:00', 1),
+(76, 6, 'Dầu Gội Dưỡng Tóc Suôn Mượt Loreal Paris Shampoo Extraordinary Oil Sleek 440ml', 950000, 1000000, 0, '100% tinh dầu gỗ tuyết tùng (từ Pháp) giàu chất dưỡng ẩm cùng khả năng phục hồi hư tổn cho các tế bào ở mô tóc, nuôi dưỡng tóc suôn mượt, vào nếp.', 100, '2023-11-20 00:00:00', 1),
+(77, 6, 'Dầu Gội Gừng Hà Thủ Ô Kích Mọc Tóc Weilaiya Zingiber Officinale Juice Shampoo 400Ml', 1050000, 1100000, 0, 'Dầu gội gừng hà thủ ô Weilaiya chứa chiết xuất từ gừng tươi, tinh chất hà thủ ô và các loại thảo mộc tự nhiên giúp làm sạch tóc và da đầu, loại bỏ gàu. Đồng thời dầu gội còn có tác dụng hỗ trợ lưu thông máu da đầu, tăng cường dinh dưỡng nuôi dưỡng nang tóc, giúp tóc phục hồi chắc khoẻ, giảm gãy rụng chỉ sau 1 lần gội. Ngoài ra tinh chất hà thủ ô có khả năng kích thích tóc mọc mới, giúp tóc đen nhánh, bóng mượt.', 100, '2023-11-20 00:00:00', 1),
+(78, 6, 'Dầu Gội & Xả Dành Cho Nam Giới Head & Shouders Male Shampoo & Conditioner 2In1 Old Spice Pure Sport', 1150000, 1200000, 0, 'Head & Shouder là thương hiệu dầu gội trị gàu nổi tiếng có nguồn gốc từ Mỹ. Sản phẩm được đánh giá cao về chất lượng từ thành phần đến công dụng. Không chỉ loại bỏ bụi bẩn giúp mái tóc sạch sẽ, mà còn hỗ trợ điều trị các vấn đề về da đầu như nấm, gàu, ngứa rát gây khó chịu bằng thành phần ưu việt Zinc Pyrithione (ZPT) 1%. Nếu bạn đang gặp phải những tình trạng trên, đây sẽ là giải pháp tuyệt vời cho bạn.', 100, '2023-11-20 00:00:00', 1),
+(79, 6, 'Dầu Gội Tsubaki Phục Hồi Ngăn Rụng Tóc 490ml\r\nPremium Volume & Repair Shampoo', 1250000, 1300000, 0, 'TSUBAKI Premium Shampoo là dòng sản phẩm dầu gội cao cấp của thương hiệu TSUBAKI (thuộc tập đoàn Shiseido Nhật Bản), được ứng dụng công nghệ thẩm thấu độc quyền của Shiseido giúp dưỡng chất hấp thu nhanh và sâu vào trong lõi tóc, nuôi dưỡng cho mái tóc khỏe mạnh và bóng mượt như vừa được dưỡng tại Salon Nhật về chỉ với \"0 giây chờ đợi\"!', 100, '2023-11-20 00:00:00', 1),
+(80, 6, 'Bộ Gội Xả TRESemmé Keratin Vào Nếp Suôn Mượt 640g+620g\r\nKeratin Smooth Shampoo & Conditioner', 1350000, 1400000, 0, 'Combo TRESemmé Keratin Smooth Vào Nếp Mượt Mà: Dầu Gội 640g + Dầu Xả 620g là dòng chăm sóc tóc mới của thương hiệu TRESemmé. Với nồng độ sulfate thấp, sản phẩm dầu gội + dầu xả TRESemmé Keratin Smooth  dành riêng cho tóc xơ rối không thể vào nếp.  Công thức chứa tinh dầu Argan từ vùng Morocco và keratin giúp nuôi dưỡng từng sợi tóc, mang lại 5 hiệu quả sau: Tóc vào nếp - Bóng Mượt - Mềm Mại - Giảm xơ - Gỡ Rối ngay sau khi sử dụng. ', 100, '2023-11-20 00:00:00', 1),
 (81, 7, 'Kem Chống Nắng Nâng Tông Da CNP Laboratory Tone-Up Protection Sun Spf42 Pa+++ 50Ml', 286000, 300000, 0, 'CNP Laboratory Tone-Up Protection Sun SPF42 PA+++ là kem chống nắng vật lý lai hóa học có chỉ số chống nắng SPF42 PA++++ phù hợp với người làm văn phòng, ở trong môi trường có bóng mát. Sản phẩm được nghiên cứu dành cho mọi loại da, thành phẩn được điều chế ở liều lượng an toàn, phù hợp cho làn da yếu, nhạy cảm.', 100, '2023-11-20 00:00:00', 1),
 (82, 7, 'Kem Nền Nâng Tông Da, Chống Nắng Klairs Illuminating Supple Blemish Cream Spf40 Pa++ 40Ml', 279000, 319000, 0, 'Sodium Hyaluronate: hoạt chất có thể cấp nước ở các tầng biểu bì của da, giúp da ngậm nước, căng mọng, niacinamide: Giúp làm mờ đốm nâu, làm sáng đều màu da, chiết xuất nha đam: cấp nước dưỡng ẩm, làm dịu da.', 100, '2023-11-20 00:00:00', 1),
 (83, 7, 'Sữa Chống Nắng Ngừa Mụn Sunplay Skin Aqua Acne Clear Milk 25G', 127000, 156000, 0, 'Sữa chống nắng Sunplay có khả năng chống nắng mạnh mẽ, bền lâu giúp bảo vệ da tối ưu dưới ánh nắng trong nhiều giờ liền. Ngoài ra, sản phẩm cấp giữ ẩm, kiểm soát dầu và ngăn ngừa mụn phát triển.', 100, '2023-11-20 00:00:00', 1),
@@ -957,7 +996,7 @@ INSERT INTO `sanpham` (`masp`, `maloai`, `ten_sp`, `gia_tien`, `gia_goc`, `so_lu
 (99, 8, 'Dung Dịch Làm Sạch Và Tẩy Trang Cho Da Nhạy Cảm Bioderma Sensibio H2O 500Ml', 1300000, 1400000, 0, 'Bioderma là hãng dược mỹ phẩm nổi tiếng của Pháp chuyên chăm sóc da nhạy cảm, tổn thương. Các sản phẩm của thương hiệu mang sứ mệnh an toàn cho da với tính năng dịu nhẹ, lành tính. Trong đó nổi bật nhất là dung dịch tẩy trang dành cho da nhạy cảm Bioderma Sensibio H2O. Đây là sản phẩm hứa hẹn loại bỏ bụi bẩn, bã nhờn trên da trả lại cho bạn làn da sạch sẽ, khỏe mạnh.', 100, '2023-11-20 00:00:00', 1),
 (100, 8, 'Sữa Tẩy Trang Hạnh Nhân Dưỡng Ẩm Caudalie Vinoclean Cleansing Almond Milk 400Ml', 1400000, 1500000, 0, 'Hỗn hợp hữu cơ (dầu hạnh nhân, dầu hạt jojoba, dầu bơ hạt mỡ, nước hoa ngô và polyphenols): giúp chống oxy hóa, làm dịu da đồng thời nuôi dưỡng da mềm mại, bảo vệ da khỏi tình trạng khô căng do mất nước.', 100, '2023-11-20 00:00:00', 1),
 (101, 10, 'Kem Dưỡng Trắng Da Hada Labo Perfect White Cream 50G', 500000, 600000, 0, 'Arbutin: có tác dụng ức chế tích tụ melanin giúp làm sáng da, mờ các vùng da sạm nám.\r\nHỗn hợp vitamin C & E: chống oxy hóa, làm sáng đều màu da.\r\nHyaluronic acid: tăng cường độ ẩm, dưỡng da trong mướt.\r\nChiết xuất hạt Ý Dĩ : giúp dưỡng ẩm và sáng da, giảm viêm, ngừa lão hóa.', 100, '2023-11-20 00:00:00', 1),
-(102, 10, 'Kem Dưỡng Ẩm Ban Đêm Astalift Night Charge Cream S 30G', 600000, 700000, 0, 'Bổ sung độ ẩm vượt trội, tăng cường hàng rào ẩm bảo vệ da vào ban đêm mang lại làn da căng mướt.', 100, '2023-11-20 00:00:00', 1),
+(102, 10, 'Kem Dưỡng Ẩm Ban Đêm Astalift Night Charge Cream S 30G', 600000, 700000, 2, 'Bổ sung độ ẩm vượt trội, tăng cường hàng rào ẩm bảo vệ da vào ban đêm mang lại làn da căng mướt.', 100, '2023-11-20 00:00:00', 1),
 (103, 10, 'Kem Dưỡng Tay Và Móng Caudalie Hand And Nail Cream 75Ml', 700000, 800000, 0, 'Kem dưỡng tập trung cấp giữ ẩm cho da tay, chăm sóc móng tay chắc khỏe, dẻo dai, chống oxy hóa với thành phần polyphenols giúp da tay thêm mềm mại, phục hồi da tay thô sần, bong tróc với tinh dầu bơ hạt mỡ, đôi tay được chăm sóc, bảo vệ mỗi ngày', 100, '2023-11-20 00:00:00', 1),
 (104, 10, 'Bộ Dưỡng Da Nuxe (Kem Dưỡng Tay 50ml + Sáp Dưỡng Môi 15g + Dầu Dưỡng 10ml)', 800000, 900000, 0, 'Bộ dưỡng da Nuxe đa năng gồm 3 sản phẩm gồm kem dưỡng da tay, sáp dưỡng môi và dầu dưỡng giúp chăm sóc toàn diện cho làn da luôn khỏe khoắn, rạng rỡ.', 100, '2023-11-20 00:00:00', 1),
 (105, 10, 'Kem Dưỡng Giảm Mụn, Kiềm Dầu Svr Sebiaclear Active 40Ml', 900000, 1000000, 0, 'Kem dưỡng SVR Sebiaclear Active đem lại hiệu quả giảm mụn và mờ thâm trong 7 ngày. Sản phẩm an toàn và hiệu quả trên cả các nốt mụn và mụn đầu đen.', 100, '2023-11-20 00:00:00', 1),
@@ -967,9 +1006,9 @@ INSERT INTO `sanpham` (`masp`, `maloai`, `ten_sp`, `gia_tien`, `gia_goc`, `so_lu
 (109, 10, 'Kem Dưỡng Mắt Chống Lão Hóa Laneige Perfect Renew Youth R. Eye Cream 20Ml', 1300000, 1400000, 0, 'Bạn cảm thấy mình già hơn khi chụp những bức ảnh selfie. Thấy những nếp nhăn đã dần hình thành ở khóe mắt. Kem dưỡng mắt với thành phần cao cấp của nhà Laneige sẽ là sự lựa chọn hoàn hảo, là giải pháp chăm sóc vùng da quanh mắt giúp bạn trông trẻ trung và rạng rỡ hơn.', 100, '2023-11-20 00:00:00', 1),
 (110, 10, 'Kem Dưỡng Ẩm, Kiểm Soát Nhờn, Ngừa Mụn Eucerin Proacne Matt Fluid 50Ml', 1400000, 1500000, 0, 'Nhờ Salicylic Acid, Licochalcone A và Decandiol là các thành phần chuyên biệt cho da mụn, sản phẩm được chứng minh lâm sàng và kiểm chứng bởi nhiều người tiêu dùng về hiệu quả vượt trội cho da mụn.', 100, '2023-11-20 00:00:00', 1),
 (111, 11, 'Mặt Nạ Giấy INNISFREE Squeeze Energy Mask', 200000, 220000, 0, 'Dạng giấy cellulose êm dịu, làm tính cho da.Được chiết xuất từ các thành phần hoa quả, cây lá tự nhiên giàu dưỡng chất,Giúp chăm sóc các vấn đề da hiệu quả như da khô, tối màu, da yếu, thiếu sức sống...Thiết kế mặt nạ ôm sát da, mỏng nhẹ, giàu dưỡng chất', 100, '2023-11-21 18:14:20', 1),
-(112, 11, 'Mặt Nạ Dưỡng Da JMsolution Selfie Mask 30ml', 100000, 1200000, 0, 'Mặt nạ dưỡng da vùng mắt được làm từ nước dừa tươi lên men dưới dạng thạch trong suốt giúp định hình mặt nạ trên da. Sản phẩm giúp làm mát dịu vùng da mắt mệt mỏi, dưỡng da căng mịn, tăng độ đàn hồi, hạn chế nếp nhăn và vết chân chim.', 100, '2023-11-21 18:14:20', 1),
-(113, 11, 'Mặt Nạ Dưỡng Da Jmsolution Water Luminous Mask', 120000, 1000000, 0, 'Mặt Nạ JMSolution Luminous là dòng sản phẩm mặt nạ giấy chăm sóc làn da toàn diện đến từ thương hiệu mỹ phẩm nội địa HànQuốcJMSolution. Được chiết xuất từ các thành phần hoàn toàn thiên nhiên mang đến hiệu quả chăm sóc từng vấn đề cụ thể của làn da. Đồng thời, mặt nạ được sử dụng chất liêu cực kỳ mềm mại êm ái dễ chịu cho cả làn da nhạy cảm', 100, '2023-11-21 18:50:35', 1),
-(114, 11, 'Mặt Nạ Tinh Chất Garnier Serum Mask 23G', 100000, 900000, 0, 'Công dụng chính: mặt nạ tinh chất Garnier serum mask được chiết xuất từ những thành phần thiên nhiên giúp chăm sóc và cải thiện tối ưu những tình trạng mà da gặp phải.Cung cấp đổ ẩm cho da tức thì, cho bạn làn da căng bóng, khỏemạnh.Tăng độ đàn hồi và trẻ hóa làn da, cải thiện vết nhăn và đẩy lùi mọi dấu hiệu lão hóa', 100, '2023-11-21 18:50:35', 1),
+(112, 11, 'Mặt Nạ Dưỡng Da JMsolution Selfie Mask 30ml', 1000000, 1200000, 0, 'Mặt nạ dưỡng da vùng mắt được làm từ nước dừa tươi lên men dưới dạng thạch trong suốt giúp định hình mặt nạ trên da. Sản phẩm giúp làm mát dịu vùng da mắt mệt mỏi, dưỡng da căng mịn, tăng độ đàn hồi, hạn chế nếp nhăn và vết chân chim.', 100, '2023-11-21 18:14:20', 1),
+(113, 11, 'Mặt Nạ Dưỡng Da Jmsolution Water Luminous Mask', 800000, 1000000, 0, 'Mặt Nạ JMSolution Luminous là dòng sản phẩm mặt nạ giấy chăm sóc làn da toàn diện đến từ thương hiệu mỹ phẩm nội địa HànQuốcJMSolution. Được chiết xuất từ các thành phần hoàn toàn thiên nhiên mang đến hiệu quả chăm sóc từng vấn đề cụ thể của làn da. Đồng thời, mặt nạ được sử dụng chất liêu cực kỳ mềm mại êm ái dễ chịu cho cả làn da nhạy cảm', 100, '2023-11-21 18:50:35', 1),
+(114, 11, 'Mặt Nạ Tinh Chất Garnier Serum Mask 23G', 700000, 900000, 0, 'Công dụng chính: mặt nạ tinh chất Garnier serum mask được chiết xuất từ những thành phần thiên nhiên giúp chăm sóc và cải thiện tối ưu những tình trạng mà da gặp phải.Cung cấp đổ ẩm cho da tức thì, cho bạn làn da căng bóng, khỏemạnh.Tăng độ đàn hồi và trẻ hóa làn da, cải thiện vết nhăn và đẩy lùi mọi dấu hiệu lão hóa', 100, '2023-11-21 18:50:35', 1),
 (115, 11, 'Mặt Nạ Bí Đao Cocoon Winter Melon Face Mask', 200000, 300000, 0, 'Mặt nạ bí đao giúp giảm nhờn, thông thoáng lỗ chân lông góp phần cải thiện tình trạng da mụn, ửng đỏ trở nên sạch mịn.Sử dụng trước khi trang điểm để giúp lớp trang điểm căng bóng và lâu trôi hơn.Cung cấp đổ ẩm cho da tức thì, cho bạn làn da căng bóng, khỏe mạnh.', 100, '2023-11-21 19:01:07', 1),
 (116, 11, 'Mặt Nạ Giấy Làm Dịu Da Peripera Calming Time Mask Sheet', 100000, 300000, 0, 'Mặt nạ giấy mang lại độ ẩm nhất định và cung cấp đầy đủ chất dinh dưỡng từ chiết xuất thảo mộc, mang lại một làn da tươi mới, giàu dưỡng chất.\r\nPhân tử Micellar lấy sạch bụi bẩn sâu bên trong lỗ chân lông mà không cần chà xát,Làm sạch da nhanh chóng, loại bỏ dầu thừa, bã nhờn tích tụ giúp lỗ chân lông thông thoáng.', 100, '2023-11-21 19:01:07', 1),
 (117, 11, 'Mặt Nạ Dưỡng Da Bnbg Vita Cocktail Aqua Foil Mask 30Ml', 14222, 17444, 0, 'Công dụng chính: Tăng cường nuôi dưỡng da khỏe mạnh, ẩm mượt giúp duy trì sự trẻ trung, tươi tắn hoàn hảo.Thành phần chính: chiết xuất từ thiên nhiên.Mặt nạ cung cấp độ ẩm cao mà không gây bết dính, giúp dưỡng ẩm tối ưu và dưỡng sáng làn da. Thành phần chanh và mật ong mang lại sức sống cho da luôn rạng rỡ, trong trẻo.', 100, '2023-11-21 19:09:54', 1),
@@ -983,13 +1022,13 @@ INSERT INTO `sanpham` (`masp`, `maloai`, `ten_sp`, `gia_tien`, `gia_goc`, `so_lu
 (125, 12, 'Tinh Chất Cấp Ẩm Căng Mướt Da L\'Oreal Paris Revitalift Hyaluronic Acid Serum', 140000, 150000, 0, 'Revitalift Hyaluronic Acid Serum là giải pháp cấp ẩm cho da căng mướt và khỏe từ bên trong với thành phần chính là hyaluronic acid đậm đặc 1.5%, đem lại khả năng cấp khóa ẩm vượt trội, đủ đầy giúp duy trì làn da căng mọng, mướt mát. Hyaluronic acid: có 2 dạng HA là macro & micro với cấu trúc phân tử siêu nhỏ có thể cấp nước tức thì trên bề mặt da, ngăn ngừa tình trạng mất độ ẩm, đồng thời thấm sâu vào hạ bì giúp làm căng đầy, giảm nếp nhăn và sáng da từ bên trong', 100, '2023-11-22 12:56:22', 1),
 (126, 12, 'Tinh Chất Cấp Ẩm Cosrx The Hyaluronic Acid 3 Serum 20ml', 180000, 190000, 0, 'Công dụng chính: Tinh chất Cosrx đem lại hiệu quả dưỡng ẩm tức thì, dưỡng ẩm sâu bên dưới da giúp làm dịu làn da cháy nắng.Tinh chất Cosrx The Hyaluronic Acid 3 Serum đem lại hiệu quả dưỡng ẩm tức thì & sâu bên trong da nhờ khả năng thâm nhập chuyên nghiệp của hoạt chất Hyaluronic acid. Sản phẩm cấp nước giữ ẩm cho làn da, phục hồi da khô thiếu ẩm đồng thời cải thiện kết cấu da mịn màng, căng mướt.', 100, '2023-11-22 12:56:22', 1),
 (127, 12, 'Tinh Chất Dưỡng Sáng Da Garnier Skin Naturals Bright Complete Anti - Acne Booster Serum 30Ml', 130000, 160000, 0, 'Công dụng chính: Làm sáng, giảm mờ thâm nám, đốm nâu, vùng da xỉn màu mang lại làn da trắng khỏe và trẻ trung tràn đầy sức sống.Làm sáng da, mờ thâm nám, đốm nâu, cải thiện vùng da không đều màu.Tẩy da chết nhẹ nhàng, loại bỏ bụi bẩn ẩn sâu bên trong lỗ chân lông.Cấp ẩm, xây dựng hàng rào ẩm tự nhiên bảo vệ da khỏi các tác nhân gây hại.', 100, '2023-11-22 13:03:35', 1),
-(128, 12, 'Tinh Chất Chống Lão Hóa Ohui Prime Advancer Ampoule Serum 50Ml', 120000, 100000, 0, 'Công dụng chính: Tinh chất chống lão hóa cùng các thành phần Triple Care nhằm giữ vững cốt lõi và tăng cường sức mạnh ban đầu của da trước các tác động môi trường.Serum chứa 78% lượng tinh chất đậm đặc có tác dụng chống lão hóa vượt trội, tăng cường hiệu quả dưỡng da trẻ khỏe:Cải thiện đàn hồi,Tăng độ ẩm,Cải thiện độ trong suốt.', 100, '2023-11-22 13:03:35', 1),
-(129, 12, 'Tinh Chất Làm Sáng Da Some By Mi Yuja Niacin Blemish Care Serum 50Ml', 100000, 90000, 0, 'YUJA NIACIN là dòng sản phẩm với thành phần chính từ chiết xuất trái Yuja và Niacinamide giúp dưỡng sáng, cung cấp năng lượng cho làn da tối, xỉn màu mang lại làn da tươi sáng rạng rỡ.Một trong những sản phẩm chủ đạo của YUJA NIACIN phải nhắc đến Tinh chất làm sáng da Some By Mi Yuja Niacin Blemish Care Serum. Sản phẩm cho hiệu quả cải thiện da sáng trắng rõ rệt, với khả năng thâm nhập sâu vào vùng da tối màu, cải thiện sắc tố và làm mờ các vết nám, tàn nhang.', 100, '2023-11-22 13:14:03', 1),
-(130, 12, 'Serum Dưỡng Da Kháng Mụn Balance Active Formula Niacinamide Blemish Recovery 15% Serum 30Ml', 500000, 400000, 0, 'Tinh Chất Balance Active Formula Niacinamide 15% Blemish Recovery Serum là sản phẩm serum mới ra mắt từ thương hiệu Balance Active Formula, với dạng lỏng nhẹ như nước và nồng độ 15% Niacinamide - một loại Vitamin B3 tự nhiên giúp giảm dầu thừa, giúp lỗ chân lông được thu nhỏ lại. Đồng thời, làm giảm các nhược điểm trên da và làm mờ vết thâm, giúp cải thiện kết cấu da và khuyến khích làn da khỏe mạnh.', 100, '2023-11-22 13:14:03', 1),
-(131, 14, 'Lăn Khử Mùi Vichy Traitement Anti-Transpirant 48H 50ML', 1400000, 1200000, 0, 'Lăn khử mùi Vichy giúp khô thoáng vùng da dưới cánh tay suốt 48h giúp hạn chế và kiểm soát lượng mồ hôi hằng ngày, dưỡng da dưới cánh tay mềm mịn, khô thoáng suốt 48h. Sản phẩm đặc biệt dành cho da nhạy cảm.Sử dụng trên vùng da dưới cánh tay sạch sẽ và khô thoáng. Dùng hằng ngày.Dùng được cho cả nam và nữ.', 100, '2023-11-22 13:30:49', 1),
-(132, 14, 'Xịt Ngăn Mùi Toàn Thân Cho Nam Axe Deo Bodyspray 135Ml', 70000, 60000, 0, 'Công dụng: xịt ngăn mùi AXE Deodorant Body Spray dành cho phái mạnh có khả năng khử mùi cơ thể hiệu quả. Ngoài ra, sản phẩm còn mang đến hương thơm nam tính lôi cuốn, cùng khả năng lưu giữ mùi hương suốt 48h, giúp phái mạnh tự tin hơn trong mọi hoạt động.Làn da sử dụng: mọi loại da .Xịt Nước Hoa Toàn Thân AXE có 3 hương thơm.', 100, '2023-11-22 13:30:49', 1),
-(133, 14, 'Gel Khử Mùi Giảm Mùi Cơ Thể Etiaxil Deo Anti-Transpirant 48h Roll-on 50ml', 600000, 500000, 0, 'Công dụng chính: Chấm dứt các mùi hôi cơ thể khó chịu, có khả năng trị dứt điểm viêm cánh và kiểm soát mồ hôi dưới cánh tay hiệu quả.Thành phần chính: Chiết xuất thiên nhiên an toàn, phù hợp với làn da nhạy cảm.Aluminum Sesquichlorohydrate: Giảm sản xuất mồ hôi, ngăn việc tiết mồ hôi nhanh chóng, loại bỏ mùi hôi ở vùng da dưới cánh tay.', 100, '2023-11-22 13:39:47', 1),
-(134, 14, 'Lăn Khử Mùi Ngăn Mùi Cơ Thể Cho Da Thường Etiaxil Detranspirant Aisselles Normales 15ml', 180000, 150000, 0, 'Công dụng chính: Có khả năng loại bỏ các mùi hôi khó chịu, hỗ trợ tẩy da chết, điều trị dứt điểm tình trạng viêm cánh với hương thơm dễ chịu, giữ vùng nách thông thoáng, thơm mát suốt ngày dài.Thành phần chính: Chiết xuất thiên nhiên, muối nhôm cùng với phức hợp dưỡng da.Thời tiết nắng nóng như hiện nay khiến mồ hôi, mùi cơ thể xuất hiện nhiều hơn khiến bạn kém tự tin, ngại giao tiếp và không thoải mái trong sinh hoạt hàng ngày. Giải pháp hiệu quả nhất để bảo vệ cơ thể khỏi các mùi khó chịu, lăn khử mùi Etiaxil Detranspirant Aisselles Normales là sự lựa chọn hoàn hảo.', 100, '2023-11-22 13:39:47', 1),
+(128, 12, 'Tinh Chất Chống Lão Hóa Ohui Prime Advancer Ampoule Serum 50Ml', 89000, 100000, 0, 'Công dụng chính: Tinh chất chống lão hóa cùng các thành phần Triple Care nhằm giữ vững cốt lõi và tăng cường sức mạnh ban đầu của da trước các tác động môi trường.Serum chứa 78% lượng tinh chất đậm đặc có tác dụng chống lão hóa vượt trội, tăng cường hiệu quả dưỡng da trẻ khỏe:Cải thiện đàn hồi,Tăng độ ẩm,Cải thiện độ trong suốt.', 100, '2023-11-22 13:03:35', 1),
+(129, 12, 'Tinh Chất Làm Sáng Da Some By Mi Yuja Niacin Blemish Care Serum 50Ml', 100000, 120000, 0, 'YUJA NIACIN là dòng sản phẩm với thành phần chính từ chiết xuất trái Yuja và Niacinamide giúp dưỡng sáng, cung cấp năng lượng cho làn da tối, xỉn màu mang lại làn da tươi sáng rạng rỡ.Một trong những sản phẩm chủ đạo của YUJA NIACIN phải nhắc đến Tinh chất làm sáng da Some By Mi Yuja Niacin Blemish Care Serum. Sản phẩm cho hiệu quả cải thiện da sáng trắng rõ rệt, với khả năng thâm nhập sâu vào vùng da tối màu, cải thiện sắc tố và làm mờ các vết nám, tàn nhang.', 100, '2023-11-22 13:14:03', 1),
+(130, 12, 'Serum Dưỡng Da Kháng Mụn Balance Active Formula Niacinamide Blemish Recovery 15% Serum 30Ml', 500000, 600000, 0, 'Tinh Chất Balance Active Formula Niacinamide 15% Blemish Recovery Serum là sản phẩm serum mới ra mắt từ thương hiệu Balance Active Formula, với dạng lỏng nhẹ như nước và nồng độ 15% Niacinamide - một loại Vitamin B3 tự nhiên giúp giảm dầu thừa, giúp lỗ chân lông được thu nhỏ lại. Đồng thời, làm giảm các nhược điểm trên da và làm mờ vết thâm, giúp cải thiện kết cấu da và khuyến khích làn da khỏe mạnh.', 100, '2023-11-22 13:14:03', 1),
+(131, 14, 'Lăn Khử Mùi Vichy Traitement Anti-Transpirant 48H 50ML', 1400000, 1550000, 0, 'Lăn khử mùi Vichy giúp khô thoáng vùng da dưới cánh tay suốt 48h giúp hạn chế và kiểm soát lượng mồ hôi hằng ngày, dưỡng da dưới cánh tay mềm mịn, khô thoáng suốt 48h. Sản phẩm đặc biệt dành cho da nhạy cảm.Sử dụng trên vùng da dưới cánh tay sạch sẽ và khô thoáng. Dùng hằng ngày.Dùng được cho cả nam và nữ.', 100, '2023-11-22 13:30:49', 1),
+(132, 14, 'Xịt Ngăn Mùi Toàn Thân Cho Nam Axe Deo Bodyspray 135Ml', 70000, 85000, 0, 'Công dụng: xịt ngăn mùi AXE Deodorant Body Spray dành cho phái mạnh có khả năng khử mùi cơ thể hiệu quả. Ngoài ra, sản phẩm còn mang đến hương thơm nam tính lôi cuốn, cùng khả năng lưu giữ mùi hương suốt 48h, giúp phái mạnh tự tin hơn trong mọi hoạt động.Làn da sử dụng: mọi loại da .Xịt Nước Hoa Toàn Thân AXE có 3 hương thơm.', 100, '2023-11-22 13:30:49', 1),
+(133, 14, 'Gel Khử Mùi Giảm Mùi Cơ Thể Etiaxil Deo Anti-Transpirant 48h Roll-on 50ml', 600000, 760000, 0, 'Công dụng chính: Chấm dứt các mùi hôi cơ thể khó chịu, có khả năng trị dứt điểm viêm cánh và kiểm soát mồ hôi dưới cánh tay hiệu quả.Thành phần chính: Chiết xuất thiên nhiên an toàn, phù hợp với làn da nhạy cảm.Aluminum Sesquichlorohydrate: Giảm sản xuất mồ hôi, ngăn việc tiết mồ hôi nhanh chóng, loại bỏ mùi hôi ở vùng da dưới cánh tay.', 100, '2023-11-22 13:39:47', 1),
+(134, 14, 'Lăn Khử Mùi Ngăn Mùi Cơ Thể Cho Da Thường Etiaxil Detranspirant Aisselles Normales 15ml', 180000, 190000, 0, 'Công dụng chính: Có khả năng loại bỏ các mùi hôi khó chịu, hỗ trợ tẩy da chết, điều trị dứt điểm tình trạng viêm cánh với hương thơm dễ chịu, giữ vùng nách thông thoáng, thơm mát suốt ngày dài.Thành phần chính: Chiết xuất thiên nhiên, muối nhôm cùng với phức hợp dưỡng da.Thời tiết nắng nóng như hiện nay khiến mồ hôi, mùi cơ thể xuất hiện nhiều hơn khiến bạn kém tự tin, ngại giao tiếp và không thoải mái trong sinh hoạt hàng ngày. Giải pháp hiệu quả nhất để bảo vệ cơ thể khỏi các mùi khó chịu, lăn khử mùi Etiaxil Detranspirant Aisselles Normales là sự lựa chọn hoàn hảo.', 100, '2023-11-22 13:39:47', 1),
 (135, 14, 'Lăn Khử Mùi Ngăn Mùi Cơ Thể Dành Cho Da Siêu Nhạy Cảm Etiaxil Detranspirant Aisselles Confort+ 15ml', 150000, 1700000, 0, 'Công dụng chính: Có khả năng loại bỏ các mùi hôi khó chịu, hỗ trợ tẩy da chết, điều trị dứt điểm tình trạng viêm cánh với hương thơm dễ chịu, giữ vùng nách thông thoáng, thơm mát suốt ngày dài.Thành phần chính: Chiết xuất thiên nhiên, muối nhôm cùng với phức hợp dưỡng da.Chứa công thức độc đáo của Etiaxil: Hoạt động với cơ chế tác động trực tiếp và cải thiện hiện tượng đổ mồ hôi ngay từ lần đầu tiên, không chỉ vậy còn giúp trị tình trạng viêm cánh hiệu quả.', 100, '2023-11-23 11:19:46', 1),
 (136, 14, 'Gel Khử Mùi Giảm Mùi Cơ Thể Nam Giới Gillette Clear Gel Cool Wave 107g', 120000, 160000, 0, 'Công dụng chính: Đánh bay mùi hôi và tình trạng ẩm ướt dưới cánh tay, giúp hạn chế mùi hôi cơ thể mang lại cảm giác mát lạnh, sảng khoái.Loại da phù hợp: Mọi loại da của nam giới.Làn da dưới cánh tay hay đổ mồ hôi, lúc nào cũng trong tình trạng ẩm ướt khó chịu. Thậm chí còn có mùi hôi khiến bạn không thể tự tin giao tiếp với ai. Đừng quá lo lắng, gel khử mùi Gillette Clear Gel Cool Wave mát lạnh sẽ là giải pháp tuyệt vời nhất trong mùa hè oi bức này.', 100, '2023-11-23 11:19:46', 1),
 (137, 14, ' Sáp Khử Mùi Hương Cam Quýt Old Spice Deo Stick Wolfthorn 73G', 150000, 170000, 0, 'Công dụng: nước dưỡng da Payot Radiance-Boosting Toning Lotion chứa 98% chiết xuất từ nguồn gốc tự nhiên giúp giảm khô và tái tạo da. Đồng thời, sản phẩm chứa AHA mang lại hiệu quả thanh tẩy tế bào chết nhẹ dịu cho làn da.Thành phần chính: chứa AHA,Làn da sử dụng: mọi loại daAHA khắc phục các vấn đề da: loại bỏ tế bào chết, chống lão hóa, làm sáng da, ngăn ngừa mụn.', 100, '2023-11-23 11:32:37', 1),
@@ -1029,7 +1068,7 @@ CREATE TABLE `taikhoan` (
   `email` varchar(100) NOT NULL,
   `so_dien_thoai` varchar(20) DEFAULT NULL,
   `dia_chi` varchar(250) DEFAULT NULL,
-  `mat_khau` varchar(50) DEFAULT NULL,
+  `mat_khau` varchar(250) DEFAULT NULL,
   `hinh_anh` varchar(150) DEFAULT NULL,
   `mavt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -1039,7 +1078,8 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`matk`, `ho_ten`, `email`, `so_dien_thoai`, `dia_chi`, `mat_khau`, `hinh_anh`, `mavt`) VALUES
-(1, 'Nguyễn Chính', 'chinhnguyennn24@gmail.com', '', '', '', 'http://graph.facebook.com/1759565574523451/picture', 2);
+(1, 'Nguyễn Chính', 'chinhnguyennn24@gmail.com', '', '', '', 'http://graph.facebook.com/1759565574523451/picture', 2),
+(2, 'Admin Cosstewn', 'admin@gmail.com', '0999999999', '', '15ce81f5a5085f1da25121f1bae1b582e49df4b207bf0a9a6896ee194026b0b4', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1063,6 +1103,12 @@ INSERT INTO `vaitro` (`mavt`, `vai_tro`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`mabn`);
 
 --
 -- Indexes for table `binhluan`
@@ -1151,6 +1197,12 @@ ALTER TABLE `vaitro`
 --
 
 --
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `mabn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT for table `binhluan`
 --
 ALTER TABLE `binhluan`
@@ -1196,7 +1248,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `matk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `matk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vaitro`

@@ -501,11 +501,20 @@ li {
 }
 
 #container_detail .flash-sale-wrapper {
-    background: linear-gradient(90deg, #218CFF 0%, rgba(0, 0, 0, 0.803));
+    /* background: url('../../../public/app/imgs/tet.png') no-repeat center; */
+    border: solid 1px var(--primary-color);
+    font-style: italic;
+    font-weight: bold;
+    color: var(--primary-color);
+    height: 40px;
     padding: 7px 15px;
     border-radius: 10px;
     align-items: center;
     justify-content: space-between;
+}
+
+#container_detail .flash-sale-wrapper img {
+    width: 100px;
 }
 
 #container_detail .text-flash-sale {

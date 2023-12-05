@@ -61,7 +61,6 @@
                 </div>
                 <form class="row mt-4 form_info" enctype="multipart/form-data" action="../controllers/profileController/profileController.php?u=<?= $_SESSION['user_id'] ?>" method="post">
                     <div class="col-lg-8 px-lg-4 px-sm-1 border-end">
-                        <?= isset($_SESSION['error']) ? $_SESSION['error'] : '' ?>
                         <table class="px-4 w-100">
                             <tr class="align-items-center">
                                 <td class="text-end me-3 pe-5">Họ tên: </td>

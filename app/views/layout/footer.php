@@ -101,6 +101,8 @@ if (isset($_GET['page'])) {
         case 'quen-mat-khau':
             echo '<script src="../../public/app/js/form-repass.js"></script>';
             break;
+        default: 
+            echo '<script src="../../public/app/js/main.js"></script>';
     }
 } else {
     echo '<script src="../../public/app/js/main.js"></script>';

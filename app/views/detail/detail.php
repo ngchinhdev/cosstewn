@@ -43,46 +43,10 @@
                     <?php endif; ?>
                 </div>
                 <div class="flash-sale-wrapper d-flex my-2">
-                    <div class="text-flash-sale"><i class="fa-solid fa-bolt"></i>SIÊU DEAL CHỚP NHOÁNG</div>
-                    <div class="timer">
-                        <div class="container-segment ms-2 before-icon">
-                            <div class="segment text-primary">
-                                <div class="flip-card mx-1" data-hours-tens>
-                                    <div class="top">2</div>
-                                    <div class="bottom">2</div>
-                                </div>
-                                <div class="flip-card" data-hours-ones>
-                                    <div class="top">4</div>
-                                    <div class="bottom">4</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="container-segment ms-2 before-icon">
-                            <div class="segment text-primary">
-                                <div class="flip-card mx-1" data-minutes-tens>
-                                    <div class="top">0</div>
-                                    <div class="bottom">0</div>
-                                </div>
-                                <div class="flip-card" data-minutes-ones>
-                                    <div class="top">0</div>
-                                    <div class="bottom">0</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="container-segment ms-2">
-                            <div class="segment text-primary">
-                                <div class="flip-card mx-1" data-seconds-tens>
-                                    <div class="top">0</div>
-                                    <div class="bottom">0</div>
-                                </div>
-                                <div class="flip-card" data-seconds-ones>
-                                    <div class="top">0</div>
-                                    <div class="bottom">0</div>
-                                </div>
-                            </div>
-                        </div>
+                    <span>Thanh toán tiện hơn lợi với </span>
+                    <div class="h-100">
+                        <img src="../../public/app/imgs/vnvnpaydt.webp" class="h-100 me-3" alt="">
+                        <img src="../../public/app/imgs/coddt.webp" class="h-100 d-none d-sm-inline-block" alt="">
                     </div>
                 </div>
                 <form action="index.php?page=<?= isset($_COOKIE['user_id']) ? 'gio-hang' : 'dang-nhap' ?>" method="POST">

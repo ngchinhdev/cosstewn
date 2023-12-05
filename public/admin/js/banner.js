@@ -23,8 +23,8 @@ $(function() {
                                         </div>
                                         <div class="buttons">
                                             <div class="change">
-                                                <label for="change-banner" role="button">Đổi ảnh</label>
-                                                <input type="file" id="change-banner" data-banner="${banner.mabn}">
+                                                <label for="change-banner-${banner.mabn}" role="button">Đổi ảnh</label>
+                                                <input type="file" id="change-banner-${banner.mabn}" class="change-banner" data-banner="${banner.mabn}">
                                             </div>
                                             <div class="delete-banner" role="button" data-banner="${banner.mabn}">Xóa ảnh</div>
                                         </div>
@@ -49,8 +49,9 @@ $(function() {
         loadDetail(nameType);
     })
 
-    $(document).on('change', '#change-banner', function(e) {
+    $(document).on('change', '.change-banner', function(e) {
         const curBannerID = $(this).data('banner');
+        console.log(curBannerID);
 
         const file = e.target.files[0];
 
