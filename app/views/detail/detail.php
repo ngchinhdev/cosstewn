@@ -147,7 +147,9 @@
             <h2>Mô tả</h2>
         </div>
         <div class="col-12 col-lg-9 d-flex p-0">
-            <div class="text-description"><?php echo $infoByProducts['mo_ta'] ?></div>
+            <?php if (!empty($infoByProducts['mo_ta'])) :  ?>
+                <div class="text-description"><?php echo $infoByProducts['mo_ta'] ?></div>
+            <?php endif; ?>
         </div>
     </div>
     <div class="box-banner-detail">
@@ -217,7 +219,7 @@
             <?php } else if (isset($_COOKIE['user_id']) && (empty($checkPurchaseProducts))) { ?>
                 <div class="lock-cmt"><a href="">Mua hàng để đánh giá <i class="fa-solid fa-comment-medical"></i></a></div>
             <?php } ?>
-            <?php if (isset($_COOKIE['user_id'])) { ?>
+            <?php if (isset($_COOKIE['user_id'])  || $_COOKIE['user_id']) { ?>
                 <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="">
             <?php } else { ?>
                 <img src="../../public/app/imgs/img-prods/user.jpg" alt="">
