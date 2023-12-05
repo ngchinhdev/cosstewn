@@ -8,8 +8,9 @@ if(isset($_COOKIE['user_id'])) {
 } else if(isset($_GET['u'])) {
     $user_id=  isset($_GET['u']) ? base64_decode($_GET['u']) : '';
 }
-$magh = isset($_GET['removesp']) ? $_GET['removesp'] : '';
-
+$removesp = isset($_GET['removesp']) ? $_GET['removesp'] : '';
+$magh = isset($_GET['magh']) ? $_GET['magh'] : '';
+$matk = isset($_GET['matk']) ? $_GET['matk'] : '';
 if (isset($user_id) && $user_id) {
     // $getUserIdbyEmail = $cartPage->getUserIdbyEmail($email);
     $matk = $user_id;
@@ -19,7 +20,7 @@ if (isset($user_id) && $user_id) {
 
     // Chức năng xóa sản phẩm trong giỏ hàng
     if (!empty($magh)) {
-        $removeProductInTableCart = $cartPage->removeProductInTableCart($magh, $matk);
+        $removeProductInTableCart = $cartPage->removeProductInTableCart($removesp, $magh, $matk);
 
         header("Location: index.php?page=gio-hang");
         exit();

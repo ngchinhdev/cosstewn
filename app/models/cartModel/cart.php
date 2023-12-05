@@ -4,16 +4,34 @@ class CartPage extends PDOModel
 {
     function insertProductIntoCart($matk, $masp, $quantity)
     {
-        $existingProduct = $this->getProductInDetailCart($masp);
+        $existingMagh = $this->getMaghByMatk($matk);
+        $magh = $existingMagh ? $existingMagh['magh'] : null;
+        $existingProduct = $this->getProductInDetailCart($masp, $magh);
         $existingUser = $this->checkInfoUserInTable($matk);
         if ($existingProduct && $existingUser) {
             $newQuantity = $existingProduct['so_luong'] + $quantity;
-            $this->updateProductInDetailCart($masp, $newQuantity);
+            $this->updateProductInDetailCart($masp, $newQuantity, $magh);
         } else {
-            $sql = "INSERT INTO giohang (matk) VALUES (?)";
-            $lastInsertId = $this->pdoExecute($sql, $matk);
-            $this->insertProductIntoDetailCart($lastInsertId, $masp, $quantity);
+            if ($existingUser) {
+                $this->insertProductIntoDetailCart($magh, $masp, $quantity);
+            } else {
+                $sql = "INSERT INTO giohang (matk) VALUES (?)";
+                $lastInsertId = $this->pdoExecute($sql, $matk);
+                if ($lastInsertId) {
+                    $this->insertProductIntoDetailCart($lastInsertId, $masp, $quantity);
+                }
+            }
         }
+    }
+
+    // Lấy ra mã gh theo tài khoản nếu có tồn tại
+    function getMaghByMatk($matk)
+    {
+        $sql = "SELECT chitietgiohang.magh FROM chitietgiohang 
+        JOIN giohang on chitietgiohang.magh = giohang.magh
+        WHERE matk = ?";
+
+        return $this->pdoQueryOne($sql, $matk);
     }
 
     function insertProductIntoDetailCart($lastInsertId, $masp, $quantity)
@@ -22,16 +40,16 @@ class CartPage extends PDOModel
         $this->pdoExecute($sql, $lastInsertId, $masp, $quantity);
     }
 
-    function changeQuantityProductbyCart($quantity, $magh)
+    function changeQuantityProductbyCart($quantity, $magh, $masp)
     {
-        $sql = "UPDATE chitietgiohang SET so_luong = ? WHERE magh = ?";
-        $this->pdoExecute($sql, $quantity, $magh);
+        $sql = "UPDATE chitietgiohang SET so_luong = ? WHERE magh = ? AND masp = ?";
+        $this->pdoExecute($sql, $quantity, $magh, $masp);
     }
 
-    function getProductInDetailCart($masp)
+    function getProductInDetailCart($masp, $magh)
     {
-        $sql = "SELECT * FROM chitietgiohang WHERE masp = ?";
-        return $this->pdoQueryOne($sql, $masp);
+        $sql = "SELECT * FROM chitietgiohang WHERE masp = ? AND magh = ?";
+        return $this->pdoQueryOne($sql, $masp, $magh);
     }
 
     function checkInfoUserInTable($matk)
@@ -40,15 +58,15 @@ class CartPage extends PDOModel
         return $this->pdoQueryOne($sql, $matk);
     }
 
-    function updateProductInDetailCart($masp, $newQuantity)
+    function updateProductInDetailCart($masp, $newQuantity, $magh)
     {
-        $sql = "UPDATE chitietgiohang SET so_luong = ? WHERE masp = ?";
-        $this->pdoExecute($sql, $newQuantity, $masp);
+        $sql = "UPDATE chitietgiohang SET so_luong = ? WHERE masp = ? AND magh = ?";
+        $this->pdoExecute($sql, $newQuantity, $masp, $magh);
     }
 
     function getProductsByUserId($matk)
     {
-        $sql = "SELECT sp.*, ctgh.so_luong as so_luong_chitiet, lh.ten_loai, GROUP_CONCAT(ha.hinh_anh) AS hinh_anh, gh.magh
+        $sql = "SELECT sp.*, ctgh.so_luong as so_luong_chitiet, gh.matk,  lh.ten_loai, GROUP_CONCAT(ha.hinh_anh) AS hinh_anh, gh.magh
         FROM sanpham sp
         INNER JOIN chitietgiohang ctgh ON sp.masp = ctgh.masp
         INNER JOIN loaihang lh ON lh.maloai = sp.maloai
@@ -91,14 +109,19 @@ class CartPage extends PDOModel
 
     function getTotalQuantityProductByCartUser($matk)
     {
-        $sql = "SELECT count(*) FROM giohang WHERE matk = ?";
+        $sql = "SELECT count(*) FROM chitietgiohang
+            JOIN giohang on chitietgiohang.magh = giohang.magh
+            WHERE giohang.matk = ?";
         return $this->pdoQueryValue($sql, $matk);
     }
 
-    function removeProductInTableCart($magh, $matk)
+    function removeProductInTableCart($masp, $magh, $matk)
     {
-        $sql = "DELETE FROM giohang WHERE magh =? AND matk = ?";
-        $this->pdoExecute($sql, $magh, $matk);
+        $sql = "DELETE chitietgiohang 
+        FROM chitietgiohang
+        JOIN giohang ON chitietgiohang.magh = giohang.magh
+        WHERE chitietgiohang.masp = ? AND giohang.magh = ? AND giohang.matk = ?";
+        $this->pdoExecute($sql, $masp, $magh, $matk);
     }
 
     function totalPromoPrice($masp)

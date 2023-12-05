@@ -31,7 +31,7 @@ class DetailProducts extends PDOModel
 
     function getSimilarProducts($maloai, $masp)
     {
-        $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh
+        $sql = "SELECT sanpham.*, loaihang.ten_loai, hinhanh.hinh_anh, km.ten_km, km.giam_gia
         FROM sanpham
         INNER JOIN loaihang ON sanpham.maloai = loaihang.maloai
         LEFT JOIN (
@@ -39,6 +39,8 @@ class DetailProducts extends PDOModel
             FROM hinhanh
             GROUP BY masp
         ) AS hinhanh ON sanpham.masp = hinhanh.masp
+        LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
+        LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
         WHERE sanpham.maloai = ? AND sanpham.masp != ? AND sanpham.an_hien = 1 LIMIT 5";
 
         return $this->pdoQuery($sql, $maloai, $masp);
@@ -55,7 +57,8 @@ class DetailProducts extends PDOModel
         return $this->pdoQuery($sql, $masp);
     }
 
-    function getBannersDetail() {
+    function getBannersDetail()
+    {
         $sql = "SELECT * FROM banner WHERE loai = 5";
 
         return $this->pdoQuery($sql);

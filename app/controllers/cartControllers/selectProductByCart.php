@@ -26,7 +26,7 @@ if ($getProductsByUserId) { ?>
                     <p style="font-size: 13px;" class="mb-2"><?php echo $row['ten_sp']; ?></p>
                     <input type="hidden" value="<?= $row['masp'] ?>" name="prod_id[]">
                     <input type="hidden" value="<?php echo $row['so_luong_chitiet']; ?>" name="prod_quantity[]">
-                    <a style="color: #C73130; font-size: 12px;" href="index.php?page=gio-hang&removesp=<?php echo $row['magh']; ?>">
+                    <a style="color: #C73130; font-size: 12px;" href="index.php?page=gio-hang&removesp=<?= $row['masp']; ?>&magh=<?= $row['magh']; ?>&matk=<?= $row['matk']; ?>">
                         <i class="fa-solid fa-square-xmark pe-1" style="color: #C73130;"></i>
                         Xóa khỏi giỏ hàng
                     </a>
@@ -39,7 +39,7 @@ if ($getProductsByUserId) { ?>
                 </div>
             </td>
             <td class="quantity text-center">
-                <input type="number" class="soLuong quantityProducts" value="<?php echo $row['so_luong_chitiet']; ?>" min="1" data-gia-tien="<?php echo $row['gia_tien']; ?>" data-id-gh="<?php echo $row['magh']; ?>">
+                <input type="number" class="soLuong quantityProducts" value="<?php echo $row['so_luong_chitiet']; ?>" min="1" data-gia-tien="<?php echo $row['gia_tien']; ?>" data-id-gh="<?php echo $row['magh']; ?>" data-id-masp="<?php echo $row['masp']; ?>">
             </td>
             <td class="text-center">
                 <b class="tongTien"><?php $lastPrice =  $row['gia_tien'] * $row['so_luong_chitiet'];
