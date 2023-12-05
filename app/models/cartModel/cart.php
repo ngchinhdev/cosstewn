@@ -5,7 +5,7 @@ class CartPage extends PDOModel
     function insertProductIntoCart($matk, $masp, $quantity)
     {
         $existingMagh = $this->getMaghByMatk($matk);
-        $magh = $existingMagh ? $existingMagh['magh'] : null;
+        $magh = $existingMagh ? $existingMagh['magh'] : 'loi';
         $existingProduct = $this->getProductInDetailCart($masp, $magh);
         $existingUser = $this->checkInfoUserInTable($matk);
         if ($existingProduct && $existingUser) {
@@ -24,12 +24,10 @@ class CartPage extends PDOModel
         }
     }
 
-    // Lấy ra mã gh theo tài khoản nếu có tồn tại
+    // Lấy ra mã gh theo tài khoản nếu có tồn tại magh
     function getMaghByMatk($matk)
     {
-        $sql = "SELECT chitietgiohang.magh FROM chitietgiohang 
-        JOIN giohang on chitietgiohang.magh = giohang.magh
-        WHERE matk = ?";
+        $sql = "SELECT magh FROM giohang WHERE matk = ?";
 
         return $this->pdoQueryOne($sql, $matk);
     }

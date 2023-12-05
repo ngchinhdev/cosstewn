@@ -3,10 +3,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/cartModel/ca
 $cartPage = new CartPage();
 
 $user_id = '';
-if(isset($_COOKIE['user_id'])) {
-    $user_id=  isset($_COOKIE['user_id']) ? base64_decode($_COOKIE['user_id']) : '';
-} else if(isset($_GET['u'])) {
-    $user_id=  isset($_GET['u']) ? base64_decode($_GET['u']) : '';
+if (isset($_COOKIE['user_id'])) {
+    $user_id =  isset($_COOKIE['user_id']) ? base64_decode($_COOKIE['user_id']) : '';
+} else if (isset($_GET['u'])) {
+    $user_id =  isset($_GET['u']) ? base64_decode($_GET['u']) : '';
 }
 $removesp = isset($_GET['removesp']) ? $_GET['removesp'] : '';
 $magh = isset($_GET['magh']) ? $_GET['magh'] : '';
@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-buy'])) {
     $_SESSION['prod_id'] = $_POST['prod_id'];
     $_SESSION['quantity_dt'] = $_POST['quantity-pd'];
     $promm = 0;
-    if(isset($_POST['vouchers'])) {
-        for ($i = 0; $i < count($_POST['vouchers']); $i++) { 
+    if (isset($_POST['vouchers'])) {
+        for ($i = 0; $i < count($_POST['vouchers']); $i++) {
             $promm += (int)$_POST['vouchers'][$i];
         }
     }
