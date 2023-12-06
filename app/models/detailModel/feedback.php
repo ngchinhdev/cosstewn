@@ -50,7 +50,7 @@ class DetailFeedback extends PDOModel
         $sql = "SELECT donhang.*, chitietdonhang.*
         FROM donhang
         INNER JOIN chitietdonhang ON chitietdonhang.madh = donhang.madh
-        WHERE donhang.matk = ? AND chitietdonhang.masp = ?;";
+        WHERE donhang.matk = ? AND chitietdonhang.masp = ?";
 
         return $this->pdoQuery($sql, $matk, $masp);
     }
