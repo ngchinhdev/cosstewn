@@ -41,7 +41,8 @@ class DetailProducts extends PDOModel
         ) AS hinhanh ON sanpham.masp = hinhanh.masp
         LEFT JOIN chitietkhuyenmai ctkm ON ctkm.masp = sanpham.masp
         LEFT JOIN khuyenmai km ON km.makm = ctkm.makm
-        WHERE sanpham.maloai = ? AND sanpham.masp != ? AND sanpham.an_hien = 1 LIMIT 5";
+        WHERE sanpham.maloai = ? AND sanpham.masp != ? AND sanpham.an_hien = 1
+        GROUP BY sanpham.masp LIMIT 5"; 
 
         return $this->pdoQuery($sql, $maloai, $masp);
     }
@@ -62,5 +63,11 @@ class DetailProducts extends PDOModel
         $sql = "SELECT * FROM banner WHERE loai = 5";
 
         return $this->pdoQuery($sql);
+    }
+
+    function getCurUser($user_id) { 
+        $sql = "SELECT * FROM `taikhoan` WHERE matk = ?";
+        
+        return $this->pdoQueryOne($sql, $user_id);
     }
 }

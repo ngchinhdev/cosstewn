@@ -54,4 +54,10 @@ class DetailFeedback extends PDOModel
 
         return $this->pdoQuery($sql, $matk, $masp);
     }
+
+    function getCurUser($user_id) { 
+        $sql = "SELECT * FROM `taikhoan` WHERE matk = ?";
+        
+        return $this->pdoQueryOne($sql, $user_id);
+    }
 }

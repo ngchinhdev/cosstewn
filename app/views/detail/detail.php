@@ -184,7 +184,7 @@
                 <div class="lock-cmt"><a href="">Mua hàng để đánh giá <i class="fa-solid fa-comment-medical"></i></a></div>
             <?php } ?>
             <?php if (isset($_COOKIE['user_id'])  || $_COOKIE['user_id']) { ?>
-                <img src="<?= $_SESSION['data_user']['avatar'] ?>" alt="">
+                <img src="<?= $cur_user['hinh_anh'] ?>" alt="Avatar">
             <?php } else { ?>
                 <img src="../../public/app/imgs/img-prods/user.jpg" alt="">
             <?php } ?>
