@@ -27,16 +27,16 @@
     }
 
     if(isset($_GET['u']) && $_GET['u']) {
+        // If 'u' parameter is set and not null
         $_SESSION["user_id"] = base64_decode($_GET['u']);
-        $cur_user = $profile->getCurUser($_SESSION["user_id"]);
-        // if(empty($cur_user)) {
-        //     $_SESSION['error'] = "Không hợp lệ!";
-        //     return;
-        // }
-        extract($cur_user);
-        $_SESSION["name"] = $ho_ten;
-        $_SESSION["email"] = $email;
-        $_SESSION["avatar"] = $hinh_anh;
+    } elseif(isset($_COOKIE['user_id']) && $_COOKIE['user_id']) {
+        // If 'u' is null, use 'user_id' cookie
+        $_SESSION["user_id"] = base64_decode($_COOKIE['user_id']);
     }
 
+    $cur_user = $profile->getCurUser($_SESSION["user_id"]);
+    extract($cur_user);
+    $_SESSION["name"] = $ho_ten;
+    $_SESSION["email"] = $email;
+    $_SESSION["avatar"] = $hinh_anh;
 ?>
