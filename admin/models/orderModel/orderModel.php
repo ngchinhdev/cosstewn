@@ -16,9 +16,23 @@ class OrderPage extends PDOModel
         return $this->pdoQuery($sql);
     }
 
+    function countQuantityOrder($madh)
+    {
+        $sql = "SELECT COUNT(*)
+        FROM donhang
+        INNER JOIN chitietdonhang ON donhang.madh = chitietdonhang.madh
+        INNER JOIN sanpham ON chitietdonhang.masp = sanpham.masp 
+        WHERE chitietdonhang.madh = ?";
+
+        return $this->pdoQueryValue($sql, $madh);
+    }
+
     function countColumnTaleOrder()
     {
-        $sql = "SELECT COUNT(*) FROM donhang";
+        $sql = "SELECT COUNT(*)
+        FROM donhang
+        INNER JOIN chitietdonhang ON donhang.madh = chitietdonhang.madh
+        INNER JOIN sanpham ON chitietdonhang.masp = sanpham.masp";
         return $this->pdoQueryValue($sql);
     }
 

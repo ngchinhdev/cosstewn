@@ -4,8 +4,9 @@ require_once $ROOT_ADMIN . "models/orderModel/orderModel.php";
 $orderPage = new OrderPage();
 
 $pageNumber = isset($_POST['pageNumber']) ? $_POST['pageNumber'] : 1;
+$numberlast = isset($_POST['numberlast']) ? $_POST['numberlast'] : 0;
 $page_size = 10;
-$startRow = ($pageNumber - 1) * $page_size;
+$startRow = ($pageNumber - 1) * $numberlast;
 $countColumnTaleOrder = $orderPage->countColumnTaleOrder();
 $totalPages = ceil($countColumnTaleOrder / $page_size);
 $infoTableOrder = $orderPage->getInfoTableOrder($page_size, $pageNumber);

@@ -36,6 +36,12 @@ if ($getProductsByUserId) { ?>
                 <div class="gia">
                     <b class="giaban d-block"><?php echo  number_format($row['gia_tien'], 0, '.', '.') ?> đ</b>
                     <span class="giaGoc"><?php echo number_format($row['gia_goc'], 0, '.', '.') ?> đ</span>
+                    <?php $masp = $row['masp'];
+                    $promoPrice = $cartPage->getPromoProductByMasp($masp);
+                    foreach ($promoPrice as $rowChildren) :
+                    ?>
+                        <input type="hidden" value="<?= $rowChildren['giam_gia']; ?>">
+                    <?php endforeach ?>
                 </div>
             </td>
             <td class="quantity text-center">

@@ -17,11 +17,29 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($infoTableOrder as $i => $row) : ?>
+            <?php
+            $prevMadh = null;
+            $i = 0;
+            foreach ($infoTableOrder as $row) : ?>
+                <?php $madh = $row['madh'];
+                $countQuantityOrder = $orderPage->countQuantityOrder($madh);
+                ?>
                 <tr>
-                    <td><?php $i++;
-                        echo $startRow + $i;
-                        ?></td>
+                    <?php if ($countQuantityOrder > 1) { ?>
+                        <?php if ($madh !== $prevMadh) { ?>
+                            <td rowspan="<?= $countQuantityOrder ?>">
+                                <?php $i++;
+                                echo $startRow + $i; ?>
+                            </td>
+                        <?php } else { ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td>
+                            <?php $i++;
+                            echo $startRow + $i; ?>
+                        </td>
+                    <?php } ?>
                     <td class="td-nameOrder"><strong>Tên:</strong> <?= $row['ho_ten'] ?><br>
                         <strong>Email:</strong> <?= $row['email'] ?><br>
                         <strong>SĐT:</strong> <?= $row['so_dien_thoai'] ?>
@@ -63,11 +81,13 @@
                         </select>
                     </td>
                 </tr>
-            <?php endforeach; ?>
+
+            <?php $prevMadh = $row['madh'];
+            endforeach; ?>
         </tbody>
     </table>
     <div class="pagination-container">
-        <ul class="pagination pagingOrder">
+        <ul class="pagination pagingOrder" data-number-last="<?= $i; ?>">
             <?php if ($pageNumber > 1) : ?>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="1"><i class="fa-solid fa-angles-left"></i></a></li>
                 <li><a href="javascript:void(0);" class="page-link" data-number-page="<?php echo $pageNumber - 1; ?>"><i class="fa-solid fa-angle-left"></i></a></li>
