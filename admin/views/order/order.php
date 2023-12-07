@@ -62,31 +62,77 @@
                         ?>
                     </td>
                     <td><?= $row['dia_chi'] ?></td>
-                    <td>
-                        <div class="wrap-formpay">
-                            <?php if ($row['phuong_thuc'] == 0) { ?>
-                                <div class="formpay" style="border: 1px solid #0059ff; color: #0059ff; background: #E6EEF3;">Chuyển khoản</div>
-                            <?php } else { ?>
-                                <div class="formpay">Tiền mặt</div>
-                            <?php } ?>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="wrap-status">
-                            <?php if ($row['trang_thai'] == 0) { ?>
-                                <div class="status-order" style="border: 1px solid #ffd453; color: #ffbf00; background: #fff4d2;">Đang giao</div>
-                            <?php } elseif ($row['trang_thai'] == 1) { ?>
-                                <div class="status-order" style="background: #dbffcc; color: #39bb02; border: 1px solid #39bb02;">Đã giao</div>
-                            <?php } ?>
-                        </div>
-                    </td>
-                    <td>
-                        <select name="orderStatus" class="orderStatus status" data-madh="<?= $row['madh'] ?>">
-                            <option>Thao tác</option>
-                            <option value="0">Đang giao</option>
-                            <option value="1">Đã giao</option>
-                        </select>
-                    </td>
+                    <?php if ($countQuantityOrder > 1) { ?>
+                        <?php if ($madh !== $prevMadh) { ?>
+                            <td rowspan="<?= $countQuantityOrder ?>">
+                                <div class="wrap-formpay">
+                                    <?php if ($row['phuong_thuc'] == 0) { ?>
+                                        <div class="formpay" style="border: 1px solid #0059ff; color: #0059ff; background: #E6EEF3;">Chuyển khoản</div>
+                                    <?php } else { ?>
+                                        <div class="formpay">Tiền mặt</div>
+                                    <?php } ?>
+                                </div>
+                            </td>
+                        <?php } else { ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td>
+                            <div class="wrap-formpay">
+                                <?php if ($row['phuong_thuc'] == 0) { ?>
+                                    <div class="formpay" style="border: 1px solid #0059ff; color: #0059ff; background: #E6EEF3;">Chuyển khoản</div>
+                                <?php } else { ?>
+                                    <div class="formpay">Tiền mặt</div>
+                                <?php } ?>
+                            </div>
+                        </td>
+                    <?php } ?>
+                    <?php if ($countQuantityOrder > 1) { ?>
+                        <?php if ($madh !== $prevMadh) { ?>
+                            <td rowspan="<?= $countQuantityOrder ?>">
+                                <div class="wrap-status">
+                                    <?php if ($row['trang_thai'] == 0) { ?>
+                                        <div class="status-order" style="border: 1px solid #ffd453; color: #ffbf00; background: #fff4d2;">Đang giao</div>
+                                    <?php } elseif ($row['trang_thai'] == 1) { ?>
+                                        <div class="status-order" style="background: #dbffcc; color: #39bb02; border: 1px solid #39bb02;">Đã giao</div>
+                                    <?php } ?>
+                                </div>
+                            </td>
+                        <?php } else { ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td>
+                            <div class="wrap-status">
+                                <?php if ($row['trang_thai'] == 0) { ?>
+                                    <div class="status-order" style="border: 1px solid #ffd453; color: #ffbf00; background: #fff4d2;">Đang giao</div>
+                                <?php } elseif ($row['trang_thai'] == 1) { ?>
+                                    <div class="status-order" style="background: #dbffcc; color: #39bb02; border: 1px solid #39bb02;">Đã giao</div>
+                                <?php } ?>
+                            </div>
+                        </td>
+                    <?php } ?>
+                    <?php if ($countQuantityOrder > 1) { ?>
+                        <?php if ($madh !== $prevMadh) { ?>
+                            <td rowspan="<?= $countQuantityOrder ?>">
+                                <select name="orderStatus" class="orderStatus status" data-madh="<?= $row['madh'] ?>" data-masp="<?= $row['masp'] ?>">
+                                    <option>Thao tác</option>
+                                    <option value="0">Đang giao</option>
+                                    <option value="1">Đã giao</option>
+                                </select>
+                            </td>
+                        <?php } else { ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td>
+                            <select name="orderStatus" class="orderStatus status" data-madh="<?= $row['madh'] ?>" data-masp="<?= $row['masp'] ?>">
+                                <option>Thao tác</option>
+                                <option value="0">Đang giao</option>
+                                <option value="1">Đã giao</option>
+                            </select>
+                        </td>
+                    <?php } ?>
                 </tr>
 
             <?php $prevMadh = $row['madh'];

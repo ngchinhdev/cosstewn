@@ -18,7 +18,6 @@ $(document).ready(function () {
     $(document).on("change", ".orderStatus", function () {
         var selectedValue = $(this).val();
         var madh = $(this).data('madh');
-
         var selectElement = $(this);
         if (selectedValue === "0" || selectedValue === "1") {
             $.ajax({

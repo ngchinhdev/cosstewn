@@ -5,7 +5,7 @@ class OrderPage extends PDOModel
 {
     function getInfoTableOrder($filterOrder)
     {
-        $sql = "SELECT donhang.*, sanpham.*, chitietdonhang.so_luong as soluongctdh
+        $sql = "SELECT donhang.*, sanpham.*, chitietdonhang.*,  chitietdonhang.so_luong as soluongctdh
         FROM donhang
         INNER JOIN chitietdonhang ON donhang.madh = chitietdonhang.madh
         INNER JOIN sanpham ON chitietdonhang.masp = sanpham.masp 
