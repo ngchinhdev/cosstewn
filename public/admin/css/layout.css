@@ -564,6 +564,7 @@ canvas#chart-exam {
 
 /* PageProducts Css */
 
+#pageOrder .wrap-actionTop,
 #pageDetailPromo .wrap-actionTop,
 #pagePromo .wrap-actionTop,
 #pageProduct .wrap-actionTop {
@@ -1127,8 +1128,28 @@ canvas#chart-exam {
 /* page order css */
 
 
+#pageOrder {
+    margin-bottom: 50px;
+}
+
+#pageOrder .filter-order{
+    margin-left: auto;
+}   
 #pageOrder table thead tr th:nth-child(7){
     width: 130px;
+}
+
+#pageOrder .filter-order select {
+    padding: 3px 6px; 
+    font-size: 14px; 
+    border: 1px solid #218CFF; 
+    border-radius: 4px; 
+    color: #333; 
+}
+
+#pageOrder .filter-order option {
+    background-color: #fff; 
+    color: #333; 
 }
 
 #pageOrder table thead tr th:nth-child(6),

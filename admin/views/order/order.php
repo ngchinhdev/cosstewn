@@ -1,6 +1,13 @@
 <section id="pageOrder" class="activePaging">
     <div class="wrap-actionTop">
         <h1>Danh sách đơn hàng</h1>
+        <div class="filter-order">
+            Lọc theo: <select name="filterOrder" id="selectOrder">
+                <option value="0" <?php if ($filterOrder == 0) echo 'selected'; ?>>Tất cả</option>
+                <option value="1" <?php if ($filterOrder == 1) echo 'selected'; ?>>Đang giao</option>
+                <option value="2" <?php if ($filterOrder == 2) echo 'selected'; ?>>Đã giao</option>
+            </select>
+        </div>
     </div>
     <table border="1">
         <thead>
@@ -29,7 +36,7 @@
                         <?php if ($madh !== $prevMadh) { ?>
                             <td rowspan="<?= $countQuantityOrder ?>">
                                 <?php $i++;
-                                echo $startRow + $i; ?>
+                                echo $i; ?>
                             </td>
                         <?php } else { ?>
 
@@ -37,7 +44,7 @@
                     <?php } else { ?>
                         <td>
                             <?php $i++;
-                            echo $startRow + $i; ?>
+                            echo $i; ?>
                         </td>
                     <?php } ?>
                     <td class="td-nameOrder"><strong>Tên:</strong> <?= $row['ho_ten'] ?><br>
@@ -86,22 +93,4 @@
             endforeach; ?>
         </tbody>
     </table>
-    <div class="pagination-container">
-        <ul class="pagination pagingOrder" data-number-last="<?= $i; ?>">
-            <?php if ($pageNumber > 1) : ?>
-                <li><a href="javascript:void(0);" class="page-link" data-number-page="1"><i class="fa-solid fa-angles-left"></i></a></li>
-                <li><a href="javascript:void(0);" class="page-link" data-number-page="<?php echo $pageNumber - 1; ?>"><i class="fa-solid fa-angle-left"></i></a></li>
-            <?php endif; ?>
-
-            <?php if ($totalPages > 1) : ?>
-                <li class="wrap-pagenum">
-                    <a href="javascript:void(0);" class="page-num active"><?php echo $pageNumber; ?></a>
-                </li>
-            <?php endif; ?>
-            <?php if ($pageNumber < $totalPages) : ?>
-                <li><a href="javascript:void(0);" class="page-link" data-number-page="<?php echo $pageNumber + 1; ?>"><i class="fa-solid fa-angle-right"></i></a></li>
-                <li><a href="javascript:void(0);" class="page-link" data-number-page="<?php echo $totalPages; ?>"><i class="fa-solid fa-angles-right"></i></a></li>
-            <?php endif; ?>
-        </ul>
-    </div>
 </section>
