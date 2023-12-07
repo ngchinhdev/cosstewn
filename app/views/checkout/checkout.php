@@ -1,3 +1,7 @@
+<?php
+    if(!isset($products_to_pay)) return '';
+?>
+
 <div id="container_checkout" class="container">
 <form id="form_wrap" action="../controllers/checkoutController/completeCheckout.php" method="post">
     <div class="head_form">
@@ -39,40 +43,42 @@
             </div>
             <table class="row_prod">
                 <?php 
-                    $data = $products_to_pay;
-                    $sumPay = 0;
-                    $sumPayPro = 0;
-                    foreach($data as $key => $row) {
-                        $quantity = isset($product_quantity[$key]) ? $product_quantity[$key] : $_SESSION['quantity_dt'];
-                        $price = $quantity * $data[$key]['gia_tien'];
-                        $sumPay += $price; 
-                        $imgs = explode(',', $row['hinh_anh']);
-                        echo 
-                        '<tr>
-                            <td class="">
-                                <div class="img-prod">
-                                    <img src="../../public/app/imgs/imgs-product/'.$imgs[0].'" alt="">
-                                </div>
-                            </td>
-                            <td class="mid">
-                                <div class="name-prod">
-                                    '.$data[$key]['ten_sp'].'
-                                </div>
-                            </td>
-                            <td class="">
-                                <div class="quantity-prod">
-                                    x <span>'.$quantity.'</span>
-                                </div>
-                            </td>
-                            <td class="">
-                                <div class="price-prod">
-                                    <div>'.number_format($price, 0, '.', '.').'₫</div>
-                                    <input type="hidden" value="'. $price .'" name="price[]" />
-                                    <div class="pro_pro">- '. (number_format(isset($total_promo[$key]) ? $total_promo[$key] * $quantity : $promotion, 0, '.', '.')) .'₫</div>
-                                    <input type="hidden" value="'. (isset($total_promo[$key]) ? $total_promo[$key] * $quantity : $promotion) .'" name="promotion[]" />
-                                </div>
-                            </td>
-                        </tr>';
+                    if(isset($products_to_pay)) {
+                        $data = $products_to_pay;
+                        $sumPay = 0;
+                        $sumPayPro = 0;
+                        foreach($data as $key => $row) {
+                            $quantity = isset($product_quantity[$key]) ? $product_quantity[$key] : $_SESSION['quantity_dt'];
+                            $price = $quantity * $data[$key]['gia_tien'];
+                            $sumPay += $price; 
+                            $imgs = explode(',', $row['hinh_anh']);
+                            echo 
+                            '<tr>
+                                <td class="">
+                                    <div class="img-prod">
+                                        <img src="../../public/app/imgs/imgs-product/'.$imgs[0].'" alt="">
+                                    </div>
+                                </td>
+                                <td class="mid">
+                                    <div class="name-prod">
+                                        '.$data[$key]['ten_sp'].'
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="quantity-prod">
+                                        x <span>'.$quantity.'</span>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="price-prod">
+                                        <div>'.number_format($price, 0, '.', '.').'₫</div>
+                                        <input type="hidden" value="'. $price .'" name="price[]" />
+                                        <div class="pro_pro">- '. (number_format(isset($total_promo[$key]) ? $total_promo[$key] * $quantity : $promotion, 0, '.', '.')) .'₫</div>
+                                        <input type="hidden" value="'. (isset($total_promo[$key]) ? $total_promo[$key] * $quantity : $promotion) .'" name="promotion[]" />
+                                    </div>
+                                </td>
+                            </tr>';
+                        }
                     }
                 ?>
             </table>

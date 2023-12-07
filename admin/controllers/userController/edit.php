@@ -22,7 +22,7 @@
             $email = $_POST['email'];
             $phone = $_POST['phone'];
             $adr = $_POST['adr'];
-            $pass = $_POST['pass'];
+            $pass = hash_hmac('sha256', $_POST['pass'], 'coscoscos');
             $role = $_POST['role'];
             $id = $_POST['id'];
             

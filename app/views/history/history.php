@@ -1,3 +1,7 @@
+<?php
+    if(!isset($_COOKIE['user_id'])) return '';
+?>
+
 <div id="container_profile" class="container mt-4">
     <div class="row">
         <div class="left_site px-4 py-3 col-lg-3">

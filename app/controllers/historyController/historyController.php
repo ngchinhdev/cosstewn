@@ -1,4 +1,8 @@
 <?php
+    if(!isset($_COOKIE['user_id'])) return '';
+?>
+
+<?php
     require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/historyModel/historyModel.php";
     $history = new History();
 
