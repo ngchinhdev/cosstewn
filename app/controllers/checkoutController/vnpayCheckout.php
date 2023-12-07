@@ -13,7 +13,7 @@
             }
             for ($i = 0; $i < count($_SESSION['products_to_pay']); $i++) { 
                 extract($_SESSION['products_to_pay'][$i]);
-                $checkout->addNewOrderDetails($order_id, $masp, $_SESSION['product_quantity'][$i]);
+                $checkout->addNewOrderDetails($order_id, $masp, $_SESSION['product_quantity'][$i],  (int)$price[$i] - (int)$promotion[$i]);
                 $checkout->decreaseQuantityProd($_SESSION['product_quantity'][$i], $masp);
             }
             header("Location: /cosstewn/app/controllers/index.php?page=dat-hang-thanh-cong");
@@ -22,7 +22,7 @@
             $order_id = $checkout->addNewOrder(null, $customer_name, $phone, $email, $adr, $banking);
             for ($i = 0; $i < count($_SESSION['products_to_pay']); $i++) { 
                 extract($_SESSION['products_to_pay'][$i]);
-                $checkout->addNewOrderDetails($order_id, $masp, $_SESSION['product_quantity'][$i]);
+                $checkout->addNewOrderDetails($order_id, $masp, $_SESSION['product_quantity'][$i],  (int)$price[$i] - (int)$promotion[$i]);
                 $checkout->decreaseQuantityProd($_SESSION['product_quantity'][$i], $masp);
             }
             header("Location: /cosstewn/app/controllers/index.php?page=dat-hang-thanh-cong");

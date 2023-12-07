@@ -105,7 +105,7 @@ if (isset($_GET['page'])) {
             echo '<script src="../../public/app/js/main.js"></script>';
     }
 } else {
-    echo '<script src="../../public/app/js/main.js"></script>';
+    echo '<script src="../../public/app/js/countdown.js"></script>';
 }
 ?>
 
@@ -118,24 +118,7 @@ if (isset($_GET['page'])) {
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../../public/app/js/searchMobile.js"></script>
-    <?php
-        if(isset($_GET['page'])) {
-            switch($_GET['page']) {
-                case 'san-pham':
-                    echo '<script src="../../public/app/js/product-detail.js"></script>';
-                    break;
-                case 'thanh-toan':
-                    echo '<script src="../../public/app/js/checkout.js"></script>';
-                    break;
-                case 'dang-nhap':
-                case 'dang-ky':
-                    echo '<script src="../../public/app/js/form-login.js"></script>';
-                    break;
-            }
-        } else {
-            echo '<script src="../../public/app/js/main.js"></script>';
-        }
-    ?>
+ 
 </body>
 
 </html>

@@ -12,7 +12,7 @@
         foreach ($getProductsByUserId as $row) {
             $masp = $row['masp'];
             $totalPromoPrice = $cartPage->totalPromoPrice($masp);
-            $totalDiscount += $totalPromoPrice;
+            $totalDiscount += $totalPromoPrice * $row['so_luong_chitiet'];
         }
         $_SESSION['promotion'] = $totalDiscount;
 

@@ -19,11 +19,17 @@ if ($getProductsByUserId) { ?>
                 <?php
                 $images = explode(',', $row['hinh_anh']);
                 for ($i = 0; $i < 1; $i++) : ?>
-                    <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="" class="me-3 img_prod">
+                    <a href="index.php?page=san-pham&masp=<?= $row['masp'] ?>&maloai=<?= $row['maloai'] ?>">
+                        <img src="../../public/app/imgs/imgs-product/<?= $images[$i] ?>" alt="" class="me-3 img_prod">
+                    </a>
                 <?php endfor; ?>
                 <div class="ten">
-                    <b><?php echo $row['ten_loai']; ?></b>
-                    <p style="font-size: 13px;" class="mb-2"><?php echo $row['ten_sp']; ?></p>
+                    <b><a href="index.php?page=danh-muc&maloai=<?= $row['maloai'] ?>"><?php echo $row['ten_loai']; ?></a></b>
+                    <p style="font-size: 13px;" class="mb-2">
+                        <a href="index.php?page=san-pham&masp=<?= $row['masp'] ?>&maloai=<?= $row['maloai'] ?>">
+                            <?php echo $row['ten_sp']; ?>
+                        </a>
+                    </p>
                     <input type="hidden" value="<?= $row['masp'] ?>" name="prod_id[]">
                     <input type="hidden" value="<?php echo $row['so_luong_chitiet']; ?>" name="prod_quantity[]">
                     <a style="color: #C73130; font-size: 12px;" href="index.php?page=gio-hang&removesp=<?= $row['masp']; ?>&magh=<?= $row['magh']; ?>&matk=<?= $row['matk']; ?>">
@@ -38,10 +44,12 @@ if ($getProductsByUserId) { ?>
                     <span class="giaGoc"><?php echo number_format($row['gia_goc'], 0, '.', '.') ?> đ</span>
                     <?php $masp = $row['masp'];
                     $promoPrice = $cartPage->getPromoProductByMasp($masp);
-                    foreach ($promoPrice as $rowChildren) :
+                    $total_promo = 0;
+                    foreach ($promoPrice as $rowChildren) {
+                        $total_promo += (int)$rowChildren['giam_gia'];
+                    }
                     ?>
-                        <input type="hidden" value="<?= $rowChildren['giam_gia']; ?>">
-                    <?php endforeach ?>
+                    <input type="hidden" value="<?= $total_promo ?>" name="promo[]">
                 </div>
             </td>
             <td class="quantity text-center">

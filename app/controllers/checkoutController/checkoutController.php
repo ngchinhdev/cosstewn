@@ -16,6 +16,7 @@
         }
         $_SESSION['products_to_pay'] = $products_to_pay;
         $_SESSION['product_quantity'] = $product_quantity;
+        $_SESSION['pay-from-cart'] = 'false';
         // var_dump($products_to_pay);
     }
 
@@ -28,6 +29,7 @@
 
         $products_to_pay = [];
         $product_quantity = $_POST['prod_quantity'];
+        $total_promo = $_POST['promo'];
         for($i = 0; $i < count($_POST['prod_id']); $i++) {
             $product = $checkout->getProductToPay($_POST['prod_id'][$i]);
             array_push($products_to_pay, $product);
@@ -35,6 +37,6 @@
         $_SESSION['products_to_pay'] = $products_to_pay;
         $_SESSION['product_quantity'] = $product_quantity;
         $_SESSION['pay-from-cart'] = 'true';
-        // var_dump($products_to_pay);
+        // var_dump($total_promo);
     }
 ?>

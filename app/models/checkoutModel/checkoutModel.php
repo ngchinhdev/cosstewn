@@ -8,11 +8,11 @@
             return $this->pdoExecute($sql, $user_id, $name, $phone, $email, $adr, $method);
         }
 
-        function addNewOrderDetails($order_id, $prod_id, $quantity) {
-            $sql = "INSERT INTO chitietdonhang (madh, masp, so_luong)
-                    VALUES(?, ?, ?)";
+        function addNewOrderDetails($order_id, $prod_id, $quantity, $price) {
+            $sql = "INSERT INTO chitietdonhang (madh, masp, so_luong, gia_tien)
+                    VALUES(?, ?, ?, ?)";
 
-            return $this->pdoExecute($sql, $order_id, $prod_id, $quantity);
+            return $this->pdoExecute($sql, $order_id, $prod_id, $quantity, $price);
         }
 
         function getProductToPay($prod_id) {
@@ -34,10 +34,16 @@
             return $this->pdoExecute($sql, $quantity, $prod_id);
         }
 
-        function deleteCartAfterBuy($user_id) {
-            $sql = "DELETE FROM giohang WHERE matk = ?";
+        function getCurCartId($user_id) {
+            $sql = "SELECT magh FROM giohang WHERE matk = ?";
 
-            return $this->pdoExecute($sql, $user_id);
+            return $this->pdoQueryValue($sql, $user_id);
+        }
+
+        function deleteCartAfterBuy($cart_id, $prod_id) {
+            $sql = "DELETE FROM chitietgiohang WHERE magh = ? AND masp = ?";
+
+            return $this->pdoExecute($sql, $cart_id, $prod_id);
         }
     }
 ?>

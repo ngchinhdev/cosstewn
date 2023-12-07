@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  isset($_POST['submit-buy'])) {
     $promm = 0;
     if (isset($_POST['vouchers'])) {
         for ($i = 0; $i < count($_POST['vouchers']); $i++) {
-            $promm += (int)$_POST['vouchers'][$i];
+            $promm += (int)$_POST['vouchers'][$i] * (int)$_POST['quantity-pd'];
         }
     }
     $_SESSION['promotion'] = $promm;

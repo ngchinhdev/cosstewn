@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="item_price">
-                                <del class="pe-2"><?= number_format($detail['gia_goc'], 0, '.', '.') ?>₫</del>
+                                <del class="text-end"><?= number_format($detail['gia_goc'] * (int)$detail['so_luong'], 0, '.', '.') ?>₫</del>
                                 <strong><?= number_format($detail['gia_tien'], 0, '.', '.') ?>₫</strong>
                             </div>
                         </div>

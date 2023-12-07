@@ -66,7 +66,10 @@
                             </td>
                             <td class="">
                                 <div class="price-prod">
-                                    '.number_format($price, 0, '.', '.').'₫
+                                    <div>'.number_format($price, 0, '.', '.').'₫</div>
+                                    <input type="hidden" value="'. $price .'" name="price[]" />
+                                    <div class="pro_pro">- '. (number_format(isset($total_promo[$key]) ? $total_promo[$key] * $quantity : $promotion, 0, '.', '.')) .'₫</div>
+                                    <input type="hidden" value="'. (isset($total_promo[$key]) ? $total_promo[$key] * $quantity : $promotion) .'" name="promotion[]" />
                                 </div>
                             </td>
                         </tr>';

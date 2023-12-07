@@ -64,7 +64,7 @@ class CartPage extends PDOModel
 
     function getProductsByUserId($matk)
     {
-        $sql = "SELECT sp.*, ctgh.so_luong as so_luong_chitiet, gh.matk,  lh.ten_loai, GROUP_CONCAT(ha.hinh_anh) AS hinh_anh, gh.magh
+        $sql = "SELECT sp.*, ctgh.so_luong as so_luong_chitiet, gh.matk, lh.maloai, lh.ten_loai, GROUP_CONCAT(ha.hinh_anh) AS hinh_anh, gh.magh
         FROM sanpham sp
         INNER JOIN chitietgiohang ctgh ON sp.masp = ctgh.masp
         INNER JOIN loaihang lh ON lh.maloai = sp.maloai
