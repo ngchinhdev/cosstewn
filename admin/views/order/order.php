@@ -47,21 +47,55 @@
                             echo $i; ?>
                         </td>
                     <?php } ?>
-                    <td class="td-nameOrder"><strong>Tên:</strong> <?= $row['ho_ten'] ?><br>
-                        <strong>Email:</strong> <?= $row['email'] ?><br>
-                        <strong>SĐT:</strong> <?= $row['so_dien_thoai'] ?>
-                    </td>
+                    <?php if ($countQuantityOrder > 1) { ?>
+                        <?php if ($madh !== $prevMadh) { ?>
+                            <td class="td-nameOrder" rowspan="<?= $countQuantityOrder ?>"><strong>Tên:</strong> <?= $row['ho_ten'] ?><br>
+                                <strong>Email:</strong> <?= $row['email'] ?><br>
+                                <strong>SĐT:</strong> <?= $row['so_dien_thoai'] ?>
+                            </td>
+                        <?php } else { ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td class="td-nameOrder"><strong>Tên:</strong> <?= $row['ho_ten'] ?><br>
+                            <strong>Email:</strong> <?= $row['email'] ?><br>
+                            <strong>SĐT:</strong> <?= $row['so_dien_thoai'] ?>
+                        </td>
+                    <?php } ?>
                     <td><?= $row['ten_sp'] ?> × <?= $row['soluongctdh'] ?></td>
                     <td><?php $price =  $row['gia_tien'] * $row['soluongctdh'];
                         echo number_format($price, 0, '.', '.');
                         ?> ₫</td>
-                    <td><?php $ngay_dh = $row['ngay_dat_hang'];
-                        $ngay_dh = new DateTime($ngay_dh);
-                        $ngay_dhFormat = $ngay_dh->format('d-m-Y');
-                        echo $ngay_dhFormat;
-                        ?>
-                    </td>
-                    <td><?= $row['dia_chi'] ?></td>
+                    <?php if ($countQuantityOrder > 1) { ?>
+                        <?php if ($madh !== $prevMadh) { ?>
+                            <td rowspan="<?= $countQuantityOrder ?>"><?php $ngay_dh = $row['ngay_dat_hang'];
+                                                                        $ngay_dh = new DateTime($ngay_dh);
+                                                                        $ngay_dhFormat = $ngay_dh->format('d-m-Y');
+                                                                        echo $ngay_dhFormat;
+                                                                        ?>
+                            </td>
+                        <?php } else { ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td><?php $ngay_dh = $row['ngay_dat_hang'];
+                            $ngay_dh = new DateTime($ngay_dh);
+                            $ngay_dhFormat = $ngay_dh->format('d-m-Y');
+                            echo $ngay_dhFormat;
+                            ?>
+                        </td>
+                    <?php } ?>
+
+                    <?php if ($countQuantityOrder > 1) { ?>
+                        <?php if ($madh !== $prevMadh) { ?>
+                            <td rowspan="<?= $countQuantityOrder ?>"><?= $row['dia_chi'] ?></td>
+                        <?php } else { ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td><?= $row['dia_chi'] ?></td>
+                    <?php } ?>
+
                     <?php if ($countQuantityOrder > 1) { ?>
                         <?php if ($madh !== $prevMadh) { ?>
                             <td rowspan="<?= $countQuantityOrder ?>">
