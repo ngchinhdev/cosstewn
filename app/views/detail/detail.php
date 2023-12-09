@@ -1,4 +1,11 @@
 <div class="container" id="container_detail">
+    <?php
+        if(isset($is_not_exist) && $is_not_exist) {
+            echo '<p class="py-5 fs-6 text-center">Sản phẩm đã không còn tồn tại.</p></div>';
+            return false;
+        };
+    ?>
+
     <?php if ($infoByProducts) : ?>
         <div class="row">
             <div class="col-12 text-link my-2">

@@ -5,11 +5,11 @@
 
     $cmp_array = array(
         0 => 'Banner Slider',
-        1 => 'Banner Brand',
-        2 => 'Banner Partner',
-        3 => 'Last Banner Home',
-        4 => 'Banner Category',
-        5 => 'Banner Detail'
+        1 => 'Banner Thương Hiệu',
+        2 => 'Banner Đối Tác',
+        3 => 'Banner Dài Trang Chủ',
+        4 => 'Banner Trang Loại Hàng',
+        5 => 'Banner Trang Chi Tiết'
     );
 
     $all_types  = $banner->getAllTypesBanner();

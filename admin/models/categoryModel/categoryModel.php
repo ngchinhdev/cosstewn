@@ -44,5 +44,12 @@
 
             return $this->pdoExecute($sql, $cate_id);
         }
+
+        function updateProdWhenDeleteCategory($cate_id) {
+            $sql = "UPDATE sanpham SET maloai = 17, an_hien = 0 WHERE maloai = ?";
+
+            return $this->pdoExecute($sql, $cate_id);
+        }
+
     }
  ?>

@@ -45,5 +45,11 @@
 
             return $this->pdoQuery($sql);
         }
+
+        function updateOrderWhenDeleteUser($user_id) {
+            $sql = "UPDATE donhang SET matk = null WHERE matk = ?";
+
+            return $this->pdoExecute($sql, $user_id);
+        }
     }
  ?>

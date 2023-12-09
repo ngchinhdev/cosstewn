@@ -260,7 +260,7 @@
         <?php endforeach ?>
     </div>
     <div class="row pt-5">
-        <div class="col-12 py-4 container-news rounded-4 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+        <!-- <div class="col-12 py-4 container-news rounded-4 d-flex flex-column flex-lg-row align-items-center justify-content-between">
             <div class="box-news px-5 ">
                 <div class="title text-center">NHẬN BẢN TIN LÀM ĐẸP</div>
                 <div class="sub-title text-center">Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn</div>
@@ -269,6 +269,7 @@
                 <input placeholder="Điền email của bạn" id="subscribe-email" type="text" value="">
                 <span class="input-follow"><button type="button">Theo dõi</button></span>
             </div>
-        </div>
+        </div> -->
+        <!-- <img src="../../public/app/imgs/banners/banner-son-moi-1-PhotoRoom.png-PhotoRoom.png" alt=""> -->
     </div>
 </div>

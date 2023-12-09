@@ -60,4 +60,10 @@ class DetailFeedback extends PDOModel
         
         return $this->pdoQueryOne($sql, $user_id);
     }
+
+    function getCurProductStatus($productId) {
+        $sql = "SELECT * FROM `sanpham` WHERE masp = ?";
+
+        return $this->pdoQueryOne($sql, $productId);
+    }
 }

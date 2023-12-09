@@ -1,5 +1,5 @@
 <?php
-    if(!isset($_COOKIE['user_id'])) return '';
+    if(!isset($_COOKIE['user_id']) && !isset($_GET['u'])) return '';
 ?>
 
 <div id="container_profile" class="container mt-4">
@@ -81,15 +81,17 @@
                 </div>
                 <div class="items_row">
                     <?php foreach($order_details[$key] as $detail): ?>
-                        <?php $sum += (int)$detail['gia_tien'] * (int)$detail['so_luong'] ?>
+                        <?php $sum += (int)$detail['gia_tien'] ?>
                         <div class="item d-flex justify-content-between align-items-center mt-3 pb-3 border-bottom">
                             <div class="item_info d-flex align-items-center">
                                 <img src="../../public/app/imgs/imgs-product/<?= $detail['hinh_anh'] ?>" alt="" class="me-3 img_prod">
                                 <div class="name">
-                                    <b><?= $detail['ten_loai'] ?></b>
+                                    <b><?php echo $detail['maloai'] == 17 ? 'Sản phẩm' : $detail['ten_loai'] ?></b>
                                     <p style="font-size: 13px;" class="mb-2"><?= $detail['ten_sp'] ?></p>
                                     <span>x<?= $detail['so_luong'] ?></span>
-                                    <a href="index.php?page=san-pham&masp=<?= $detail['masp'] ?>&maloai=<?= $detail['maloai'] ?>" class="feedback-now">Đánh giá ngay</a>
+                                    <?php if($detail['maloai'] !== 17): ?>
+                                        <a href="index.php?page=san-pham&masp=<?= $detail['masp'] ?>&maloai=<?= $detail['maloai'] ?>" class="feedback-now">Đánh giá ngay</a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="item_price">

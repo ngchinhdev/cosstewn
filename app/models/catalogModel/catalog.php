@@ -440,7 +440,7 @@ class CatalogProducts extends PDOModel
 
     function getTypeCatagory()
     {
-        $sql = "SELECT * FROM loaihang";
+        $sql = "SELECT * FROM loaihang WHERE an_hien = 1";
 
         return $this->pdoQuery($sql);
     }

@@ -4,9 +4,9 @@
             <div class="left_site col-sm-8 align-self-stretch">
                 <div id="carouselExampleIndicators" class="carousel slide rounded-3 overflow-hidden" data-bs-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                        <?php foreach ($banners_slider as $index => $banner) : ?>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $index ?>" class="<?php echo $index === 0 ? 'active' : '' ?>"></li>
+                        <?php endforeach ?>
                     </ol>
                     <div class="carousel-inner">
                         <?php foreach ($banners_slider as $index => $banner) : ?>

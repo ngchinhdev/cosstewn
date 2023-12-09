@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../../public/app/css/header.css">
     <link rel="stylesheet" href="../../public/app/css/footer.css">
+    <link rel="icon" type="image/png" href="../../public/app/imgs/faavi.png">
     <?php
     if (isset($_GET['page'])) {
         switch ($_GET['page']) {
@@ -47,7 +48,7 @@
     ?>
 
     <!-- Titile -->
-    <title>Let's go to code!!</title>
+    <title>Cosstewn - Thương hiệu bán mỹ phẩm số 1 Việt Nam</title>
 </head>
 
 <body id="body">

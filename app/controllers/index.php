@@ -2,8 +2,14 @@
     session_start();
     require_once $_SERVER['DOCUMENT_ROOT'] . '/cosstewn/configs/urls.php';
     require_once $URL_APP_CONTROLLER . "loginController/matchUser.php";
-    if(isset($_GET['u']) && $_GET['u']) {
-        if(isset($_COOKIE['user_id']) && $_GET['u'] !== $_COOKIE['user_id'] || !in_array(base64_decode($_GET['u']), $all_id)) {
+    if(isset($_GET['u'])) {
+        if($_GET['u']) {
+            if((isset($_COOKIE['user_id']) && $_GET['u'] !== $_COOKIE['user_id']) || !in_array(base64_decode($_GET['u']), $all_id)) {
+                echo "<script>window.location.href='/cosstewn/app/controllers/index.php';</script>";
+                exit();
+            }
+        }
+        if(!$_GET['u']) {
             echo "<script>window.location.href='/cosstewn/app/controllers/index.php';</script>";
             exit();
         }

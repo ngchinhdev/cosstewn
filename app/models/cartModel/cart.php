@@ -74,7 +74,7 @@ class CartPage extends PDOModel
             FROM hinhanh
             GROUP BY masp
         ) ha ON sp.masp = ha.masp
-        WHERE gh.matk = ?
+        WHERE gh.matk = ? AND sp.an_hien = 1
         GROUP BY sp.masp ORDER BY gh.magh DESC";
 
         return $this->pdoQuery($sql, $matk);

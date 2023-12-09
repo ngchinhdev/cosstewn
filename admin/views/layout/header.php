@@ -40,7 +40,7 @@
         </header>
         <aside>
             <div class="logo">
-                <a href="<?= $_SERVER['PHP_SELF'] ?>"><img src="../../public/app/imgs/logo.png" alt=""></a>
+                <a href="<?= $_SERVER['PHP_SELF'] ?>"><img src="../../public/admin/imgs/logoft.png" alt=""></a>
             </div>
             <ul class="sidebar_menu">
                 <li class="active">

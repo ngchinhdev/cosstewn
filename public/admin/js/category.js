@@ -187,7 +187,8 @@ $(function() {
                 container.load(`../controllers/categoryController/categoryController.php`);
             },
             error: function(err) {
-                console.error(err);
+                alert('Xóa không thành công');
+                console.error(err.responseText);
             }
         })
     })

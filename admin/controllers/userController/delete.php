@@ -5,6 +5,7 @@
 
     if (isset($_GET['id']) && $_GET['type'] === 'delete') {
         $user_id = $_GET['id'];
+        $user->updateOrderWhenDeleteUser($user_id);
         $user->deleteUser($user_id);
 
         header('Content-Type: application/json');

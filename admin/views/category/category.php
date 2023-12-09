@@ -29,7 +29,9 @@
             <td>
                 <div class="last-td">
                     <a href="views/edit_user.php?id=<?= $category['maloai'] ?>" class="change-btn change-cate-btn" data-cate="<?= $category['maloai'] ?>">Sửa</a>
-                    <a href="controllers/delete_user.php?id=<?= $category['maloai'] ?>" data-cate="<?= $category['maloai'] ?>" class="del-btn del-btn-cate">Xóa</a>
+                    <?php if($category['maloai'] !== 17): ?>
+                        <a href="controllers/delete_user.php?id=<?= $category['maloai'] ?>" data-cate="<?= $category['maloai'] ?>" class="del-btn del-btn-cate">Xóa</a>
+                    <?php endif ?>
                 </div>
             </td>
         </tr>

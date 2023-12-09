@@ -15,3 +15,9 @@ if(isset($_COOKIE['user_id'])) {
         $checkPurchaseProducts = $detailFeedback->checkPurchaseProducts($matk, $masp);
     }
 }
+
+if(isset($_GET['masp']) && $_GET['masp']) {
+    $cur_prod = $detailFeedback->getCurProductStatus($_GET['masp']);
+    $is_not_exist = $cur_prod['maloai'] == 17;
+}
+

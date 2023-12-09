@@ -19,7 +19,7 @@
         </div>
         <div class="pass-box box">
             <label for="pass">Mật khẩu (>= 5 ký tự)</label>
-            <input type="text" id="pass" placeholder="Nhập mật khẩu">
+            <input type="password" id="pass" placeholder="Nhập mật khẩu">
         </div>
     </div>
     <div class="last-box">

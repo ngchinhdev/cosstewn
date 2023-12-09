@@ -5,6 +5,7 @@
 
     if (isset($_GET['id']) && $_GET['type'] === 'delete') {
         $cate_id = $_GET['id'];
+        $category->updateProdWhenDeleteCategory($cate_id);
         $category->deleteCategory($cate_id);
 
         header('Content-Type: application/json');

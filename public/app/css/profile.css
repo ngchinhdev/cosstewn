@@ -147,3 +147,24 @@ input[type="text"]:disabled{
     color: white;
     margin-left: 14px;
 }
+
+@media (max-width: 576px) {
+    #container_profile .bill_details .name {
+        padding-right: 10px;
+    }
+
+    #container_profile .bill_details .title {
+        font-size: .8rem;
+    }
+
+    #container_profile .bill_details .item_price strong {
+        font-size: .8rem;
+        display: block;
+    }
+
+    #container_profile .bill_details del {
+        font-size: .7rem;
+        display: block;
+    }
+
+}

@@ -1,5 +1,5 @@
 <?php
-    if(!isset($_COOKIE['user_id'])) return '';
+    if(!isset($_COOKIE['user_id']) && !isset($_GET['u'])) return '';
 ?>
 
 <?php 

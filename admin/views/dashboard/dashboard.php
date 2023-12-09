@@ -9,7 +9,7 @@
                 <?= $user_quantity ?>
             </div>
             <h3 class="title">
-                Khách hàng
+                Người dùng
             </h3>
             <div class="more-info link" data-control="user">
                 Xem thêm <i class="fa-sharp fa-solid fa-circle-arrow-right"></i>
