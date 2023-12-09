@@ -1,4 +1,7 @@
 <?php
+
+use Google\Service\Batch\Script;
+
 require_once $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/app/" . "models/cartModel/cart.php";
 $cartPage = new CartPage();
 
@@ -48,12 +51,14 @@ if ($getProductsByUserId) { ?>
                     foreach ($promoPrice as $rowChildren) {
                         $total_promo += (int)$rowChildren['giam_gia'];
                     }
+
+
                     ?>
                     <input type="hidden" value="<?= $total_promo ?>" name="promo[]">
                 </div>
             </td>
             <td class="quantity text-center">
-                <input type="number" class="soLuong quantityProducts" value="<?php echo $row['so_luong_chitiet']; ?>" min="1" data-gia-tien="<?php echo $row['gia_tien']; ?>" data-id-gh="<?php echo $row['magh']; ?>" data-id-masp="<?php echo $row['masp']; ?>">
+                <input type="number" class="soLuong quantityProducts" value="<?php echo $row['so_luong_chitiet']; ?>" min="1" max="<?php echo $row['so_luong']; ?>" data-max-value="<?php echo $row['so_luong']; ?>" data-gia-tien="<?php echo $row['gia_tien']; ?>" data-id-gh="<?php echo $row['magh']; ?>" data-id-masp="<?php echo $row['masp']; ?>" oninput="handleInput(this)">
             </td>
             <td class="text-center">
                 <b class="tongTien"><?php $lastPrice =  $row['gia_tien'] * $row['so_luong_chitiet'];

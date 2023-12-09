@@ -30,6 +30,7 @@ $(document).ready(function () {
 
     function loadToltalPromoPriceProducts() {
         var userid = cartForm.getAttribute("data-id-user");
+
         $.ajax({
             url: 'cartControllers/selectTotalPromoPrice.php',
             type: 'POST',
@@ -61,24 +62,21 @@ $(document).ready(function () {
         var quantity = $(this).val();
         var magh = $(this).data("id-gh");
         var masp = $(this).data("id-masp");
-        console.log(masp);
+
         $.ajax({
             url: 'cartControllers/insertCart.php',
             type: 'POST',
-            data: { magh: magh, quantity: quantity, masp: masp},
+            data: { magh: magh, quantity: quantity, masp: masp },
             success: function () {
-                console.log(magh);
-                console.log(quantity);
-                console.log(masp);
                 loadProductByCart();
                 loadToltalPriceProducts();
                 loadToltalPriceProducts();
                 loadToltalLastPrice();
+                loadToltalPromoPriceProducts();
             },
             error: function (xhr, status, error) {
                 console.error("Error updating cart: " + error);
             }
         });
     });
-
 });

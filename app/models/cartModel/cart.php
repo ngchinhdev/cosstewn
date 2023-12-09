@@ -7,10 +7,16 @@ class CartPage extends PDOModel
         $existingMagh = $this->getMaghByMatk($matk);
         $magh = $existingMagh ? $existingMagh['magh'] : 'loi';
         $existingProduct = $this->getProductInDetailCart($masp, $magh);
+        $quantityMax = $this->getQuantityMaxByPrd($masp);
         $existingUser = $this->checkInfoUserInTable($matk);
         if ($existingProduct && $existingUser) {
+            $quantityMaxProduct = $quantityMax['so_luong'];
             $newQuantity = $existingProduct['so_luong'] + $quantity;
-            $this->updateProductInDetailCart($masp, $newQuantity, $magh);
+            if ($newQuantity <= $quantityMaxProduct) {
+                $this->updateProductInDetailCart($masp, $newQuantity, $magh);
+            } else {
+                $this->updateProductInDetailCart($masp, $quantityMaxProduct, $magh);
+            }
         } else {
             if ($existingUser) {
                 $this->insertProductIntoDetailCart($magh, $masp, $quantity);
@@ -48,6 +54,12 @@ class CartPage extends PDOModel
     {
         $sql = "SELECT * FROM chitietgiohang WHERE masp = ? AND magh = ?";
         return $this->pdoQueryOne($sql, $masp, $magh);
+    }
+
+    function getQuantityMaxByPrd($masp)
+    {
+        $sql = "SELECT * FROM sanpham WHERE masp = ?";
+        return $this->pdoQueryOne($sql, $masp);
     }
 
     function checkInfoUserInTable($matk)

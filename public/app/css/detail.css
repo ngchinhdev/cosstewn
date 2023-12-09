@@ -843,6 +843,7 @@ li {
     transform-origin: bottom;
 
 }
+
 #container_detail .box-voucher {
     display: flex;
     height: fit-content;
@@ -869,17 +870,18 @@ li {
     background-position-x: -6px;
 }
 
-#container_detail .items-voucher::before{
+#container_detail .items-voucher::before {
     left: -3px;
 }
 
-#container_detail .items-voucher::after{
+#container_detail .items-voucher::after {
     right: -3px;
 }
 
-#container_detail .items-voucher .voucher-promo-value{
+#container_detail .items-voucher .voucher-promo-value {
     font-size: 12px;
-    color: #d0011b;;
+    color: #d0011b;
+    ;
 }
 
 @keyframes flip-top {
@@ -992,6 +994,21 @@ li {
 
 #container_detail .lock-cmt a:hover {
     color: #218CFF;
+}
+
+#container_detail form .sold-out {
+    width: 100%;
+    background-color: #dcdcdc;
+    color: #4d4c4c;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+    margin-top: 25px;
 }
 
 /* css page detail product */

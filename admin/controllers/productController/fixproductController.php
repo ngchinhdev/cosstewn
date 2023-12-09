@@ -2,6 +2,7 @@
 $ROOT_ADMIN = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/admin/";
 require_once $ROOT_ADMIN . "models/productModel/fixproductModel.php";
 $fixProducts = new FixProducts();
+$getAllBrand = $fixProducts->getAllBrand();
 $masp = isset($_POST['masp']) ? $_POST['masp'] : '';
 $productByMasp = $fixProducts->getProductByMasp($masp);
 if (isset($_FILES['image_variation']) || isset($_POST['statusproduct']) || isset($_POST['brandproduct']) || isset($_POST['describeprd']) || isset($_POST['quantityprd']) || isset($_POST['priceNow']) || isset($_POST['priceOrigin']) || isset($_POST['nameproduct'])) {
