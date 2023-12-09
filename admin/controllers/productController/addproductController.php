@@ -3,6 +3,8 @@ $ROOT_ADMIN = $_SERVER['DOCUMENT_ROOT'] . "/cosstewn/admin/";
 require_once $ROOT_ADMIN . "models/productModel/addproductModel.php";
 $addproducts = new AddProducts();
 
+$getAllBrand = $addproducts->getAllBrand();
+
 if (isset($image_variation4) || isset($image_variation3) || isset($image_variation2) || isset($image_variation1) || isset($_POST['statusproduct']) || isset($_POST['brandproduct']) || isset($_POST['describeprd']) || isset($_POST['quantityprd']) || isset($_POST['priceNow']) || isset($_POST['priceOrigin']) || isset($_POST['nameproduct'])) {
     $nameProduct = isset($_POST['nameproduct']) ? $_POST['nameproduct'] : '';
     $priceOrigin = isset($_POST['priceOrigin']) ? $_POST['priceOrigin'] : '';

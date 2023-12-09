@@ -62,21 +62,26 @@
                             <input type="hidden" value="<?= $row['giam_gia'] ?>" name="vouchers[]">
                         <?php endforeach; ?>
                     <?php endif; ?>
-                    <div class="wrapper-action">
-                        <div class="d-flex wrap-quantity-btn">
-                            <button type="button" class="quantity-btn minus-btn" onclick="decreaseQuantity()"><i class="fa-solid fa-minus"></i></button>
-                            <input type="text" class="quantity-text" value="1" name="quantity-pd" id="quantity-pd">
-                            <button type="button" class="quantity-btn add-btn" onclick="increaseQuantity()"><i class="fa-solid fa-plus"></i></button>
+                    <?php if ($infoByProducts['so_luong'] >= 1) { ?>
+                        <div class="wrapper-action">
+                            <div class="d-flex wrap-quantity-btn">
+                                <button type="button" class="quantity-btn minus-btn" onclick="decreaseQuantity()"><i class="fa-solid fa-minus"></i></button>
+                                <input type="text" class="quantity-text" value="1" name="quantity-pd" id="quantity-pd" data-max-value="<?= $infoByProducts['so_luong']; ?>">
+                                <button type="button" class="quantity-btn add-btn" onclick="increaseQuantity()"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                            <button class="btn-add-cart" name="submit-cart">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                <span>Thêm vào giỏ hàng</span>
+                            </button>
+                            <input type="hidden" value="<?php echo $_GET['masp'] ?>" name="input-masp">
+                            <input type="hidden" value="<?php echo $infoByProducts['so_luong'] ?>" name="quantity-max">
+                            <input type="hidden" value="<?php echo $InfoUsers['matk']; ?>" name="input-matk">
+                            <input type="hidden" value="<?php echo $_GET['masp'] ?>" name="prod_id[]">
+                            <button class="btn-buy" name="submit-buy">MUA NGAY</button>
                         </div>
-                        <button class="btn-add-cart" name="submit-cart">
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <span>Thêm vào giỏ hàng</span>
-                        </button>
-                        <input type="hidden" value="<?php echo $_GET['masp'] ?>" name="input-masp">
-                        <input type="hidden" value="<?php echo $InfoUsers['matk']; ?>" name="input-matk">
-                        <input type="hidden" value="<?php echo $_GET['masp'] ?>" name="prod_id[]">
-                        <button class="btn-buy" name="submit-buy">MUA NGAY</button>
-                    </div>
+                    <?php } else { ?>
+                        <div class="sold-out">Tạm thời hết hàng</div>
+                    <?php } ?>
                 </form>
 
                 <div class="row box-commit">

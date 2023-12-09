@@ -29,22 +29,9 @@
         <div class="form-group">
             <label for="">Loại hàng</label>
             <select name="brandproduct" class="form-control">
-                <option value="1">Sữa rửa mặt</option>
-                <option value="2">Sữa tắm</option>
-                <option value="3">Xịt khoáng</option>
-                <option value="4">Nước hoa</option>
-                <option value="5">Dưỡng thể</option>
-                <option value="6">Dầu gội</option>
-                <option value="7">Chống nắng</option>
-                <option value="8">Tẩy trang</option>
-                <option value="9">Son môi</option>
-                <option value="10">Kem dưỡng</option>
-                <option value="11">Mặt nạ</option>
-                <option value="12">Serum</option>
-                <option value="13">Phấn má</option>
-                <option value="14">Lăn khử mùi</option>
-                <option value="15">Tẩy tế bào chết</option>
-                <option value="16">Phụ kiện làm đẹp</option>
+                <?php foreach ($getAllBrand as $row) : ?>
+                    <option value="<?= $row['maloai'] ?>"><?= $row['ten_loai'] ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">

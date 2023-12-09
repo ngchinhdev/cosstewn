@@ -20,4 +20,10 @@ class AddProducts extends PDOModel
         VALUES (?, ?)";
         $this->pdoExecute($sql, $images, $masp);
     }
+
+    function getAllBrand(){
+        $sql = "SELECT * FROM loaihang";
+
+        return $this->pdoQuery($sql);
+    }
 }

@@ -39,4 +39,10 @@ class FixProducts extends PDOModel
 
         return $this->pdoQuery($sql, $masp);
     }
+
+    function getAllBrand(){
+        $sql = "SELECT * FROM loaihang";
+
+        return $this->pdoQuery($sql);
+    }
 }

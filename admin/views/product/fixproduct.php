@@ -27,24 +27,11 @@
             <textarea name="describeprd" id="textDescribeprd" cols="30" rows="10"><?php echo $productByMasp['mo_ta']; ?></textarea>
         </div>
         <div class="form-group">
-            <label for="">Loại hàng</label>
+            <label for="">Loại hàng<?= $productByMasp['maloai'] ?></label>
             <select name="brandproduct" class="form-control">
-                <option value="1" <?php if ($productByMasp['maloai'] == 1) echo 'selected'; ?>>Sữa rửa mặt</option>
-                <option value="2" <?php if ($productByMasp['maloai'] == 2) echo 'selected'; ?>>Sữa tắm</option>
-                <option value="3" <?php if ($productByMasp['maloai'] == 3) echo 'selected'; ?>>Xịt khoáng</option>
-                <option value="4" <?php if ($productByMasp['maloai'] == 4) echo 'selected'; ?>>Nước hoa</option>
-                <option value="5" <?php if ($productByMasp['maloai'] == 5) echo 'selected'; ?>>Dưỡng thể</option>
-                <option value="6" <?php if ($productByMasp['maloai'] == 6) echo 'selected'; ?>>Dầu gội</option>
-                <option value="7" <?php if ($productByMasp['maloai'] == 7) echo 'selected'; ?>>Chống nắng</option>
-                <option value="8" <?php if ($productByMasp['maloai'] == 8) echo 'selected'; ?>>Tẩy trang</option>
-                <option value="9" <?php if ($productByMasp['maloai'] == 9) echo 'selected'; ?>>Son môi</option>
-                <option value="10" <?php if ($productByMasp['maloai'] == 10) echo 'selected'; ?>>Kem dưỡng</option>
-                <option value="11" <?php if ($productByMasp['maloai'] == 11) echo 'selected'; ?>>Mặt nạ</option>
-                <option value="12" <?php if ($productByMasp['maloai'] == 12) echo 'selected'; ?>>Serum</option>
-                <option value="13" <?php if ($productByMasp['maloai'] == 13) echo 'selected'; ?>>Phấn má</option>
-                <option value="14" <?php if ($productByMasp['maloai'] == 14) echo 'selected'; ?>>Lăn khử mùi</option>
-                <option value="15" <?php if ($productByMasp['maloai'] == 15) echo 'selected'; ?>>Tẩy tế bào chết</option>
-                <option value="16" <?php if ($productByMasp['maloai'] == 16) echo 'selected'; ?>>Phụ kiện làm đẹp</option>
+                <?php foreach ($getAllBrand as $row) : ?>
+                    <option value="<?= $row['maloai'] ?>" <?php if ($productByMasp['maloai'] == $row['maloai']) echo 'selected'; ?>><?= $row['ten_loai'] ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
