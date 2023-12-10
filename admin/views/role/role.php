@@ -22,7 +22,9 @@
                 <td class="last-col">
                     <div class="last-td" style="flex-direction: row; align-items: center;">
                         <a style="margin: 0 6px 0 0;" href="views/edit_user.php?id=<?= $role['mavt'] ?>" class="change-btn change-role-btn" data-role="<?= $role['mavt'] ?>">Sửa</a>
-                        <a href="controllers/delete_user.php?id=<?= $role['mavt'] ?>" data-role="<?= $role['mavt'] ?>" class="del-btn del-btn-role">Xóa</a>
+                        <?php if($role['mavt'] !== 1 && $role['mavt'] !== 2): ?>
+                            <a href="controllers/delete_role.php?id=<?= $role['mavt'] ?>" data-role="<?= $role['mavt'] ?>" class="del-btn del-btn-role">Xóa</a>
+                        <?php endif ?>
                     </div>
                 </td>
             </tr>

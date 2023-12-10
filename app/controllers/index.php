@@ -5,6 +5,7 @@
     if(isset($_GET['u'])) {
         if($_GET['u']) {
             if((isset($_COOKIE['user_id']) && $_GET['u'] !== $_COOKIE['user_id']) || !in_array(base64_decode($_GET['u']), $all_id)) {
+                setcookie('user_id', '', time() - (86400 * 30), "/");
                 echo "<script>window.location.href='/cosstewn/app/controllers/index.php';</script>";
                 exit();
             }

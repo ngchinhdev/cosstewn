@@ -38,7 +38,7 @@
         $_SESSION['data_user'] = $data_user;
         $register = new Register();
         $user = $register->getInfoUser($email);
-        if($user['matk']) {
+        if(is_array($user)) {
             require_once $URL_APP_CONTROLLER . "loginController/loginController.php";
         } else {
             require_once $URL_APP_CONTROLLER . "registerController/registerController.php";

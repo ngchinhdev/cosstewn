@@ -10,6 +10,17 @@
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
 
     if(isset($_POST['submit'])) {
+        $user = $login->getInfoUser($_POST["email"]);
+        if(!is_array($user)) {
+            echo "<script>window.location.href='/cosstewn/app/controllers/index.php';</script>";
+            return;
+        } 
+
+        if($user['mat_khau'] == '') {
+            echo "<script>window.location.href='/cosstewn/app/controllers/index.php';</script>";
+            return;
+        } 
+
         $emailTo = $_POST["email"];
         $_SESSION['repass_email'] = $emailTo;
 
