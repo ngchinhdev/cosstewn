@@ -31,5 +31,11 @@
 
             return $this->pdoExecute($sql, $role_id);
         }
+
+        function deleteUserContraints($role_id) {
+            $sql = "DELETE FROM taikhoan WHERE mavt = ?";
+
+            return $this->pdoExecute($sql, $role_id);
+        }
     }
  ?>

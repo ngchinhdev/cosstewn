@@ -51,5 +51,16 @@
             return $this->pdoExecute($sql, $cate_id);
         }
 
+        function deleteCartDetailWhenDeleteCategory($cate_id) {
+            $sql = "DELETE FROM chitietgiohang 
+                    WHERE masp IN (
+                    SELECT sp.masp
+                    FROM chitietgiohang ctgh 
+                    JOIN sanpham sp ON ctgh.masp = sp.masp 
+                    WHERE sp.maloai = ?
+                );";
+
+            return $this->pdoExecute($sql, $cate_id);
+        }
     }
  ?>
